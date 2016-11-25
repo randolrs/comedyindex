@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+	  <title>App</title>
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <%= csrf_meta_tags %>
+
+	  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	  
+	</head>
+
+	<body>
+
+		<%= render 'layouts/header' %>
+
+		<div class="content-container">
+
+			<%= yield %>
+		
+		</div>
+
+	</body>
+</html>

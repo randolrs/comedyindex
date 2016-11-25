@@ -1,0 +1,105 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+body{
+		
+	a:hover{
+		text-decoration: none;
+	}
+
+	background-color: #f6f6f6;
+
+	.centered{
+		text-align:center;
+	}
+	
+	input[type=number]::-webkit-inner-spin-button, 
+	input[type=number]::-webkit-outer-spin-button { 
+	  -webkit-appearance: none; 
+	  margin: 0; 
+	}
+
+
+
+	.green-background{
+		border: 1px solid #00b22d;
+	    color:#fff;
+	    text-transform: none;
+	    background: -webkit-linear-gradient(#35c350, #03b525);
+	    background: -moz-linear-gradient(#35c350, #03b525);
+	    background: -o-linear-gradient(#35c350, #03b525);
+	    background: linear-gradient(#35c350, #03b525);
+	    text-shadow: 0 -1px 1px rgba(0,0,0,0.2);
+
+	    border-radius: 3px;
+	}
+
+	.orange-background{
+
+		border: 1px solid #f83600;
+		color:#fff;
+		text-transform: none;
+		background: #fe8c00; /* fallback for old browsers */
+		background: -webkit-linear-gradient(to bottom, #fe8c00 , #f83600); /* Chrome 10-25, Safari 5.1-6 */
+		background: linear-gradient(to bottom, #fe8c00 , #f83600); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	}
+
+	.button{
+		padding: 10px 25px;
+	    border-radius: 5px;
+	    
+	    display: inline-block;
+	    margin: 0px auto 15px 0px;
+	    text-align: center;
+	    z-index: 99;
+	    position: relative;
+
+	    font-family: 'Lato', sans-serif;
+
+	    box-shadow: inset 0px 1px 3px 0px rgba(240, 240, 240, 0.7), 0px 1px 3px 0px rgba(100, 100, 100, 0.3);
+	    -webkit-box-shadow: 0px 1px 3px 0px rgba(240, 240, 240, 0.7) inset, 0px 1px 3px 0px rgba(100, 100, 100, 0.3);
+	    -moz-box-shadow: 0px 1px 3px 0px rgba(240, 240, 240, 0.7) inset, 0px 1px 3px 0px rgba(100, 100, 100, 0.3);
+	}
+
+	.button.medium{
+		font-size: 2em;
+	}
+
+
+
+	ul.horizontal{
+
+		list-style-type: none;
+	    margin: 0;
+	    margin-bottom: -1px;
+	    padding: 0;
+	    display: block;
+		
+		li{
+
+			display: inline-block;
+	        text-align: center;
+	        vertical-align: top;
+
+			a{
+
+				display: block;
+	            font-size: 18px;
+	            padding: 10px;
+	           	letter-spacing: 1.5px;
+			}
+
+		}
+
+	}
+
+}
+
+.flash{
+	background: #9f9;
+	border: 1px solid #6f6;
+	padding: 5px;
+	margin-bottom: 10px;
+}
