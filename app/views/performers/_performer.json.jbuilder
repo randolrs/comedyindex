@@ -1,0 +1,2 @@
+json.extract! performer, :id, :name, :bio, :city, :country, :twitter_url, :facebook_url, :instagram_url, :youtube_url, :video_url, :created_at, :updated_at
+json.url performer_url(performer, format: :json)

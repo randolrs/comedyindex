@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @performer.name %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @performer.bio %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @performer.city %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @performer.country %>
+</p>
+
+<p>
+  <strong>Twitter url:</strong>
+  <%= @performer.twitter_url %>
+</p>
+
+<p>
+  <strong>Facebook url:</strong>
+  <%= @performer.facebook_url %>
+</p>
+
+<p>
+  <strong>Instagram url:</strong>
+  <%= @performer.instagram_url %>
+</p>
+
+<p>
+  <strong>Youtube url:</strong>
+  <%= @performer.youtube_url %>
+</p>
+
+<p>
+  <strong>Video url:</strong>
+  <%= @performer.video_url %>
+</p>
+
+<%= link_to 'Edit', edit_performer_path(@performer) %> |
+<%= link_to 'Back', performers_path %>

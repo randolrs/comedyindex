@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Performers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Bio</th>
+      <th>City</th>
+      <th>Country</th>
+      <th>Twitter url</th>
+      <th>Facebook url</th>
+      <th>Instagram url</th>
+      <th>Youtube url</th>
+      <th>Video url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @performers.each do |performer| %>
+      <tr>
+        <td><%= performer.name %></td>
+        <td><%= performer.bio %></td>
+        <td><%= performer.city %></td>
+        <td><%= performer.country %></td>
+        <td><%= performer.twitter_url %></td>
+        <td><%= performer.facebook_url %></td>
+        <td><%= performer.instagram_url %></td>
+        <td><%= performer.youtube_url %></td>
+        <td><%= performer.video_url %></td>
+        <td><%= link_to 'Show', performer %></td>
+        <td><%= link_to 'Edit', edit_performer_path(performer) %></td>
+        <td><%= link_to 'Destroy', performer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Performer', new_performer_path %>
