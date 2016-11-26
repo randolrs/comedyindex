@@ -11,6 +11,11 @@
 </p>
 
 <p>
+  <strong>Image</strong>
+  <%= image_tag @performer.image.url(:medium), class: "medium-profile-image"%>
+</p>
+
+<p>
   <strong>City:</strong>
   <%= @performer.city %>
 </p>
@@ -40,10 +45,16 @@
   <%= @performer.youtube_url %>
 </p>
 
-<p>
-  <strong>Video url:</strong>
-  <%= @performer.video_url %>
-</p>
+<% if @performer.video_url %>
+
+  <p>
+    <strong>Video url:</strong>
+
+    <iframe width="560" height="315" src="<%= @performer.video_url %>" frameborder="0" allowfullscreen></iframe>
+
+  </p>
+
+<%end%>
 
 <%= link_to 'Edit', edit_performer_path(@performer) %> |
 <%= link_to 'Back', performers_path %>

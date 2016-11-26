@@ -54,6 +54,7 @@ body{
  	top: 50px;
  	position: relative;
  	padding-bottom: 50px;
+ 	min-height: 100%;
  	
  }
 
