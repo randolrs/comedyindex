@@ -42,7 +42,26 @@
 
 			}
 
+		}
 
+	}
+
+}
+
+
+@media only screen and (min-width: 800px) {
+	
+	html {
+
+		body {
+
+			.mobile-only{
+				display: none !important;
+			}
+
+			.full-screen-only{
+				display: inherit !important;
+			}
 
 		}
 

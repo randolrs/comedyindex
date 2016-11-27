@@ -44,3 +44,20 @@
 		
 	}
 }
+
+.hamburger{
+	background:none;
+	position:absolute;
+	top:0;
+	right:0;
+	line-height: 40px;
+	padding: 5px 15px 5px 15px;
+	text-shadow: 0px 1px 1px rgba(0,0,0,0.5);
+	color:#fff;
+	border:0;
+	font-size:1.4em;
+	font-weight:bold;
+	cursor:pointer;
+	outline:none;
+	z-index:10000000000000;
+}

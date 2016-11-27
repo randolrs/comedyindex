@@ -6,11 +6,11 @@
 
 			<li><a class="logo" href="<%= root_path %>"><span style="color: #EEE84C;">COMICS</span></a></li>
 
-			<li><%= link_to "Shows", root_path %></li>
+			<li><%= link_to "Shows", root_path, class:"full-screen-only" %></li>
 
-			<li><%= link_to "Venues", root_path %></li>
+			<li><%= link_to "Venues", root_path, class:"full-screen-only" %></li>
 
-			<li><%= link_to "Comics", root_path %></li>
+			<li><%= link_to "Comics", root_path, class:"full-screen-only" %></li>
 
 		</ul>
 
@@ -19,7 +19,9 @@
 
 	<div class="header-options right">
 
-		<ul class="horizontal">
+		<button class="hamburger mobile-only">&#9776;</button>
+
+		<ul class="horizontal full-screen-only">
 
 			<% if user_signed_in? %>
 
@@ -32,6 +34,8 @@
 				<li><%= link_to "Sign Up", new_user_registration_path %></li>
 
 			<%end%>
+
+
 
 		</ul>
 

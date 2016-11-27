@@ -58,6 +58,14 @@ body{
  	
  }
 
+.mobile-only{
+	display: inherit !important;
+}
+
+ .full-screen-only{
+ 	display: none !important;
+ }
+
 .brand-gradient{
 
  	background: #24C6DC; /* fallback for old browsers */
