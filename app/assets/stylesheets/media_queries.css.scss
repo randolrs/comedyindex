@@ -1,0 +1,46 @@
+// Place all the styles related to the Performers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@media only screen and (min-width: 800px) {
+	
+	html {
+
+		body {
+			
+			.profile-image-container, .profile-detail-container{
+
+				display: table-cell;
+
+			}
+
+			.profile-image-container{
+
+				vertical-align: top;
+
+			}
+
+			.profile-detail-container{
+
+				vertical-align: middle;
+			    text-align: left;
+			    width: 100%;
+			    background: #fff;
+			    padding: 20px 30px;
+			    box-shadow: 0px 2px 1px rgba(100, 100, 100, 0.3);
+
+			}
+
+			.medium-profile-image{
+	
+				display: block;
+
+			}
+
+
+
+		}
+
+	}
+
+}

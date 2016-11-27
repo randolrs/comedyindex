@@ -1,40 +1,66 @@
 <div class="content">
 
-  <div class="centered">
-
+  <div class="profile-image-container">
+    
     <%= image_tag @performer.image.url(:medium), class: "medium-profile-image"%>
+  
+  </div>
+  <div class="profile-detail-container">
+
     <h1><%= @performer.name %></h1>
-    <h2><%= @performer.bio %></h2>
+
+    <p><%= @performer.bio %></p>
+    
     <p><%= @performer.city %>, <%= @performer.country %></p>
 
     <p><% if @performer.twitter_url.length > 0 %><%= link_to "Twitter", @performer.twitter_url %> |<%end%> <% if @performer.facebook_url.length > 0 %><%= link_to "Facebook", @performer.facebook_url %> |<%end%> <% if @performer.instagram_url.length > 0 %><%= link_to "Instagram", @performer.instagram_url %> |<%end%> <% if @performer.youtube_url.length > 0 %><%= link_to "Youtube", @performer.youtube_url %><%end%></p>
 
+  </div>
+
+  <div class="profile-bar">
+
+    <ul class="horizontal">
+      <li><a class="click-to-reveal active" data-reveal-panel-id="shows">Upcoming Shows</a></li>
+      <li><a class="click-to-reveal" data-reveal-panel-id="media">Media</a></li>
+      <li><a class="click-to-reveal" data-reveal-panel-id="credits">Credits</a></li>
+      <li><a class="click-to-reveal" data-reveal-panel-id="topics">Topics</a></li>
+    </ul>
 
   </div>
 
   <br><br>
-  
+
+  <div class="reveal-panel" id="shows">
+
+    Show
+
+  </div>
+
+  <div class="reveal-panel default-off" id="media">
+
+    Media
+
+  </div>
+
+  <div class="reveal-panel default-off" id="credits">
+
+    Credits
+
+  </div>
+
+  <div class="reveal-panel default-off" id="topics">
+
+    Topics
+
+  </div>
+
   <div class="centered">
 
-    <% if @performer.video_url %>
+    <% if @performer.video_url.length > 0 %>
 
         <iframe width="560" height="315" src="<%= @performer.video_url %>" frameborder="0" allowfullscreen></iframe>
 
     <%end%>
-
-  </div>
-
-  <br><br>
-
-  <div class="content-section">
-
-    <h3 class="content-section-header">Upcoming Shows</h3>
-
-    <h3 class="content-section-header">Media</h3>
-
-    <h3 class="content-section-header">Credits</h3>
-
-    <h3 class="content-section-header">Topics</h3>
 
   </div>
 
