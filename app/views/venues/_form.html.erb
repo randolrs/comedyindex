@@ -12,6 +12,20 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <br>
+
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image, class: "form-control" %>
+  </div>
+
+  <br>
+
+  <div class="field">
     <%= f.label :city_id %><br>
     <%= f.number_field :city_id %>
   </div>
@@ -23,10 +37,8 @@
     <%= f.label :address_line_2 %><br>
     <%= f.text_field :address_line_2 %>
   </div>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

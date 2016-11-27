@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161127233843) do
+ActiveRecord::Schema.define(version: 20161127235254) do
 
   create_table "performers", force: :cascade do |t|
     t.string   "name"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 20161127233843) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "snapchat_url"
+    t.string   "website_url"
   end
 
   create_table "users", force: :cascade do |t|
@@ -60,6 +62,12 @@ ActiveRecord::Schema.define(version: 20161127233843) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "twitter_url"
+    t.string   "instagram_url"
+    t.string   "facebook_url"
+    t.string   "youtube_url"
+    t.string   "snapchat_url"
+    t.string   "website_url"
   end
 
 end

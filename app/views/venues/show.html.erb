@@ -1,24 +1,66 @@
-<p id="notice"><%= notice %></p>
+<div class="profile-header-banner dark-brand-gradient">
 
-<p>
-  <strong>City:</strong>
-  <%= @venue.city_id %>
-</p>
+</div>
 
-<p>
-  <strong>Address line 1:</strong>
-  <%= @venue.address_line_1 %>
-</p>
+<div class="profile-content">
 
-<p>
-  <strong>Address line 2:</strong>
-  <%= @venue.address_line_2 %>
-</p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @venue.name %>
-</p>
+  <div class="profile-image-container">
+    
+    <%= image_tag @venue.image.url(:medium), class: "medium-profile-image"%>
+  
+  </div>
+  <div class="profile-detail-container">
 
-<%= link_to 'Edit', edit_venue_path(@venue) %> |
-<%= link_to 'Back', venues_path %>
+    <h1><%= @venue.name %></h1>
+    
+    <p>City, Country</p>
+
+    <p>Twitter and Stuff</p>
+
+  </div>
+
+  <div class="profile-bar">
+
+    <ul class="horizontal">
+      <li><a class="click-to-reveal active" data-reveal-panel-id="shows">Upcoming Shows</a></li>
+      <li><a class="click-to-reveal" data-reveal-panel-id="credits">About</a></li>
+      <li><a class="click-to-reveal" data-reveal-panel-id="media">Media</a></li>
+      
+    </ul>
+
+  </div>
+
+  <br><br>
+
+  <div class="reveal-panel" id="shows">
+
+    Show
+
+  </div>
+
+  <div class="reveal-panel default-off" id="media">
+
+    Media
+
+  </div>
+
+  <div class="reveal-panel default-off" id="credits">
+
+    Credits
+
+  </div>
+
+  <div class="reveal-panel default-off" id="topics">
+
+    Topics
+
+  </div>
+
+  <div class="centered">
+
+  	Video
+
+  </div>
+
+</div>
