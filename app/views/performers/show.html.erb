@@ -1,60 +1,25 @@
-<p id="notice"><%= notice %></p>
+<div class="content">
 
-<p>
-  <strong>Name:</strong>
-  <%= @performer.name %>
-</p>
+  <div class="centered">
 
-<p>
-  <strong>Bio:</strong>
-  <%= @performer.bio %>
-</p>
+    <%= image_tag @performer.image.url(:medium), class: "medium-profile-image"%>
+    <h1><%= @performer.name %></h1>
+    <h2><%= @performer.bio %></h2>
+    <p><%= @performer.city %>, <%= @performer.country %></p>
 
-<p>
-  <strong>Image</strong>
-  <%= image_tag @performer.image.url(:medium), class: "medium-profile-image"%>
-</p>
+    <p><% if @performer.twitter_url.length > 0 %><%= link_to "Twitter", @performer.twitter_url %> |<%end%> <% if @performer.facebook_url.length > 0 %><%= link_to "Facebook", @performer.facebook_url %> |<%end%> <% if @performer.instagram_url.length > 0 %><%= link_to "Instagram", @performer.instagram_url %> |<%end%> <% if @performer.youtube_url.length > 0 %><%= link_to "Youtube", @performer.youtube_url %><%end%></p>
 
-<p>
-  <strong>City:</strong>
-  <%= @performer.city %>
-</p>
 
-<p>
-  <strong>Country:</strong>
-  <%= @performer.country %>
-</p>
+  </div>
 
-<p>
-  <strong>Twitter url:</strong>
-  <%= @performer.twitter_url %>
-</p>
+  <div class="centered">
 
-<p>
-  <strong>Facebook url:</strong>
-  <%= @performer.facebook_url %>
-</p>
+    <% if @performer.video_url %>
 
-<p>
-  <strong>Instagram url:</strong>
-  <%= @performer.instagram_url %>
-</p>
+        <iframe width="560" height="315" src="<%= @performer.video_url %>" frameborder="0" allowfullscreen></iframe>
 
-<p>
-  <strong>Youtube url:</strong>
-  <%= @performer.youtube_url %>
-</p>
+    <%end%>
 
-<% if @performer.video_url %>
+  </div>
 
-  <p>
-    <strong>Video url:</strong>
-
-    <iframe width="560" height="315" src="<%= @performer.video_url %>" frameborder="0" allowfullscreen></iframe>
-
-  </p>
-
-<%end%>
-
-<%= link_to 'Edit', edit_performer_path(@performer) %> |
-<%= link_to 'Back', performers_path %>
+</div>
