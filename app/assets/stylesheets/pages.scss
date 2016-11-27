@@ -19,7 +19,7 @@ section.home-form{
 	height: 100%;
 }
 
-.content{
+.content, .profile-content{
 	max-width: 800px;
 	margin: 0 auto;
 	position: relative;
@@ -36,6 +36,11 @@ section.home-form{
 		}
 
 	}
+}
+
+.profile-content{
+	margin-top: -50px;
+	padding: 0px 50px;
 }
 
 
