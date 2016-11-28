@@ -18,7 +18,7 @@
     
     <p><%= @performer.city %>, <%= @performer.country %></p>
 
-    <p><% if @performer.twitter_url.length > 0 %><%= link_to "Twitter", @performer.twitter_url %> |<%end%> <% if @performer.facebook_url.length > 0 %><%= link_to "Facebook", @performer.facebook_url %> |<%end%> <% if @performer.instagram_url.length > 0 %><%= link_to "Instagram", @performer.instagram_url %> |<%end%> <% if @performer.youtube_url.length > 0 %><%= link_to "Youtube", @performer.youtube_url %><%end%></p>
+    <p class="social-media-row"><% if @performer.twitter_url.length > 0 %><%= link_to "Twitter", @performer.twitter_url %> |<%end%> <% if @performer.facebook_url.length > 0 %><%= link_to "Facebook", @performer.facebook_url %> |<%end%> <% if @performer.instagram_url.length > 0 %><%= link_to "Instagram", @performer.instagram_url %> |<%end%> <% if @performer.youtube_url.length > 0 %><%= link_to "Youtube", @performer.youtube_url %><%end%></p>
 
   </div>
 

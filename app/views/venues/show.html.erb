@@ -19,7 +19,7 @@
 
     <% if @venue.website_url.length > 0 %><p><%= link_to "Website", @venue.website_url %></p><%end%>
 
-    <p><% if @venue.twitter_url.length > 0 %><%= link_to "Twitter", @venue.twitter_url %> |<%end%> <% if @venue.facebook_url.length > 0 %><%= link_to "Facebook", @venue.facebook_url %> |<%end%> <% if @venue.instagram_url.length > 0 %><%= link_to "Instagram", @venue.instagram_url %> |<%end%> <% if @venue.youtube_url.length > 0 %><%= link_to "Youtube", @venue.youtube_url %><%end%></p>
+    <p class="social-media-row"><% if @venue.twitter_url.length > 0 %><%= link_to "Twitter", @venue.twitter_url %> |<%end%> <% if @venue.facebook_url.length > 0 %><%= link_to "Facebook", @venue.facebook_url %> |<%end%> <% if @venue.instagram_url.length > 0 %><%= link_to "Instagram", @venue.instagram_url %> |<%end%> <% if @venue.youtube_url.length > 0 %><%= link_to "Youtube", @venue.youtube_url %><%end%></p>
 
   </div>
 
