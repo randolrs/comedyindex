@@ -29,20 +29,30 @@
   </div>
 
 
-  <div class="reveal-panel" id="shows">
+  <div class="profile-section">
 
-    Show
+    <h2>Media</h2>
+
+    <div class="centered">
+
+      <% if @performer.video_url.length > 0 %>
+
+          <iframe class="video-embed" src="<%= @performer.video_url %>" frameborder="0" allowfullscreen></iframe>
+
+      <%end%>
+
+    </div>
+  
 
   </div>
 
-  <div class="centered">
 
-    <% if @performer.video_url.length > 0 %>
 
-        <iframe class="video-embed" src="<%= @performer.video_url %>" frameborder="0" allowfullscreen></iframe>
+  <div class="profile-section">
 
-    <%end%>
+    <h2>Podcast</h2>
 
   </div>
+
 
 </div>
