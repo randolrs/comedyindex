@@ -51,9 +51,9 @@ body{
 
 
  .content-container{
- 	top: 50px;
+ 	padding-top: 50px;
  	position: relative;
- 	padding-bottom: 50px;
+ 	
  	min-height: 100%;
  	
  }

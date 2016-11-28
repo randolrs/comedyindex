@@ -7,6 +7,19 @@ body{
 	
 	background-color: #f9f9f9;
 
+	h1.mega{
+		font-size: 4em;
+
+	}
+
+	.light-text-shadow{
+		text-shadow: rgba(50,50,50,0.5);
+	}
+
+	.light-box-shadow{
+		box-shadow: rgba(50,50,50,0.5);
+	}
+
 	a, a:hover{
 		text-decoration: none;
 	}

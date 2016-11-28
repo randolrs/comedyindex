@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   
   root 'pages#home'
 
+  get 'signup' => 'pages#signup'
+
+  get 'login' => 'pages#login'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
