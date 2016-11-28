@@ -10,14 +10,16 @@
     <%= image_tag @venue.image.url(:medium), class: "medium-profile-image"%>
   
   </div>
-  
+
   <div class="profile-detail-container">
 
     <h1><%= @venue.name %></h1>
     
     <p>City, Country</p>
 
-    <p>Twitter and Stuff</p>
+    <% if @venue.website_url.length > 0 %><p><%= link_to "Website", @venue.website_url %></p><%end%>
+
+    <p><% if @venue.twitter_url.length > 0 %><%= link_to "Twitter", @venue.twitter_url %> |<%end%> <% if @venue.facebook_url.length > 0 %><%= link_to "Facebook", @venue.facebook_url %> |<%end%> <% if @venue.instagram_url.length > 0 %><%= link_to "Instagram", @venue.instagram_url %> |<%end%> <% if @venue.youtube_url.length > 0 %><%= link_to "Youtube", @venue.youtube_url %><%end%></p>
 
   </div>
 
