@@ -69,6 +69,6 @@ class PerformersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def performer_params
-      params.require(:performer).permit(:name, :bio, :city, :country, :twitter_url, :facebook_url, :instagram_url, :youtube_url, :video_url, :image)
+      params.require(:performer).permit(:name, :bio, :city, :country, :twitter_url, :facebook_url, :instagram_url, :youtube_url, :snapchat_url, :website_url, :video_url, :image)
     end
 end
