@@ -1,0 +1,66 @@
+<div class="profile-header-banner dark-brand-gradient">
+
+</div>
+
+<div class="profile-content">
+
+
+  <div class="profile-image-container">
+    
+    <%= image_tag @show.image.url(:medium), class: "medium-profile-image"%>
+  
+  </div>
+  <div class="profile-detail-container">
+
+    <h1><%= @show.name %></h1>
+
+    <p><%= @show.about %></p>
+
+    <% if @show.website_url.length > 0 %><p><%= link_to "Website", @show.website_url %></p><%end%>
+
+  </div>
+
+  <div class="profile-bar">
+
+    <ul class="horizontal">
+      <li><a class="click-to-reveal active" data-reveal-panel-id="shows">Upcoming Shows</a></li>
+      <li><a class="click-to-reveal" data-reveal-panel-id="media">Media</a></li>
+      <li><a class="click-to-reveal" data-reveal-panel-id="credits">Credits</a></li>
+      <li><a class="click-to-reveal" data-reveal-panel-id="topics">Topics</a></li>
+    </ul>
+
+  </div>
+
+  <br><br>
+
+  <div class="reveal-panel" id="shows">
+
+    Show
+
+  </div>
+
+  <div class="reveal-panel default-off" id="media">
+
+    Media
+
+  </div>
+
+  <div class="reveal-panel default-off" id="credits">
+
+    Credits
+
+  </div>
+
+  <div class="reveal-panel default-off" id="topics">
+
+    Topics
+
+  </div>
+
+  <div class="centered">
+
+
+
+  </div>
+
+</div>

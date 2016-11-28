@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  venue_id: 1
+  website_url: MyString
+  about: MyText
+
+two:
+  name: MyString
+  venue_id: 1
+  website_url: MyString
+  about: MyText
