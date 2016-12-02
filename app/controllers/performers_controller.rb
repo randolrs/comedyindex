@@ -10,6 +10,9 @@ class PerformersController < ApplicationController
   # GET /performers/1
   # GET /performers/1.json
   def show
+
+    @main_SEO_title = @performer.name
+    
   end
 
   # GET /performers/new

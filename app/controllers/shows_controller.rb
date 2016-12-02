@@ -10,6 +10,8 @@ class ShowsController < ApplicationController
   # GET /shows/1
   # GET /shows/1.json
   def show
+
+    
   end
 
   # GET /shows/new
