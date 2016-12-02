@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :shows
   resources :venues
   resources :performers
@@ -13,6 +14,8 @@ Rails.application.routes.draw do
   get 'signup' => 'pages#signup'
 
   get 'login' => 'pages#login'
+
+  get 'account' => 'users#account_settings'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

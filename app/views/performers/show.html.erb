@@ -10,7 +10,7 @@
     <%= image_tag @performer.image.url(:medium), class: "medium-profile-image"%>
   
   </div>
-  
+
   <div class="profile-detail-container">
 
     <h1><%= @performer.name %></h1>
@@ -19,24 +19,34 @@
     
     <p><%= @performer.city %>, <%= @performer.country %></p>
 
-    <p class="social-media-row"><% if @performer.twitter_url.length > 0 %><%= link_to "Twitter", @performer.twitter_url %> <%end%> <% if @performer.facebook_url.length > 0 %><%= link_to "Facebook", @performer.facebook_url %> <%end%> <% if @performer.instagram_url.length > 0 %><%= link_to "Instagram", @performer.instagram_url %> <%end%> <% if @performer.youtube_url.length > 0 %><%= link_to "Youtube", @performer.youtube_url %><%end%></p>
+    <p></p>
 
-      <a class="button">+ Follow</a>
+    <p class="social-media-row">
+      <% if @performer.twitter_url %><%= link_to @performer.twitter_url do %> <%= image_tag "twitter_icon.PNG", class:"social-media-button" %><%end%><%end%> 
 
-      <a class="button inverse"><span class="glyphicon glyphicon-envelope" style="margin-right: 15px;"></span>Message</a>
+      <% if @performer.facebook_url %><%= link_to @performer.facebook_url do %> <%= image_tag "facebook_icon.png", class:"social-media-button" %><%end%><%end%> 
+
+      <% if @performer.instagram_url %><%= link_to @performer.instagram_url do %><%= image_tag "instagram_icon.png", class:"social-media-button" %><%end%><%end%> 
+
+      <% if @performer.youtube_url %><%= link_to @performer.youtube_url do %><%= image_tag "youtube_icon.PNG", class:"social-media-button" %><%end%><%end%>
+
+      <% if @performer.snapchat_url %><% link_to @performer.snapchat_url do %><%= image_tag "snapchat_icon.png", class:"social-media-button" %><%end%><%end%>
+
+    </p>
+
+    <p>
+    
+      <a class="button blue-background">+ Follow</a>
+
+      <a class="button orange-background"><span class="glyphicon glyphicon-envelope" style="margin-right: 15px;"></span>Message</a>
+
+    </p>
 
   </div>
 
   <div class="profile-section">
 
-    <h2>Upcoming Shows</h2>
-
-  </div>
-
-
-  <div class="profile-section">
-
-    <h2>Media</h2>
+    <h2>Spotlight</h2>
 
     <div class="centered">
 
@@ -48,6 +58,12 @@
 
     </div>
 
+  </div>
+
+
+  <div class="profile-section">
+
+    <h2>Upcoming Shows</h2>
 
   </div>
 
