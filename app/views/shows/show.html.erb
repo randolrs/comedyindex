@@ -10,6 +10,7 @@
     <%= image_tag @show.image.url(:medium), class: "medium-profile-image"%>
   
   </div>
+
   <div class="profile-detail-container">
 
     <h1><%= @show.name %></h1>
@@ -18,7 +19,17 @@
 
     <% if @show.website_url.length > 0 %><p><%= link_to "Website", @show.website_url %></p><%end%>
 
+    <a class="button green-background">Buy Tickets</a>
+
   </div>
+
+  <div class="profile-section">
+
+    <h2>Featured Comics</h2>
+
+  </div>
+
+
 
 
 

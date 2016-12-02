@@ -13,4 +13,11 @@ ready = ->
 			targetId = "#" + $(@).data("reveal-panel-id")
 			$('body').find(targetId).show()
 
+		$(".modal-cta").click (window.event), ->
+			targetId = "#" + $(@).data("modal-id")
+			$('body').find(targetId).show()
+
+		$(".modal-container").click (window.event), ->
+			$(@).hide()
+
 $(document).on('turbolinks:load', ready)

@@ -5,7 +5,7 @@
 
 body{
 	
-	background-color: #f9f9f9;
+	background-color: #fff;
 
 	h1.mega{
 		font-size: 4em;
@@ -37,6 +37,14 @@ body{
 	input[type=number]::-webkit-outer-spin-button { 
 	  -webkit-appearance: none; 
 	  margin: 0; 
+	}
+
+	.button{
+		margin: 0px;
+	}
+
+	.button:hover{
+		cursor: pointer;
 	}
 
 	.dark-brand-gradient{

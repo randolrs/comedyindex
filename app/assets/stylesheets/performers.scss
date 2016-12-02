@@ -9,6 +9,7 @@
 
 .profile-detail-container{
 	padding: 0px 20px;
+	font-size: 20px;
 
 }
 
@@ -26,7 +27,9 @@
 }
 
 .medium-profile-image{
-	box-shadow: 0px 2px 1px rgba(100, 100, 100, 0.3);
+	
 	border-radius: 200px;
-	width: 194px;
+	min-width: 194px;
+	width:33.33%;
+	border: 5px solid #fff;
 }

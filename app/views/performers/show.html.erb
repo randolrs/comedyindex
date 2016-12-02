@@ -10,6 +10,7 @@
     <%= image_tag @performer.image.url(:medium), class: "medium-profile-image"%>
   
   </div>
+  
   <div class="profile-detail-container">
 
     <h1><%= @performer.name %></h1>
@@ -19,6 +20,10 @@
     <p><%= @performer.city %>, <%= @performer.country %></p>
 
     <p class="social-media-row"><% if @performer.twitter_url.length > 0 %><%= link_to "Twitter", @performer.twitter_url %> <%end%> <% if @performer.facebook_url.length > 0 %><%= link_to "Facebook", @performer.facebook_url %> <%end%> <% if @performer.instagram_url.length > 0 %><%= link_to "Instagram", @performer.instagram_url %> <%end%> <% if @performer.youtube_url.length > 0 %><%= link_to "Youtube", @performer.youtube_url %><%end%></p>
+
+      <a class="button">+ Follow</a>
+
+      <a class="button inverse"><span class="glyphicon glyphicon-envelope" style="margin-right: 15px;"></span>Message</a>
 
   </div>
 

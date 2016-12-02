@@ -13,7 +13,7 @@
 	left:0px;
 	right:0px;
 	height: 50px;
-	z-index: 96000;
+	z-index: 960;
 
 	.header-options{
 
@@ -47,9 +47,6 @@
 
 .hamburger{
 	background:none;
-	position:absolute;
-	top:0;
-	right:0;
 	line-height: 40px;
 	padding: 5px 15px 5px 15px;
 	text-shadow: 0px 1px 1px rgba(0,0,0,0.5);
@@ -60,4 +57,8 @@
 	cursor:pointer;
 	outline:none;
 	z-index:10000000000000;
+}
+
+.hamburger:hover{
+	background: rgba(0,0,0,0.2);
 }

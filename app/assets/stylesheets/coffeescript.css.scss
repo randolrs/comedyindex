@@ -9,3 +9,10 @@ a.click-to-reveal{
 a.click-to-reveal.active{
 	border-bottom: 3px solid green;
 }
+
+span.dismiss-parent{
+	position: absolute;
+	font-size: 20px;
+	color: #fff;
+	right: 0px;
+}
