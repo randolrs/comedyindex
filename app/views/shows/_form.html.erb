@@ -1,45 +1,65 @@
-<%= form_for(@show) do |f| %>
-  <% if @show.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@show.errors.count, "error") %> prohibited this show from being saved:</h2>
+<div class="form-container">
 
-      <ul>
-      <% @show.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <%= form_for(@show) do |f| %>
+    <% if @show.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@show.errors.count, "error") %> prohibited this show from being saved:</h2>
+
+        <ul>
+        <% @show.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <h2 class="form-section-header">Event Details</h2>
+
+    <div class="field">
+      <label>Event Title</label><br>
+      <%= f.text_field :name %>
     </div>
+
+    <div class="field">
+
+      <label>Event Image</label>
+
+      <div class="image-field-container">
+        
+        <h3>Click to Add Event Picture</h3>
+
+        <%= f.file_field :image, class: "form-control" %>
+
+      </div>
+
+    </div>
+
+    <div class="field">
+      <%= f.label :start_time %><br>
+      <input type="text" class="datepicker" name="start_time" required>
+    </div>
+
+
+    <div class="field">
+      <%= f.label :venue_id %><br>
+      <%= f.number_field :venue_id %>
+    </div>
+    <div class="field">
+      <label>Event Website URL</label><br>
+      <%= f.text_field :website_url %>
+    </div>
+    <div class="field">
+      <label>Event Description</label><br>
+      <%= f.text_area :about %>
+    </div>
+
+    <h2 class="form-section-header">Tickets</h2>
+
+
+    <div class="actions">
+      <input type="submit" class="button green-background" value="Create Show">
+    </div>
+
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :image %>
-    <%= f.file_field :image, class: "form-control" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :start_time %><br>
-    <input type="text" class="datepicker" name="start_time" required>
-  </div>
-
-
-  <div class="field">
-    <%= f.label :venue_id %><br>
-    <%= f.number_field :venue_id %>
-  </div>
-  <div class="field">
-    <%= f.label :website_url %><br>
-    <%= f.text_field :website_url %>
-  </div>
-  <div class="field">
-    <%= f.label :about %><br>
-    <%= f.text_area :about %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

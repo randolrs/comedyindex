@@ -20,4 +20,6 @@ ready = ->
 		$(".modal-container").click (window.event), ->
 			$(@).hide()
 
+		$(".datepicker").datepicker()
+
 $(document).on('turbolinks:load', ready)
