@@ -29,9 +29,16 @@
 		
 	}
 
-	input, textarea, select{
+	input, textarea {
 		width:100%;
 		display: block;
+		padding: 10px 0px;
+		text-indent: 5px;
+		font-size: 1.5em;
+    	color: #333;
+	}
+
+	select {
 		padding: 10px 0px;
 		text-indent: 5px;
 		font-size: 1.5em;
