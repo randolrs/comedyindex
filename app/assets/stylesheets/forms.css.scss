@@ -113,6 +113,7 @@ h2.form-section-header{
 	height: 100px;
 	text-align: center;
 	padding: 10px;
+	margin-top: 0.5em;
 
 	input.form-control{
 		position: relative;
@@ -127,6 +128,7 @@ h2.form-section-header{
 
 	input.form-control:hover{
 		cursor: pointer;
+
 	}
 
 	h3, h4{
@@ -140,4 +142,5 @@ h2.form-section-header{
 .image-field-container:hover{
 	border-color: #2a5298;
 	cursor: pointer;
+	background: #ddf;
 }

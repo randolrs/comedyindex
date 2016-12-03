@@ -17,7 +17,7 @@
 
     <p><%= @show.about %></p>
 
-    <% if @show.website_url.length > 0 %><p><%= link_to "Website", @show.website_url %></p><%end%>
+    <% if @show.website_url %><p><%= link_to "Website", @show.website_url %></p><%end%>
 
     <a class="button green-background">Buy Tickets</a>
 

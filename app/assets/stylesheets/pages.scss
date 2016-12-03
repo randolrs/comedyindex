@@ -60,3 +60,26 @@ section.home-form{
     text-align: center;
     margin-top: 1em;
 }
+
+.action-header-container{
+	
+	background: #336;
+	padding: 10px;
+	position: fixed;
+	width: 100%;
+	display: block;
+	top: 50px;
+	z-index: 950;
+
+	.action-header-content{
+		
+		max-width: 800px;
+		margin: 0 auto;
+		text-align: center;
+
+		a{
+			color: #fff;
+			font-size: 30px;
+		}
+	}
+}
