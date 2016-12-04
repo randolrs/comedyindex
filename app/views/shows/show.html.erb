@@ -37,9 +37,13 @@
 
     <h2>More Dates</h2>
 
-    <% @show.show_occurences.each do |occurence| %>
+    <% if @show.show_occurences.count > 0 %>
 
-      <%= occurence.id %>
+      <% @show.show_occurences.each do |occurence| %>
+
+        <%= occurence.id %>
+
+      <%end%>
 
     <%end%>
 
