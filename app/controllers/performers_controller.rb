@@ -15,6 +15,10 @@ class PerformersController < ApplicationController
     
   end
 
+  def setup_profile
+    @performer = Performer.new
+  end
+
   # GET /performers/new
   def new
     @performer = Performer.new

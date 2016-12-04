@@ -1,3 +1,5 @@
+<% unless user_signed_in?%>
+
 <section class="home-form">
 
 	<div class="section-content">
@@ -9,3 +11,10 @@
 
 
 </section>
+
+
+<%else%>
+
+	<%= render 'users/dashboard' %>
+
+<%end%>

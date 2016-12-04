@@ -1,1 +1,40 @@
-Account Settings
+<div class="content">
+
+	<div class="dashboard-section-header">
+
+		<ul>
+			<li><a class="click-to-reveal active" data-reveal-panel-id="login-information">Login</a></li><li><a class="click-to-reveal" data-reveal-panel-id="gallery-profile">About You</a></li><li><a class="click-to-reveal" data-reveal-panel-id="billing">Billing</a></li>
+		</ul>
+
+	</div>
+
+	
+	<div class="form-container medium">
+
+		<%= form_for(current_user, url: registration_path(current_user), html: { method: :put }) do |f| %>
+
+		    <div class="field">
+		      <%= f.label :email %><br />
+		      <%= f.email_field :email %>
+		    </div>
+
+		    <div class="field">
+		      <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+		      <%= f.password_field :password, autocomplete: "off" %>
+		      <% if @minimum_password_length %>
+		        <br />
+		        <em><%= @minimum_password_length %> characters minimum</em>
+		      <% end %>
+		    </div>
+
+		    <div class="actions">
+		      <%= f.submit "Update", class:"button orange-background" %>
+		    </div>
+
+		<% end %>
+
+
+	</div>
+
+
+</div>

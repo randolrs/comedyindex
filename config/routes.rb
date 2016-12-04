@@ -15,7 +15,15 @@ Rails.application.routes.draw do
 
   get 'login' => 'pages#login'
 
+  get 'profile/setup' => 'performers#setup_profile', as: 'setup_performer_profile'
+
   get 'account' => 'users#account_settings'
+
+  get 'signup/comics' => 'users#comic_signup', as: 'comic_signup'
+
+  get 'signup/producers' => 'users#producer_signup', as: 'producer_signup'
+
+  get 'signup/venues' => 'users#venue_signup', as: 'venue_signup'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
