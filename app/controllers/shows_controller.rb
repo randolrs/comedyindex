@@ -11,6 +11,7 @@ class ShowsController < ApplicationController
   # GET /shows/1.json
   def show
 
+    @main_SEO_title = @show.name
     
   end
 
