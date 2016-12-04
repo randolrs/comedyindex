@@ -15,17 +15,22 @@
 
     <h1><%= @show.name %></h1>
 
-    <p><%= @show.about %></p>
-
-    <br>
-
     <p><%= @show.start_time.strftime("%A, %b %e, %Y") %></p>
 
     <br>
 
-    <a class="button green-background">Buy Tickets</a><% if @show.website_url %><a class="button blue-background" href="<%= @show.website_url %>">Website</a><%end%>
+    <a class="button green-background">Buy Tickets</a><% if @show.website_url %><%= link_to @show.website_url do %><a class="button blue-background" href="<%= @show.website_url %>">Website</a><%end%><%end%>
 
   </div>
+
+  <div class="profile-section">
+
+    <h2>About the Show</h2>
+
+    <p><%= @show.about %></p>
+
+  </div>
+
 
   <div class="profile-section">
 
