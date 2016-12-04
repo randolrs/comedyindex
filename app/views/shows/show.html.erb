@@ -17,15 +17,31 @@
 
     <p><%= @show.about %></p>
 
-    <% if @show.website_url %><p><%= link_to "Website", @show.website_url %></p><%end%>
+    <br>
 
-    <a class="button green-background">Buy Tickets</a>
+    <p><%= @show.start_time.strftime("%A, %b %e, %Y") %></p>
+
+    <br>
+
+    <a class="button green-background">Buy Tickets</a><% if @show.website_url %><a class="button blue-background" href="<%= @show.website_url %>">Website</a><%end%>
 
   </div>
 
   <div class="profile-section">
 
     <h2>Featured Comics</h2>
+
+  </div>
+
+  <div class="profile-section">
+
+    <h2>More Dates</h2>
+
+    <% @show.show_occurences.each do |occurence| %>
+
+      <%= occurence.id %>
+
+    <%end%>
 
   </div>
 

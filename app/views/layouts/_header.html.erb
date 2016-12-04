@@ -43,6 +43,22 @@
 
 		</ul>
 
+		<ul class="horizontal mobile-only">
+
+			<% if user_signed_in? %>
+
+				<li><a href="<%= account_path%>"><span class="glyphicon glyphicon-cog"></span></a></li>
+
+			<%else%>
+
+				
+
+			<%end%>
+
+
+
+		</ul>
+
 
 	</div>
 

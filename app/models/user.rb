@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
    has_one :performer
 
+   has_many :shows
+
 
 
 end

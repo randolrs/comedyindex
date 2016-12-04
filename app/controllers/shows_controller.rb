@@ -31,14 +31,13 @@ class ShowsController < ApplicationController
     respond_to do |format|
       if @show.save
 
-        if @show.producer_id
+        unless @show.producer_id
 
-
-        else
-
-          @show.update(:producer_id => current_user.id)
+          @show.update(:producer_id => current_user.id, :user_id => current_user.id)
 
         end
+
+        ShowOccurence.create(:show_id => @show.id, :start_time => @show.start_time)
 
         format.html { redirect_to @show, notice: 'Show was successfully created.' }
         format.json { render :show, status: :created, location: @show }

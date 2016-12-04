@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161204203630) do
+ActiveRecord::Schema.define(version: 20161204210314) do
 
   create_table "performers", force: :cascade do |t|
     t.string   "name"
@@ -32,6 +32,13 @@ ActiveRecord::Schema.define(version: 20161204203630) do
     t.string   "snapchat_url"
     t.string   "website_url"
     t.integer  "user_id"
+  end
+
+  create_table "show_occurences", force: :cascade do |t|
+    t.integer  "show_id"
+    t.datetime "start_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "shows", force: :cascade do |t|
