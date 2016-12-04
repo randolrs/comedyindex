@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161204012157) do
+ActiveRecord::Schema.define(version: 20161204203630) do
 
   create_table "performers", force: :cascade do |t|
     t.string   "name"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20161204012157) do
     t.datetime "image_updated_at"
     t.string   "snapchat_url"
     t.string   "website_url"
+    t.integer  "user_id"
   end
 
   create_table "shows", force: :cascade do |t|
@@ -65,6 +66,7 @@ ActiveRecord::Schema.define(version: 20161204012157) do
     t.boolean  "is_comic"
     t.boolean  "is_producer"
     t.boolean  "is_venue"
+    t.integer  "performer_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

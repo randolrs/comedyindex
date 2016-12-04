@@ -31,17 +31,40 @@ class PerformersController < ApplicationController
   # POST /performers
   # POST /performers.json
   def create
-    @performer = Performer.new(performer_params)
+    
+    if user_signed_in?
+    
+      @performer = Performer.new(performer_params)
 
-    respond_to do |format|
-      if @performer.save
-        format.html { redirect_to @performer, notice: 'Performer was successfully created.' }
-        format.json { render :show, status: :created, location: @performer }
-      else
-        format.html { render :new }
-        format.json { render json: @performer.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        
+        if @performer.save
+
+          if current_user.is_comic
+
+            @performer.update(:user_id => current_user.id)
+
+            current_user.update(:performer_id => @performer.id)
+
+          end
+
+          format.html { redirect_to @performer, notice: 'Performer was successfully created.' }
+          format.json { render :show, status: :created, location: @performer }
+        else
+          format.html { redirect_to :back }
+          format.json { render json: @performer.errors, status: :unprocessable_entity }
+        end
+
       end
+
+    else
+
+      redirect_to root_path
+
     end
+
+
+
   end
 
   # PATCH/PUT /performers/1
