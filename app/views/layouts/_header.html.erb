@@ -47,6 +47,8 @@
 
 			<% if user_signed_in? %>
 
+				<li><a href="<%= new_show_path%>"><span class="glyphicon glyphicon-plus"></span></a></li>
+
 				<li><a href="<%= account_path%>"><span class="glyphicon glyphicon-cog"></span></a></li>
 
 			<%else%>
