@@ -36,6 +36,40 @@
 
     <h2>Featured Comics</h2>
 
+
+
+    <div class="image-grid">
+
+      <% Performer.all.each do |performer| %>
+
+        <%= link_to performer do %>
+          
+          <div class="entry">
+
+            <div class="image-container">
+              <%= image_tag performer.image.url(:medium) %>
+    
+            </div>
+
+            <div class="detail-container centered">
+
+              <a class="metadata name"><%= performer.name %></a>
+
+            </div>
+
+
+          </div>
+
+        <%end%>
+
+      <%end%>
+
+    </div>
+
+   
+
+
+
   </div>
 
   <div class="profile-section">

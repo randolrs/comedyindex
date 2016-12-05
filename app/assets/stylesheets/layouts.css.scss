@@ -1,0 +1,68 @@
+// Place all the styles related to the Shows controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.image-grid{
+
+    content: "";
+    clear: both;
+    display: block;
+    width: 100%;
+    float: left;
+
+
+    .entry{
+        display: inline-block;
+        width: 33%;
+        
+        text-align: left;
+        vertical-align: top;
+        float: left;
+        content: "";
+
+        padding: 10px 20px 0px 20px;
+
+        .image-container{
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+
+            img {
+	            max-width: 100%;
+	            max-height: 100%;
+	            position: relative;
+	            box-shadow: 0px 2px 2px rgba(0,0,0,0.5);
+	            vertical-align: bottom;
+        	}
+
+        }
+
+
+        .detail-container{
+
+            padding: 20px 0px;
+            
+
+            a.metadata{
+                
+                color: #444;
+                font-size: 0.9em;
+            }
+
+            a.name{
+                font-weight: 700;
+            }
+            
+        }
+
+        
+    }
+
+
+    .entry:hover{
+    	cursor: pointer;
+    	background: #eee;
+    }
+
+}
