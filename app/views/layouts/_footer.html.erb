@@ -5,7 +5,8 @@
 		
 		
 		<ul>
-			<% if user_signed_in? %>
+			<% unless user_signed_in? %>
+
 				<li><%= link_to "I'm a Comic", comic_signup_path %></li>
 				<li><%= link_to "I'm a Producer", producer_signup_path %></li>
 				<li><%= link_to "I'm a Venue", venue_signup_path %></li>

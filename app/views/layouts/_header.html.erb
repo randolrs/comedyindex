@@ -25,17 +25,11 @@
 
 			<% if user_signed_in? %>
 
-				<li><%= link_to "+ New Show", new_show_path %></li>
-
-				<li><%= link_to "My Account", account_path %></li>
-
-				<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+				<li><%= link_to "+ New Show", new_show_path %></li><li><%= link_to "My Account", account_path %></li>
 
 			<%else%>
 
-				<li><%= link_to "Log In", login_path %></li>
-
-				<li><%= link_to "Sign Up", signup_path %></li>
+				<li><%= link_to "Log In", login_path %></li><li><%= link_to "Sign Up", signup_path %></li>
 
 			<%end%>
 

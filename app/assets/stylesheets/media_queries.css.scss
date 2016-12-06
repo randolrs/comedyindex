@@ -29,7 +29,7 @@
 
 				margin-top: -150px;
 				background: #fff;
-				box-shadow: 0 1px 3px 0 rgba(0,0,0,.25);
+				box-shadow: 0 1px 3px 0 rgba(0,0,0,.5);
 				padding: 0px;
 				margin-bottom: 50px;
 			}
@@ -57,6 +57,36 @@
 				border-radius: 0px;
 
 			}
+
+			.profile-body-container{
+				
+
+				.profile-body-main{
+					display: table-cell;
+					
+					width:100%;
+					vertical-align: top;
+					padding-top: 30px;
+				}
+
+
+				.profile-body-side{
+					display: table-cell;
+					padding: 20px;
+					padding-top: 50px;
+					
+				
+					vertical-align: top;
+
+					.profile-body-side-content{
+						width:300px;
+					}
+				}
+
+
+			}
+
+
 
 		}
 

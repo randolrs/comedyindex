@@ -1,3 +1,33 @@
 // Place all the styles related to the Shows controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.profile-body-container{
+	display: block;
+
+	.profile-body-main{
+		display: block;
+		padding: 20px;
+		
+		width:100%;
+		vertical-align: top;
+		padding-top: 30px;
+	}
+
+
+	.profile-body-side{
+		display: block;
+		padding: 20px;
+		
+		
+		
+		vertical-align: top;
+
+		.profile-body-side-content{
+			width:200px;
+		}
+	}
+
+
+}

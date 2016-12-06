@@ -1,0 +1,178 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.sidebar-container{
+    position:fixed;
+    height: 100%;
+    width:150px;
+    min-height: 100%;
+    vertical-align: top;
+    z-index: 9;
+    background: #111;
+    text-align: center;
+
+    .sidebar-panel{
+
+    	ul{
+            	
+        	list-style-type: none;
+    	    margin: 0;
+    	    padding: 0px;
+    	    display: block;
+
+    		li{
+
+    			display: block;
+
+    			a{
+
+    	    		display: block;
+    	    		font-size: 1em;
+    	    		font-weight: 500;
+        			letter-spacing: 1.1px;
+        			padding: 12px 20px;
+                    color: #bbb;
+                    text-shadow: 0px 1px 1px #000;
+                    text-transform: uppercase;
+
+                    font-family: 'Lato', sans-serif;
+
+                    span.glyphicon{
+                        padding:10px;
+                    }
+
+        		}
+
+        		a.title{
+    				font-weight: 600;
+    				font-size: 32px;
+    				font-family: 'Lobster', cursive;
+    			}
+
+        		a.header-cta.purple{
+                    text-shadow: 0px 1px 2px #222;
+                    background-color: #AA076B;
+                    background-image: -webkit-gradient(linear, left top, left bottom, from(#F20A98), to(#AA076B));
+                    background-image: -webkit-linear-gradient(top, #F20A98, #AA076B);
+                    background-image: -moz-linear-gradient(top, #F20A98, #AA076B);
+                    background-image: -ms-linear-gradient(top, #F20A98, #AA076B);
+                    background-image: -o-linear-gradient(top, #F20A98, #AA076B);
+                    background-image: linear-gradient(top, #F20A98, #AA076B);
+                    color: #fff;
+                    border: 1px solid rgba(100, 0, 100, 0.5);
+                    box-shadow: inset 0px 1px 2px 0px #FFaaff;
+                }
+
+
+        		a:hover{
+        			
+        		}
+
+        	}
+
+        	li:first-child{
+
+        	}
+
+        	li:last-child{
+        		
+        		
+        	}
+
+            li.active{
+                background: rgba(100,100,100,0.5);
+            }
+
+        	li.dashboard-header{
+
+                text-align: center;
+    			
+    			border-bottom: none;
+                padding: 20px;
+
+                a{
+                    display: inline-block;
+                    padding: 5px;
+                }
+
+    			a.title{
+    				font-weight: 600;
+    				font-size: 32px;
+    				font-family: 'Lobster', cursive;
+    				text-shadow: 0px 2px 1px #111;
+    			}
+
+                a.name{
+                    font-size: 24px;
+                }
+
+                a.cta{
+
+                    border-radius: 30px;
+                    padding: 10px;
+                    margin: 10px 0px;
+                    letter-spacing: 2px;
+                    display: block;
+                }
+
+    			a:hover{
+    				color: #fff;
+    			}
+
+    			
+        	}
+
+        	li.dashboard-header:hover{
+
+    			box-shadow: none;
+
+    			
+        	}
+
+
+        	li.active{
+                
+                
+        		a{
+        			
+        			color: #fff;
+                    font-weight: 700;
+        		}
+
+
+        	}
+
+        	li.mobile-only{
+    			display: none;
+    		}
+
+        	li.dashboard-option:hover{
+        		
+        		cursor: pointer;
+
+        		a{
+        			
+                    color: #fff;
+        		}
+        	}
+
+        	li.active:hover{
+
+        		cursor: pointer;
+
+        	}
+
+        }
+
+        .sidebar-profile-image{
+            width: 60px;
+            height: 60px;
+            border-radius: 60px;
+            border: 2px solid #fff;
+            box-shadow: 0px 1px 2px #222;
+        }
+    	
+    }
+
+}

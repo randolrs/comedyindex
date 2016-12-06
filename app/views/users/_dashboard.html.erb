@@ -1,5 +1,18 @@
-<div class="content">
+<div class="sidebar-container">
 
-	<%= current_user.id %>
+	<div class="sidebar-content">
+
+		<ul>
+			
+			<li class="dashboard-option dashboard-nav-option sales-view <% if @page=="home" %>active<%end%>" id="home" data-dashboard-item-id="sales-view">
+						
+				<a href="<%= root_path %>"><span class="glyphicon glyphicon-home" aria-hidden="true" style="margin-right: 5px;"></span><br><span>Home</span></a>
+
+
+			</li>
+
+		</ul>
+
+	</div>
 
 </div>
