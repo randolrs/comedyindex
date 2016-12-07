@@ -25,6 +25,8 @@ Rails.application.routes.draw do
 
   get 'signup/venues' => 'users#venue_signup', as: 'venue_signup'
 
+  get 'shows/all/comedy' => 'shows#dashboard', as: 'show_dashboard'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

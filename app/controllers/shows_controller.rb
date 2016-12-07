@@ -7,6 +7,10 @@ class ShowsController < ApplicationController
     @shows = Show.all
   end
 
+  def dashboard
+    @shows = Show.all
+  end
+
   # GET /shows/1
   # GET /shows/1.json
   def show
