@@ -176,3 +176,22 @@
     }
 
 }
+
+.content-sidebar{
+    position:fixed;
+    height: 100%;
+    width:200px;
+    min-height: 100%;
+    vertical-align: top;
+    z-index: 9;
+
+    background: rgba(100,0,100,0.5);
+
+}
+
+
+.content-main{
+    margin-left: 200px;
+    
+    padding: 0px 20px;
+}

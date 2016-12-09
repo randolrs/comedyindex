@@ -1,0 +1,35 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.card{
+	height: 100px;
+    background: #fff;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);
+    margin-bottom: 50px;
+    border: 1px solid #ddd;
+    border-bottom: none;
+
+    .image-container, .detail-container{
+    	display: table-cell;
+    	vertical-align: top;
+    }
+
+    .detail-container{
+    	width:100%;
+    	padding: 10px;
+    }
+}
+
+.medium-profile-image{
+	
+	border-radius: 200px;
+	min-width: 194px;
+	width:33.33%;
+	box-shadow: 0px 2px 2px rgba(0,0,0,0.5);
+	
+}
+
+.small-index-image{
+	height: 100px;
+}
