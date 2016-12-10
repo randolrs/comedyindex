@@ -18,43 +18,80 @@
 
     <br>
 
-    <div>
+    <div class="sort-by-container">
       <a>Sort By:</a>
       <ul class="horizontal toggle">
-        <li><a class="active click-to-reveal" data-reveal-panel-id="">Rating</a></li><li><a class="click-to-reveal" data-reveal-panel-id="">Date</a></li>
+        <li><a class="active click-to-reveal" data-reveal-panel-id="rating">Rating</a></li><li><a class="click-to-reveal" data-reveal-panel-id="date">Date</a></li>
       </ul>
 
     </div>
 
     <br>
 
-    <% @shows.each do |show| %>
-      
-      <%= link_to(show_with_url_path(show.url_slug)) do %>
+    <div class="reveal-panel" id="rating">
+      Rating
+      <% @shows.each do |show| %>
+        
+        <%= link_to(show_with_url_path(show.url_slug)) do %>
 
-        <div class="card">
-          
-          <div class="image-container">
+          <div class="card">
             
-            <%= image_tag show.image.url(:medium), class: "small-index-image"%>
+            <div class="image-container">
+              
+              <%= image_tag show.image.url(:medium), class: "small-index-image"%>
+
+            </div>
+
+            <div class="detail-container">
+              
+              <p class="title"><%= show.name %></p>
+
+              <p><%= show.start_time.strftime("%A, %b %e, %Y") %></p>
+
+              <p>Venue McGullicuddy</p>
+
+            </div>
 
           </div>
 
-          <div class="detail-container">
-            
-            <p class="title"><%= show.name %></p>
-
-            <p><%= show.start_time.strftime("%A, %b %e, %Y") %></p>
-
-            <p>Venue McGullicuddy</p>
-
-          </div>
-
-        </div>
+        <% end %>
 
       <% end %>
 
-    <% end %>
+    </div>
+
+
+    <div class="reveal-panel default-off" id="date">
+      Date
+      <% @shows.each do |show| %>
+        
+        <%= link_to(show_with_url_path(show.url_slug)) do %>
+
+          <div class="card">
+            
+            <div class="image-container">
+              
+              <%= image_tag show.image.url(:medium), class: "small-index-image"%>
+
+            </div>
+
+            <div class="detail-container">
+              
+              <p class="title"><%= show.name %></p>
+
+              <p><%= show.start_time.strftime("%A, %b %e, %Y") %></p>
+
+              <p>Venue McGullicuddy</p>
+
+            </div>
+
+          </div>
+
+        <% end %>
+
+      <% end %>
+
+    </div>
 
 
 
