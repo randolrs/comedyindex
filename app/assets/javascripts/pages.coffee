@@ -13,6 +13,10 @@ ready = ->
 			targetId = "#" + $(@).data("reveal-panel-id")
 			$('body').find(targetId).show()
 
+		$(".click-to-toggle").click (window.event), ->
+			targetId = "#" + $(@).data("reveal-panel-id")
+			$('body').find(targetId).slideToggle()
+
 		$(".modal-cta").click (window.event), ->
 			targetId = "#" + $(@).data("modal-id")
 			$('body').find(targetId).show()

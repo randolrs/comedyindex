@@ -2,17 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-a.click-to-reveal{
-   	border-bottom: 3px solid transparent;
-}
 
-a.click-to-reveal:hover{
+
+.click-to-reveal:hover, .click-to-toggle:hover{
 	cursor: pointer;
 }
 
-a.click-to-reveal.active{
-	border-bottom: 3px solid green;
-}
+
 
 span.dismiss-parent{
 	position: absolute;

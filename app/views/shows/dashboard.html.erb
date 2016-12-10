@@ -2,11 +2,37 @@
 
   <div class="content-sidebar">
 
-    <p>CITY</p>
+    <div class="filter-group"><u>FILTER RESULTS</u></div>
 
-    <p>DATE</p>
+    <div class="filter-group">
+      
+      <p class="click-to-toggle" data-reveal-panel-id="city-filter">CITY <span class="glyphicon glyphicon-chevron-down"></span></p>
+      
+      <div class="default-off" id="city-filter">
+        City FiLTER
+      </div>
 
-    <p>PRICE</p>
+    </div>
+
+    <div class="filter-group">
+      
+      <p class="click-to-toggle" data-reveal-panel-id="date-filter">DATE <span class="glyphicon glyphicon-chevron-down"></span></p>
+      
+      <div class="default-off" id="date-filter">
+        DATE FiLTER
+      </div>
+
+    </div>
+
+    <div class="filter-group">
+
+      <p class="click-to-toggle" data-reveal-panel-id="price-filter">PRICE <span class="glyphicon glyphicon-chevron-down"></span></p>
+
+      <div class="default-off" id="price-filter">
+        PRICE FiLTER
+      </div>
+
+    </div>
 
   </div>
 
@@ -46,7 +72,7 @@
               
               <p class="title"><%= show.name %></p>
 
-              <p><%= show.start_time.strftime("%A, %b %e, %Y") %></p>
+              <p><%= show.start_time.strftime("%a, %b %e, %Y") %></p>
 
               <p>Venue McGullicuddy</p>
 
