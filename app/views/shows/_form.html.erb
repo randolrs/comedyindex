@@ -39,6 +39,12 @@
       <%= f.datetime_select :start_time, :ampm => true, :minute_step => 15 %>
     </div>
 
+    <%= f.fields_for :show_occurences do |builder| %>
+      <%= render 'show_occurence_fields', f: builder %>
+    <% end %>
+
+    <%= link_to_add_fields "Add Date", f, :show_occurences %>
+
 
     <div class="field">
       <%= f.label :venue_id %><br>

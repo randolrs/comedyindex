@@ -10,5 +10,7 @@ class Show < ActiveRecord::Base
 	belongs_to :user
 
 	has_many :show_occurences
+
+	accepts_nested_attributes_for :show_occurences, allow_destroy: true
 	
 end

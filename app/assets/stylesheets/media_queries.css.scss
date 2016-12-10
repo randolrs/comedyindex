@@ -25,6 +25,10 @@
 
 			}
 
+			.content{
+				padding: 50px 30px;
+			}
+
 			.profile-content{
 
 				margin-top: -150px;
@@ -53,15 +57,15 @@
 
 			.content-sidebar{
 				position: fixed;
-    			height: 100%;
+    			
     			width: 200px;
-    			min-height: 100%;
+    			
     			margin-bottom: 0px;
 			}
 
 			.content-main{
 			    margin-left: 200px;
-			    padding: 0px 20px;
+			    padding-left: 30px;
 			    
 			    h1{
 			    	text-align: left;

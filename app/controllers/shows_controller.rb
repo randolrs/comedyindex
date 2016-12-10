@@ -62,7 +62,7 @@ class ShowsController < ApplicationController
 
           end
 
-          ShowOccurence.create(:show_id => @show.id, :start_time => @show.start_time)
+          #ShowOccurence.create(:show_id => @show.id, :start_time => @show.start_time)
 
           format.html { redirect_to @show, notice: 'Show was successfully created.' }
           format.json { render :show, status: :created, location: @show }
@@ -111,6 +111,6 @@ class ShowsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def show_params
-      params.require(:show).permit(:name, :venue_id, :website_url, :about, :image, :start_time)
+      params.require(:show).permit(:name, :venue_id, :website_url, :about, :image, :start_time, show_occurences_attributes:[:start_time])
     end
 end
