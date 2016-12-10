@@ -27,6 +27,9 @@ Rails.application.routes.draw do
 
   get 'shows/all/comedy' => 'shows#dashboard', as: 'show_dashboard'
 
+  get 's/:url_slug' => 'shows#show_with_url', as: 'show_with_url'
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

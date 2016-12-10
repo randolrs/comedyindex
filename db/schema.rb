@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161204210314) do
+ActiveRecord::Schema.define(version: 20161210003654) do
 
   create_table "performers", force: :cascade do |t|
     t.string   "name"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20161204210314) do
     t.datetime "start_time"
     t.integer  "user_id"
     t.integer  "producer_id"
+    t.string   "url_slug"
   end
 
   create_table "users", force: :cascade do |t|

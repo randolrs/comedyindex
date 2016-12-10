@@ -19,6 +19,21 @@ class ShowsController < ApplicationController
     
   end
 
+  def show_with_url
+
+    if Show.where(:url_slug => params[:url_slug]).exists?
+
+      @show = Show.find_by_url_slug(params[:url_slug])
+
+    else
+
+      redirect_to root_path
+
+    end
+
+
+  end
+
   # GET /shows/new
   def new
     @show = Show.new
@@ -32,6 +47,8 @@ class ShowsController < ApplicationController
   # POST /shows.json
   def create
     @show = Show.new(show_params)
+
+    @show.url_slug = @show.name.downcase.gsub(' ', '-')
 
     respond_to do |format|
       if @show.save

@@ -6,6 +6,10 @@ a.click-to-reveal{
    	border-bottom: 3px solid transparent;
 }
 
+a.click-to-reveal:hover{
+	cursor: pointer;
+}
+
 a.click-to-reveal.active{
 	border-bottom: 3px solid green;
 }

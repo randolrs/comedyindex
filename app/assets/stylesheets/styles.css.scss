@@ -7,9 +7,21 @@ body{
 	
 	background-color: #f8f8f8;
 
+	a{
+		color: #111;
+    }
+
+    a:hover{
+    	color: #111;
+    }
+
 	h1.mega{
 		font-size: 4em;
 
+	}
+
+	h1{
+		font-size: 3em;
 	}
 
 	.light-text-shadow{
@@ -135,6 +147,22 @@ body{
 
 		}
 
+	}
+
+	ul.toggle{
+		
+		li{
+		
+			a{
+				background: #ddd;
+				border: 1px solid #ccc;
+			}
+
+			a.active{
+				background: #fff;
+				border-bottom:2px solid #99f;
+			}
+		}
 	}
 
 }
