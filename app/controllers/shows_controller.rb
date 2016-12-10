@@ -46,28 +46,37 @@ class ShowsController < ApplicationController
   # POST /shows
   # POST /shows.json
   def create
-    @show = Show.new(show_params)
+    
+    if user_signed_in?
 
-    @show.url_slug = @show.name.downcase.gsub(' ', '-')
+      @show = Show.new(show_params)
 
-    respond_to do |format|
-      if @show.save
+      @show.url_slug = @show.name.downcase.gsub(' ', '-')
 
-        unless @show.producer_id
+      respond_to do |format|
+        if @show.save
 
-          @show.update(:producer_id => current_user.id, :user_id => current_user.id)
+          unless @show.producer_id
 
+            @show.update(:producer_id => current_user.id, :user_id => current_user.id)
+
+          end
+
+          ShowOccurence.create(:show_id => @show.id, :start_time => @show.start_time)
+
+          format.html { redirect_to @show, notice: 'Show was successfully created.' }
+          format.json { render :show, status: :created, location: @show }
+        else
+          format.html { render :new }
+          format.json { render json: @show.errors, status: :unprocessable_entity }
         end
-
-        ShowOccurence.create(:show_id => @show.id, :start_time => @show.start_time)
-
-        format.html { redirect_to @show, notice: 'Show was successfully created.' }
-        format.json { render :show, status: :created, location: @show }
-      else
-        format.html { render :new }
-        format.json { render json: @show.errors, status: :unprocessable_entity }
       end
+
+    else
+
+      redirect_to root_path
     end
+
   end
 
   # PATCH/PUT /shows/1
