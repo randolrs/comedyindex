@@ -1,4 +1,4 @@
-<div class="content">
+<div class="content with-sidebar">
 
   <div class="content-sidebar">
 
@@ -56,31 +56,10 @@
 
     <div class="reveal-panel" id="rating">
       Rating
+
       <% @shows.each do |show| %>
-        
-        <%= link_to(show_with_url_path(show.url_slug)) do %>
 
-          <div class="card">
-            
-            <div class="image-container">
-              
-              <%= image_tag show.image.url(:medium), class: "small-index-image"%>
-
-            </div>
-
-            <div class="detail-container">
-              
-              <p class="title"><%= show.name %></p>
-
-              <p><%= show.start_time.strftime("%a, %b %e, %Y") %></p>
-
-              <p>Venue McGullicuddy</p>
-
-            </div>
-
-          </div>
-
-        <% end %>
+        <%= render :partial => 'shows/index_show', :locals => {:show =>  show} %>
 
       <% end %>
 
@@ -89,31 +68,10 @@
 
     <div class="reveal-panel default-off" id="date">
       Date
+      
       <% @shows.each do |show| %>
-        
-        <%= link_to(show_with_url_path(show.url_slug)) do %>
 
-          <div class="card">
-            
-            <div class="image-container">
-              
-              <%= image_tag show.image.url(:medium), class: "small-index-image"%>
-
-            </div>
-
-            <div class="detail-container">
-              
-              <p class="title"><%= show.name %></p>
-
-              <p><%= show.start_time.strftime("%A, %b %e, %Y") %></p>
-
-              <p>Venue McGullicuddy</p>
-
-            </div>
-
-          </div>
-
-        <% end %>
+        <%= render :partial => 'shows/index_show', :locals => {:show =>  show} %>
 
       <% end %>
 

@@ -4,7 +4,7 @@
 
 .header-container{
 	position: fixed;
-	background: #EB3349;
+	background: #fff;
 	
    	box-shadow: 0 1px 3px 0 rgba(0,0,0,.25);
 	width: 100%;
@@ -12,24 +12,34 @@
 	top: 0px;
 	left:0px;
 	right:0px;
-	height: 50px;
+	height: 60px;
 	z-index: 960;
 
 	.header-options{
 
 		a{
 			line-height: 30px;
-    		height: 50px;
-    		color: #fff;
-    		text-shadow: 0px 1px 1px rgba(0,0,0,0.5);
+			padding: 15px 10px;
+    		
+    		color: #EB3349;
+    		text-shadow: 0px 1px 1px rgba(200,200,200,0.5);
 		}
 
 		a.logo{
 			font-weight: 800;
     		font-size: 30px;
-    		color: #B83F16;
     		letter-spacing: -2px;
-    		text-shadow: 0px 1px 1px rgba(50,50,50,0.8);
+    		color: #EB3349;
+    		text-shadow: 0px 1px 1px rgba(100,100,100,0.5);
+		}
+
+		a.cta{
+			padding: 5px 15px;
+		    margin: 10px;
+		    background: #3349EB;
+		    border-radius: 5px;
+		    color: #fff;
+		    text-shadow: 0px 1px 1px rgba(0,0,0,0.5);
 		}
 
 	}
@@ -48,11 +58,11 @@
 .hamburger{
 	background:none;
 	line-height: 40px;
-	padding: 5px 15px 5px 15px;
-	text-shadow: 0px 1px 1px rgba(0,0,0,0.5);
-	color:#fff;
+	padding: 10px 15px 10px 15px;
+	text-shadow: 0px 1px 1px rgba(100,100,100,0.5);
+	color:#EB3349;
 	border:0;
-	font-size:1.4em;
+	font-size:1.6em;
 	font-weight:bold;
 	cursor:pointer;
 	outline:none;

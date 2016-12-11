@@ -6,7 +6,7 @@
 			
 			<li><button class="hamburger mobile-only modal-cta" data-modal-id="main-menu">&#9776;</button></li>
 
-			<li><a class="logo" href="<%= root_path %>"><span style="color: #EEE84C;">COMICS</span></a></li>
+			<li><a class="logo" href="<%= root_path %>"><span style="color: #66dd66;">C</span>OMICS</a></li>
 
 			<li><%= link_to "Shows", show_dashboard_path, class:"full-screen-only" %></li>
 
@@ -29,7 +29,7 @@
 
 			<%else%>
 
-				<li><%= link_to "Log In", login_path %></li><li><%= link_to "Sign Up", signup_path %></li>
+				<li><%= link_to "Log In", login_path %></li><li><%= link_to "Sign Up", signup_path, class:"cta" %></li>
 
 			<%end%>
 
@@ -47,7 +47,7 @@
 
 			<%else%>
 
-				
+				<li><%= link_to "Log In", login_path %></li><li><%= link_to "Sign Up", signup_path, class:"cta" %></li>
 
 			<%end%>
 

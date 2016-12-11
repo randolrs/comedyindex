@@ -5,16 +5,25 @@ class UsersController < ApplicationController
 
   def comic_signup
 
+  	@main_SEO_title = "Comics Signup"
 
   end
 
   def producer_signup
 
+  	@main_SEO_title = "Producer Signup"
 
   end
 
   def venue_signup
 
+  	@main_SEO_title = "Venue Signup"
+
+  end
+
+  def dashboard
+
+  	@main_SEO_title = "Dashboard"
 
   end
   

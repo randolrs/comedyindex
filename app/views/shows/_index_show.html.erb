@@ -1,0 +1,23 @@
+<%= link_to(show_with_url_path(show.url_slug)) do %>
+
+  <div class="card">
+    
+    <div class="image-container">
+      
+      <%= image_tag show.image.url(:medium), class: "small-index-image"%>
+
+    </div>
+
+    <div class="detail-container">
+      
+      <p class="title"><%= show.name %></p>
+
+      <p><%= show.start_time.strftime("%a, %b %e, %Y") %></p>
+
+      <p>Venue McGullicuddy</p>
+
+    </div>
+
+  </div>
+
+<% end %>

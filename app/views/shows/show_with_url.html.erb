@@ -94,11 +94,11 @@
 
         <h3>Location</h3>
 
-        <p>Address Line 1</p>
+        <p><%= @show.address_line_1 %></p>
 
-        <p>Address Line 2</p>
+        <p><%= @show.address_line_2 %></p>
 
-        <p>City, State, Zip</p>
+        <p><%= @show.city %>, <%= @show.state_province %></p>
 
         <br>
 
@@ -108,7 +108,7 @@
 
           <% @show.show_occurences.each do |occurence| %>
 
-            <%= occurence.start_time.strftime("%A, %b %e, %Y") %>
+            <p><%= occurence.start_time.strftime("%A, %b %e, %Y") %></p>
 
           <%end%>
 
