@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get 'signup' => 'pages#signup'
 
+  get 'dashboard' => 'users#dashboard'
+
   get 'login' => 'pages#login'
 
   get 'profile/setup' => 'performers#setup_profile', as: 'setup_performer_profile'
