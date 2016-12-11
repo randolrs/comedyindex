@@ -42,4 +42,36 @@ class Show < ActiveRecord::Base
 		end
 	end
 
+
+	def more_dates
+
+		dates = ShowOccurence.where(:show_id => self.id)
+
+		if dates.count > 0
+
+			future_dates = dates.where("start_time > ? ", Time.now)
+
+			if future_dates.count > 0
+
+				future_dates_sorted = future_dates.sort_by { |i| i.start_time }
+				
+				future_dates_sorted.shift
+
+				return future_dates_sorted
+
+			else
+
+				return nil
+
+			end
+
+		else
+
+			return nil
+
+		end
+	end
+
+
+
 end

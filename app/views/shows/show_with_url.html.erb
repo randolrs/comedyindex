@@ -106,9 +106,9 @@
 
         <h2>More Dates</h2>
 
-        <% if @show.show_occurences.count > 0 %>
+        <% if @show.more_dates.count > 0 %>
 
-          <% @show.show_occurences.each do |occurence| %>
+          <% @show.more_dates.each do |occurence| %>
 
             <p><%= occurence.start_time.strftime("%A, %b %e, %Y") %></p>
 
