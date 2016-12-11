@@ -78,3 +78,7 @@ body{
 .default-off{
 	display: none;
 }
+
+.underlined{
+	border-bottom: 2px solid #999;
+}
