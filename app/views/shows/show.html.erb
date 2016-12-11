@@ -86,13 +86,13 @@
 
       <div class="profile-body-side-content">
 
-        <h3>Date and Time</h3>
+        <h2>Date and Time</h2>
 
-        <p><%= @show.start_time.strftime("%A, %b %e, %Y") %></p>
+        <p><%= @show.display_date.strftime("%A, %b %e, %Y") %></p>
 
         <br>
 
-        <h3>Location</h3>
+        <h2>Location</h2>
 
         <p><%= @show.address_line_1 %></p>
 
@@ -102,7 +102,7 @@
 
         <br>
 
-        <h3>More Dates</h3>
+        <h2>More Dates</h2>
 
         <% if @show.show_occurences.count > 0 %>
 

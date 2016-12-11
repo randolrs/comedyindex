@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161211003529) do
+ActiveRecord::Schema.define(version: 20161211212742) do
 
   create_table "performers", force: :cascade do |t|
     t.string   "name"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20161211003529) do
     t.string   "city"
     t.string   "state_province"
     t.string   "country"
+    t.string   "venue_name"
   end
 
   create_table "users", force: :cascade do |t|

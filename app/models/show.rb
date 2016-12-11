@@ -13,4 +13,33 @@ class Show < ActiveRecord::Base
 
 	accepts_nested_attributes_for :show_occurences, allow_destroy: true
 	
+	def display_date
+
+		dates = ShowOccurence.where(:show_id => self.id)
+
+		if dates.count > 0
+
+			future_dates = dates.where("start_time > ? ", Time.now)
+
+			if future_dates.count > 0
+
+				next_date = future_dates.sort_by { |i| i.start_time }
+				
+				return next_date.first.start_time.strftime("%A, %b %e, %Y")
+
+			else
+
+				past_dates = dates.where("start_time < ? ", Time.now)
+
+				most_recent_date = past_dates.sort_by { |i| i.start_time }
+				
+				return most_recent_date.first.start_time.strftime("%A, %b %e, %Y")
+			end
+		else
+
+			return ""
+
+		end
+	end
+
 end
