@@ -12,6 +12,8 @@ class PerformersController < ApplicationController
   def show
 
     @main_SEO_title = @performer.name
+
+    @SEO_description = @performer.about
     
   end
 

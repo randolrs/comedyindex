@@ -21,9 +21,15 @@ class ShowsController < ApplicationController
 
   def show_with_url
 
+   
+
     if Show.where(:url_slug => params[:url_slug]).exists?
 
       @show = Show.find_by_url_slug(params[:url_slug])
+
+      @main_SEO_title = @show.name
+
+      @SEO_description = @show.about
 
     else
 
