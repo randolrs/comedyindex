@@ -4,56 +4,58 @@
 
 <div class="profile-content">
 
+  <div class="profile-title-container">
 
-  <div class="profile-image-container">
+    <div class="profile-image-container">
+      
+      <%= image_tag @performer.image.url(:medium), class: "medium-profile-image round"%>
     
-    <%= image_tag @performer.image.url(:medium), class: "medium-profile-image round"%>
-  
-  </div>
+    </div>
 
-  <div class="profile-detail-container">
+    <div class="profile-detail-container">
 
-    <h1><%= @performer.name %></h1>
+      <h1><%= @performer.name %></h1>
 
-    <p><%= @performer.bio %></p>
-    
-    <p><%= @performer.city %>, <%= @performer.country %></p>
+      <p><%= @performer.bio %></p>
+      
+      <p><%= @performer.city %>, <%= @performer.country %></p>
 
-    <p></p>
+      <p></p>
 
-    <p class="social-media-row">
-      <% if @performer.twitter_url %><%= link_to @performer.twitter_url do %> <%= image_tag "twitter_icon.PNG", class:"social-media-button" %><%end%><%end%> 
+      <p class="social-media-row">
+        <% if @performer.twitter_url %><%= link_to @performer.twitter_url do %> <%= image_tag "twitter_icon.PNG", class:"social-media-button" %><%end%><%end%> 
 
-      <% if @performer.facebook_url %><%= link_to @performer.facebook_url do %> <%= image_tag "facebook_icon.png", class:"social-media-button" %><%end%><%end%> 
+        <% if @performer.facebook_url %><%= link_to @performer.facebook_url do %> <%= image_tag "facebook_icon.png", class:"social-media-button" %><%end%><%end%> 
 
-      <% if @performer.instagram_url %><%= link_to @performer.instagram_url do %><%= image_tag "instagram_icon.png", class:"social-media-button" %><%end%><%end%> 
+        <% if @performer.instagram_url %><%= link_to @performer.instagram_url do %><%= image_tag "instagram_icon.png", class:"social-media-button" %><%end%><%end%> 
 
-      <% if @performer.youtube_url %><%= link_to @performer.youtube_url do %><%= image_tag "youtube_icon.PNG", class:"social-media-button" %><%end%><%end%>
+        <% if @performer.youtube_url %><%= link_to @performer.youtube_url do %><%= image_tag "youtube_icon.PNG", class:"social-media-button" %><%end%><%end%>
 
-      <% if @performer.snapchat_url %><% link_to @performer.snapchat_url do %><%= image_tag "snapchat_icon.png", class:"social-media-button" %><%end%><%end%>
+        <% if @performer.snapchat_url %><% link_to @performer.snapchat_url do %><%= image_tag "snapchat_icon.png", class:"social-media-button" %><%end%><%end%>
 
-    </p>
+      </p>
+        
+      <div class="button-container">
+        <a class="button blue-background">+ Follow</a>
+      </div>
 
-    <p>
-    
-      <a class="button blue-background">+ Follow</a>
+      <div class="button-container">
+        <a class="button orange-background"><span class="glyphicon glyphicon-envelope" style="margin-right: 15px;"></span>Message</a>
+      </div>
 
-      <a class="button orange-background"><span class="glyphicon glyphicon-envelope" style="margin-right: 15px;"></span>Message</a>
-
-    </p>
-
-
-
-  </div>
+    </div>
 
 
-  <div class="centered">
+    <div class="centered" style="padding-bottom: 20px;">
 
-    <% if @performer.video_url.length > 0 %>
+      <% if @performer.video_url.length > 0 %>
 
-        <iframe class="video-embed" src="<%= @performer.video_url %>" frameborder="0" allowfullscreen></iframe>
+          <iframe class="video-embed" src="<%= @performer.video_url %>" frameborder="0" allowfullscreen></iframe>
 
-    <%end%>
+      <%end%>
+
+    </div>
+
 
   </div>
 

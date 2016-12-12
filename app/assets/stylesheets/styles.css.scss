@@ -89,6 +89,10 @@ body{
 	    border-radius: 3px;
 	}
 
+	a.green-background{
+		color: #fff;
+	}
+
 	.blue-background{
 	
 	    background-color: #4e69a2;
@@ -138,6 +142,12 @@ body{
 
 	.button.medium{
 		font-size: 1.5em;
+	}
+
+
+	a.button:hover{
+		color: #fff;
+	    box-shadow: none;
 	}
 
 

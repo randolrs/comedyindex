@@ -13,7 +13,7 @@ class PerformersController < ApplicationController
 
     @main_SEO_title = @performer.name
 
-    @SEO_description = @performer.about
+    @SEO_description = @performer.bio
     
   end
 
