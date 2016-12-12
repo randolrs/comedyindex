@@ -1,7 +1,7 @@
-<h1 class="centered mega light-text-shadow">Login</h1>
+<h1 class="centered mega light-text-shadow login-header">ComedyZilla</h1>
 
 
-<div class="form-container medium">
+<div class="form-container medium clear">
 
 	<%= form_for(:user, :url => session_path(:user)) do |f| %>
 
@@ -18,7 +18,7 @@
 		</div>
 
 		<div class="actions">
-		  <%= f.submit "Next", class: "button medium orange-background" %>
+		  <%= f.submit "Login", class: "button medium blue-background" %>
 		</div>
 
 	<% end %>
