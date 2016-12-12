@@ -187,11 +187,20 @@
     border: 1px solid #ddd;
     border-bottom: none;
     margin-bottom: 30px;
+
     
+    .filter-group-container{
+        display: none;
+    }    
+
+    .filter-title{
+        padding: 20px 0px;
+    }
 
     .filter-group{
 
         padding: 20px;
+
 
         font-size: 1.3em;
         
@@ -206,6 +215,8 @@
 
         .filter-options{
             text-align: center;
+
+
             
             select{
                 display: block;

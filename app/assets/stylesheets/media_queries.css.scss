@@ -65,8 +65,15 @@
     			width: 250px;
     			
     			margin-bottom: 0px;
+
+    			.filter-group-container, .filter-group{
+					display: block;
+				}
+
 			}
 
+
+			
 			.content-main{
 			    margin-left: 250px;
 			    padding-left: 30px;

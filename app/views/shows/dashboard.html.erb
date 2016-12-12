@@ -2,46 +2,50 @@
 
   <div class="content-sidebar">
 
-    <div class="filter-group centered"><u>FILTER RESULTS</u></div>
+    <div class="filter-title centered click-to-toggle" data-reveal-panel-id="filter-group-container">FILTERS <span class="glyphicon glyphicon-chevron-down mobile-only"></span></div>
 
-    <div class="filter-group">
-      
-      <p class="click-to-toggle" data-reveal-panel-id="city-filter">CITY <span class="glyphicon glyphicon-chevron-down"></span></p>
-      
-      <div class="filter-options" id="city-filter">
-        <select name="city">
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
-        </select>
+    <div class="filter-group-container reveal-panel" id="filter-group-container">
+
+      <div class="filter-group">
+        
+        <p class="click-to-toggle" data-reveal-panel-id="city-filter">CITY <span class="glyphicon glyphicon-chevron-down"></span></p>
+        
+        <div class="filter-options" id="city-filter">
+          <select name="city">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </select>
+        </div>
+
       </div>
 
-    </div>
+      <div class="filter-group">
+        
+        <p class="click-to-toggle" data-reveal-panel-id="date-filter">DATE RANGE<span class="glyphicon glyphicon-chevron-down"></span></p>
+        
+        <div class="filter-options" id="date-filter">
+          <select name="date-filter">
+            <option value="volvo">Today</option>
+            <option value="saab">This Week</option>
+            <option value="mercedes">This Month</option>
+            <option value="audi">All</option>
+          </select>
+        </div>
 
-    <div class="filter-group">
-      
-      <p class="click-to-toggle" data-reveal-panel-id="date-filter">DATE RANGE<span class="glyphicon glyphicon-chevron-down"></span></p>
-      
-      <div class="filter-options" id="date-filter">
-        <select name="date-filter">
-          <option value="volvo">Today</option>
-          <option value="saab">This Week</option>
-          <option value="mercedes">This Month</option>
-          <option value="audi">All</option>
-        </select>
       </div>
 
-    </div>
+      <div class="filter-group">
 
-    <div class="filter-group">
+        <p class="click-to-toggle" data-reveal-panel-id="price-filter">PRICE <span class="glyphicon glyphicon-chevron-down"></span></p>
 
-      <p class="click-to-toggle" data-reveal-panel-id="price-filter">PRICE <span class="glyphicon glyphicon-chevron-down"></span></p>
+        <div class="filter-options" id="price-filter">
+          <ul class="horizontal toggle">
+            <li><a>Free</a></li><li><a>$1-$10</a></li><li><a>$10+</a></li>
+          </ul>
+        </div>
 
-      <div class="filter-options" id="price-filter">
-        <ul class="horizontal toggle">
-          <li><a>Free</a></li><li><a>$1-$10</a></li><li><a>$10+</a></li>
-        </ul>
       </div>
 
     </div>
