@@ -98,35 +98,13 @@
 
       <div class="profile-body-side-content">
 
-        <h2>Date and Time</h2>
-
-        <p><%= @show.display_date %></p>
+        <%= render :partial => 'shows/date_and_time', :locals => {:show => @show} %>
 
         <br>
 
-        <h2>Location</h2>
+        <%= render :partial => 'shows/full_address', :locals => {:show => @show} %>
 
-        <p><%= @show.venue_name %></p>
-
-        <p><%= @show.address_line_1 %></p>
-
-        <p><%= @show.address_line_2 %></p>
-
-        <p><%= @show.city %>, <%= @show.state_province %></p>
-
-        <br>
-
-        <h2>More Dates</h2>
-
-        <% if @show.more_dates.count > 0 %>
-
-          <% @show.more_dates.each do |occurence| %>
-
-            <p><%= occurence.start_time.strftime("%A, %b %e, %Y") %></p>
-
-          <%end%>
-
-        <%end%>
+        <%= render :partial => 'shows/more_dates', :locals => {:show => @show} %>
 
       </div>
   

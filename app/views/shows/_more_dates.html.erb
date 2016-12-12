@@ -1,0 +1,13 @@
+<% if show.more_dates.count > 0 %>
+
+  <br>
+
+  <h2>More Dates</h2>
+
+  <% show.more_dates.each do |occurence| %>
+
+    <p><%= occurence.start_time.strftime("%A, %b %e, %Y") %></p>
+
+  <%end%>
+
+<%end%>
