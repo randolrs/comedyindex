@@ -64,6 +64,11 @@ body{
 		cursor: pointer;
 	}
 
+	.button-container{
+		padding: 20px 10px;
+		display: inline-block;
+	}
+
 	.dark-brand-gradient{
 		background: #1e3c72; /* fallback for old browsers */
 		background: -webkit-linear-gradient(to left, #1e3c72 , #2a5298); /* Chrome 10-25, Safari 5.1-6 */

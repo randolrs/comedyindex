@@ -16,9 +16,23 @@
 
       <h1><%= @show.name %></h1>
 
+      <p><%= @show.about %></p>
+      
       <p><%= @show.display_date %><% if user_signed_in? %><% if @show.user_id == current_user.id %><a class="button">Add Dates</a><%end%><%end%></p>
 
-      <a class="button green-background">Buy Tickets</a><% if @show.website_url %><%= link_to @show.website_url do %><a class="button blue-background" href="<%= @show.website_url %>">Website</a><%end%><%end%>
+      <div class="button-container">
+        <a class="button green-background">Buy Tickets</a>
+      </div>
+
+      <% if @show.website_url %>
+        
+        <div class="button-container">
+            
+          <a class="button blue-background" href="<%= @show.website_url %>">Website</a>
+
+        </div>
+        
+      <%end%>
 
     </div>
 

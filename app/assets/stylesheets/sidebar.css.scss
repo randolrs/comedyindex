@@ -187,17 +187,36 @@
     border: 1px solid #ddd;
     border-bottom: none;
     margin-bottom: 30px;
-    padding: 25px 0px;
+    
 
     .filter-group{
+
+        padding: 20px;
+
+        font-size: 1.3em;
         
 
         p{
-            padding: 20px;
+            margin-bottom: 1em;
         }
         
         .glyphicon{
             float: right;
+        }
+
+        .filter-options{
+            text-align: center;
+            
+            select{
+                display: block;
+                
+                width: 100%;
+                padding: 10px;
+            }
+
+            select:hover{
+                cursor: pointer;
+            }
         }
     }
 
