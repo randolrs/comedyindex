@@ -8,7 +8,7 @@
 
 	.profile-body-main{
 		display: block;
-		padding: 20px;
+		padding: 0px 20px;
 		
 		width:100%;
 		vertical-align: top;
@@ -18,7 +18,7 @@
 
 	.profile-body-side{
 		display: block;
-		padding: 20px;
+		padding: 0px 20px;
 		
 		
 		
@@ -26,7 +26,10 @@
 
 		.profile-body-side-content{
 			
-			width:200px;
+			max-width:100%;
+			width: 400px;
+			margin: 0 auto;
+			text-align: center;
 			
 			h2{
 				margin-bottom: 0.5em;

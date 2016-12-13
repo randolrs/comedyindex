@@ -98,13 +98,23 @@
 
       <div class="profile-body-side-content">
 
-        <%= render :partial => 'shows/date_and_time', :locals => {:show => @show} %>
+        <div class="profile-section">
+        
+          <%= render :partial => 'shows/date_and_time', :locals => {:show => @show} %>
 
-        <br>
+        </div>
 
-        <%= render :partial => 'shows/full_address', :locals => {:show => @show} %>
+        <div class="profile-section">
 
-        <%= render :partial => 'shows/more_dates', :locals => {:show => @show} %>
+          <%= render :partial => 'shows/full_address', :locals => {:show => @show} %>
+
+        </div>
+
+        <div class="profile-section">
+
+          <%= render :partial => 'shows/more_dates', :locals => {:show => @show} %>
+
+        </div>
 
       </div>
   
