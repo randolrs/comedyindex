@@ -16,7 +16,7 @@
 
       <h1><%= @show.name %></h1>
 
-      <p><%= @show.display_date %><% if user_signed_in? %><% if @show.user_id == current_user.id %><a class="button">Add Dates</a><%end%><%end%></p>
+      <p><%= @show.display_date %></p>
 
       <div class="button-container">
         <a class="button green-background">Buy Tickets</a>
@@ -46,6 +46,8 @@
 
         <p><%= @show.about %></p>
 
+        <p class="blue-text clickable profile-edit-action">Edit Show Description</p>
+
       </div>
 
       <div class="profile-section">
@@ -61,6 +63,7 @@
               <div class="entry">
 
                 <div class="image-container">
+                  
                   <%= image_tag performer.image.url(:medium), class:"medium round" %>
         
                 </div>
@@ -71,7 +74,6 @@
 
                 </div>
 
-
               </div>
 
             <%end%>
@@ -79,6 +81,8 @@
           <%end%>
 
         </div>
+
+        <a class="blue-text clickable profile-edit-action">Add Comics to Lineup</a>
 
       </div>
 
@@ -88,6 +92,10 @@
         <h2>About the Producer</h2>
 
         <p>Producer producer</p>
+
+        <p class="blue-text clickable profile-edit-action">Edit Your Bio</p>
+
+
 
       </div>
 
