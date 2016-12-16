@@ -54,37 +54,9 @@
 			    
 			}
 
-			.content.with-sidebar{
-				max-width: 1000px;
-			}
-
-			.content-sidebar{
-				position: absolute;
-    			
-    			width: 250px;
-    			
-    			margin-bottom: 0px;
-
-    			.filter-group-container, .filter-group{
-					display: block;
-				}
-
-			}
 
 
 			
-			.content-main{
-			    margin-left: 250px;
-			    padding-left: 30px;
-			    
-			    h1{
-			    	text-align: left;
-			    }
-
-			    .sort-by-container{
-        			text-align:left;
-    			}
-			}
 
 			.dashboard-section{
 
@@ -138,6 +110,11 @@
 }
 
 
+
+
+
+
+
 @media only screen and (min-width: 800px) {
 	
 	html {
@@ -152,6 +129,16 @@
 				display: inherit !important;
 			}
 
+			.header-container{
+				
+				.header-content{
+					padding: 0px 30px;
+				}
+				
+			}
+
+
+
 			.image-grid{
 
 			    .entry{
@@ -159,6 +146,71 @@
 			    	width: 33.3%;
 			    }
 
+			}
+
+			.content.with-sidebar{
+				padding: 50px 10px;
+			}
+
+			.content-sidebar{
+				position: absolute;
+    			
+    			width: 250px;
+    			
+    			margin-bottom: 0px;
+
+    			.filter-group-container, .filter-group{
+					display: block;
+				}
+
+			}
+
+
+			
+			.content-main{
+			    margin-left: 250px;
+			    padding-left: 30px;
+			    
+			    h1{
+			    	text-align: left;
+			    }
+
+			    .sort-by-container{
+        			text-align:left;
+    			}
+			}
+
+
+
+			.card{
+	
+
+			    margin-bottom: 50px;
+
+			    .image-container, .detail-container{
+			    	display: table-cell;
+			    	vertical-align: top;
+
+			    	img.small-index-image{
+			    		width: auto;
+			    		height: 150px;
+			    	}
+
+			    }
+
+			    .image-container{
+			    	display: table-cell;
+			    	width: auto;
+			    }
+			    .detail-container{
+			    	width:100%;
+			    	display: table-cell;
+			    	padding: 10px;
+
+			    	p.title{
+			    		font-size: 2em;
+			    	}
+			    }
 			}
 
 		}

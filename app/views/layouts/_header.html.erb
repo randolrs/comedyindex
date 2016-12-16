@@ -1,64 +1,65 @@
 <div class="header-container">
 
-	<div class="header-options left">
+	<div class="header-content">
 
-		<ul class="horizontal">
-			
-			<li><button class="hamburger mobile-only modal-cta" data-modal-id="main-menu">&#9776;</button><span class="glyphicon glyphicon-menu-hamburger"></span></li>
+		<div class="header-options left">
 
-			<li><a class="logo" href="<%= root_path %>"><span style="color: #66dd66;">C</span>OMICS</a></li>
+			<ul class="horizontal">
+				
+				<li><button class="hamburger mobile-only modal-cta" data-modal-id="main-menu">&#9776;</button><span class="glyphicon glyphicon-menu-hamburger"></span></li>
 
-			<li><%= link_to "Shows", show_dashboard_path, class:"full-screen-only" %></li>
+				<li><a class="logo" href="<%= root_path %>"><span style="color: #66dd66;">C</span>OMICS</a></li>
 
-			<li><%= link_to "Venues", venues_path, class:"full-screen-only" %></li>
+				<li><%= link_to "Shows", show_dashboard_path, class:"full-screen-only" %></li>
 
-			<li><%= link_to "Comics", performers_path, class:"full-screen-only" %></li>
+				<li><%= link_to "Venues", venues_path, class:"full-screen-only" %></li>
 
-		</ul>
+				<li><%= link_to "Comics", performers_path, class:"full-screen-only" %></li>
+
+			</ul>
+
+		</div>
+
+
+		<div class="header-options right">
+
+			<ul class="horizontal full-screen-only">
+
+				<% if user_signed_in? %>
+
+					<li><%= link_to "+ New Show", new_show_path %></li><li><%= link_to "Dashboard", dashboard_path %></li><li><%= link_to "Account", account_path %></li>
+
+				<%else%>
+
+					<li><%= link_to "Log In", login_path %></li><li><%= link_to "Sign Up", signup_path, class:"cta" %></li>
+
+				<%end%>
+
+
+
+			</ul>
+
+			<ul class="horizontal mobile-only">
+
+				<% if user_signed_in? %>
+
+					<li><a href="<%= new_show_path%>"><span class="glyphicon glyphicon-plus"></span></a></li>
+
+					<li><a href="<%= account_path%>"><span class="glyphicon glyphicon-cog"></span></a></li>
+
+				<%else%>
+
+					<li><%= link_to "Log In", login_path %></li><li><%= link_to "Sign Up", signup_path, class:"cta" %></li>
+
+				<%end%>
+
+
+
+			</ul>
+
+
+		</div>
 
 	</div>
-
-
-	<div class="header-options right">
-
-		<ul class="horizontal full-screen-only">
-
-			<% if user_signed_in? %>
-
-				<li><%= link_to "+ New Show", new_show_path %></li><li><%= link_to "Dashboard", dashboard_path %></li><li><%= link_to "Account", account_path %></li>
-
-			<%else%>
-
-				<li><%= link_to "Log In", login_path %></li><li><%= link_to "Sign Up", signup_path, class:"cta" %></li>
-
-			<%end%>
-
-
-
-		</ul>
-
-		<ul class="horizontal mobile-only">
-
-			<% if user_signed_in? %>
-
-				<li><a href="<%= new_show_path%>"><span class="glyphicon glyphicon-plus"></span></a></li>
-
-				<li><a href="<%= account_path%>"><span class="glyphicon glyphicon-cog"></span></a></li>
-
-			<%else%>
-
-				<li><%= link_to "Log In", login_path %></li><li><%= link_to "Sign Up", signup_path, class:"cta" %></li>
-
-			<%end%>
-
-
-
-		</ul>
-
-
-	</div>
-
-
-
 
 </div>

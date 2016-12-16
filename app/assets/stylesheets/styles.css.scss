@@ -198,6 +198,26 @@ body{
 
 	}
 
+	ul.horizontal.even-spaced{
+
+		display: table !important;
+    	width: 100%;
+    	table-layout: fixed;
+		
+		li{
+
+			display: table-cell;
+
+			a{
+
+			}
+
+		}
+
+	}
+
+
+
 	ul.toggle{
 		
 		li{
