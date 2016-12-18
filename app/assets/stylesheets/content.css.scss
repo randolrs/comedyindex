@@ -12,7 +12,6 @@
     border-radius: 3px;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);
     margin-bottom: 50px;
-    border: 1px solid #ddd;
 
     .image-container, .detail-container{
     	display: block;
@@ -22,7 +21,7 @@
     .image-container{
 
     	width: 100%;
-    	
+
     	img.small-index-image{
     		width: 100%;
     		height: auto;

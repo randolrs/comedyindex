@@ -8,4 +8,21 @@
 	height: 100%;
 	width: 100%;
 	z-index: 999;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+}
+
+.modal-content{
+
+	max-width: 100%;
+	width: 500px;
+	margin: 0 auto;
+	margin-top: 100px;
+	padding: 50px;
+	border-radius: 3px;
+	background: #fff;
+	box-shadow: 0px 2px 0px rgba(0,0,0,0.2);
+	
 }
