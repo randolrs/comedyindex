@@ -20,8 +20,10 @@ ready = ->
 		$(".modal-cta").click (window.event), ->
 			targetId = "#" + $(@).data("modal-id")
 			$('body').find(targetId).show()
+			$('body').addClass('no-scroll')
 
 		$(".modal-container").click (window.event), ->
 			$(@).hide()
+			$('body').removeClass('no-scroll')
 
 $(document).on('turbolinks:load', ready)

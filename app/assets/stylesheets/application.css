@@ -66,6 +66,10 @@ body{
  	display: none !important;
  }
 
+ .no-scroll{
+  overflow: hidden;
+}
+
 .brand-gradient{
 
  	background: #1e3c72; /* fallback for old browsers */
