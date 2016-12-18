@@ -26,16 +26,16 @@
 			line-height: 30px;
 			padding: 15px 10px;
     		
-    		color: #EB3349;
+    		color: #ff5a5f;
     		text-shadow: 0px 1px 1px rgba(200,200,200,0.5);
 		}
 
 		a.logo{
 			font-weight: 800;
-    		font-size: 30px;
-    		letter-spacing: -2px;
-    		color: #EB3349;
-    		text-shadow: 0px 1px 1px rgba(100,100,100,0.5);
+    		font-size: 20px;
+    		letter-spacing: -1px;
+    		color: #ff5a5f;
+    		text-shadow: 0px 1px 1px rgba(200,200,200,0.5);
 		}
 
 		a.cta{
@@ -64,14 +64,13 @@
 	background:none;
 	line-height: 40px;
 	padding: 10px 15px 10px 15px;
-	text-shadow: 0px 1px 1px rgba(100,100,100,0.5);
-	color:#EB3349;
+	color:#ff5a5f;
 	border:0;
-	font-size:1.6em;
+	font-size:2em;
 	font-weight:bold;
 	cursor:pointer;
 	outline:none;
-	z-index:10000000000000;
+	z-index:1000;
 }
 
 .hamburger:hover{
