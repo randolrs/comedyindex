@@ -32,11 +32,18 @@
 	background: #fff;
 	width: 300px;
 	max-width: 100%;
+	box-shadow: 2px 0px 1px rgba(0, 0, 0, 0.3);
+    border-right: 1px solid #333;
 
 	a{
-		padding: 10px 30px;
+		padding: 15px 30px;
 		font-size: 1.2em;
 		display: block;
+	}
+
+	a:hover{
+		background: #111;
+		color: #fff;
 	}
 }
 

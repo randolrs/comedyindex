@@ -12,7 +12,18 @@
 
 span.dismiss-parent{
 	position: absolute;
-	font-size: 20px;
-	color: #fff;
-	right: 0px;
+    font-size: 20px;
+    color: #fff;
+    right: 10px;
+    top: 10px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    background: #000;
+    text-shadow: 0px -1px 1px rgba(0,0,0,0.5);
+    box-shadow: 0px 1px 1px rgba(0,0,0,0.5);
+    cursor: pointer;
 }
