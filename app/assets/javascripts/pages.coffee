@@ -21,9 +21,24 @@ ready = ->
 			targetId = "#" + $(@).data("modal-id")
 			$('body').find(targetId).show()
 			$('body').addClass('no-scroll')
+			$('.menu-content').animate({width:'show'},350);
 
 		$(".modal-container").click (window.event), ->
 			$(@).hide()
 			$('body').removeClass('no-scroll')
+			$('.menu-content').animate({width:'hide'},350);
+
+		$(".menu-cta").click (window.event), ->
+			$('.menu-content').animate({width:'show'},350);
+
+		$(".menu-modal").click (window.event), ->
+			$('.menu-content').animate({width:'hide'},350);
+
+		$('.menu-content').click (window.event), ->
+			window.event.stopPropagation()
+
+		$('.modal-content').click (window.event), ->
+			window.event.stopPropagation()
+
 
 $(document).on('turbolinks:load', ready)
