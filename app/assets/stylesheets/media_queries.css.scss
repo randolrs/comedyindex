@@ -146,7 +146,7 @@
 
 			    .entry{
 
-			    	width: 33.3%;
+			    	width: 50.0%;
 			    }
 
 			}
@@ -194,23 +194,24 @@
 			    margin-bottom: 50px;
 
 			    .image-container, .detail-container{
-			    	display: table-cell;
+			    	
 			    	vertical-align: top;
 
 			    	img.small-index-image{
-			    		width: auto;
-			    		height: 150px;
+			    		
+			    		
 			    	}
 
 			    }
 
 			    .image-container{
-			    	display: table-cell;
+			    	
 			    	width: auto;
 			    }
+			    
 			    .detail-container{
 			    	width:100%;
-			    	display: table-cell;
+			    	
 			    	padding: 10px;
 
 			    	p.title{

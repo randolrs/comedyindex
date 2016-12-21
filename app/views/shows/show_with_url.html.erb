@@ -52,7 +52,13 @@
 
       <div class="profile-section">
 
-        <h2>Featured Comics</h2>
+        <p class="section-title">Reviews</p>
+      </div>
+
+
+      <div class="profile-section">
+
+        <p class="section-title">Featured Comics</p>
 
         <div class="image-grid">
 
@@ -93,11 +99,15 @@
 
       <div class="profile-section">
 
-        <h2>About the Producer</h2>
+        <p class="section-title">About the Producer</p>
 
         <p>Producer producer</p>
 
-        <p class="blue-text clickable profile-edit-action">Edit Your Bio</p>
+        <% if user_signed_in?%>
+
+          <p class="blue-text clickable profile-edit-action">Edit Your Bio</p>
+
+        <%end%>
 
       </div>
 
