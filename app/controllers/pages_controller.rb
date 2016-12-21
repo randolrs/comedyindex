@@ -40,4 +40,12 @@ class PagesController < ApplicationController
 		@hide_footer = true
 		
 	end
+
+
+	def community
+
+
+	end
+
+
 end

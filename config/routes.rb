@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   get 'login' => 'pages#login'
 
+  get 'community' => 'pages#community'
+
   get 'profile/setup' => 'performers#setup_profile', as: 'setup_performer_profile'
 
   get 'account' => 'users#account_settings'
