@@ -8,7 +8,7 @@
 
     <div class="profile-image-container">
       
-      <%= image_tag @show.image.url(:medium), class: "medium-profile-image"%>
+      <%= image_tag @show.image.url(:medium), class: ""%>
     
     </div>
 
@@ -16,21 +16,31 @@
 
       <h1><%= @show.name %></h1>
 
+      <p><%= @show.about %></p>
+
+      <% if user_signed_in?%>
+      
+        <p class="blue-text clickable profile-edit-action">Edit Show Description</p>
+      
+      <%end%>
+
       <p><%= @show.display_date %></p>
 
       <div class="button-container">
+
         <a class="button green-background">Buy Tickets</a>
+
       </div>
 
-      <% if @show.website_url %>
+<!--       <%# if @show.website_url %>
         
         <div class="button-container">
             
-          <a class="button blue-background" href="<%= @show.website_url %>">Website</a>
+          <a class="button blue-background" href="<%# @show.website_url %>">Website</a>
 
         </div>
         
-      <%end%>
+      <%#end%> -->
 
     </div>
 
@@ -39,16 +49,6 @@
   <div class="profile-body-container">
 
     <div class="profile-body-main">
-
-      <div class="profile-section">
-
-        <h2>About the Show</h2>
-
-        <p><%= @show.about %></p>
-
-        <p class="blue-text clickable profile-edit-action">Edit Show Description</p>
-
-      </div>
 
       <div class="profile-section">
 
@@ -82,7 +82,11 @@
 
         </div>
 
-        <a class="blue-text clickable profile-edit-action">Add Comics to Lineup</a>
+        <% if user_signed_in?%>
+
+          <a class="blue-text clickable profile-edit-action">Add Comics to Lineup</a>
+
+        <%end%>
 
       </div>
 
@@ -94,8 +98,6 @@
         <p>Producer producer</p>
 
         <p class="blue-text clickable profile-edit-action">Edit Your Bio</p>
-
-
 
       </div>
 

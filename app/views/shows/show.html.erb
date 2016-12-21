@@ -8,7 +8,7 @@
 
     <div class="profile-image-container">
       
-      <%= image_tag @show.image.url(:medium), class: "medium-profile-image"%>
+      <%= image_tag @show.image.url(:medium), class: ""%>
     
     </div>
 
@@ -16,9 +16,9 @@
 
       <h1><%= @show.name %></h1>
 
-      <p><%= @show.start_time.strftime("%A, %b %e, %Y") %><% if user_signed_in? %><% if @show.user_id == current_user.id %><a class="button">Add Dates</a><%end%><%end%></p>
+      <p><%= @show.start_time.strftime("%A, %b %e, %Y") %><% if user_signed_in? %><% if @show.user_id == current_user.id %><br><a class="button">Add Dates</a><%end%><%end%></p>
 
-      <a class="button green-background">Buy Tickets</a><% if @show.website_url %><%= link_to @show.website_url do %><a class="button blue-background" href="<%= @show.website_url %>">Website</a><%end%><%end%>
+      <a class="button green-background">Buy Tickets</a><!-- <%# if @show.website_url %><%# link_to @show.website_url do %><a class="button blue-background" href="<%# @show.website_url %>">Website</a><%#end%><%#end%> -->
 
     </div>
 
@@ -86,33 +86,41 @@
 
       <div class="profile-body-side-content">
 
-        <h2>Date and Time</h2>
+        <div class="profile-section">
 
-        <p><%= @show.display_date %></p>
+          <h2>Date and Time</h2>
 
-        <br>
+          <p><%= @show.display_date %></p>
 
-        <h2>Location</h2>
+        </div>
 
-        <p><%= @show.address_line_1 %></p>
+        <div class="profile-section">
 
-        <p><%= @show.address_line_2 %></p>
+          <h2>Location</h2>
 
-        <p><%= @show.city %>, <%= @show.state_province %></p>
+          <p><%= @show.address_line_1 %></p>
 
-        <br>
+          <p><%= @show.address_line_2 %></p>
 
-        <h2>More Dates</h2>
+          <p><%= @show.city %>, <%= @show.state_province %></p>
 
-        <% if @show.show_occurences.count > 0 %>
+        </div>
+        
+        <div class="profile-section">
 
-          <% @show.show_occurences.each do |occurence| %>
+          <h2>More Dates</h2>
 
-            <%= occurence.start_time.strftime("%A, %b %e, %Y") %>
+          <% if @show.show_occurences.count > 0 %>
+
+            <% @show.show_occurences.each do |occurence| %>
+
+              <%= occurence.start_time.strftime("%A, %b %e, %Y @ %l:%M %p") %>
+
+            <%end%>
 
           <%end%>
 
-        <%end%>
+        </div>
 
       </div>
   

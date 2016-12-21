@@ -8,4 +8,8 @@
 
 <p><%= @show.city %>, <%= @show.state_province %></p>
 
-<p class="blue-text clickable profile-edit-action">Change Location</p>
+<% if user_signed_in?%>
+
+	<p class="blue-text clickable profile-edit-action">Change Location</p>
+
+<%end%>

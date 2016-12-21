@@ -1,7 +1,7 @@
 class Show < ActiveRecord::Base
 
 	has_attached_file :image, 
-	:styles => { :medium => "800x400#", :small => "70x70#", :thumb => "30x30#"},
+	:styles => { :medium => "825x400#", :small => "70x70#", :thumb => "30x30#"},
 	:default_url => 'missing_person_photo.png',
 	:s3_protocol => :https
 
@@ -25,7 +25,7 @@ class Show < ActiveRecord::Base
 
 				next_date = future_dates.sort_by { |i| i.start_time }
 				
-				return next_date.first.start_time.strftime("%A, %b %e, %Y")
+				return next_date.first.start_time.strftime("%A, %b %e, %Y @ %l:%M %p")
 
 			else
 
@@ -33,7 +33,7 @@ class Show < ActiveRecord::Base
 
 				most_recent_date = past_dates.sort_by { |i| i.start_time }
 				
-				return most_recent_date.first.start_time.strftime("%A, %b %e, %Y")
+				return most_recent_date.first.start_time.strftime("%A, %b %e, %Y @ %l:%M %p")
 			end
 		else
 
@@ -41,6 +41,37 @@ class Show < ActiveRecord::Base
 
 		end
 	end
+
+
+	def display_time
+
+		dates = ShowOccurence.where(:show_id => self.id)
+
+		if dates.count > 0
+
+			future_dates = dates.where("start_time > ? ", Time.now)
+
+			if future_dates.count > 0
+
+				next_date = future_dates.sort_by { |i| i.start_time }
+				
+				return next_date.first.start_time.strftime("%l:%M %p")
+
+			else
+
+				past_dates = dates.where("start_time < ? ", Time.now)
+
+				most_recent_date = past_dates.sort_by { |i| i.start_time }
+				
+				return most_recent_date.first.start_time.strftime("%l:%M %p")
+			end
+		else
+
+			return ""
+
+		end
+	end
+
 
 
 	def more_dates
