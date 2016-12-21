@@ -31,7 +31,7 @@
 
     </div>
 
-    <%= f.hidden_field :show, value: @show.id %>
+    <%= f.hidden_field :show_id, value: @show.id %>
 
     <br>
 
@@ -51,15 +51,17 @@
 
       <%= f.label :rating %><br>
 
-      <select class="wide" required>
+      <select id="rating_string" name="rating_string" class="wide" required>
         <option value="" disabled selected>Select a Rating</option>
-        <option value="5">5 - Hilarious!</option>
-        <option value="4">4 - Good</option>
-        <option value="3">3 - Average</option>
-        <option value="2">2 - Needs Improvement</option>
-        <option value="1">1 - Waste of Time</option>
+        <option value="5.0">5 - Hilarious!</option>
+        <option value="4.0">4 - Good</option>
+        <option value="3.0">3 - Average</option>
+        <option value="2.0">2 - Needs Improvement</option>
+        <option value="1.0">1 - Waste of Time</option>
 
       </select>
+
+      <%= f.hidden_field :rating, id:'rating_number'%>
 
     </div>
 <!-- 

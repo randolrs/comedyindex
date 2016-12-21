@@ -44,5 +44,8 @@ ready = ->
 		$('.modal-content').click (window.event), ->
 			window.event.stopPropagation()
 
+		$('#rating_string').change (window.event), ->
+			$('#rating_number').val($(@).val());
+
 
 $(document).on('turbolinks:load', ready)

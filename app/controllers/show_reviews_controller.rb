@@ -33,7 +33,7 @@ class ShowReviewsController < ApplicationController
 
 
   def new_with_show_header
-    
+
     @show_review = ShowReview.new
 
     if params[:show_id]

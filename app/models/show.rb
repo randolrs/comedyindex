@@ -14,6 +14,12 @@ class Show < ActiveRecord::Base
 	has_many :show_reviews
 
 	accepts_nested_attributes_for :show_occurences, allow_destroy: true
+
+	def average_rating 
+
+		return self.show_reviews.average(:rating)
+
+	end
 	
 	def display_date
 
