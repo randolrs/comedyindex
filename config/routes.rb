@@ -34,6 +34,8 @@ Rails.application.routes.draw do
 
   get 's/:url_slug' => 'shows#show_with_url', as: 'show_with_url'
 
+  get 'review/new/:show_id' => 'show_reviews#new_with_show_header', as: 'new_review'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

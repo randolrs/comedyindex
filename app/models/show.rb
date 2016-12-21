@@ -11,6 +11,8 @@ class Show < ActiveRecord::Base
 
 	has_many :show_occurences
 
+	has_many :show_reviews
+
 	accepts_nested_attributes_for :show_occurences, allow_destroy: true
 	
 	def display_date

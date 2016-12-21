@@ -45,6 +45,11 @@
     	color: #333;
 	}
 
+	select.wide{
+		width:100%;
+		display: block;
+	}
+
 	input.short{
 		width: 100px;
 		display: inline-block;

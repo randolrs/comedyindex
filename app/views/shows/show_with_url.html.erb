@@ -26,9 +26,11 @@
 
       <p><%= @show.display_date %></p>
 
+      <p>Rating: 4.0/5.0</p>
+      
       <div class="button-container">
 
-        <a class="button green-background">Buy Tickets</a>
+        <%= link_to "Write a Review", new_review_path(@show.id), class:"button green-background"%>
 
       </div>
 

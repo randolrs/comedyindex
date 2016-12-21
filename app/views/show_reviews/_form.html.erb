@@ -11,31 +11,65 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :show_id %><br>
-    <%= f.number_field :show_id %>
-  </div>
-  <div class="field">
-    <%= f.label :show_occurence_id %><br>
-    <%= f.number_field :show_occurence_id %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </div>
-  <div class="field">
-    <%= f.label :rating %><br>
-    <%= f.text_field :rating %>
-  </div>
-  <div class="field">
-    <%= f.label :author_id %><br>
-    <%= f.number_field :author_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <% if @show %>
+
+    <div class="card form-header">
+    
+      <div class="image-container">
+        
+        <%= image_tag @show.image.url(:medium), class: "small-index-image"%>
+
+      </div>
+
+      <div class="detail-container">
+        
+        <p class="title"><%= @show.name %></p>
+
+        <p><%= @show.venue_name %></p>
+
+      </div>
+
+    </div>
+
+    <%= f.hidden_field :show, value: @show.id %>
+
+    <br>
+
+  <%end%>
+
+<!--     <div class="field">
+      <%# f.label :show_occurence_id %>
+      <%# f.number_field :show_occurence_id %>
+    </div> -->
+
+    <div class="field">
+      <label>Your Review</label><br>
+      <%= f.text_area :body, required: true %>
+    </div>
+
+    <div class="field">
+
+      <%= f.label :rating %><br>
+
+      <select class="wide" required>
+        <option value="" disabled selected>Select a Rating</option>
+        <option value="5">5 - Hilarious!</option>
+        <option value="4">4 - Good</option>
+        <option value="3">3 - Average</option>
+        <option value="2">2 - Needs Improvement</option>
+        <option value="1">1 - Waste of Time</option>
+
+      </select>
+
+    </div>
+<!-- 
+    <div class="field">
+      <%# f.label :author_id %><br>
+      <%# f.number_field :author_id %>
+    </div> -->
+
+    <div class="actions">
+      <input type="submit" class="button green-background" value="Post Review">
+    </div>
+
 <% end %>

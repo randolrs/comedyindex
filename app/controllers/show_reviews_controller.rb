@@ -15,7 +15,42 @@ class ShowReviewsController < ApplicationController
   # GET /show_reviews/new
   def new
     @show_review = ShowReview.new
+
+    if params[:show_id]
+
+      if Show.where(:id => params[:show_id]).exists?
+
+        @show = Show.find(params[:show_id])
+
+      end
+
+
+    end
+
+
+
   end
+
+
+  def new_with_show_header
+    
+    @show_review = ShowReview.new
+
+    if params[:show_id]
+
+      if Show.where(:id => params[:show_id]).exists?
+
+        @show = Show.find(params[:show_id])
+
+      end
+
+
+    end
+
+
+
+  end
+
 
   # GET /show_reviews/1/edit
   def edit
