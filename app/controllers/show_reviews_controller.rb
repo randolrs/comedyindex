@@ -59,7 +59,18 @@ class ShowReviewsController < ApplicationController
   # POST /show_reviews
   # POST /show_reviews.json
   def create
-    @show_review = ShowReview.new(show_review_params)
+    
+    if user_signed_in?
+
+      @show_review = ShowReview.new(show_review_params)
+
+      @show_review.update(:user_id => current_user.id)
+
+    else
+
+      redirect_to root_path
+
+    end
 
     respond_to do |format|
       if @show_review.save

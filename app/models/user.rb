@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
 
    has_many :shows
 
+   has_many :show_reviews
+
 
 
 end

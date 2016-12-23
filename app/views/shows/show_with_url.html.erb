@@ -60,7 +60,11 @@
         
           <% @show.show_reviews.all.each do |review| %>
 
-            <tr><td><%= review.rating %></td><td><%= review.body %></td></tr>
+            <div class="outline">
+              img<%# current_user.image(:small) %>
+              <%= review.rating %>
+              <%= review.body %>
+            </div>
 
           <%end%>
           

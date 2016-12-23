@@ -17,7 +17,7 @@ class Show < ActiveRecord::Base
 
 	def average_rating 
 
-		return self.show_reviews.average(:rating)
+		return (self.show_reviews.average(:rating)*2).round / 2
 
 	end
 	
