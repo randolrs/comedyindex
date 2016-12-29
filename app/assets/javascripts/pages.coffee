@@ -21,15 +21,11 @@ ready = ->
 			targetId = "#" + $(@).data("modal-id")
 			$('body').find(targetId).show()
 			$('body').addClass('no-scroll')
-			$('.content-container').addClass('blurred')
-			$('.header-container').addClass('blurred')
 			$('.menu-content').animate({width:'show'},350);
 
 		$(".modal-container").click (window.event), ->
 			$(@).hide()
 			$('body').removeClass('no-scroll')
-			$('.content-container').removeClass('blurred')
-			$('.header-container').removeClass('blurred')
 			$('.menu-content').animate({width:'hide'},350);
 
 		$(".menu-cta").click (window.event), ->

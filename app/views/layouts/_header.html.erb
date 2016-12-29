@@ -10,8 +10,6 @@
 
 				<li><%= link_to "Write a Review", show_dashboard_path, class:"full-screen-only" %></li>
 
-				<li><%= link_to "Community", community_path, class:"full-screen-only" %></li>
-
 				<li><%= link_to "Comedy Shows", show_dashboard_path, class:"full-screen-only" %></li>
 
 				<!-- <li><%# link_to "Venues", venues_path, class:"full-screen-only" %></li>
@@ -32,8 +30,8 @@
 					<li><%= link_to "+ New Show", new_show_path %></li><li><%= link_to "Dashboard", dashboard_path %></li><li><%= link_to "Account", account_path %></li>
 
 				<%else%>
-
-					<li><%= link_to "Log In", login_path %></li><li><%= link_to "Sign Up", signup_path, class:"cta" %></li>
+					
+					<li><%= link_to "Log In", login_path %></li><li><%= link_to "Sign Up", signup_path, class:"cta" %></li><li><a class="clickable modal-cta" data-modal-id="select-city">SELECT A CITY<span class="glyphicon glyphicon-map-marker" style="margin-left: 10px;"></span></a></li>
 
 				<%end%>
 
@@ -51,11 +49,11 @@
 
 				<%else%>
 
-					<li><%= link_to "Log In", login_path %></li><li><%= link_to "Sign Up", signup_path, class:"cta" %></li>
+					<li><%= link_to "Sign Up", signup_path, class:"cta" %></li>
 
 				<%end%>
 
-
+				<li><a class="clickable modal-cta" data-modal-id="select-city">SELECT A CITY<span class="glyphicon glyphicon-map-marker" style="margin-left: 10px;" data-modal-id="select-city"></span></a></li>
 
 			</ul>
 
