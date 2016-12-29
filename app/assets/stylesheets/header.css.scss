@@ -98,4 +98,22 @@ nav.header-container{
 .sub-header{
 	position: fixed;
 	background: #fff;
+	padding: 15px 0px;
+
+	ul.horizontal{
+		li{
+			a{
+				display: inline-block;
+				width: 150px;
+				background: rgba(200,200,200,1);
+				border-radius: 1px;
+				font-size: 0.9em;	
+			}
+
+			a.active{
+				background: rgba(70,220,70,1);
+				color: #fff;
+			}	
+		}
+	}
 }

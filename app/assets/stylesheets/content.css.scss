@@ -11,20 +11,20 @@
     background: #fff;
     border-radius: 3px;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);
-    margin-bottom: 50px;
+    margin-bottom: 25px;
 
     .image-container, .detail-container{
-    	display: block;
+    	display: table-cell;
     	vertical-align: top;
     }
 
     .image-container{
 
-    	width: 100%;
+    	
 
     	img.small-index-image{
-    		width: 100%;
-    		height: auto;
+    		
+    		height: 150px;
     	}
     }
 

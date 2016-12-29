@@ -1,8 +1,9 @@
 <div class="content with-sidebar">
 
-  <div class="sub-header mobile-only">
+  <div class="sub-header mobile-only light-box-shadow">
+    <h1 class="centered"><%= @city %> Comedy Shows</h1>
     <ul class="horizontal even-spaced centered">
-      <li><a>Today</a></li>
+      <li><a class="active">Today</a></li>
       <li><a>This Week</a></li>
       <li><a>This Month</a></li>
     </ul>
@@ -10,15 +11,6 @@
 
 
   <div class="content-sidebar">
-
-    <div class="filter-title centered mobile-only fixed-to-bottom">
-
-      <ul class="horizontal even-spaced">
-        <li style="border-right: 2px solid #bbb;"><a class="clickable modal-cta" data-modal-id="select-city"><span>CITY</span><br><span class="brand-color">Select City</span></a></li>
-        <li><a class=" clickable modal-cta" data-modal-id="select-date"><span>DATE</span><br><span class="brand-color">This Week</span></a></li>
-      </ul>
-
-    </div>
 
     <div class="filter-group-container toggle-panel" id="filter-group-container">
 
@@ -78,22 +70,7 @@
 
   <div class="content-main">
 
-    <h1>Local Comedy Shows</h1>
-
-    <br>
-
-    <div class="sort-by-container">
-      <a>Sort By:</a>
-      <ul class="horizontal toggle">
-        <li><a class="active click-to-reveal" data-reveal-panel-id="rating">Rating</a></li><li><a class="click-to-reveal" data-reveal-panel-id="date">Date</a></li>
-      </ul>
-
-    </div>
-
-    <br>
-
     <div class="reveal-panel" id="rating">
-      Rating
 
       <% @shows.each do |show| %>
 
@@ -102,24 +79,8 @@
       <% end %>
 
     </div>
-
-
-    <div class="reveal-panel default-off" id="date">
-      Date
-
-      <% @shows.each do |show| %>
-
-        <%= render :partial => 'shows/index_show', :locals => {:show =>  show} %>
-
-      <% end %>
-
-    </div>
-
-
 
   </div>
-
-
 
 
 </div>

@@ -9,6 +9,7 @@ class ShowsController < ApplicationController
 
   def dashboard
     @shows = Show.all
+    @city = "Montreal"
   end
 
   # GET /shows/1
