@@ -17,8 +17,14 @@ class Show < ActiveRecord::Base
 
 	def average_rating 
 
-		return (self.show_reviews.average(:rating)*2).round / 2
+		if self.show_reviews.count > 0
+			
+			return (self.show_reviews.average(:rating)*2).round / 2
 
+		else
+
+			return "N/A"
+		end
 	end
 	
 	def display_date
