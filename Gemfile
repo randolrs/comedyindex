@@ -39,6 +39,8 @@ gem 'devise'
 
 gem 'paperclip', '~> 4.2'
 
+gem 'bootstrap-sass'
+
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
