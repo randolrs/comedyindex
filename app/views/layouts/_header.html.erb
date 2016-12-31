@@ -10,9 +10,9 @@
 				
 				<li><a class="logo full-screen-only" href="<%= root_path %>">COMEDY<span style="color: #66dd66;">ZILLA</span></a><a class="logo modal-cta mobile-only" data-modal-id="main-menu"><button class="hamburger">&#9776;</button></span>C<span style="color: #66dd66;">Z</span></a></li>
 
-				<li><%= link_to "Write a Review", show_dashboard_path, class:"full-screen-only" %></li>
+				<li><%= link_to "Write a Review", show_dashboard_path(@market["short_name"]), class:"full-screen-only" %></li>
 
-				<li><%= link_to "Comedy Shows", show_dashboard_path, class:"full-screen-only" %></li>
+				<li><%= link_to "Comedy Shows", show_dashboard_path(@market["short_name"]), class:"full-screen-only" %></li>
 
 				<!-- <li><%# link_to "Venues", venues_path, class:"full-screen-only" %></li>
 

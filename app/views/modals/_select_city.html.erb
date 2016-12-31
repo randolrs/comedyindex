@@ -8,17 +8,22 @@
 
 			<%= form_tag update_market_path do %>
 
-				<a>Tell us your location</a>
+				<a class="modal-header">Tell us your location</a>
 
 				<br>
-
-				<%= collection_select(:market_data, :market_id, Market.all, :id, :name, prompt: true) %>
-
 				<br>
 
-				<a>Not in Montreal? Please select your location to help us display the correct information for your area.</a>
+				<%= collection_select(:market_data, :market_id, Market.all, :id, :name, prompt: "Select a City", required: true ) %>
 
-				<button class="black-background button">Update</button>
+				<br>
+				<br>
+
+				<a>Not in <%= @market["name"] %>? Please select your location to help us display the correct information for your area.</a>
+
+				<br>
+				<br>
+
+				<button class="black-background button medium">Change my city</button>
 
 			<%end%>
 

@@ -9,9 +9,9 @@ class ShowsController < ApplicationController
 
   def dashboard
     
-    @market_object = Market.find(@market["id"])
+    @market_object = Market.find_by_short_name(params[:market_name])
     @shows = @market_object.shows
-    @city = "Montreal"
+    @city = @market_object.name
     @time_period = "Anytime"
     @price_description = "Any Price"
   end

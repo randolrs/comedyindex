@@ -1,8 +1,6 @@
 <div class="footer-container">
 
 	<div class="footer-content">
-
-		
 		
 		<ul>
 			<% unless user_signed_in? %>
@@ -13,6 +11,16 @@
 			<%else%>
 
 				<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+
+			<%end%>
+
+		</ul>
+
+		<ul>
+			
+			<% Market.all.each do |market| %>
+
+				<li><%= link_to market.name + " Comedy Shows", show_dashboard_path(market.short_name) %></li>
 
 			<%end%>
 

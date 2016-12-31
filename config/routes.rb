@@ -31,7 +31,7 @@ Rails.application.routes.draw do
 
   get 'signup/venues' => 'users#venue_signup', as: 'venue_signup'
 
-  get 'shows/all/comedy' => 'shows#dashboard', as: 'show_dashboard'
+  get 'shows/comedy/:market_name' => 'shows#dashboard', as: 'show_dashboard'
 
   get 's/:url_slug' => 'shows#show_with_url', as: 'show_with_url'
 
