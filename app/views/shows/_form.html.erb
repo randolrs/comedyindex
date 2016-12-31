@@ -67,7 +67,7 @@
 
       <label>Market</label><br>
       
-      <%= collection_select(@show, :market_id, Market.all, :id, :name, prompt: true) %><br>
+      <%= collection_select(:show, :market_id, Market.all, :id, :name, prompt: true) %><br>
    
     </div>
     
