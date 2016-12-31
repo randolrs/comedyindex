@@ -28,6 +28,11 @@ ready = ->
 			$('body').removeClass('no-scroll')
 			$('.menu-content').animate({width:'hide'},350);
 
+		$(".dismiss-modal").click (window.event), ->
+			$(".modal-container").hide()
+			$('body').removeClass('no-scroll')
+			$('.menu-content').animate({width:'hide'},350);
+
 		$(".menu-cta").click (window.event), ->
 			$('.menu-content').animate({width:'show'},350);
 

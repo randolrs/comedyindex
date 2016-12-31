@@ -5,6 +5,18 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  before_action :check_for_location
+
+  def check_for_location
+
+    session[:market] = Market.find(1)
+
+
+  end
+
+
+
+
   def after_sign_in_path_for(user)
 
     if user_signed_in?

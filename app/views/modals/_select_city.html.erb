@@ -1,18 +1,24 @@
 <div class="modal-container default-off" id="select-city">
 
-	<div class="modal-content centered">
-		
-		<span class="dismiss-parent">x</span>
+	<div class="modal-content-container">
 
-		Select City
+		<div class="modal-content centered">
+			
+			<span class="dismiss-modal">x</span>
 
-		<br>
+			<a>Tell us your location</a>
 
-		<%= collection_select(:market_type, :market_id, Market.all, :id, :name, prompt: true) %>
+			<br>
 
-		<br>
+			<%= collection_select(:market_type, :market_id, Market.all, :id, :name, prompt: true) %>
 
-		<a class="black-background button">Update</a>
+			<br>
+
+			<a>Not in Montreal? Please select your location to help us display the correct information for your area.</a>
+
+			<a class="black-background button">Update</a>
+
+		</div>
 
 	</div>
 
