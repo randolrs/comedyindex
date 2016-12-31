@@ -18,15 +18,15 @@
 
       <p><%= @show.about %></p>
 
-      <% if user_signed_in?%>
-      
-        <p class="blue-text clickable profile-edit-action">Edit Show Description</p>
-      
-      <%end%>
-
       <p><%= @show.display_date %></p>
 
-      <p>Rating: <%= @show.average_rating %>/5.0</p>
+      <p>Rating: <%= @show.average_rating %>/5.0 | <%= @show.show_reviews.count %> Reviews</p>
+
+      <% if user_signed_in?%>
+
+        <p class="blue-text clickable profile-edit-action"><%= link_to "Edit", edit_show_path(@show), class:"blue-text"%></p>
+
+      <%end%>
       
       <div class="button-container">
 
@@ -56,19 +56,27 @@
 
         <p class="section-title">Reviews</p>
         
-        <table>
-        
-          <% @show.show_reviews.all.each do |review| %>
-
-            <div class="outline">
-              img<%# current_user.image(:small) %>
-              <%= review.rating %>
-              <%= review.body %>
-            </div>
-
-          <%end%>
+        <% if @show.show_reviews.count > 0 %>
           
-        </table>
+          <table>
+          
+            <% @show.show_reviews.all.each do |review| %>
+
+              <div class="outline">
+                img<%# current_user.image(:small) %>
+                <%= review.rating %>
+                <%= review.body %>
+              </div>
+
+            <%end%>
+            
+          </table>
+
+        <%else%>
+
+          No Reviews Yet. Be the first to post a review.
+
+        <%end%>
 
       </div>
 
@@ -105,11 +113,6 @@
 
         </div>
 
-        <% if user_signed_in?%>
-
-          <a class="blue-text clickable profile-edit-action">Add Comics to Lineup</a>
-
-        <%end%>
 
       </div>
 
@@ -119,12 +122,6 @@
         <p class="section-title">About the Producer</p>
 
         <p>Producer producer</p>
-
-        <% if user_signed_in?%>
-
-          <p class="blue-text clickable profile-edit-action">Edit Your Bio</p>
-
-        <%end%>
 
       </div>
 

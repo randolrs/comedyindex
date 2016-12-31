@@ -10,6 +10,8 @@ class ShowsController < ApplicationController
   def dashboard
     @shows = Show.all
     @city = "Montreal"
+    @time_period = "Anytime"
+    @price_description = "Any Price"
   end
 
   # GET /shows/1
