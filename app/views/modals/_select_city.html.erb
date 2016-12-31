@@ -6,17 +6,21 @@
 			
 			<span class="dismiss-modal">x</span>
 
-			<a>Tell us your location</a>
+			<%= form_tag update_market_path do %>
 
-			<br>
+				<a>Tell us your location</a>
 
-			<%= collection_select(:market_type, :market_id, Market.all, :id, :name, prompt: true) %>
+				<br>
 
-			<br>
+				<%= collection_select(:market_data, :market_id, Market.all, :id, :name, prompt: true) %>
 
-			<a>Not in Montreal? Please select your location to help us display the correct information for your area.</a>
+				<br>
 
-			<a class="black-background button">Update</a>
+				<a>Not in Montreal? Please select your location to help us display the correct information for your area.</a>
+
+				<button class="black-background button">Update</button>
+
+			<%end%>
 
 		</div>
 

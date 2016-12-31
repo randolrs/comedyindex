@@ -7,10 +7,20 @@ class ApplicationController < ActionController::Base
 
   before_action :check_for_location
 
+  
+
   def check_for_location
 
-    session[:market] = Market.find(1)
+    unless session[:market]
+    
+      session[:market] = Market.find(1)
 
+
+
+    end
+
+    @market = session[:market]
+    
 
   end
 

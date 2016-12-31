@@ -8,7 +8,9 @@ class ShowsController < ApplicationController
   end
 
   def dashboard
-    @shows = Show.all
+    
+    @market_object = Market.find(@market["id"])
+    @shows = @market_object.shows
     @city = "Montreal"
     @time_period = "Anytime"
     @price_description = "Any Price"

@@ -37,6 +37,7 @@ Rails.application.routes.draw do
 
   get 'review/new/:show_id' => 'show_reviews#new_with_show_header', as: 'new_review'
 
+  post 'update_market' => 'pages#update_market', as: 'update_market'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

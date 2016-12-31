@@ -47,5 +47,13 @@ class PagesController < ApplicationController
 
 	end
 
+	def update_market
+
+		session[:market] = Market.find(params[:market_data][:market_id])
+
+		redirect_to :back
+
+	end
+
 
 end
