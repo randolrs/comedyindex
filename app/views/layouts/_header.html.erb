@@ -29,7 +29,7 @@
 
 				<% if user_signed_in? %>
 
-					<li><%= link_to "+ New Show", new_show_path %></li><li><%= link_to "Dashboard", dashboard_path %></li><li><%= link_to "Account", account_path %></li>
+					<li><%= link_to "Account", account_path %></li><li><a class="clickable modal-cta" data-modal-id="select-city">SELECT A CITY<span class="glyphicon glyphicon-map-marker" style="margin-left: 10px;"></span></a></li>
 
 				<%else%>
 					

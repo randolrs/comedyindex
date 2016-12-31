@@ -1,8 +1,6 @@
 <div class="modal-container default-off" id="select-city">
 
-	
-
-	<div class="modal-content">
+	<div class="modal-content centered">
 		
 		<span class="dismiss-parent">x</span>
 
@@ -10,12 +8,11 @@
 
 		<br>
 
-		<select name="city">
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
-          </select>
+		<%= collection_select(:market_type, :market_id, Market.all, :id, :name, prompt: true) %>
+
+		<br>
+
+		<a class="black-background button">Update</a>
 
 	</div>
 

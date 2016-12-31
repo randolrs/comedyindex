@@ -9,6 +9,8 @@ class Show < ActiveRecord::Base
 
 	belongs_to :user
 
+	belongs_to :market
+
 	has_many :show_occurences
 
 	has_many :show_reviews
