@@ -1,23 +1,53 @@
-<%= link_to(show_with_url_path(show.url_slug)) do %>
 
-  <div class="card">
-    
-    <div class="image-container">
+<% unless @review_index %>
+
+  <%= link_to(show_with_url_path(show.url_slug)) do %>
+
+    <div class="card">
       
-      <%= image_tag show.image.url(:medium), class: "small-index-image"%>
+      <div class="image-container">
+        
+        <%= image_tag show.image.url(:medium), class: "small-index-image"%>
+
+      </div>
+
+      <div class="detail-container">
+        
+        <p class="title"><%= show.name %></p>
+
+        <p><%= show.display_date %></p>
+
+        <p>Venue McGullicuddy</p>
+        <p>Rating: <%= show.average_rating %>/5.0 | <%= show.show_reviews.count %> Reviews</p>
+
+      </div>
 
     </div>
 
-    <div class="detail-container">
+  <% end %>
+
+<% else %>
+
+    <div class="card">
       
-      <p class="title"><%= show.name %></p>
+      <div class="image-container">
+        
+        <%= image_tag show.image.url(:medium), class: "small-index-image"%>
 
-      <p><%= show.display_date %></p>
+      </div>
 
-      <p>Venue McGullicuddy</p>
+      <div class="detail-container">
+        
+        <p class="title"><%= show.name %></p>
+
+        <p><%= show.display_date %></p>
+
+        <p>Venue McGullicuddy</p>
+        <p>Rating: <%= show.average_rating %>/5.0 | <%= show.show_reviews.count %> Reviews</p>
+        <p><%= link_to "Start Your Review", new_review_path(show.id), class:"red-text"%></p>
+
+      </div>
 
     </div>
-
-  </div>
 
 <% end %>

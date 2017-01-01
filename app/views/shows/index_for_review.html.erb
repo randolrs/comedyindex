@@ -1,22 +1,15 @@
-<div class="sub-header light-box-shadow">
-
-  <div class="sub-header-content">
-    <h1 class="centered"><%= @city %> Comedy Shows</h1>
-    <ul class="horizontal even-spaced centered">
-      <li><a class="active clickable"><%= @show_type %></a></li>
-      <li><a class="clickable"><%= @time_period %></a></li>
-      <li><a class="clickable"><%= @price_description %></a></li>
-    </ul>
-  </div>
-    
-  <%= render 'modals/select_date' %>
-
-</div>
 
 <!-- <div class="content with-sidebar"> -->
 
-<div class="content with-subheader"> 
+<div class="content"> 
 
+  <h1>Your Next Review Awaits</h1>
+
+  <br>
+  
+  <h2>Post Your Review of Any Comedy Show in <%= @market["name"]%></h2>
+
+  <br>
 
 <!--   <div class="content-sidebar">
 
@@ -97,6 +90,3 @@
   </div>
 
 </div>
-
-
-

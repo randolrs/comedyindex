@@ -2,166 +2,161 @@
 
 </div>
 
-<div class="profile-content">
 
-  <div class="profile-title-container">
 
-    <div class="profile-image-container">
+  <div class="profile-content">
+
+    <div class="profile-title-container">
+
+      <div class="profile-image-container">
+        
+        <%= image_tag @show.image.url(:medium), class: ""%>
       
-      <%= image_tag @show.image.url(:medium), class: ""%>
-    
-    </div>
-
-    <div class="profile-detail-container">
-
-      <h1><%= @show.name %></h1>
-
-      <p><%= @show.about %></p>
-
-      <p><%= @show.display_date %></p>
-
-      <p>Rating: <%= @show.average_rating %>/5.0 | <%= @show.show_reviews.count %> Reviews</p>
-
-      <% if user_signed_in?%>
-
-        <p class="blue-text clickable profile-edit-action"><%= link_to "Edit", edit_show_path(@show), class:"blue-text"%></p>
-
-      <%end%>
-      
-      <div class="button-container">
-
-        <%= link_to "Write a Review", new_review_path(@show.id), class:"button green-background"%>
-
       </div>
 
-<!--       <%# if @show.website_url %>
-        
-        <div class="button-container">
-            
-          <a class="button blue-background" href="<%# @show.website_url %>">Website</a>
+      <div class="profile-detail-container">
 
-        </div>
-        
-      <%#end%> -->
+        <h1><%= @show.name %></h1>
 
-    </div>
+        <p><%= @show.about %></p>
 
-  </div>
+        <p><%= @show.display_date %></p>
 
-  <div class="profile-body-container">
+        <p>Rating: <%= @show.average_rating %>/5.0 | <%= @show.show_reviews.count %> Reviews</p>
 
-    <div class="profile-body-main">
+        <% if user_signed_in?%>
 
-      <div class="profile-section">
-
-        <p class="section-title">Reviews</p>
-        
-        <% if @show.show_reviews.count > 0 %>
-          
-          <table>
-          
-            <% @show.show_reviews.all.each do |review| %>
-
-              <div class="outline">
-                img<%# current_user.image(:small) %>
-                <%= review.rating %>
-                <%= review.body %>
-              </div>
-
-            <%end%>
-            
-          </table>
-
-        <%else%>
-
-          No Reviews Yet. Be the first to post a review.
+          <p class="blue-text clickable profile-edit-action"><%= link_to "Edit", edit_show_path(@show), class:"blue-text"%></p>
 
         <%end%>
+        
+        <div class="button-container">
+
+          <%= link_to "Write a Review", new_review_path(@show.id), class:"button green-background"%>
+
+        </div>
+
+  <!--       <%# if @show.website_url %>
+          
+          <div class="button-container">
+              
+            <a class="button blue-background" href="<%# @show.website_url %>">Website</a>
+
+          </div>
+          
+        <%#end%> -->
 
       </div>
 
+    </div>
 
-      <div class="profile-section">
+    <div class="profile-body-container">
 
-        <p class="section-title">Featured Comics</p>
+      <div class="profile-body-main">
 
-        <div class="image-grid">
+        <div class="profile-section">
 
-          <% Performer.all.each do |performer| %>
+          <p class="section-title">Reviews</p>
+          
+          <% if @show.show_reviews.count > 0 %>
+            
+            <table>
+            
+              <% @show.show_reviews.all.each do |review| %>
 
-            <%= link_to performer do %>
+                <div class="outline">
+                  img<%# current_user.image(:small) %>
+                  <%= review.rating %>
+                  <%= review.body %>
+                </div>
+
+              <%end%>
               
-              <div class="entry">
+            </table>
 
-                <div class="image-container">
-                  
-                  <%= image_tag performer.image.url(:medium), class:"medium round" %>
-        
-                </div>
+          <%else%>
 
-                <div class="detail-container centered">
-
-                  <a class="metadata name"><%= performer.name %></a>
-
-                </div>
-
-              </div>
-
-            <%end%>
+            No Reviews Yet. Be the first to post a review.
 
           <%end%>
 
         </div>
 
 
-      </div>
-
-
-      <div class="profile-section">
-
-        <p class="section-title">About the Producer</p>
-
-        <p>Producer producer</p>
-
-      </div>
-
-    </div>
-
-
-    <div class="profile-body-side">
-
-      <div class="profile-body-side-content">
-
         <div class="profile-section">
-        
-          <%= render :partial => 'shows/date_and_time', :locals => {:show => @show} %>
+
+          <p class="section-title">Featured Comics</p>
+
+          <div class="image-grid">
+
+            <% Performer.all.each do |performer| %>
+
+              <%= link_to performer do %>
+                
+                <div class="entry">
+
+                  <div class="image-container">
+                    
+                    <%= image_tag performer.image.url(:medium), class:"medium round" %>
+          
+                  </div>
+
+                  <div class="detail-container centered">
+
+                    <a class="metadata name"><%= performer.name %></a>
+
+                  </div>
+
+                </div>
+
+              <%end%>
+
+            <%end%>
+
+          </div>
+
 
         </div>
 
-        <div class="profile-section">
-
-          <%= render :partial => 'shows/full_address', :locals => {:show => @show} %>
-
-        </div>
 
         <div class="profile-section">
 
-          <%= render :partial => 'shows/more_dates', :locals => {:show => @show} %>
+          <p class="section-title">About the Producer</p>
+
+          <p>Producer producer</p>
 
         </div>
 
       </div>
-  
+
+
+      <div class="profile-body-side">
+
+        <div class="profile-body-side-content">
+
+          <div class="profile-section">
+          
+            <%= render :partial => 'shows/date_and_time', :locals => {:show => @show} %>
+
+          </div>
+
+          <div class="profile-section">
+
+            <%= render :partial => 'shows/full_address', :locals => {:show => @show} %>
+
+          </div>
+
+          <div class="profile-section">
+
+            <%= render :partial => 'shows/more_dates', :locals => {:show => @show} %>
+
+          </div>
+
+        </div>
+    
+      </div>
+
     </div>
 
   </div>
 
-
-
-
-
-
-
-
-
-</div>

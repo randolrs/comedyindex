@@ -33,6 +33,8 @@ Rails.application.routes.draw do
 
   get 'shows/comedy/:market_name' => 'shows#dashboard', as: 'show_dashboard'
 
+  get 'writeareview' => 'shows#index_for_review', as: 'index_for_review'
+
   get 's/:url_slug' => 'shows#show_with_url', as: 'show_with_url'
 
   get 'review/new/:show_id' => 'show_reviews#new_with_show_header', as: 'new_review'

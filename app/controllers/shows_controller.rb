@@ -12,8 +12,21 @@ class ShowsController < ApplicationController
     @market_object = Market.find_by_short_name(params[:market_name])
     @shows = @market_object.shows
     @city = @market_object.name
+    @time_period = "Anyday"
+    @price_description = "Any Price"
+    @show_type = "Any Show Type"
+  end
+
+  def index_for_review
+
+    @review_index = true
+    @market_object = Market.find(@market["id"])
+    @shows = @market_object.shows
+    @city = @market_object.name
     @time_period = "Anytime"
     @price_description = "Any Price"
+
+
   end
 
   # GET /shows/1
@@ -26,7 +39,6 @@ class ShowsController < ApplicationController
 
   def show_with_url
 
-   
 
     if Show.where(:url_slug => params[:url_slug]).exists?
 

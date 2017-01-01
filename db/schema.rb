@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161231024654) do
+ActiveRecord::Schema.define(version: 20170101005651) do
 
   create_table "cities", force: :cascade do |t|
     t.string   "name"
@@ -107,6 +107,7 @@ ActiveRecord::Schema.define(version: 20161231024654) do
     t.boolean  "is_producer"
     t.boolean  "is_venue"
     t.integer  "performer_id"
+    t.integer  "default_market_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -48,8 +48,17 @@ class PagesController < ApplicationController
 	end
 
 	def update_market
+		
+		market_id = params[:market_data][:market_id]
+		
+		if user_signed_in?
 
-		session[:market] = Market.find(params[:market_data][:market_id])
+			current_user.update(:default_market_id => market_id)
+
+		end
+
+
+		session[:market] = Market.find(market_id)
 
 		redirect_to :back
 

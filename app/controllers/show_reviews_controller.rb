@@ -14,16 +14,25 @@ class ShowReviewsController < ApplicationController
 
   # GET /show_reviews/new
   def new
-    @show_review = ShowReview.new
+    
+    if user_signed_in?
+      
+      @show_review = ShowReview.new
 
-    if params[:show_id]
+      if params[:show_id]
 
-      if Show.where(:id => params[:show_id]).exists?
+        if Show.where(:id => params[:show_id]).exists?
 
-        @show = Show.find(params[:show_id])
+          @show = Show.find(params[:show_id])
+
+        end
+
 
       end
 
+    else
+
+      redirect_to login_path
 
     end
 
@@ -34,18 +43,29 @@ class ShowReviewsController < ApplicationController
 
   def new_with_show_header
 
-    @show_review = ShowReview.new
+    if user_signed_in?
 
-    if params[:show_id]
+      @show_review = ShowReview.new
 
-      if Show.where(:id => params[:show_id]).exists?
+      if params[:show_id]
 
-        @show = Show.find(params[:show_id])
+        if Show.where(:id => params[:show_id]).exists?
+
+          @show = Show.find(params[:show_id])
+
+        end
+
 
       end
 
+    else
+
+      flash[:login_prompt] = "Login or Signup to write your review."
+      redirect_to login_path 
 
     end
+
+
 
 
 

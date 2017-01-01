@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .modal-container{
-	background: rgba(0,0,0,.5);
+	background: rgba(0,0,0,.6);
 	position: fixed;
 	height: 100%;
 	width: 100%;
@@ -71,4 +71,13 @@
 
 .modal-dropdown{
 	font-size: 30px;	
+}
+
+span.dismiss-modal{
+	float: right;
+    font-weight: 800;
+    position: relative;
+    right: -40px;
+    top: -15px;
+    font-size: 20px;
 }

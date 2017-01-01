@@ -2,138 +2,134 @@
 
 </div>
 
-<div class="profile-content">
+<div class="profile-content-container">
 
-  <div class="profile-title-container">
+  <div class="profile-content">
 
-    <div class="profile-image-container">
+    <div class="profile-title-container">
+
+      <div class="profile-image-container">
+        
+        <%= image_tag @show.image.url(:medium), class: ""%>
       
-      <%= image_tag @show.image.url(:medium), class: ""%>
+      </div>
+
+      <div class="profile-detail-container">
+
+        <h1><%= @show.name %></h1>
+
+        <p><%= @show.start_time.strftime("%A, %b %e, %Y") %><% if user_signed_in? %><% if @show.user_id == current_user.id %><br><a class="button">Add Dates</a><%end%><%end%></p>
+
+        <a class="button green-background">Buy Tickets</a><!-- <%# if @show.website_url %><%# link_to @show.website_url do %><a class="button blue-background" href="<%# @show.website_url %>">Website</a><%#end%><%#end%> -->
+
+      </div>
+
+    </div>
+
+    <div class="profile-body-container">
+
+      <div class="profile-body-main">
+
+        <div class="profile-section">
+
+          <h2>About the Show</h2>
+
+          <p><%= @show.about %></p>
+
+        </div>
+
+        <div class="profile-section">
+
+          <h2>Featured Comics</h2>
+
+          <div class="image-grid">
+
+            <% Performer.all.each do |performer| %>
+
+              <%= link_to performer do %>
+                
+                <div class="entry">
+
+                  <div class="image-container">
+                    <%= image_tag performer.image.url(:medium) %>
+          
+                  </div>
+
+                  <div class="detail-container centered">
+
+                    <a class="metadata name"><%= performer.name %></a>
+
+                  </div>
+
+
+                </div>
+
+              <%end%>
+
+            <%end%>
+
+          </div>
+
+        </div>
+
+
+        <div class="profile-section">
+
+          <h2>About the Producer</h2>
+
+          <p>Producer producer</p>
+
+        </div>
+
+      </div>
+
+
+      <div class="profile-body-side">
+
+        <div class="profile-body-side-content">
+
+          <div class="profile-section">
+
+            <h2>Date and Time</h2>
+
+            <p><%= @show.display_date %></p>
+
+          </div>
+
+          <div class="profile-section">
+
+            <h2>Location</h2>
+
+            <p><%= @show.address_line_1 %></p>
+
+            <p><%= @show.address_line_2 %></p>
+
+            <p><%= @show.city %>, <%= @show.state_province %></p>
+
+          </div>
+          
+          <div class="profile-section">
+
+            <h2>More Dates</h2>
+
+            <% if @show.show_occurences.count > 0 %>
+
+              <% @show.show_occurences.each do |occurence| %>
+
+                <%= occurence.start_time.strftime("%A, %b %e, %Y @ %l:%M %p") %>
+
+              <%end%>
+
+            <%end%>
+
+          </div>
+
+        </div>
     
-    </div>
-
-    <div class="profile-detail-container">
-
-      <h1><%= @show.name %></h1>
-
-      <p><%= @show.start_time.strftime("%A, %b %e, %Y") %><% if user_signed_in? %><% if @show.user_id == current_user.id %><br><a class="button">Add Dates</a><%end%><%end%></p>
-
-      <a class="button green-background">Buy Tickets</a><!-- <%# if @show.website_url %><%# link_to @show.website_url do %><a class="button blue-background" href="<%# @show.website_url %>">Website</a><%#end%><%#end%> -->
+      </div>
 
     </div>
 
   </div>
-
-  <div class="profile-body-container">
-
-    <div class="profile-body-main">
-
-      <div class="profile-section">
-
-        <h2>About the Show</h2>
-
-        <p><%= @show.about %></p>
-
-      </div>
-
-      <div class="profile-section">
-
-        <h2>Featured Comics</h2>
-
-        <div class="image-grid">
-
-          <% Performer.all.each do |performer| %>
-
-            <%= link_to performer do %>
-              
-              <div class="entry">
-
-                <div class="image-container">
-                  <%= image_tag performer.image.url(:medium) %>
-        
-                </div>
-
-                <div class="detail-container centered">
-
-                  <a class="metadata name"><%= performer.name %></a>
-
-                </div>
-
-
-              </div>
-
-            <%end%>
-
-          <%end%>
-
-        </div>
-
-      </div>
-
-
-      <div class="profile-section">
-
-        <h2>About the Producer</h2>
-
-        <p>Producer producer</p>
-
-      </div>
-
-    </div>
-
-
-    <div class="profile-body-side">
-
-      <div class="profile-body-side-content">
-
-        <div class="profile-section">
-
-          <h2>Date and Time</h2>
-
-          <p><%= @show.display_date %></p>
-
-        </div>
-
-        <div class="profile-section">
-
-          <h2>Location</h2>
-
-          <p><%= @show.address_line_1 %></p>
-
-          <p><%= @show.address_line_2 %></p>
-
-          <p><%= @show.city %>, <%= @show.state_province %></p>
-
-        </div>
-        
-        <div class="profile-section">
-
-          <h2>More Dates</h2>
-
-          <% if @show.show_occurences.count > 0 %>
-
-            <% @show.show_occurences.each do |occurence| %>
-
-              <%= occurence.start_time.strftime("%A, %b %e, %Y @ %l:%M %p") %>
-
-            <%end%>
-
-          <%end%>
-
-        </div>
-
-      </div>
-  
-    </div>
-
-  </div>
-
-
-
-
-
-
-
-
 
 </div>
