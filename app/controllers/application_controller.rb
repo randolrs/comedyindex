@@ -11,27 +11,31 @@ class ApplicationController < ActionController::Base
 
   def check_for_location
 
-    unless session[:market]
+    if user_signed_in?
 
-      if user_signed_in?
-
-        if current_user.default_market_id
-          session[:market] = Market.find(current_user.default_market_id)
-        else
-          session[:market] = Market.find(1)
-          session[:location_is_unset] = true
-        end
+      if current_user.default_market_id
+        
+        session[:market] = Market.find(current_user.default_market_id)
 
       else
+
+        unless session[:market]
+
+        session[:market] = Market.find(1)
+        session[:location_is_unset] = true
+        
+        end
+
+      end
+
+    else
+
+      unless session[:market]
 
         session[:market] = Market.find(1)
         session[:location_is_unset] = true
 
       end
-    
-      
-
-
 
     end
 

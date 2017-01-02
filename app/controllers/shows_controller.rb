@@ -12,6 +12,7 @@ class ShowsController < ApplicationController
     @market_object = Market.find_by_short_name(params[:market_name])
     @shows = @market_object.shows
     @city = @market_object.name
+    @show_dashboard_view = true
     @time_period = "Anyday"
     @price_description = "Any Price"
     @show_type = "Any Show Type"

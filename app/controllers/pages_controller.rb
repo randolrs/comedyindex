@@ -50,6 +50,7 @@ class PagesController < ApplicationController
 	def update_market
 		
 		market_id = params[:market_data][:market_id]
+		@market = Market.find(market_id)
 		
 		if user_signed_in?
 
@@ -57,10 +58,20 @@ class PagesController < ApplicationController
 
 		end
 
-
 		session[:market] = Market.find(market_id)
 
-		redirect_to :back
+		session[:location_is_unset] = false
+
+		if params[:dashboard_refresh]
+			
+			redirect_to show_dashboard_path(@market["short_name"])
+
+		else
+
+			redirect_to :back
+
+		end
+
 
 	end
 
