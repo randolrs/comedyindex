@@ -29,6 +29,10 @@ nav.header-container{
     		text-shadow: 0px 1px 1px rgba(0,0,0,1);
 		}
 
+		a.header-image{
+			padding: 10px 15px;
+		}
+
 		a.logo{
 			font-weight: 800;
     		font-size: 24px;
@@ -176,4 +180,12 @@ nav.header-container{
   cursor:pointer;
   outline:none;
   z-index:10000000000000;
+}
+
+
+.header-profile-image{
+	width:40px;
+	height: 40px;
+	border-radius: 50%;
+	border:2px solid #fff;	
 }

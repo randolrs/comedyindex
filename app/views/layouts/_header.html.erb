@@ -27,7 +27,7 @@
 
 				<% if user_signed_in? %>
 
-					<li><%= link_to "Account", account_path %></li><li><a class="clickable modal-cta" data-modal-id="select-city"><% if @market %><%= @market["name"] %><%else%>SELECT A CITY<%end%><span class="glyphicon glyphicon-map-marker" style="margin-left: 10px;"></span></a></li>
+					<li><a href="<%= account_path%>" class="header-image"><%= image_tag current_user.image.url(:small), class: "header-profile-image" %></a></li><li><a class="clickable modal-cta" data-modal-id="select-city"><% if @market %><%= @market["name"] %><%else%>SELECT A CITY<%end%><span class="glyphicon glyphicon-map-marker" style="margin-left: 10px;"></span></a></li>
 
 				<%else%>
 					
@@ -45,7 +45,7 @@
 
 					<li><a href="<%= new_show_path%>"><span class="glyphicon glyphicon-plus"></span></a></li>
 
-					<li><a href="<%= account_path%>"><span class="glyphicon glyphicon-cog"></span></a></li>
+					<li><a href="<%= account_path%>" class="header-image"><%= image_tag current_user.image.url(:small), class: "header-profile-image" %></a></li>
 
 				<%else%>
 

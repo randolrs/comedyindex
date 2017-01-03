@@ -13,6 +13,20 @@
 
 		<%= form_for(current_user, url: registration_path(current_user), html: { method: :put }) do |f| %>
 
+			<div class="field">
+
+		      <label>Profile Picture</label>
+
+		      <div class="image-field-container">
+		        
+		        <h3>Click to Add Profile Picture</h3>
+
+		        <%= f.file_field :image, class: "form-control" %>
+
+		      </div>
+
+		    </div>
+
 		    <div class="field">
 		      <%= f.label :email %><br />
 		      <%= f.email_field :email %>
