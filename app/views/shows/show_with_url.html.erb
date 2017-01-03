@@ -118,18 +118,6 @@
 
         </div>
 
-        <% if @show.venue_id %>
-
-          <div class="profile-section">
-
-            <p class="section-title">About the Venue</p>
-
-            <p><%= @show.venue.about %></p>
-
-          </div>
-
-        <%end%>
-
         <div class="profile-section">
 
           <p class="section-title">About the Producer</p>
@@ -162,6 +150,18 @@
             <%= render :partial => 'shows/more_dates', :locals => {:show => @show} %>
 
           </div>
+
+          <% if @show.venue_id %>
+
+            <div class="profile-section">
+
+              <p class="section-title">About the Venue</p>
+
+              <p><%= @show.venue.about %></p>
+
+            </div>
+
+          <%end%>
 
         </div>
     
