@@ -7,4 +7,6 @@ class Venue < ActiveRecord::Base
 
 	validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
+	has_many :shows
+	belongs_to :market
 end

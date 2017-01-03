@@ -1,11 +1,27 @@
 <h2>Location</h2>
 
-<p><%= @show.venue_name %></p>
+<% if @show.venue_id %>
 
-<p><%= @show.address_line_1 %></p>
+	<p><%= @show.venue.name %></p>
 
-<% if @show.address_line_2 %><p><%= @show.address_line_2 %></p><%end%>
+	<p><%= @show.venue.address_line_1 %></p>
 
-<p><%= @show.city %>, <%= @show.state_province %></p>
+	<% if @show.venue.address_line_2 %><p><%= @show.venue.address_line_2 %></p><%end%>
+
+	<p><%= @show.venue.city %>, <%= @show.venue.state_province %></p>
+
+
+<%else%>
+
+	<p><%= @show.venue_name %></p>
+
+	<p><%= @show.address_line_1 %></p>
+
+	<% if @show.address_line_2 %><p><%= @show.address_line_2 %></p><%end%>
+
+	<p><%= @show.city %>, <%= @show.state_province %></p>
+
+
+<%end%>
 
 

@@ -19,6 +19,47 @@
   <br>
 
   <div class="field">
+    <%= f.label :address_line_1 %><br>
+    <%= f.text_field :address_line_1 %>
+  </div>
+
+  <br>
+  <div class="field">
+    <%= f.label :address_line_2 %><br>
+    <%= f.text_field :address_line_2 %>
+  </div>
+
+  <br>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+
+  <br>
+
+  <div class="field">
+    <label>State/Province</label><br>
+    <%= f.text_field :state_province %>
+  </div>
+
+  <div class="field">
+
+    <label>Market</label><br>
+      
+    <%= collection_select(:venue, :market_id, Market.all, :id, :name, prompt: true) %>
+  
+  </div>
+
+  <br>
+
+  <div class="field">
+    <label>Venue Description</label><br>
+    <%= f.text_area :about %>
+  </div>
+
+  <br>
+
+  <div class="field">
     <%= f.label :image %><br>
     <%= f.file_field :image, class: "form-control" %>
   </div>
@@ -66,19 +107,7 @@
   </div>
 
   <br>
-
-  <div class="field">
-    <%= f.label :city_id %><br>
-    <%= f.number_field :city_id %>
-  </div>
-  <div class="field">
-    <%= f.label :address_line_1 %><br>
-    <%= f.text_field :address_line_1 %>
-  </div>
-  <div class="field">
-    <%= f.label :address_line_2 %><br>
-    <%= f.text_field :address_line_2 %>
-  </div>
+  
 
 
   <div class="actions">

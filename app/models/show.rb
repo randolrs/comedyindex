@@ -15,6 +15,8 @@ class Show < ActiveRecord::Base
 
 	has_many :show_reviews
 
+	belongs_to :venue
+
 	accepts_nested_attributes_for :show_occurences, allow_destroy: true
 
 	def average_rating 

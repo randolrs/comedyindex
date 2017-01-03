@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170101005651) do
+ActiveRecord::Schema.define(version: 20170103003954) do
 
   create_table "cities", force: :cascade do |t|
     t.string   "name"
@@ -130,6 +130,10 @@ ActiveRecord::Schema.define(version: 20170101005651) do
     t.string   "youtube_url"
     t.string   "snapchat_url"
     t.string   "website_url"
+    t.text     "about"
+    t.string   "state_province"
+    t.integer  "market_id"
+    t.string   "city"
   end
 
 end

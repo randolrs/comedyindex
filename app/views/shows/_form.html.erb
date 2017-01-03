@@ -49,6 +49,8 @@
     <div class="field">
       <%= f.label :venue_id %><br>
       <%= f.number_field :venue_id %><br>
+
+      <%= collection_select(:show, :venue_id, Venue.all, :id, :name, prompt: "Select a Venue") %>
       
       <%= f.label :venue_name %><br>
       <%= f.text_field :venue_name %><br>
