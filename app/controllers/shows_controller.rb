@@ -13,9 +13,9 @@ class ShowsController < ApplicationController
     @shows = @market_object.shows
     @city = @market_object.name
     @show_dashboard_view = true
-    @time_period = "Anyday"
+    @time_period = "Any Day"
     @price_description = "Any Price"
-    @show_type = "Any Show Type"
+    @show_type = "Any Type"
   end
 
   def index_for_review
@@ -88,8 +88,8 @@ class ShowsController < ApplicationController
 
           ShowOccurence.create(:show_id => @show.id, :start_time => @show.start_time)
 
-          format.html { redirect_to @show, notice: 'Show was successfully created.' }
-          format.json { render :show, status: :created, location: @show }
+          format.html { redirect_to show_with_url_path(@show.url_slug), notice: 'Show was successfully created.' }
+          format.json { render :show, status: :created, location: show_with_url_path(@show.url_slug) }
         else
           format.html { render :new }
           format.json { render json: @show.errors, status: :unprocessable_entity }
@@ -108,8 +108,8 @@ class ShowsController < ApplicationController
   def update
     respond_to do |format|
       if @show.update(show_params)
-        format.html { redirect_to @show, notice: 'Show was successfully updated.' }
-        format.json { render :show, status: :ok, location: @show }
+        format.html { redirect_to show_with_url_path(@show.url_slug), notice: 'Show was successfully updated.' }
+        format.json { render :show, status: :ok, location: show_with_url_path(@show.url_slug) }
       else
         format.html { render :edit }
         format.json { render json: @show.errors, status: :unprocessable_entity }

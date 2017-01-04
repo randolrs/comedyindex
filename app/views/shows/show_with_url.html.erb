@@ -31,8 +31,11 @@
         <%end%>
         
         <div class="button-container">
-
-          <%= link_to "Write a Review", new_review_path(@show.id), class:"button green-background"%>
+          <% if @show.show_reviews.count > 0 %>
+            <%= link_to "Write a Review", new_review_path(@show.id), class:"button green-background"%>
+          <%else%>
+            <%= link_to "Be First to Review", new_review_path(@show.id), class:"button green-background"%>
+          <%end%>
 
         </div>
 
@@ -145,11 +148,15 @@
 
           </div>
 
-          <div class="profile-section">
+          <% if @show.more_dates %>
+            
+            <div class="profile-section">
 
-            <%= render :partial => 'shows/more_dates', :locals => {:show => @show} %>
+              <%= render :partial => 'shows/more_dates', :locals => {:show => @show} %>
 
-          </div>
+            </div>
+
+          <%end%>
 
           <% if @show.venue_id %>
 
@@ -158,6 +165,8 @@
               <p class="section-title">About the Venue</p>
 
               <p><%= @show.venue.about %></p>
+
+              <p><a class="blue-text" href="<%= @show.venue.website_url %>">Website <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a></p>
 
             </div>
 

@@ -17,8 +17,9 @@
 
         <p><%= show.display_date %></p>
 
-        <p>Venue McGullicuddy</p>
-        <p>Rating: <%= show.average_rating %>/5.0 | <%= show.show_reviews.count %> Reviews</p>
+        <p><%= show.venue_id %></p>
+
+        <p><div class="img-stars <%= show.css_rating_code %>"></div>(<%= show.average_rating %>) | <%= show.show_reviews.count %> Reviews</p>
 
       </div>
 
@@ -39,8 +40,6 @@
       <div class="detail-container">
         
         <p class="title"><%= show.name %></p>
-
-        <p><%= show.display_date %></p>
 
         <p>Venue McGullicuddy</p>
         <p>Rating: <%= show.average_rating %>/5.0 | <%= show.show_reviews.count %> Reviews</p>
