@@ -70,12 +70,18 @@
             <table>
             
               <% @show.show_reviews.all.each do |review| %>
+                <tr>
+                  <td>
+                    <%= image_tag review.user.image.url(:small), class: "reviewer-small-image" %><br>
+                    <%= review.user.email.first(5) %>
+                    <%= Market.find(review.user.default_market_id).name %>
+                  </td>
+                  <td>
+                    <div class="img-stars <%= review.css_rating_code %>"></div><br>
+                    <i>"<%= review.body %>"</i>
+                  </td>
 
-                <div class="outline">
-                  img<%# current_user.image(:small) %>
-                  <%= review.rating %>
-                  <%= review.body %>
-                </div>
+                </tr>
 
               <%end%>
               
