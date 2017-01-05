@@ -19,7 +19,8 @@
 
         <p><%= number_to_currency(show.price, precision: 2)  %> | <% show.categories.each do |category| %><%= category.name %><%end%></p>
 
-        <p><b>Next Show: </b><%= show.display_date %></p>
+        <p><b><%= show.display_date %></b></p>
+        <p></b><%= show.display_time %></p>
 
         <p><%# if show.venue_id %><%# show.venue.name %><%#else%><%# show.venue_name %><%#end%></p>
 
