@@ -18,11 +18,15 @@
 
         <h1><%= @show.name %></h1>
 
+        <p><div class="img-stars large <%= @show.css_rating_code %>"></div> <%= @show.show_reviews.count.to_s + " " + "Review".pluralize(@show.show_reviews.count) %></p>
+
+        <br>
+
         <p><%= @show.about %></p>
 
         <p><%= @show.display_date %></p>
 
-        <p>Rating: <%= @show.average_rating %>/5.0 | <%= @show.show_reviews.count %> Reviews</p>
+        
 
         <% if user_signed_in?%>
 

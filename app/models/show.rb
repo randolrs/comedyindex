@@ -92,6 +92,26 @@ class Show < ActiveRecord::Base
 
 	end
 
+	def categories
+
+		categories = Array.new
+
+		if self.category_1_id
+
+			categories << Category.find(self.category_1_id)
+
+		end
+
+		if self.category_2_id
+
+			categories << Category.find(self.category_2_id)
+
+		end
+
+		
+		return categories
+
+	end
 
 	
 	def display_date

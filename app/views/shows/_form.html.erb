@@ -37,6 +37,12 @@
       <%= f.datetime_select :start_time, :ampm => true, :minute_step => 15 %>
     </div>
 
+    <div class="field">
+      <label>Category</label><br>
+      <%= collection_select(:show, :category_1_id, Category.all, :id, :name, prompt: "Select a Category") %>
+    </div>
+
+
     <%= f.fields_for :show_occurences do |builder| %>
       <%= render 'show_occurence_fields', f: builder %>
     <% end %>

@@ -15,11 +15,15 @@
         
         <p class="title"><%= show.name %></p>
 
-        <p><%= show.display_date %></p>
+        <p><div class="img-stars <%= show.css_rating_code %>"></div> <%= show.show_reviews.count.to_s + " " + "Review".pluralize(show.show_reviews.count) %></p>
 
-        <p><%= show.venue_id %></p>
+        <p><%= number_to_currency(show.price, precision: 2)  %> | <% show.categories.each do |category| %><%= category.name %><%end%></p>
 
-        <p><div class="img-stars <%= show.css_rating_code %>"></div>(<%= show.average_rating %>) | <%= show.show_reviews.count %> Reviews</p>
+        <p><b>Next Show: </b><%= show.display_date %></p>
+
+        <p><%# if show.venue_id %><%# show.venue.name %><%#else%><%# show.venue_name %><%#end%></p>
+
+        
 
       </div>
 
@@ -42,7 +46,7 @@
         <p class="title"><%= show.name %></p>
 
         <p>Venue McGullicuddy</p>
-        <p>Rating: <%= show.average_rating %>/5.0 | <%= show.show_reviews.count %> Reviews</p>
+        <p><div class="img-stars <%= show.css_rating_code %>"></div> <%= show.show_reviews.count.to_s + " " + "Review".pluralize(show.show_reviews.count) %></p>
         <p><%= link_to "Start Your Review", new_review_path(show.id), class:"red-text"%></p>
 
       </div>

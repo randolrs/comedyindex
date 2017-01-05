@@ -51,11 +51,16 @@ body{
 
 
  .content-container{
- 	padding: 60px 0px 0px 0px;
+ 	padding: 60px 0px;
+ 	margin-bottom: -60px;
  	position: relative;
  	
  	min-height: 100%;
  	
+ }
+
+ .content-container.all-white-background{
+ 	background: #fff;
  }
 
 .mobile-only{

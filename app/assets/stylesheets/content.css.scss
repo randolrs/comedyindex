@@ -24,18 +24,23 @@
 
     	img.small-index-image{
     		
-    		height: 150px;
+    		height: 180px;
     	}
     }
 
     .detail-container{
     	width:100%;
-    	padding: 10px;
+    	padding: 20px;
 
     	p.title{
     		font-size: 1.2em;
     		font-weight: 800;
-    		margin-bottom: 0.5em;
+    		
+
+    	}
+
+    	p{
+    		margin-bottom: 0.25em;
     	}
     }
 }
@@ -62,5 +67,5 @@
 }
 
 .small-index-image{
-	height: 150px;
+	height: 180px;
 }
