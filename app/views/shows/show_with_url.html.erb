@@ -73,7 +73,7 @@
                 <tr>
                   <td>
                     <%= image_tag review.user.image.url(:small), class: "reviewer-small-image" %><br>
-                    <%= review.user.email.first(5) %>
+                    <%= review.user.email.first(5) %><br>
                     <%= Market.find(review.user.default_market_id).name %>
                   </td>
                   <td>
