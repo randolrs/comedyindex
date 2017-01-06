@@ -126,7 +126,7 @@ class Show < ActiveRecord::Base
 
 				next_date = future_dates.sort_by { |i| i.start_time }
 				
-				return next_date.first.start_time.strftime("%a, %b %e, %Y")
+				return next_date.first.start_time.strftime("%a, %b %e")
 
 			else
 
@@ -134,7 +134,7 @@ class Show < ActiveRecord::Base
 
 				most_recent_date = past_dates.sort_by { |i| i.start_time }
 				
-				return most_recent_date.first.start_time.strftime("%a, %b %e, %Y")
+				return most_recent_date.first.start_time.strftime("%a, %b %e")
 			end
 		else
 
