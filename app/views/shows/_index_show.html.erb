@@ -15,7 +15,7 @@
         
         <p class="title"><%= show.name %><span class="price"><%= number_to_currency(show.price, precision: 2)  %></span></p>
 
-        <p><div class="img-stars <%= show.css_rating_code %>"></div> <%= show.show_reviews.count.to_s + " " + "Review".pluralize(show.show_reviews.count) %> <span style="float:right; top: 10px; font-size: 10px;">Mexico<% show.categories.each do |category| %><%= category.name %><%end%></span></p>
+        <p><div class="img-stars <%= show.css_rating_code %>"></div> <%= show.show_reviews.count.to_s + " " + "Review".pluralize(show.show_reviews.count) %></p>
 
         
 

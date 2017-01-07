@@ -18,6 +18,86 @@
 
 </section>
 
+<section class="home-index">
+
+	<div class="content">
+
+		<header class="home-section-header">Recommended for Tonight</header>
+
+		<% Show.all.take(3).each do |show| %>
+
+      		<%= render :partial => 'shows/index_show', :locals => {:show =>  show} %>
+
+    	<% end %>
+
+    </div>
+
+</section>
+
+<section class="home-index">
+
+	<div class="content">
+
+		<header class="home-section-header">Staff Picks</header>
+
+		<% Show.all.take(3).each do |show| %>
+
+      		<%= render :partial => 'shows/index_show', :locals => {:show =>  show} %>
+
+    	<% end %>
+
+    </div>
+
+</section>
+
+<section class="home-index">
+
+	<div class="content">
+
+		<header class="home-section-header">Best Comedy Shows this Weekend</header>
+
+		<% Show.all.last(3).each do |show| %>
+
+      		<%= render :partial => 'shows/index_show', :locals => {:show =>  show} %>
+
+    	<% end %>
+
+    </div>
+
+</section>
+
+<section class="home-index">
+
+	<div class="content">
+
+		<header class="home-section-header">New Shows</header>
+
+		<% Show.all.first(3).each do |show| %>
+
+      		<%= render :partial => 'shows/index_show', :locals => {:show =>  show} %>
+
+    	<% end %>
+
+    </div>
+
+</section>
+
+<section class="home-index">
+
+	<div class="content">
+
+		<header class="home-section-header">Recommended for Tonight</header>
+
+		<% Show.all.take(3).each do |show| %>
+
+      		<%= render :partial => 'shows/index_show', :locals => {:show =>  show} %>
+
+    	<% end %>
+
+    </div>
+
+</section>
+
 
 <%else%>
 
