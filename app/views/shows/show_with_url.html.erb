@@ -22,8 +22,6 @@
 
         <br>
 
-        <p><%= @show.about %></p>
-
         <p><%= @show.display_date %></p>
 
         
@@ -61,9 +59,19 @@
 
       <div class="profile-body-main">
 
-        <div class="profile-section">
 
-          <p class="section-title">Reviews</p>
+        <section class="profile-section">
+
+          <header class="section-title">About the Show</header>
+
+          <p><%= @show.about %></p>
+
+        </section>
+
+
+        <section class="profile-section">
+
+          <header class="section-title">Reviews</header>
           
           <% if @show.show_reviews.count > 0 %>
             
@@ -93,12 +101,12 @@
 
           <%end%>
 
-        </div>
+        </section>
 
 
-        <div class="profile-section">
+        <section class="profile-section">
 
-          <p class="section-title">Featured Comics</p>
+          <header class="section-title">Featured Comics</header>
 
           <div class="image-grid">
 
@@ -129,15 +137,18 @@
           </div>
 
 
-        </div>
+        </section>
 
-        <div class="profile-section">
 
-          <p class="section-title">About the Producer</p>
+
+
+        <section class="profile-section">
+
+          <header class="section-title">About the Producer</header>
 
           <p>Producer producer</p>
 
-        </div>
+        </section>
 
       </div>
 
@@ -146,31 +157,31 @@
 
         <div class="profile-body-side-content">
 
-          <div class="profile-section">
+          <section class="profile-section">
           
             <%= render :partial => 'shows/date_and_time', :locals => {:show => @show} %>
 
-          </div>
+          </section>
 
-          <div class="profile-section">
+          <section class="profile-section">
 
             <%= render :partial => 'shows/full_address', :locals => {:show => @show} %>
 
-          </div>
+          </section>
 
           <% if @show.more_dates %>
             
-            <div class="profile-section">
+            <section class="profile-section">
 
               <%= render :partial => 'shows/more_dates', :locals => {:show => @show} %>
 
-            </div>
+            </section>
 
           <%end%>
 
           <% if @show.venue_id %>
 
-            <div class="profile-section">
+            <section class="profile-section">
 
               <p class="section-title">About the Venue</p>
 
@@ -178,7 +189,7 @@
 
               <p><a class="blue-text" href="<%= @show.venue.website_url %>">Website <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a></p>
 
-            </div>
+            </section>
 
           <%end%>
 
