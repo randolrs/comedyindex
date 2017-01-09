@@ -5,14 +5,14 @@
 	<div class="menu-content default-off">
 		
 		<ul>
-			<li class="centered">COMEDY<span style="color: #66dd66;">ZILLA</span></li>
+			<li class="menu-header centered">COMEDY<span style="color: #66dd66;">ZILLA</span></li>
 			<li><%= link_to "Home", root_path %></li>
 			<li><%= link_to "Write a Review", show_dashboard_path(@market["short_name"]) %></li>
 			<!-- <li><%# link_to "Community", community_path %></li> -->
 			<li><%= link_to "Comedy Shows", show_dashboard_path(@market["short_name"]) %></li>
 			<% unless user_signed_in?%>
 				<li><%= link_to "Login", login_path, class:"" %></li>
-				<li><%= link_to "Signup", signup_path, class:"blue-background" %></li>
+				<li><%= link_to "Signup", signup_path%></li>
 			<%else%>
 				<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
 			<%end%>

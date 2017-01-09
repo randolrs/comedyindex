@@ -2,10 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'colors';
+
+@import 'material';
+
 nav.header-container{
 	position: fixed;
 	background: #111;
-	box-shadow: none;
+	box-shadow: 0 2px 5px rgba(0,0,0,.26);
 	width: 100%;
 	display: block;
 	top: 0px;
@@ -37,9 +41,14 @@ nav.header-container{
 			font-weight: 800;
     		font-size: 24px;
     		letter-spacing: -1px;
-    		color: #ff5a5f;
+    		color: $brand-blue;
+    		display: inline-block;
     		
 		}
+
+		a.menu-button{
+			padding:15px 5px;
+		}	
 
 		a.logo:hover{
 			-webkit-animation: neon6 1.5s ease-in-out infinite alternate;
@@ -190,4 +199,26 @@ nav.header-container{
 	height: 40px;
 	border-radius: 50%;
 	border:2px solid #fff;	
+}
+
+.cheeseburger {
+	font-weight: 800;
+   	font-size: 20px;
+   	margin-left: 10px;
+    position: relative;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: 0.3em;
+    border-top: 0.15em solid #fff;
+    border-bottom: 0.15em solid #fff;
+}
+
+.cheeseburger:before {
+    content: "";
+    position: absolute;
+    top: 0.3em;
+    left: 0px;
+    width: 100%;
+    border-top: 0.15em solid #fff;
 }
