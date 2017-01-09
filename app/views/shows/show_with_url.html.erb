@@ -81,7 +81,7 @@
             
               <% @show.show_reviews.all.each do |review| %>
                 <tr>
-                  <td style="width: 100px;">
+                  <td style="width: 150px;">
                     <%= image_tag review.user.image.url(:small), class: "reviewer-small-image" %><br>
                     <%= review.user.first_name + " " + review.user.last_name.first(1) + "."   %><br>
                     <%= Market.find(review.user.default_market_id).name %>
@@ -105,13 +105,13 @@
 
         </section>
 
-        <section class="profile-section">
+        <!-- <section class="profile-section">
 
           <header class="section-title">About the Producer</header>
 
           <p>Producer producer</p>
 
-        </section>
+        </section> -->
 
       </div>
 
@@ -144,6 +144,8 @@
 
               <p><%= @show.venue.about %></p>
 
+              <br>
+              
               <p><a class="blue-text" href="<%= @show.venue.website_url %>">Website <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a></p>
 
             </section>

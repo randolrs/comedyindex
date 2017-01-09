@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-
+@import 'colors';
 
 
 .card{
@@ -61,6 +61,16 @@
 	
 	margin: 0 auto;
 	
+}
+
+.card.flat{
+    padding: 10px;
+    box-shadow: none;
+    border: 1px solid #aaa;
+}
+
+.card.flat:hover{
+    border: 1px solid $brand-purple;
 }
 
 .medium-profile-image{
