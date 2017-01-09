@@ -29,7 +29,7 @@
 
 <section class="home-index">
 
-	<header class="home-section-header">Top Picks for Tonight in <%= @market["name"] %></header>
+	<header class="home-section-header">Tonight in <%= @market["name"] %></header>
 
 	<% Show.all.take(3).each do |show| %>
 
@@ -41,7 +41,7 @@
 
 <section class="home-index">
 
-	<header class="home-section-header">Recommended for the Weekend in <%= @market["name"] %></header>
+	<header class="home-section-header">This Weekend in <%= @market["name"] %></header>
 
 	<% Show.all.take(3).each do |show| %>
 
