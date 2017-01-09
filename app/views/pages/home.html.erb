@@ -20,17 +20,10 @@
 
 </section>
 
-<section class="home-index">
+<section class="home-index full-screen-only centered">
 
-	<header class="home-section-header">Zilla <%= @market["name"] %></header>
+	<header class="home-section-header" style="display: inline-block;">Zilla <%= @market["name"] %></header><span class="blue-text modal-cta" data-modal-id="select-city" style="display: inline-block;">Change City</span>
 
-	<ul class="horizontal centered">
-
-		<% Market.all.each do |market| %>
-			<li><a href="<%= update_market_path %>" method="POST"><%= market.name %></a></li>
-		<%end%>
-
-	</ul>
 
 </section>
 

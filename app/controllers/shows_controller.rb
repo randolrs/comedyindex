@@ -16,6 +16,10 @@ class ShowsController < ApplicationController
     @time_period = "Any Day"
     @price_description = "Any Price"
     @show_type = "Any Type"
+
+    @nav_return = true
+    @nav_return_title = @city + " Comedy Shows"
+
   end
 
   def index_for_review
