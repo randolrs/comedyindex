@@ -22,7 +22,9 @@
 
         <br>
 
-        <p><%= @show.display_date %></p>
+        <p>Next Show: <%= @show.display_date %></p>
+
+        <details><%= render :partial => 'performers/index_grid', :locals => {:performers => Performer.all} %></details>
 
         
 
@@ -32,7 +34,7 @@
 
         <%end%>
         
-        <div class="button-container">
+        <div class="button-container full-screen-only">
           <% if @show.show_reviews.count > 0 %>
             <%= link_to "Write a Review", new_review_path(@show.id), class:"button green-background"%>
           <%else%>
@@ -79,9 +81,9 @@
             
               <% @show.show_reviews.all.each do |review| %>
                 <tr>
-                  <td>
+                  <td style="width: 100px;">
                     <%= image_tag review.user.image.url(:small), class: "reviewer-small-image" %><br>
-                    <%= review.user.email.first(5) %><br>
+                    <%= review.user.first_name + " " + review.user.last_name.first(1) + "."   %><br>
                     <%= Market.find(review.user.default_market_id).name %>
                   </td>
                   <td>
@@ -103,45 +105,6 @@
 
         </section>
 
-
-        <section class="profile-section">
-
-          <header class="section-title">Featured Comics</header>
-
-          <div class="image-grid">
-
-            <% Performer.all.each do |performer| %>
-
-              <%= link_to performer do %>
-                
-                <div class="entry">
-
-                  <div class="image-container">
-                    
-                    <%= image_tag performer.image.url(:medium), class:"medium round" %>
-          
-                  </div>
-
-                  <div class="detail-container centered">
-
-                    <a class="metadata name"><%= performer.name %></a>
-
-                  </div>
-
-                </div>
-
-              <%end%>
-
-            <%end%>
-
-          </div>
-
-
-        </section>
-
-
-
-
         <section class="profile-section">
 
           <header class="section-title">About the Producer</header>
@@ -156,12 +119,6 @@
       <div class="profile-body-side">
 
         <div class="profile-body-side-content">
-
-          <section class="profile-section">
-          
-            <%= render :partial => 'shows/date_and_time', :locals => {:show => @show} %>
-
-          </section>
 
           <section class="profile-section">
 
@@ -200,4 +157,40 @@
     </div>
 
   </div>
+
+<div class="fixed-bottom-cta-container mobile-only centered">
+
+  <ul class="horizontal">
+
+    <li>
+
+      <% if @show.show_reviews.count > 0 %>
+        
+        <%= link_to "Write a Review", new_review_path(@show.id), class:"button green-background"%>
+
+      <%else%>
+        
+        <%= link_to "Be First to Review", new_review_path(@show.id), class:"button green-background"%>
+
+      <%end%>
+
+    </li>
+
+    <li>
+
+      <% if @show.show_reviews.count > 0 %>
+        
+        <%= link_to "Write a Review", new_review_path(@show.id), class:"button green-background"%>
+
+      <%else%>
+        
+        <%= link_to "Be First to Review", new_review_path(@show.id), class:"button green-background"%>
+
+      <%end%>
+
+    </li>
+
+  </ul>
+
+</div>
 

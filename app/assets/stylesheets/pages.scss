@@ -11,9 +11,9 @@ section.home-form{
 	width:100%;
 	height: 250px;
 	max-height: 50%;
-	background: #000C40;
-    background: -webkit-linear-gradient(to bottom, #C02425 , #F0CB35);
-    background: linear-gradient(to bottom, #C02425 , #F0CB35);
+	background: #111;
+    background: -webkit-linear-gradient(to bottom, #111 , #111);
+    background: linear-gradient(to bottom, #111 , #111);
 }
 
 .section-overlay{
@@ -44,12 +44,21 @@ section.home-index{
 	display: block;
 	padding: 20px;
 	
-	header.home-section-header{
+	header.main-header{
 		font-size: 2em;
 	    margin-bottom: 0.5em;
-	    color: $brand-red;
+	    color: $brand-purple;
+	    
 	    font-weight: 800;
-	    text-align: center;
+	    
+	}
+
+	header.home-section-header{
+		font-size: 1.5em;
+	    margin-bottom: 0.5em;
+	    
+	    font-weight: 800;
+	    
 	}
 }
 
