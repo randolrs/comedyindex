@@ -48,7 +48,7 @@
 
         <p>Venue McGullicuddy</p>
         <p><div class="img-stars <%= show.css_rating_code %>"></div> <%= show.show_reviews.count.to_s + " " + "Review".pluralize(show.show_reviews.count) %></p>
-        <p><%= link_to "Start Your Review", new_review_path(show.id), class:"red-text"%></p>
+        <p style="text-align:right;"><%= link_to "Start Your Review", new_review_path(show.id), class:"red-text" %></p>
 
       </div>
 

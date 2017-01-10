@@ -71,10 +71,16 @@
       <%= f.label :state_province %><br>
       <%= f.text_field :state_province %><br>
 
-      <label>Market</label><br>
       
-      <%= collection_select(:show, :market_id, Market.all, :id, :name, prompt: true) %><br>
    
+    </div>
+
+    <div class="field">
+    
+      <label>User (Admin Action)</label><br>
+      
+      <%= collection_select(:show, :market_id, Market.all, :id, :name, prompt: true) %>
+
     </div>
     
     <div class="field">

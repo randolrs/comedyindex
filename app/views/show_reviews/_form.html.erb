@@ -42,6 +42,18 @@
       <%# f.number_field :show_occurence_id %>
     </div> -->
 
+    <% if current_user.is_admin %>
+      
+      <div class="field">
+      
+        <label>Market</label><br>
+        
+        <%= collection_select(:show_review, :user_id, User.all, :id, :first_name, prompt: true) %>
+
+      </div>
+
+    <%end%>
+
     <div class="field">
       <label>Your Review</label><br>
       <%= f.text_area :body, required: true %>

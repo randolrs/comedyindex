@@ -84,7 +84,19 @@ class ShowReviewsController < ApplicationController
 
       @show_review = ShowReview.new(show_review_params)
 
-      @show_review.update(:user_id => current_user.id)
+      unless current_user.is_admin
+        
+        @show_review.update(:user_id => current_user.id)
+
+      else
+
+        unless @show_review.user_id
+
+          @show_review.update(:user_id => current_user.id)
+
+        end
+
+      end
 
     else
 
@@ -135,6 +147,6 @@ class ShowReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def show_review_params
-      params.require(:show_review).permit(:show_id, :show_occurence_id, :title, :body, :rating, :author_id)
+      params.require(:show_review).permit(:show_id, :show_occurence_id, :title, :body, :rating, :author_id, :user_id)
     end
 end
