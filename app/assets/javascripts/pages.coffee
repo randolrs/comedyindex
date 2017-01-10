@@ -33,6 +33,9 @@ ready = ->
 			$('body').removeClass('no-scroll')
 			$('.menu-content').animate({width:'hide'},350);
 
+		$(".dismiss-parent").click (window.event), ->
+			$(@).parent().slideUp()
+
 		$(".menu-cta").click (window.event), ->
 			$('.menu-content').animate({width:'show'},350);
 
