@@ -7,17 +7,29 @@
 			<ul class="horizontal">
 
 				<li>
-					<% unless @nav_return %>
+					
+					<span class="mobile-only">
 
-						<span class="mobile-only"><span class="cheeseburger modal-cta" data-modal-id="main-menu"></span><a class="logo" href="<%= root_path %>">CZ</a></span>
+						<% unless @nav_return %>
 
-						<span class="full-screen-only"><a class="logo" href="<%= root_path %>">COMEDYZILLA</a></span>
+							<span class="cheeseburger modal-cta" data-modal-id="main-menu"></span>
 
-					<%else%>
+							<a class="logo" href="<%= root_path %>">CZ</a>
 
-						<a href="<%= root_path %>"><span class="glyphicon glyphicon-arrow-left" style="margin-right: 10px;" aria-hidden="true"></span><%= @nav_return_title %></a>
+						<%else%>
 
-					<%end%>
+							<a href="<%= root_path %>"><span class="glyphicon glyphicon-arrow-left" style="margin-right: 10px;" aria-hidden="true"></span><%= @nav_return_title %></a>
+
+						<%end%>
+
+					</span>
+
+					<span class="full-screen-only">
+
+						<a class="logo" href="<%= root_path %>">COMEDYZILLA</a>
+
+					</span>
+						
 				</li>
 
 				<li><%= link_to "Write a Review", index_for_review_path, class:"full-screen-only" %></li>
@@ -46,7 +58,6 @@
 					<li><%= link_to "Log In", login_path %></li><li><%= link_to "Sign Up", signup_path, class:"cta" %></li><li><a class="clickable modal-cta" data-modal-id="select-city"><% if @market %><%= @market["name"] %><%else%>SELECT A CITY<%end%><span class="glyphicon glyphicon-map-marker" style="margin-left: 10px;"></span></a></li>
 
 				<%end%>
-
 
 
 			</ul>
