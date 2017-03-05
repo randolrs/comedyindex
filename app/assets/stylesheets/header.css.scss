@@ -8,8 +8,9 @@
 
 nav.header-container{
 	position: fixed;
-	background: #fff;
-	box-shadow: 0 2px 5px rgba(0,0,0,.26);
+	background: #D50000;
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14) ,0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
+	text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
 	width: 100%;
 	display: block;
 	top: 0px;
@@ -17,7 +18,7 @@ nav.header-container{
 	right:0px;
 	height: 60px;
 	z-index: 960;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Roboto', sans-serif;
 
 	.header-content{
 		padding: 0px 0px;
@@ -28,9 +29,9 @@ nav.header-container{
 		a{
 			line-height: 30px;
 			padding: 15px 12px;
-    		font-size: 14px;
-    		color: #333;
-    		font-weight: 600;
+    		font-size: 16px;
+    		color: #fff;
+    		font-weight: 400;
     		
 		}
 
@@ -39,12 +40,17 @@ nav.header-container{
 		}
 
 		a.logo{
-			font-weight: 800;
+			font-weight: 400;
     		font-size: 24px;
     		letter-spacing: -1px;
-    		color: $brand-purple;
+    		color: #fff;
     		display: inline-block;
     		
+		}
+
+		a.cheeseburger-container{
+			line-height: 12px;
+			padding: 22px 12px;
 		}
 
 		a.menu-button{
@@ -111,37 +117,42 @@ nav.header-container{
 
 .sub-header{
 	position: fixed;
-	background: #111;
-	padding: 15px 0px;
 	display: block;
 	width: 100%;
-	z-index: 959;
+	height: 50px;
+	display:block;
+	background: #D50000;
+	z-index: 961;
+	text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14) ,0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
 
 	h1{
 		font-size: 2em;
 		margin-bottom: 10px;
 		color: #fff;
-		text-shadow: 0px 1px 1px rgba(10, 10, 10, 1);
 	}
 
 	ul.horizontal{
+		max-width: 900px;
+		margin: 0 auto;
+
 		li{
 
-			padding: 0px 10px;
+			width: 33.3%;
 
 			a{
-				display: inline-block;
+				display: block;
 				max-width: 100%;
-    			width: 150px;
-				background: #6CFF5A;
-				font-weight: 600;
-				color: #111;
+    			padding: 13px 15px;
+				font-weight: 500;
+				color: #fff;
 				border-radius: 1px;
-				font-size: 0.9em;	
-				box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
+				font-size: 1.2em;	
+				
 				
 				will-change: opacity, transform;
     			transition: .3s ease-out;
+    			cursor: pointer;
 
 			}
 
@@ -152,6 +163,7 @@ nav.header-container{
 
 			a:hover{
 				box-shadow: none;
+				background: rgba(0,0,0,0.3);
 			}	
 		}
 	}
@@ -209,17 +221,17 @@ nav.header-container{
     position: relative;
     display: inline-block;
     width: 1em;
-    height: 19px;
+    height: 14px;
     margin-right: 0.3em;
-    border-top: 3px solid #333;
-    border-bottom: 3px solid #333;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
 }
 
 .cheeseburger:before {
     content: "";
     position: absolute;
-    top: 5px;
+    top: 4px;
     left: 0px;
     width: 100%;
-    border-top: 3px solid #333;
+    border-top: 2px solid #fff;
 }

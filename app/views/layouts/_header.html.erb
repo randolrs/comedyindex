@@ -12,7 +12,7 @@
 
 						<% unless @nav_return %>
 
-							<span class="cheeseburger modal-cta" data-modal-id="main-menu"></span>
+							<a class="cheeseburger-container"><span class="cheeseburger modal-cta" data-modal-id="main-menu"></span></a>
 
 							<a class="logo" href="<%= root_path %>">CZ</a>
 
@@ -32,9 +32,9 @@
 						
 				</li>
 
-				<li><%= link_to "Write a Review", index_for_review_path, class:"full-screen-only" %></li>
+				<!-- <li><%# link_to "Write a Review", index_for_review_path, class:"full-screen-only" %></li>
 
-				<li><%= link_to "Comedy Shows", show_dashboard_path(@market["short_name"]), class:"full-screen-only" %></li>
+				<li><%# link_to "Comedy Shows", show_dashboard_path(@market["short_name"]), class:"full-screen-only" %></li> -->
 
 				<!-- <li><%# link_to "Venues", venues_path, class:"full-screen-only" %></li>
 
@@ -51,11 +51,11 @@
 
 				<% if user_signed_in? %>
 
-					<li><a href="<%= account_path%>" class="header-image"><%= image_tag current_user.image.url(:small), class: "header-profile-image" %></a></li><li><a class="clickable modal-cta" data-modal-id="select-city"><% if @market %><%= @market["name"] %><%else%>SELECT A CITY<%end%><span class="glyphicon glyphicon-map-marker" style="margin-left: 10px;"></span></a></li>
+					<li><a href="<%= account_path%>" class="header-image"><%= image_tag current_user.image.url(:small), class: "header-profile-image" %></a></li>
 
 				<%else%>
 					
-					<li><%= link_to "Log In", login_path %></li><li><%= link_to "Sign Up", signup_path, class:"cta" %></li><li><a class="clickable modal-cta" data-modal-id="select-city"><% if @market %><%= @market["name"] %><%else%>SELECT A CITY<%end%><span class="glyphicon glyphicon-map-marker" style="margin-left: 10px;"></span></a></li>
+					<li><%= link_to "Sign Up", signup_path %></li><li><a class="clickable modal-cta" data-modal-id="select-city">
 
 				<%end%>
 
@@ -72,11 +72,9 @@
 
 				<%else%>
 
-					<li><%= link_to "Sign Up", signup_path, class:"cta" %></li>
+					<li><%= link_to "Sign Up", signup_path %></li>
 
 				<%end%>
-
-				<li><a class="clickable modal-cta" data-modal-id="select-city"><% if @market %><%= @market["short_name"] %><%else%>SELECT A CITY<%end%><span class="glyphicon glyphicon-map-marker" data-modal-id="select-city"></span></a></li>
 
 			</ul>
 

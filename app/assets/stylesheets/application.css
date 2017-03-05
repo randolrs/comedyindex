@@ -59,6 +59,10 @@ body{
  	
  }
 
+ .subheader-offset{
+ 	padding-top: 50px;
+ }
+
  .content-container.all-white-background{
  	background: #fff;
  }

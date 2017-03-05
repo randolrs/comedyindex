@@ -1,115 +1,121 @@
-<% unless user_signed_in?%>
+<%= render 'home_sub_header' %>
 
-<section class="home-form">
-	
-	<span class="dismiss-parent">X</span>
+<div class="subheader-offset">
 
-	<div class="section-overlay">
-	
-		<div class="section-content centered">
+	<% unless user_signed_in?%>
 
-			<header>Discover the Best Comedy in Your City</header>
+	<!-- <section class="home-form">
+		
+		<span class="dismiss-parent">X</span>
 
-				<br><br>
+		<div class="section-overlay">
+		
+			<div class="section-content centered">
 
-			<a class="button medium blue-background">Get Started</a>
+				<header>Discover the Best Comedy in Your City</header>
+
+					<br><br>
+
+				<a class="button medium blue-background">Get Started</a>
+
+			</div>
 
 		</div>
 
-	</div>
+	</section> -->
 
-</section>
+	<!-- <section class="home-index centered">
 
-<section class="home-index centered">
-
-	<header class="main-header" style="display: inline-block;">Zilla <%= @market["name"] %></header><br><span class="blue-text modal-cta" data-modal-id="select-city" style="display: inline-block;">Not in <%= @market["name"] %>? Change City</span>
+		<header class="main-header" style="display: inline-block;">Zilla <%# @market["name"] %></header><br><span class="blue-text modal-cta" data-modal-id="select-city" style="display: inline-block;">Not in <%# @market["name"] %>? Change City</span>
 
 
-</section>
+	</section> -->
 
-<section class="home-index">
+	<section class="home-index">
 
-	<header class="home-section-header">Tonight in <%= @market["name"] %></header>
+		<header class="home-section-header">Tonight in <%= @market["name"] %></header>
 
-	<% Show.all.take(3).each do |show| %>
+		<% Show.all.take(3).each do |show| %>
 
-  		<%= render :partial => 'shows/index_show', :locals => {:show =>  show} %>
+	  		<%= render :partial => 'shows/index_show', :locals => {:show =>  show} %>
 
-	<% end %>
+		<% end %>
 
-	<%= link_to root_path do %>
+		<%= link_to root_path do %>
 
-		<div class="card flat">
-			See More Comedy Shows Tonight <span style="float: right;" class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-		</div>
+			<div class="card flat">
+				See More Comedy Shows Tonight <span style="float: right;" class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+			</div>
+
+		<%end%>
+
+	</section>
+
+	<section class="home-index">
+
+		<header class="home-section-header">This Weekend in <%= @market["name"] %></header>
+
+		<% Show.all.take(3).each do |show| %>
+
+	  		<%= render :partial => 'shows/index_show', :locals => {:show =>  show} %>
+
+		<% end %>
+
+		<%= link_to root_path do %>
+
+			<div class="card flat">
+				See More Comedy Shows this Weekend <span style="float: right;" class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+			</div>
+
+		<%end%>
+
+	</section>
+
+	<section class="home-index">
+
+		<header class="home-section-header">Hot & New Comedy Shows in <%= @market["name"] %></header>
+
+		<% Show.all.take(3).each do |show| %>
+
+	  		<%= render :partial => 'shows/index_show', :locals => {:show =>  show} %>
+
+		<% end %>
+
+		<%= link_to root_path do %>
+
+			<div class="card flat">
+				See More Hot & New Comedy Shows <span style="float: right;" class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+			</div>
+
+		<%end%>
+
+	</section>
+
+	<section class="home-index">
+
+		<header class="home-section-header">Staff Picks for <%= @market["name"] %></header>
+
+		<% Show.all.take(3).each do |show| %>
+
+	  		<%= render :partial => 'shows/index_show', :locals => {:show =>  show} %>
+
+		<% end %>
+
+		<%= link_to root_path do %>
+
+			<div class="card flat">
+				See More Staff Picks <span style="float: right;" class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+			</div>
+
+		<%end%>
+
+	</section>
+
+
+	<%else%>
+
+		<%= render 'users/dashboard' %>
 
 	<%end%>
 
-</section>
-
-<section class="home-index">
-
-	<header class="home-section-header">This Weekend in <%= @market["name"] %></header>
-
-	<% Show.all.take(3).each do |show| %>
-
-  		<%= render :partial => 'shows/index_show', :locals => {:show =>  show} %>
-
-	<% end %>
-
-	<%= link_to root_path do %>
-
-		<div class="card flat">
-			See More Comedy Shows this Weekend <span style="float: right;" class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-		</div>
-
-	<%end%>
-
-</section>
-
-<section class="home-index">
-
-	<header class="home-section-header">Hot & New Comedy Shows in <%= @market["name"] %></header>
-
-	<% Show.all.take(3).each do |show| %>
-
-  		<%= render :partial => 'shows/index_show', :locals => {:show =>  show} %>
-
-	<% end %>
-
-	<%= link_to root_path do %>
-
-		<div class="card flat">
-			See More Hot & New Comedy Shows <span style="float: right;" class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-		</div>
-
-	<%end%>
-
-</section>
-
-<section class="home-index">
-
-	<header class="home-section-header">Staff Picks for <%= @market["name"] %></header>
-
-	<% Show.all.take(3).each do |show| %>
-
-  		<%= render :partial => 'shows/index_show', :locals => {:show =>  show} %>
-
-	<% end %>
-
-	<%= link_to root_path do %>
-
-		<div class="card flat">
-			See More Staff Picks <span style="float: right;" class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-		</div>
-
-	<%end%>
-
-</section>
-
-
-<%else%>
-
-	<%= render 'users/dashboard' %>
-
-<%end%>
+</div>
