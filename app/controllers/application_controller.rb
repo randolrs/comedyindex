@@ -11,8 +11,8 @@ class ApplicationController < ActionController::Base
 
   def check_for_location
 
-    @city = request.location.city
-    
+    session[:city] = request.location.city
+
     if user_signed_in?
 
       if current_user.default_market_id
