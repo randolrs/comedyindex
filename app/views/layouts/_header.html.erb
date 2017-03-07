@@ -28,8 +28,6 @@
 
 					<a class="logo" href="<%= root_path %>">ComedyHere</a>
 
-					<input class="geocomplete-input" type="text"></input>
-
 				</li>
 
 				<!-- <li><%# link_to "Write a Review", index_for_review_path, class:"full-screen-only" %></li>
@@ -47,37 +45,40 @@
 
 		<div class="header-options right">
 
-			<ul class="horizontal full-screen-only">
+			<ul class="horizontal">
 
-				<% if user_signed_in? %>
+				<span class="full-screen-only">
+				
+					<% if user_signed_in? %>
 
-					<li><a href="<%= account_path%>" class="header-image"><%= image_tag current_user.image.url(:small), class: "header-profile-image" %></a></li>
+						<li><a href="<%= account_path%>" class="header-image"><%= image_tag current_user.image.url(:small), class: "header-profile-image" %></a></li>
 
-				<%else%>
-					
-					<li><%= link_to "Sign Up", signup_path %></li><li><a class="clickable modal-cta" data-modal-id="select-city">
+					<%else%>
+						
+						<li><%= link_to "Sign Up", signup_path %></li>
 
-				<%end%>
+					<%end%>
+
+				</span>
+
+				<span class="mobile-only">
+
+					<% if user_signed_in? %>
+
+						<li><a href="<%= new_show_path%>"><span class="glyphicon glyphicon-plus"></span></a></li>
+
+						<li><a href="<%= account_path%>" class="header-image"><%= image_tag current_user.image.url(:small), class: "header-profile-image" %></a></li>
+
+						<%else%>
+
+						<li><%= link_to "Sign Up", signup_path %></li>
+
+					<%end%>
+
+				</span>
 
 
 			</ul>
-
-			<ul class="horizontal mobile-only">
-
-				<% if user_signed_in? %>
-
-					<li><a href="<%= new_show_path%>"><span class="glyphicon glyphicon-plus"></span></a></li>
-
-					<li><a href="<%= account_path%>" class="header-image"><%= image_tag current_user.image.url(:small), class: "header-profile-image" %></a></li>
-
-				<%else%>
-
-					<li><%= link_to "Sign Up", signup_path %></li>
-
-				<%end%>
-
-			</ul>
-
 
 		</div>
 
