@@ -15,6 +15,10 @@
 	bottom: 0px;
 }
 
+.modal-container.full-screen{
+	background: red;
+}
+
 .modal-content-container{
 	padding: 100px 10px 10px 10px;
 }
@@ -40,6 +44,22 @@
 		width: 100%;
 	}
 	
+}
+
+.modal-content-full {
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 80px 20px;
+	
+	top:0px;
+	bottom: 0px;
+
+	header{
+		color: #fff;
+		font-size: 3em;
+		text-shadow: 0px 2px 1px rgba(0,0,0,0.3);
+	}
 }
 
 .menu-content{

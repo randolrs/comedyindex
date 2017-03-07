@@ -1,5 +1,8 @@
 <%= render 'home_sub_header' %>
 
+<%= render 'modals/mobile_search_filter' %>
+
+
 <div class="subheader-offset">
 
 	<% unless user_signed_in?%>
@@ -53,14 +56,6 @@
 				  		<%= render :partial => 'shows/index_show', :locals => {:show =>  show} %>
 
 					<% end %>
-
-					<%= link_to root_path do %>
-
-						<div class="card flat">
-							See More Comedy Shows Tonight <span style="float: right;" class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-						</div>
-
-					<%end%>
 
 				</section>
 

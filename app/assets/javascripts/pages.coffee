@@ -48,6 +48,9 @@ ready = ->
 		$('.modal-content').click (window.event), ->
 			window.event.stopPropagation()
 
+		$('.modal-content-full').click (window.event), ->
+			window.event.stopPropagation()
+
 		$('#rating_string').change (window.event), ->
 			$('#rating_number').val($(@).val());
 
