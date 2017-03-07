@@ -11,7 +11,13 @@ class ApplicationController < ActionController::Base
 
   def check_for_location
 
-    session[:city] = request.location.city
+    if request
+      session[:city] = request.location.city
+
+    else
+
+      session[:city] = "Select a City"
+    end
 
     if user_signed_in?
 
