@@ -8,6 +8,13 @@
 
 @import 'bootstrap';
 
+body{
+	.row{
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+}
+
 section.home-form{
 	display: block;
 	width:100%;
@@ -243,5 +250,9 @@ h1.dashboard-header{
 		}
 
 	}
+}
+
+.dashboard{
+	padding: 50px 25px;
 }
 
