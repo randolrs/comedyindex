@@ -69,6 +69,18 @@
 
 			</section>
 
+			<section class="home-index">
+
+				<header class="home-section-header"><%= Date.tomorrow.tomorrow.strftime("%a %b %e")%></header>
+
+				<% Show.all.take(9).each do |show| %>
+
+			  		<%= render :partial => 'shows/index_show', :locals => {:show =>  show} %>
+
+				<% end %>
+
+			</section>
+
 		</div>
 
 	</div>
