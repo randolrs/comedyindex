@@ -54,8 +54,9 @@
 						<li><a href="<%= account_path%>" class="header-image"><%= image_tag current_user.image.url(:small), class: "header-profile-image" %></a></li>
 
 					<%else%>
-						
-						<li><%= link_to "Sign Up", signup_path %></li>
+
+						<li><a class="modal-cta" data-modal-id="mobile-search-filter"><span class="glyphicon glyphicon-map-marker" aria-hidden="true" style="margin-right: 10px;"></span><%= session[:city] %></a></li>
+
 
 					<%end%>
 
@@ -69,9 +70,9 @@
 
 						<li><a href="<%= account_path%>" class="header-image"><%= image_tag current_user.image.url(:small), class: "header-profile-image" %></a></li>
 
-						<%else%>
+					<%else%>
 
-						<li><%= link_to "Sign Up", signup_path %></li>
+						<li><a class="modal-cta" data-modal-id="mobile-search-filter"><span class="glyphicon glyphicon-map-marker" aria-hidden="true" style="margin-right: 10px;"></span><%= session[:city] %></a></li>
 
 					<%end%>
 
