@@ -35,29 +35,22 @@
 
 			</section>
 
-			<section class="home-index">
+			<%(Date.tomorrow..Date.tomorrow + 7).each do |date| %>
 
-				<header class="home-section-header"><%= Date.tomorrow.strftime("%a %b %e")%></header>
+				<section class="home-index">
 
-				<% Show.all.take(9).each do |show| %>
+					<header class="home-section-header"><%= date.strftime("%a %b %e")%></header>
 
-			  		<%= render :partial => 'shows/index_show', :locals => {:show =>  show} %>
+					<% Show.all.take(9).each do |show| %>
 
-				<% end %>
+				  		<%= render :partial => 'shows/index_show', :locals => {:show =>  show} %>
 
-			</section>
+					<% end %>
 
-			<section class="home-index">
+				</section>
 
-				<header class="home-section-header"><%= Date.tomorrow.tomorrow.strftime("%a %b %e")%></header>
 
-				<% Show.all.take(9).each do |show| %>
-
-			  		<%= render :partial => 'shows/index_show', :locals => {:show =>  show} %>
-
-				<% end %>
-
-			</section>
+			<% end %>
 
 		</div>
 
