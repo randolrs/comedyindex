@@ -1,36 +1,14 @@
 <%# render 'home_sub_header' %>
+<header>
 
+	<script>$(".home-section-header").stick_in_parent();</script>
+
+</header>
 <%= render 'modals/mobile_search_filter' %>
 
 
 <% unless user_signed_in?%>
 
-<!-- <section class="home-form">
-	
-	<span class="dismiss-parent">X</span>
-
-	<div class="section-overlay">
-	
-		<div class="section-content centered">
-
-			<header>Discover the Best Comedy in Your City</header>
-
-				<br><br>
-
-			<a class="button medium blue-background">Get Started</a>
-
-		</div>
-
-	</div>
-
-</section> -->
-
-<!-- <section class="home-index centered">
-
-	<header class="main-header" style="display: inline-block;">Zilla <%# @market["name"] %></header><br><span class="blue-text modal-cta" data-modal-id="select-city" style="display: inline-block;">Not in <%# @market["name"] %>? Change City</span>
-
-
-</section> -->
 <div class="dashboard">
 
 	<div class="row">

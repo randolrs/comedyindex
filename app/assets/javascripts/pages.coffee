@@ -7,7 +7,9 @@ ready = ->
 	jQuery ->
 
 		$(".geocomplete-input").geocomplete()
-		
+
+		$(".home-section-header").stick_in_parent();
+
 		$(".click-to-reveal").click (window.event), ->
 			$('a.click-to-reveal').removeClass('active')
 			$('div.reveal-panel').hide()
