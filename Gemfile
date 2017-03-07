@@ -41,6 +41,13 @@ gem 'paperclip', '~> 4.2'
 
 gem 'bootstrap-sass'
 
+#geocomplete
+gem 'geocomplete_rails'
+
+gem 'geocoder'
+
+gem 'possessive'
+
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'

@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require geocomplete
 //= require jquery.turbolinks
 //= require bootstrap-sprockets
 //= require turbolinks

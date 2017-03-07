@@ -6,6 +6,8 @@ ready = ->
 		
 	jQuery ->
 
+		$(".geocomplete-input").geocomplete()
+		
 		$(".click-to-reveal").click (window.event), ->
 			$('a.click-to-reveal').removeClass('active')
 			$('div.reveal-panel').hide()
