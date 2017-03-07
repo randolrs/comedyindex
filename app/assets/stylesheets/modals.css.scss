@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import 'material';
 
 .modal-container{
 	background: rgba(0,0,0,.6);
@@ -56,7 +55,7 @@
     	padding: 20px 0px;
     	font-size: 1.5em;
     	background: #fff;
-    	box-shadow: $material-shadow;
+    	
     }
 
     li{

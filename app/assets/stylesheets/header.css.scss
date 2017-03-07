@@ -2,10 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import 'colors';
-
-@import 'material';
-
 nav.header-container{
 	position: fixed;
 	background: #D50000;
@@ -133,7 +129,7 @@ nav.header-container{
 	}
 
 	ul.horizontal{
-		max-width: 900px;
+		max-width: 992px;
 		margin: 0 auto;
 
 		span{

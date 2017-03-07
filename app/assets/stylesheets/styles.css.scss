@@ -3,14 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-@import 'colors';
-
-@import 'material';
+@import 'variables';
 
 body{
 	
 	background-color: #eee;
 
+	.material-shadow{
+		box-shadow: $material-shadow;
+	    -webkit-box-shadow: $material-shadow;
+	    -moz-box-shadow: $material-shadow;
+	}
+	
 	a{
 		color: #333;
     }
