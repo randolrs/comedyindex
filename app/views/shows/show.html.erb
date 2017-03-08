@@ -1,5 +1,25 @@
 <div class="profile-header-banner dark-brand-gradient">
 
+  <div class="profile-title-container">
+
+    <div class="profile-image-container">
+      
+      <%= image_tag @show.image.url(:medium), class: ""%>
+    
+    </div>
+
+    <div class="profile-detail-container">
+
+      <h1><%= @show.name %></h1>
+
+      <p><%= @show.start_time.strftime("%A, %b %e, %Y") %><% if user_signed_in? %><% if @show.user_id == current_user.id %><br><a class="button">Add Dates</a><%end%><%end%></p>
+
+      <a class="button green-background">Buy Tickets</a><!-- <%# if @show.website_url %><%# link_to @show.website_url do %><a class="button blue-background" href="<%# @show.website_url %>">Website</a><%#end%><%#end%> -->
+
+    </div>
+
+  </div>
+
 </div>
 
 <div class="profile-content-container">

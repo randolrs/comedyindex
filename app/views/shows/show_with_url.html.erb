@@ -1,66 +1,32 @@
-<div class="profile-header-banner dark-brand-gradient">
+<div class="profile-header-banner dark-brand-gradient sticky">
 
-</div>
+  <div class="profile-title-container">
 
-
-
-  <div class="profile-content">
-
-    <div class="profile-title-container">
-
-      <div class="profile-image-container">
-        
-        <%= image_tag @show.image.url(:medium), class: ""%>
+    <div class="profile-image-container">
       
-      </div>
+      <%= image_tag @show.image.url(:medium), class: ""%>
+    
+    </div>
 
-      <div class="profile-detail-container">
+    <div class="profile-detail-container">
 
-        <h1><%= @show.name %></h1>
+      <h1><%= @show.name %></h1>
 
-        <p><div class="img-stars large <%= @show.css_rating_code %>"></div> <%= @show.show_reviews.count.to_s + " " + "Review".pluralize(@show.show_reviews.count) %></p>
+      <p><%= @show.start_time.strftime("%A, %b %e, %Y") %><% if user_signed_in? %><% if @show.user_id == current_user.id %><br><a class="button">Add Dates</a><%end%><%end%></p>
 
-        <br>
-
-        <p>Next Show: <%= @show.display_date %></p>
-
-        <details><%= render :partial => 'performers/index_grid', :locals => {:performers => Performer.all} %></details>
-
-        
-
-        <% if user_signed_in?%>
-
-          <p class="blue-text clickable profile-edit-action"><%= link_to "Edit", edit_show_path(@show), class:"blue-text"%></p>
-
-        <%end%>
-        
-        <div class="button-container full-screen-only">
-          <% if @show.show_reviews.count > 0 %>
-            <%= link_to "Write a Review", new_review_path(@show.id), class:"button green-background"%>
-          <%else%>
-            <%= link_to "Be First to Review", new_review_path(@show.id), class:"button green-background"%>
-          <%end%>
-
-        </div>
-
-  <!--       <%# if @show.website_url %>
-          
-          <div class="button-container">
-              
-            <a class="button blue-background" href="<%# @show.website_url %>">Website</a>
-
-          </div>
-          
-        <%#end%> -->
-
-      </div>
+      <a class="button green-background">Buy Tickets</a><!-- <%# if @show.website_url %><%# link_to @show.website_url do %><a class="button blue-background" href="<%# @show.website_url %>">Website</a><%#end%><%#end%> -->
 
     </div>
 
-    <div class="profile-body-container">
+  </div>
 
-      <div class="profile-body-main">
+</div>
 
+<div class="profile-content">
+
+  <div class="row">
+      
+      <div class="col-xs-0 col-md-4">
 
         <section class="profile-section">
 
@@ -70,129 +36,81 @@
 
         </section>
 
+      </div>
+
+      <div class="col-xs-12 col-md-8">
 
         <section class="profile-section">
 
           <header class="section-title">Reviews</header>
-          
-          <% if @show.show_reviews.count > 0 %>
             
-            <table class="review-index">
-            
-              <% @show.show_reviews.all.each do |review| %>
-                <tr>
-                  <td style="width: 150px;">
-                    <%= image_tag review.user.image.url(:small), class: "reviewer-small-image" %><br>
-                    <%= review.user.first_name + " " + review.user.last_name.first(1) + "."   %><br>
-                    <%= Market.find(review.user.default_market_id).name %>
-                  </td>
-                  <td>
-                    <div class="img-stars <%= review.css_rating_code %>"></div><br>
-                    <i>"<%= review.body %>"</i>
-                  </td>
-
-                </tr>
-
-              <%end%>
+            <% if @show.show_reviews.count > 0 %>
               
-            </table>
+              <table class="review-index">
+              
+                <% @show.show_reviews.all.each do |review| %>
+                  <tr>
+                    <td style="width: 150px;">
+                      <%= image_tag review.user.image.url(:small), class: "reviewer-small-image" %><br>
+                      <%= review.user.first_name + " " + review.user.last_name.first(1) + "."   %><br>
+                      <%= Market.find(review.user.default_market_id).name %>
+                    </td>
+                    <td>
+                      <div class="img-stars <%= review.css_rating_code %>"></div><br>
+                      <i>"<%= review.body %>"</i>
+                    </td>
 
-          <%else%>
+                  </tr>
 
-            No Reviews Yet. Be the first to <%= link_to "post a review", new_review_path(@show.id), class:"blue-text" %>.
+                <%end%>
+                
+              </table>
 
-          <%end%>
+            <%else%>
+
+              No Reviews Yet. Be the first to <%= link_to "post a review", new_review_path(@show.id), class:"blue-text" %>.
+
+            <%end%>
 
         </section>
 
-        <!-- <section class="profile-section">
-
-          <header class="section-title">About the Producer</header>
-
-          <p>Producer producer</p>
-
-        </section> -->
-
       </div>
-
-
-      <div class="profile-body-side">
-
-        <div class="profile-body-side-content">
-
-          <section class="profile-section">
-
-            <%= render :partial => 'shows/full_address', :locals => {:show => @show} %>
-
-          </section>
-
-          <% if @show.more_dates %>
-            
-            <section class="profile-section">
-
-              <%= render :partial => 'shows/more_dates', :locals => {:show => @show} %>
-
-            </section>
-
-          <%end%>
-
-          <% if @show.venue_id %>
-
-            <section class="profile-section">
-
-              <header class="section-title">About the Venue</header>
-
-              <p><%= @show.venue.about %></p>
-
-              <br>
-              
-              <p><a class="blue-text" href="<%= @show.venue.website_url %>">Website <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a></p>
-
-            </section>
-
-          <%end%>
-
-        </div>
-    
-      </div>
-
-    </div>
 
   </div>
 
-<div class="fixed-bottom-cta-container mobile-only centered">
+  <div class="row">
+      
+      <div class="col-xs-0 col-md-4">
 
-  <ul class="horizontal">
+        <section class="profile-section">
 
-    <li>
+          <%= render :partial => 'shows/full_address', :locals => {:show => @show} %>
 
-      <% if @show.show_reviews.count > 0 %>
-        
-        <%= link_to "Write a Review", new_review_path(@show.id), class:"button green-background"%>
+        </section>
 
-      <%else%>
-        
-        <%= link_to "Be First to Review", new_review_path(@show.id), class:"button green-background"%>
+      </div>
 
-      <%end%>
+      <div class="col-xs-12 col-md-8">
 
-    </li>
+        <% if @show.venue_id %>
 
-    <li>
+          <section class="profile-section">
 
-      <% if @show.show_reviews.count > 0 %>
-        
-        <%= link_to "Write a Review", new_review_path(@show.id), class:"button green-background"%>
+            <header class="section-title">About the Venue</header>
 
-      <%else%>
-        
-        <%= link_to "Be First to Review", new_review_path(@show.id), class:"button green-background"%>
+            <p><%= @show.venue.about %></p>
 
-      <%end%>
+            <br>
+            
+            <p><a class="blue-text" href="<%= @show.venue.website_url %>">Website <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a></p>
 
-    </li>
+          </section>
 
-  </ul>
+        <%end%>
+       
+
+      </div>
+
+  </div>
 
 </div>
-
