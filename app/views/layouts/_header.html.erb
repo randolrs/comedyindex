@@ -6,13 +6,15 @@
 
 			<ul class="horizontal">
 
-				<li>
-					
-					<span class="mobile-only">
+				<span class="mobile-only">
+				
+					<li>
 
 						<% unless @nav_return %>
 
-							<a class="cheeseburger-container"><span class="cheeseburger modal-cta" data-modal-id="main-menu"></span></a>
+							<a class="logo" href="<%= root_path %>">ComedyHere</a>
+							
+							<!-- <a class="cheeseburger-container"><span class="cheeseburger modal-cta" data-modal-id="main-menu"></span></a> -->
 
 						<%else%>
 
@@ -20,15 +22,21 @@
 
 						<%end%>
 
-					</span>
 						
-				</li>
+							
+					</li>
 
-				<li>
+				</span>
 
-					<a class="logo" href="<%= root_path %>">ComedyHere</a>
+				<span class="full-screen-only">
+					
+					<li>
 
-				</li>
+						<a class="logo" href="<%= root_path %>">ComedyHere</a>
+
+					</li>
+
+				</span>
 
 				<!-- <li><%# link_to "Write a Review", index_for_review_path, class:"full-screen-only" %></li>
 
