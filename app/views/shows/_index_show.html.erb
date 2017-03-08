@@ -13,16 +13,15 @@
 
       <div class="detail-container">
         
-        <p class="title"><%= show.name %><span class="price"><%= number_to_currency(show.price, precision: 2)  %></span></p>
+        <ul class="thumb-holder"><li><span class="glyphicon glyphicon-thumbs-up thumb-cta material-shadow" aria-hidden="true"></span></li><li><span class="glyphicon glyphicon-thumbs-down thumb-cta material-shadow" aria-hidden="true"></span></li></ul>
 
-        <p><div class="img-stars <%= show.css_rating_code %>"></div> <%= show.show_reviews.count.to_s + " " + "Review".pluralize(show.show_reviews.count) %></p>
-
-        
-
-        <p><b><%= show.display_date %> <%= show.display_time %></b></p>
-        <p></b></p>
-
-        <p><%# if show.venue_id %><%# show.venue.name %><%#else%><%# show.venue_name %><%#end%></p>
+        <p class="title"><%= show.name %></p>
+        <br>
+        <p><%= show.display_date %></p>
+        <br>
+        <p><%= show.display_time %></p>
+        <br>
+        <p><span class="tag-content blue-background">Standup</span><span class="tag-content green-background">Open-Mic</span></p>
 
         
 

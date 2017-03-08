@@ -5,6 +5,23 @@ class Show < ActiveRecord::Base
 	:default_url => 'missing_person_photo.png',
 	:s3_protocol => :https
 
+	geocoded_by :address
+
+	after_validation :geocode, :if => :address_changed?
+
+	
+	reverse_geocoded_by :latitude, :longitude do |obj, results|
+
+		if geo = results.first
+
+			obj.city = geo.city
+
+		end
+
+	end
+
+	after_validation :reverse_geocode
+
 	validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
 	belongs_to :user

@@ -23,7 +23,7 @@ ready = ->
 
 		$(".modal-cta").click (window.event), ->
 			targetId = "#" + $(@).data("modal-id")
-			$('body').find(targetId).show()
+			$('body').find(targetId).slideUp()
 			$('body').addClass('no-scroll')
 			$('.menu-content').animate({width:'show'},350);
 
@@ -48,6 +48,10 @@ ready = ->
 
 		$('.menu-content').click (window.event), ->
 			window.event.stopPropagation()
+
+		$('.thumb-cta').click (window.event), ->
+			window.event.stopPropagation()
+			alert("get off my dick")
 
 		$('.modal-content').click (window.event), ->
 			window.event.stopPropagation()
