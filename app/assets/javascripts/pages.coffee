@@ -23,7 +23,7 @@ ready = ->
 
 		$(".modal-cta").click (window.event), ->
 			targetId = "#" + $(@).data("modal-id")
-			$('body').find(targetId).slideUp()
+			$('body').find(targetId).slideDown()
 			$('body').addClass('no-scroll')
 			$('.menu-content').animate({width:'show'},350);
 
