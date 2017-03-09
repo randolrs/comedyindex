@@ -41,6 +41,8 @@ Rails.application.routes.draw do
 
   post 'update_market' => 'pages#update_market', as: 'update_market'
 
+  
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
