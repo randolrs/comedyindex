@@ -10,6 +10,18 @@
     border: 1px solid #ccc;
     margin-bottom: -1px;
 
+    p.title{
+        font-size: 1.5em;
+        font-weight: 800;
+            
+
+    }
+
+    p{
+        margin-bottom: 0.25em;
+        display: inline-block;
+    }
+
     .tag-content{
         padding: 5px 10px;
         border-radius: 20px;
@@ -102,6 +114,6 @@
 }
 
 .small-index-image{
-	height: 180px;
+    max-width: 100%;
 
 }

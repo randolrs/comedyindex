@@ -5,23 +5,23 @@
 
     <div class="card">
       
-      <div class="image-container">
-        
-        <%= image_tag show.image.url(:medium), class: "small-index-image"%>
+      <div class="row padded-cols">
+      
+        <div class="col-xs-3 col-sm-3">
+          <%= image_tag show.image.url(:medium), class: "small-index-image"%>
+        </div>
 
-      </div>
+        <div class="col-xs-8 col-sm-8">
+          <p class="title"><%= show.name %></p>
+          <br>
+          <p><%= show.display_time %></p>
+          <br>
+          <p><span class="tag-content blue-background">Standup</span><span class="tag-content green-background">Open-Mic</span></p>
+        </div>
 
-      <div class="detail-container">
-        
-        <ul class="thumb-holder"><li><span class="glyphicon glyphicon-thumbs-up thumb-cta material-shadow" aria-hidden="true"></span></li><li><span class="glyphicon glyphicon-thumbs-down thumb-cta material-shadow" aria-hidden="true"></span></li></ul>
-
-        <p class="title"><%= show.name %></p>
-        <br>
-        <p><%= show.display_time %></p>
-        <br>
-        <p><span class="tag-content blue-background">Standup</span><span class="tag-content green-background">Open-Mic</span></p>
-
-        
+        <div class="col-xs-1 col-sm-1">
+          <ul class="thumb-holder"><li><span class="glyphicon glyphicon-thumbs-up thumb-cta material-shadow" aria-hidden="true"></span></li><li><span class="glyphicon glyphicon-thumbs-down thumb-cta material-shadow" aria-hidden="true"></span></li></ul>
+        </div>
 
       </div>
 
