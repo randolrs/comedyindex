@@ -13,12 +13,18 @@
     p.title{
         font-size: 1.5em;
         font-weight: 800;
+        font-size: 1.5em;
+        font-weight: 800;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
             
 
     }
 
     p{
-        margin-bottom: 0.25em;
+        margin-bottom: 0.1em;
         display: inline-block;
     }
 
