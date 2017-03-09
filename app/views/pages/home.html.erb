@@ -4,31 +4,48 @@
 <%= render 'modals/mobile_search_filter' %>
 
 
-<% unless user_signed_in?%>
-
 <div class="dashboard">
 
-	<div class="row">
-	  
-		<div class="col-xs-0 col-md-4 full-screen-only">
-			<div class="card">
-				City<br>
-				Category<br>
-				Time/Date
+	<% unless user_signed_in?%>
+	
+		<div class="home-hero">
+
+			<span class="glyphicon glyphicon-remove-circle dismiss-parent" aria-hidden="true"></span>
+
+			<div class="home-hero-content centered">
+
+				<h1>All Your Local Comedy and Secret Shows</h1>
+
+				<br><br>
+
+				<%= link_to "Signup to Get Started", root_path, class:"button medium blue-background button"%>
 			</div>
+
 		</div>
 
-		<div class="col-xs-12 col-md-8">
+	<%end%>
+
+	<div class="row">
+
+		<div class="col-xs-12 col-sm-12">
 
 			<section class="home-index">
 
 				<header class="home-section-header">All Comedy Shows Tonight in <%= session[:city] %></header>
+				<div class="row">
+					
 
-				<% Show.all.take(9).each do |show| %>
+					<% Show.all.take(4).each do |show| %>
 
-			  		<%= render :partial => 'shows/index_show', :locals => {:show =>  show} %>
+						<div class="col-xs-12 col-sm-6 col-md-3">
+				  			
+				  			<%= render :partial => 'shows/index_show', :locals => {:show =>  show} %>
 
-				<% end %>
+				  		</div>
+
+					<% end %>
+
+				</div>
 
 			</section>
 
@@ -56,8 +73,4 @@
 </div>
 
 
-<%else%>
-
-	<%= render 'users/dashboard' %>
-
-<%end%>
+	<%# render 'users/dashboard' %>
