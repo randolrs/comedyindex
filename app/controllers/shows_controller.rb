@@ -46,6 +46,8 @@ class ShowsController < ApplicationController
 
     @whitebackground = false
 
+
+
     if Show.where(:url_slug => params[:url_slug]).exists?
 
       @show = Show.find_by_url_slug(params[:url_slug])
@@ -53,6 +55,9 @@ class ShowsController < ApplicationController
       @main_SEO_title = @show.name
 
       @SEO_description = @show.about
+
+      @nav_return = true
+      @nav_return_title = @show.name
 
     else
 
