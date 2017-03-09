@@ -44,7 +44,7 @@ class ShowsController < ApplicationController
 
   def show_with_url
 
-    @whitebackground = true
+    @whitebackground = false
 
     if Show.where(:url_slug => params[:url_slug]).exists?
 

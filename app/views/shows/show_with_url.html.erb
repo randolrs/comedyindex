@@ -26,9 +26,9 @@
 
   <div class="row">
       
-      <div class="col-xs-0 col-md-4">
+      <div class="col-xs-12 col-sm-6">
 
-        <section class="profile-section">
+        <section class="profile-section material-shadow white-background">
 
           <header class="section-title">About the Show</header>
 
@@ -36,11 +36,18 @@
 
         </section>
 
+        <section class="profile-section material-shadow white-background">
+
+          <%= render :partial => 'shows/full_address', :locals => {:show => @show} %>
+
+        </section>
+
+
       </div>
 
-      <div class="col-xs-12 col-md-8">
+      <div class="col-xs-12 col-sm-6">
 
-        <section class="profile-section">
+        <section class="profile-section material-shadow">
 
           <header class="section-title">Reviews</header>
             
@@ -74,27 +81,9 @@
 
         </section>
 
-      </div>
-
-  </div>
-
-  <div class="row">
-      
-      <div class="col-xs-0 col-md-4">
-
-        <section class="profile-section">
-
-          <%= render :partial => 'shows/full_address', :locals => {:show => @show} %>
-
-        </section>
-
-      </div>
-
-      <div class="col-xs-12 col-md-8">
-
         <% if @show.venue_id %>
 
-          <section class="profile-section">
+          <section class="profile-section material-shadow white-background">
 
             <header class="section-title">About the Venue</header>
 
@@ -107,7 +96,6 @@
           </section>
 
         <%end%>
-       
 
       </div>
 
