@@ -28,7 +28,7 @@
       
       <div class="col-xs-12 col-sm-6">
 
-        <section class="profile-section material-shadow white-background">
+        <section class="profile-section">
 
           <header class="section-title">About the Show</header>
 
@@ -36,7 +36,7 @@
 
         </section>
 
-        <section class="profile-section material-shadow white-background">
+        <section class="profile-section">
 
           <%= render :partial => 'shows/full_address', :locals => {:show => @show} %>
 
@@ -47,35 +47,34 @@
 
       <div class="col-xs-12 col-sm-6">
 
-        <section class="profile-section material-shadow">
+        <section class="profile-section">
 
           <header class="section-title">Reviews</header>
             
             <% if @show.show_reviews.count > 0 %>
               
-              <table class="review-index">
-              
-                <% @show.show_reviews.all.each do |review| %>
-                  <tr>
-                    <td style="width: 150px;">
-                      <%= image_tag review.user.image.url(:small), class: "reviewer-small-image" %><br>
-                      <%= review.user.first_name + " " + review.user.last_name.first(1) + "."   %><br>
-                      <%= Market.find(review.user.default_market_id).name %>
-                    </td>
-                    <td>
-                      <div class="img-stars <%= review.css_rating_code %>"></div><br>
+              <% @show.show_reviews.all.each do |review| %>
+
+                <div class="row">
+          
+                  <div class="col-xs-4">
+                    <%= image_tag review.user.image.url(:small), class: "reviewer-small-image" %>
+                    <%= review.user.first_name + " " + review.user.last_name.first(1) + "."   %><br>
+                    
+                    <%= Market.find(review.user.default_market_id).name %>
+                  </div>
+
+                  <div class="col-xs-8">
+
+                    <div class="img-stars <%= review.css_rating_code %>"></div><br>
+                      
                       <i>"<%= review.body %>"</i>
-                    </td>
 
-                  </tr>
+                  </div>
 
-                <%end%>
-                
-              </table>
+                </div>
 
-            <%else%>
-
-              No Reviews Yet. Be the first to <%= link_to "post a review", new_review_path(@show.id), class:"blue-text" %>.
+              <%end%>
 
             <%end%>
 
@@ -83,7 +82,7 @@
 
         <% if @show.venue_id %>
 
-          <section class="profile-section material-shadow white-background">
+          <section class="profile-section">
 
             <header class="section-title">About the Venue</header>
 
