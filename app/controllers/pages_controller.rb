@@ -9,6 +9,26 @@ class PagesController < ApplicationController
 
 		end
 
+		if session[:city]
+			
+			unless session[:city] == "Select a City" or session[:city] == ""
+
+				@city = session[:city]
+
+			else
+
+				@city = nil
+
+			end
+
+		else
+
+			@city = nil
+
+		end
+
+		
+
 		
 
 	end

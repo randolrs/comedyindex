@@ -14,11 +14,13 @@ class ApplicationController < ActionController::Base
     if session[:city]
       
       if request
+        
         session[:city] = request.location.city
 
       else
 
         session[:city] = "Select a City"
+        
       end
 
     else
