@@ -17,6 +17,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         max-width: 100%;
+        line-height: 30px;
             
 
     }
@@ -24,11 +25,14 @@
     p{
         
         display: inline-block;
+        line-height: 25px;
     }
 
     .tag-content{
         
-        
+        padding: 3px 8px;
+        border-radius: 20px;
+        background: #f6a;
         margin-right: 10px;
     }
 
