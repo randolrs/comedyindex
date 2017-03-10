@@ -13,8 +13,6 @@
     p.title{
         font-size: 1.5em;
         font-weight: 800;
-        font-size: 1.5em;
-        font-weight: 800;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -24,14 +22,18 @@
     }
 
     p{
-        margin-bottom: 0.1em;
+        
         display: inline-block;
     }
 
     .tag-content{
-        padding: 5px 10px;
-        border-radius: 20px;
+        
+        
         margin-right: 5px;
+    }
+
+    .tag-content:last-child{
+        margin-right:0px;
     }
 
     .thumb-holder{
