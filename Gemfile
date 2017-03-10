@@ -34,6 +34,8 @@ gem 'turbolinks'
 
 gem 'jquery-turbolinks'
 
+gem 'jquery-infinite-pages'
+
 
 gem 'devise'
 
@@ -47,6 +49,10 @@ gem 'geocomplete_rails'
 gem 'geocoder'
 
 gem 'possessive'
+
+gem 'will_paginate'
+
+#gem 'bootstrap-will_paginate'
 
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

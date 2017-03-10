@@ -30,16 +30,6 @@
 
 					<input class="geocomplete-input" type="text"></input>
 
-					<form class="form-inline">
-					  <div class="form-group">
-					    <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
-					    <div class="input-group">
-					      <input type="text" class="form-control geocomplete-input" id="exampleInputAmount" placeholder="Enter City, Neighborhood, or Address">
-					    </div>
-					  </div>
-					  <button type="submit" class="btn btn-primary">Search</button>
-					</form>
-
 				<%end%>
 
 			</div>
@@ -81,12 +71,17 @@
 					<section class="home-index">
 
 						<header class="home-section-header"><%= date.strftime("%a %b %e")%></header>
+						
+						<div class="row">
+							
+							<% Show.all.take(9).each do |show| %>
+								<div class="col-xs-12 col-sm-6 col-md-3">
+						  		<%= render :partial => 'shows/index_show', :locals => {:show =>  show} %>
+						  		</div>
 
-						<% Show.all.take(9).each do |show| %>
+							<% end %>
 
-					  		<%= render :partial => 'shows/index_show', :locals => {:show =>  show} %>
-
-						<% end %>
+						</div>
 
 					</section>
 
@@ -96,7 +91,6 @@
 			</div>
 
 		</div>
-
 
 	<%#else%>
 		

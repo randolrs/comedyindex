@@ -2,7 +2,17 @@ class PagesController < ApplicationController
 
 	def home
 
-			
+		@shows = Show.paginate(page: params[:page], per_page: 2).order('created_at DESC')
+		
+		respond_to do |format|
+    
+    		format.html
+    		format.js
+
+  		end
+
+  		
+
 		if user_signed_in?
 
 			redirect_to dashboard_path

@@ -7,6 +7,8 @@ class Show < ActiveRecord::Base
 
 	geocoded_by :address
 
+	self.per_page = 2
+
 	after_validation :geocode, :if => :address_changed?
 
 	
