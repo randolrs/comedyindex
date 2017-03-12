@@ -8,8 +8,6 @@ ready = ->
 
 		$(".geocomplete-input").geocomplete()
 
-		$(".home-section-header").stick_in_parent();
-
 		$(".sticky").stick_in_parent();
 
 		$(".click-to-reveal").click (window.event), ->
