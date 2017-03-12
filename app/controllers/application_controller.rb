@@ -11,26 +11,15 @@ class ApplicationController < ActionController::Base
 
   def check_for_location
 
-    unless session[:city]
+    if session[:city].blank?
       
       if request
         
         session[:city] = request.location.city
-
-      else
-
-        session[:city] = nil
-        session[:location_is_unset] = true
         
       end
 
-    else
-
-      session[:city] = nil
-      session[:location_is_unset] = true
-
     end
-    
 
   end
 
