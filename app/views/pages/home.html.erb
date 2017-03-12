@@ -1,6 +1,7 @@
 
+<%= session[:city] %> 
 
-<% unless @city %>
+<% unless session[:city] %>
 		
 	<%= render 'pages/home_location_cta' %>
 
@@ -20,7 +21,7 @@
 						
 						<% Show.all.take(4).each do |show| %>
 
-							<div class="col-xs-12 col-sm-6 col-md-3">
+							<div class="col-xs-12 col-sm-4 col-md-3">
 					  			
 					  			<%= render :partial => 'shows/index_show', :locals => {:show =>  show} %>
 
