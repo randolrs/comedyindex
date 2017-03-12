@@ -9,7 +9,7 @@
 			<li><%= link_to "Home", root_path %></li>
 			<li><%= link_to "Write a Review",  index_for_review_path %></li>
 			<!-- <li><%# link_to "Community", community_path %></li> -->
-			<li><%= link_to "Comedy Shows", show_dashboard_path(@market["short_name"]) %></li>
+			
 			<% unless user_signed_in?%>
 				<li><%= link_to "Login", login_path, class:"" %></li>
 				<li><%= link_to "Signup", signup_path%></li>

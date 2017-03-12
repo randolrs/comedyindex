@@ -1,7 +1,6 @@
 
-<%= session[:city] %> 
 
-<% unless session[:city] %>
+<% if session[:city].blank? %>
 		
 	<%= render 'pages/home_location_cta' %>
 

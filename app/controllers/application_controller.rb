@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   def check_for_location
 
-    if session[:city]
+    unless session[:city]
       
       if request
         
@@ -19,51 +19,20 @@ class ApplicationController < ActionController::Base
 
       else
 
-        session[:city] = "Select a City"
+        session[:city] = nil
+        session[:location_is_unset] = true
         
       end
 
     else
 
-      session[:city] = "Select a City"
+      session[:city] = nil
+      session[:location_is_unset] = true
 
     end
-
-
-    if user_signed_in?
-
-      if current_user.default_market_id
-        
-        session[:market] = Market.find(current_user.default_market_id)
-
-      else
-
-        unless session[:market]
-
-        session[:market] = Market.find(1)
-        session[:location_is_unset] = true
-        
-        end
-
-      end
-
-    else
-
-      unless session[:market]
-
-        session[:market] = Market.find(1)
-        session[:location_is_unset] = true
-
-      end
-
-    end
-
-    @market = session[:market]
     
 
   end
-
-
 
 
   def after_sign_in_path_for(user)
