@@ -1,18 +1,12 @@
-<%# render 'home_sub_header' %>
 
 
-<%= render 'modals/mobile_search_filter' %>
-
-
-<div class="dashboard">
-
-	<% unless @city %>
+<% unless @city %>
 		
-		<%= render 'pages/home_location_cta' %>
+	<%= render 'pages/home_location_cta' %>
 
-	<%end%>
+<%else%>
 
-	<%# if @city %>
+	<div class="dashboard">
 
 		<div class="row">
 
@@ -70,45 +64,6 @@
 
 		</div>
 
-	<%#else%>
-		
-		<section>
+	</div>
 
-			<h2 class="centered">Where are You?</h2>
-		
-			<div class="row padded-cols">
-
-				<div class="col-xs-6 col-sm-3">
-					<div class="card centered">
-						NYC
-					</div>
-				</div>
-
-				<div class="col-xs-6 col-sm-3">
-					<div class="card centered">
-						LAX
-					</div>
-				</div>
-
-				<div class="col-xs-6 col-sm-3">
-					<div class="card centered">
-						SF
-					</div>
-				</div>
-
-				<div class="col-xs-6 col-sm-3">
-					<div class="card centered">
-						Montreal
-					</div>
-				</div>
-
-			</div>
-
-		</section>
-
-	<%#end%>
-
-</div>
-
-
-	<%# render 'users/dashboard' %>
+<%end%>
