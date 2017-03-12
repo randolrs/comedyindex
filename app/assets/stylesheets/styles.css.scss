@@ -115,13 +115,14 @@ body{
  
 	}
 
-	.green-background{
-		border: 1px solid #00b22d;
-	    color:#fff;
-	    text-transform: none;
-	    background: $brand-green;
+	.yellow-background{
+		background: $brand-yellow;
+	}
 
-	    border-radius: 3px;
+	.green-background{
+		
+	    color:#fff;
+	    background: $brand-green;
 	}
 
 	a.green-background{
@@ -178,7 +179,7 @@ body{
 	.button{
 		padding: 10px 25px;
 	    border-radius: 2px;
-	    
+	    text-transform: none;
 	    
 	    display: inline-block;
 	    margin: 0px;
@@ -187,7 +188,7 @@ body{
 	    position: relative;
 
 	    cursor: pointer;
-
+	    border: 1px solid rgba(0,0,0,0.1);
 
 	    box-shadow: $material-shadow;
 	    -webkit-box-shadow: $material-shadow;

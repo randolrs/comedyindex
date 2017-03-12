@@ -138,11 +138,23 @@ h1.dashboard-header{
 }
 
 .home-hero{
-	margin-bottom: 20px;
+	margin: 20px 10px;
     background: rgba(0,0,0,0.5);
     background-image: asset-url("city-dusk.jpg");
 	background-attachment: fixed;
 }
+
+.home-hero.textured-background{
+	
+	background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/white_brick_wall.png);
+
+	.home-hero-content{
+
+		background: rgba(9, 128, 178, 0.7);
+	
+	}	
+}
+
 
 .home-hero-content{
 	padding: 100px 20px;
@@ -152,6 +164,7 @@ h1.dashboard-header{
     h1{
     	font-size: 2.5em;
     	color: #fff;
+    	text-shadow: 0px 1px 1px rgba(0,0,0,0.2);
     }
 
     input{
