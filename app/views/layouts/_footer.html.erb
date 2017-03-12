@@ -1,34 +1,77 @@
-<div class="footer-container">
+<footer class="footer-container">
 
 	<div class="footer-content">
-		
-		<ul>
-			<% unless user_signed_in? %>
 
-				<li><%= link_to "I'm a Comic", comic_signup_path %></li>
-				<li><%= link_to "I'm a Producer", producer_signup_path %></li>
-				<li><%= link_to "I'm a Venue", venue_signup_path %></li>
-			<%else%>
+		<div class="row">
 
-				<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+			<div class="col-xs-12 col-sm-4">
+				
+				<% unless user_signed_in? %>
 
-			<%end%>
+					<section class="footer-section">
 
-		</ul>
+						<header class="footer-header">SIGNUP</header>
 
-		<ul>
-			
-			<% Market.all.each do |market| %>
+						<ul>
 
-				<li><%= link_to market.name + " Comedy Shows", show_dashboard_path(market.short_name) %></li>
+							<li><%= link_to "I'm a Comic", comic_signup_path %></li>
+							<li><%= link_to "I'm a Producer", producer_signup_path %></li>
+							<li><%= link_to "I'm a Venue", venue_signup_path %></li>
 
-			<%end%>
+						</ul>
 
-		</ul>
+					</section>
 
+				<%end%>
+
+			</div>
+
+			<div class="col-xs-12 col-sm-4">
+
+				<section class="footer-section">
+
+					<header class="footer-header">Markets</header>
+
+					<ul>
+					
+						<% Market.all.each do |market| %>
+
+							<li><%= link_to market.name + " Comedy Shows", show_dashboard_path(market.short_name) %></li>
+
+						<%end%>
+
+					</ul>
+
+				</section>
+
+			</div>
+
+			<div class="col-xs-12 col-sm-4">
+				
+				<section class="footer-section">
+
+					<header class="footer-header">SOCIAL MEDIA</header>
+
+					<ul>
+
+						<li><a href="https://twitter.com/_servmanity">Twitter</a></li>
+
+						<li><a href="https://www.facebook.com/servmanity/">Facebook</a></li>
+
+						<li><a href="https://www.instagram.com/servmanity/">Instagram</a></li>
+
+					</ul>
+
+				</section>
+
+			</div>
+
+		</div>
 
 	</div>
 
+	<br><br><br>
+	
+	<div class="centered">Copyright <%= Time.now.strftime("%Y") %> COMEDY HERE, LLC. All Right Reserved.</div>
 
-
-</div>
+</footer>
