@@ -186,7 +186,9 @@ body{
 	    text-align: center;
 	    z-index: 99;
 	    position: relative;
-
+	    
+	    transform:scale(1);
+    	transition:all 1s;
 	    cursor: pointer;
 	    border: 1px solid rgba(0,0,0,0.1);
 
@@ -205,9 +207,9 @@ body{
 	}
 
 
-	a.button:hover{
-		color: #fff;
-	    box-shadow: none;
+	.button:hover{
+		
+	    transform:scale(1.05);
 	}
 
 

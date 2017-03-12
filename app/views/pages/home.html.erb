@@ -6,39 +6,11 @@
 
 <div class="dashboard">
 
-	<% unless user_signed_in?%>
+	<% unless @city %>
 		
-		<div class="home-hero">
-
-			<!-- <span class="glyphicon glyphicon-remove dismiss-parent" aria-hidden="true"></span> -->
-
-			<div class="home-hero-content centered">
-
-				<% if @city %>
-				
-					<h1>Find the Best <%= @city %> Comedy Shows</h1>
-
-					<br><br>
-
-					<%= link_to "Signup to Get Started", root_path, class:"button medium blue-background button"%>
-
-				<%else%>
-
-					<h1>Find the Best Comedy Shows</h1>
-
-					<br><br>
-
-					<input class="geocomplete-input" type="text"></input>
-
-				<%end%>
-
-			</div>
-
-		</div>
+		<%= render 'pages/home_location_cta' %>
 
 	<%end%>
-
-
 
 	<%# if @city %>
 
@@ -66,7 +38,11 @@
 
 				</section>
 
-				<%= render 'pages/home_signup_cta' %>
+				<% unless user_signed_in? %>
+					
+					<%= render 'pages/home_signup_cta' %>
+
+				<%end%>
 
 				<%(Date.tomorrow..Date.tomorrow + 7).each do |date| %>
 
