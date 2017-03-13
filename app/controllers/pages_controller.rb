@@ -108,4 +108,29 @@ class PagesController < ApplicationController
 	end
 
 
+	def update_city
+		
+		input_location = params[:location]
+
+		coordinates = Geocoder.coordinates(input_location)
+		
+		city = Geocoder.search(coordinates).first.city
+
+		session[:coordinates] = coordinates
+
+		session[:city] = city
+		
+		if user_signed_in?
+
+			#default city or something
+
+		end
+
+		redirect_to :back
+
+
+	end
+
+
+
 end

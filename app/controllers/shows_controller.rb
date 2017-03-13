@@ -57,7 +57,7 @@ class ShowsController < ApplicationController
       @SEO_description = @show.about
 
       @nav_return = true
-      @nav_return_title = @show.name
+      #@nav_return_title = @show.name
 
     else
 

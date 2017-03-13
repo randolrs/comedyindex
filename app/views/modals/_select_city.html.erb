@@ -6,24 +6,16 @@
 			
 			<span class="dismiss-modal clickable">x</span>
 
-			<%= form_tag update_market_path(:dashboard_refresh => @show_dashboard_view) do %>
+			<%= form_tag update_city_path do %>
 
 				<a class="modal-header">Tell us your location</a>
 
 				<br>
 				<br>
 
-				
+				<input type="text" class="geocomplete-input" name="location"></input>
 
-				<br>
-				<br>
-
-				
-
-				<br>
-				<br>
-
-				<button class="black-background button medium">Update City</button>
+				<button class="red-background button medium">Update City</button>
 
 			<%end%>
 

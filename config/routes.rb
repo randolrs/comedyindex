@@ -41,6 +41,8 @@ Rails.application.routes.draw do
 
   post 'update_market' => 'pages#update_market', as: 'update_market'
 
+  post 'update_city' => 'pages#update_city', as: 'update_city'
+
   
 
   # Example of regular route:
