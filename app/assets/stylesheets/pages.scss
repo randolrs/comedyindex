@@ -150,8 +150,9 @@ h1.dashboard-header{
 	z-index: 961;
 
 	h1{
-		line-height: 30px;
-		font-size: 30px;
+		line-height: 24px;
+		font-size: 24px;
+		font-weight: 600;
 	}
 }
 
@@ -167,6 +168,7 @@ h1.dashboard-header{
 
 .dashboard{
 	margin: 0 auto;
+	margin-top: 25px;
 	max-width: 1200px;
 	padding: 100px 0px 0px 0px;
 
@@ -174,7 +176,7 @@ h1.dashboard-header{
 
 .search-tag{
 	margin-right: 10px;
-	padding: 5px 25px;
+	padding: 5px 10px;
 	border-radius: 20px;
 	background: #aaa;
 	color: #666;
