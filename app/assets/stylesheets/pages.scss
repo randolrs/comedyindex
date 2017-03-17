@@ -96,6 +96,10 @@ section.home-index:last-child{
 	
 }
 
+section.home-index.fixed{
+	position: fixed;
+}
+
 .content, .profile-content{
 	
 	width: 100%;
@@ -136,10 +140,50 @@ h1.dashboard-header{
 	
 }
 
+.dashboard-header{
+	padding:15px 0px;
+	position: fixed;
+	top: 60px;
+	width: 100%;
+	background: #fff;
+	height: 100px;
+	z-index: 961;
+
+	h1{
+		line-height: 30px;
+		font-size: 30px;
+	}
+}
+
+.dashboard-header-content{
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0px 15px;
+}
+
+.dashboard-section{
+	margin: 15px 0px;
+}
+
 .dashboard{
 	margin: 0 auto;
 	max-width: 1200px;
+	padding: 100px 0px 0px 0px;
 
+}
+
+.search-tag{
+	margin-right: 10px;
+	padding: 5px 25px;
+	border-radius: 20px;
+	background: #aaa;
+	color: #666;
+	cursor: pointer;
+
+}
+
+.search-tag:last-child{
+	margin: 0px;
 }
 
 .home-hero{
@@ -322,10 +366,6 @@ h1.dashboard-header{
 		}
 
 	}
-}
-
-.dashboard{
-	padding: 0px;
 }
 
 .pac-container{

@@ -6,12 +6,27 @@
 	<%= render 'pages/home_location_cta' %>
 
 <%else%>
+	
+	<div class="dashboard-header material-shadow">
+		
+		<div class="dashboard-header-content">
+			<h1><%= session[:city]%> Comedy Shows</h1>
 
+			<br>
+
+			<span class="search-tag">Tag</span>
+			<span class="search-tag">Ass</span>
+			<span class="search-tag">Cotton</span>
+
+		</div>
+
+	</div>
+	
 	<div class="dashboard">
 
 		<div class="row">
 
-			<div class="col-xs-12 col-sm-12">
+			<div class="col-xs-12 col-sm-8">
 
 				<section class="home-index">
 
@@ -61,6 +76,27 @@
 
 				<% end %>
 
+			</div>
+
+			<div class="col-xs-12 col-sm-4">
+				
+				<section class="home-index fixed">
+					
+					<div class="card">
+					Location
+					</div>
+
+				</section>
+
+				<section class="home-index fixed">
+					
+					<div class="card">
+					Filters
+					</div>
+
+				</section>
+
+				
 			</div>
 
 		</div>
