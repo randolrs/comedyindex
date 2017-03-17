@@ -145,7 +145,8 @@ h1.dashboard-header{
 	position: fixed;
 	top: 60px;
 	width: 100%;
-	background: #fff;
+	background: #FFF633;
+	color: #111;
 	height: 100px;
 	z-index: 961;
 
@@ -178,7 +179,8 @@ h1.dashboard-header{
 	margin-right: 10px;
 	padding: 5px 10px;
 	border-radius: 20px;
-	background: #aaa;
+	border: 1px solid rgba(0,0,0,0.2);
+	background: #ccc;
 	color: #666;
 	cursor: pointer;
 
