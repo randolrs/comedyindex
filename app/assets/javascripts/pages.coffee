@@ -10,6 +10,12 @@ ready = ->
 
 		$(".sticky").stick_in_parent();
 
+		$(".toggle-active").click (window.event), ->
+			if $(@).hasClass("active")
+				$(@).removeClass("active")
+			else
+				$(@).addClass("active")
+
 		$(".click-to-reveal").click (window.event), ->
 			$('a.click-to-reveal').removeClass('active')
 			$('div.reveal-panel').hide()
