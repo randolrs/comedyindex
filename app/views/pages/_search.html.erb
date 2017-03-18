@@ -1,0 +1,83 @@
+
+<% if location.blank? %>
+		
+	<%= render 'pages/home_location_cta' %>
+
+<%else%>
+	
+	<div class="dashboard-header">
+		
+		<div class="dashboard-header-content">
+			<h1><%= location %> Comedy Shows</h1>
+
+			<br>
+
+			<span class="search-tag toggle-active">Stand-up</span>
+			<span class="search-tag toggle-active">Improv</span>
+			<span class="search-tag toggle-active">Open Mic</span>
+
+		</div>
+
+	</div>
+	
+	<div class="dashboard">
+
+		<div class="row">
+
+			<div class="col-xs-12 col-sm-12">
+
+				<section class="home-index">
+
+					<header class="home-section-header">Tonight</header>
+					
+					<div class="row">
+						
+						<% Show.all.take(8).each do |show| %>
+
+							<div class="col-xs-12 col-sm-4 col-md-3">
+					  			
+					  			<%= render :partial => 'shows/index_show', :locals => {:show =>  show} %>
+
+					  		</div>
+
+						<% end %>
+
+					</div>
+
+				</section>
+
+				<% unless user_signed_in? %>
+					
+					<%= render 'pages/home_signup_cta' %>
+
+				<%end%>
+
+				<%(Date.tomorrow..Date.tomorrow + 7).each do |date| %>
+
+					<section class="home-index">
+
+						<header class="home-section-header"><%= date.strftime("%a %b %e")%></header>
+						
+						<div class="row">
+							
+							<% Show.all.take(8).each do |show| %>
+								<div class="col-xs-12 col-sm-4 col-md-3">
+						  		<%= render :partial => 'shows/index_show', :locals => {:show =>  show} %>
+						  		</div>
+
+							<% end %>
+
+						</div>
+
+					</section>
+
+
+				<% end %>
+
+			</div>
+
+		</div>
+
+	</div>
+
+<%end%>

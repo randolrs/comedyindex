@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   
   root 'pages#home'
 
+  get '/:market_name' => 'pages#search', as: 'search'
+
   get 'signup' => 'pages#signup'
 
   get 'dashboard' => 'users#dashboard'

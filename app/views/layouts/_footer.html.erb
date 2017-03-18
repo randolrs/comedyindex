@@ -36,7 +36,7 @@
 					
 						<% Market.all.each do |market| %>
 
-							<li><%= link_to market.name + " Comedy Shows", show_dashboard_path(market.short_name) %></li>
+							<li><%= link_to market.name + " Comedy Shows", search_path(market.short_name) %></li>
 
 						<%end%>
 
