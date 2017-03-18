@@ -17,6 +17,17 @@ ready = ->
 			targetId = "#" + $(@).data("reveal-panel-id")
 			$('body').find(targetId).show()
 
+		$(window).scroll (window.event), ->
+			st = $(@).scrollTop()
+			last = $('body').data('last-scroll')
+			$('body').data('last-scroll', st).removeAttr('last-scroll')
+			if st > last
+				console.log("down")
+			else
+				console.log("up")
+			
+
+
 		$(".click-to-toggle").click (window.event), ->
 			targetId = "#" + $(@).data("reveal-panel-id")
 			$('body').find(targetId).slideToggle()
