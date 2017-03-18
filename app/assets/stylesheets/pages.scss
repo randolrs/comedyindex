@@ -146,8 +146,8 @@ h1.dashboard-header{
 	top: 60px;
 	width: 100%;
 	background: #1e3c72;
-    background: -webkit-linear-gradient(to right, #1e3c72, #2a5298);
-    background: linear-gradient(to right, #1e3c72, #2a5298);
+    background: -webkit-linear-gradient(to bottom, #1e3c72, #2a5298);
+    background: linear-gradient(to bottom, #1e3c72, #2a5298);
 	color: #fff;
 	height: 100px;
 	z-index: 961;
@@ -183,8 +183,8 @@ h1.dashboard-header{
 	padding: 5px 10px;
 	border-radius: 20px;
 	border: 1px solid rgba(0,0,0,0.2);
-	background: #ccc;
-	color: #666;
+	background: rgba(0,0,0,0.4);
+    color: #aaa;
 	cursor: pointer;
 
 }
