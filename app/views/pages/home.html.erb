@@ -7,7 +7,7 @@
 
 <%else%>
 	
-	<div class="dashboard-header material-shadow">
+	<div class="dashboard-header">
 		
 		<div class="dashboard-header-content">
 			<h1><%= session[:city]%> Comedy Shows</h1>
@@ -34,7 +34,7 @@
 					
 					<div class="row">
 						
-						<% Show.all.take(12).each do |show| %>
+						<% Show.all.take(8).each do |show| %>
 
 							<div class="col-xs-12 col-sm-4 col-md-3">
 					  			
@@ -62,7 +62,7 @@
 						
 						<div class="row">
 							
-							<% Show.all.take(9).each do |show| %>
+							<% Show.all.take(8).each do |show| %>
 								<div class="col-xs-12 col-sm-4 col-md-3">
 						  		<%= render :partial => 'shows/index_show', :locals => {:show =>  show} %>
 						  		</div>
