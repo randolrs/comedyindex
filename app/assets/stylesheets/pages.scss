@@ -151,7 +151,7 @@ h1.dashboard-header{
     background: -webkit-linear-gradient(to bottom, #1e3c72, #2a5298);
     background: linear-gradient(to bottom, #1e3c72, #2a5298);
 
-    box-shadow: inset 0px 2px 1px rgba(200, 200, 200, 0.1), inset 2px 0px 1px rgba(200, 200, 200, 0.1), inset -2px 0px 1px rgba(200, 200, 200, 0.1), inset 0px -2px 1px rgba(00, 00, 00, 0.1);
+    box-shadow: 0px 1px 1px rgba(0,0,0,0.3), inset 0px 2px 1px rgba(200, 200, 200, 0.1), inset 2px 0px 1px rgba(200, 200, 200, 0.1), inset -2px 0px 1px rgba(200, 200, 200, 0.1), inset 0px -2px 1px rgba(00, 00, 00, 0.1);
 
     border-bottom: 1px solid rgba(0,0,0,0.2);
 
@@ -225,7 +225,7 @@ h1.dashboard-header{
 	background: rgba(0,0,0,0.4);
     color: #aaa;
 	cursor: pointer;
-	box-shadow: inset 0px 1px 1px rgba(200,200,200,0.5), 0px 1px 1px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
 
 
 }

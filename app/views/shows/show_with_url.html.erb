@@ -14,8 +14,6 @@
 
         <p><%= @show.start_time.strftime("%A, %b %e, %Y") %><% if user_signed_in? %><% if @show.user_id == current_user.id %><br><a class="button">Add Dates</a><%end%><%end%></p>
 
-        <a class="button green-background">Buy Tickets</a>
-
       </div>
   
     </div>
