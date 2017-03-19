@@ -13,8 +13,6 @@ Rails.application.routes.draw do
   
   root 'pages#home'
 
-  get '/:market_name' => 'pages#search', as: 'search'
-
   get 'signup' => 'pages#signup'
 
   get 'dashboard' => 'users#dashboard'
@@ -23,9 +21,21 @@ Rails.application.routes.draw do
 
   get 'community' => 'pages#community'
 
+  get 'account' => 'users#account_settings'
+
+  post 'update_market' => 'pages#update_market', as: 'update_market'
+
+  post 'update_city' => 'pages#update_city', as: 'update_city'
+  
+
+
+
+  get '/:market_name' => 'pages#search', as: 'search'
+
+
   get 'profile/setup' => 'performers#setup_profile', as: 'setup_performer_profile'
 
-  get 'account' => 'users#account_settings'
+  
 
   get 'signup/comics' => 'users#comic_signup', as: 'comic_signup'
 
@@ -41,9 +51,6 @@ Rails.application.routes.draw do
 
   get 'review/new/:show_id' => 'show_reviews#new_with_show_header', as: 'new_review'
 
-  post 'update_market' => 'pages#update_market', as: 'update_market'
-
-  post 'update_city' => 'pages#update_city', as: 'update_city'
 
   
 
