@@ -59,6 +59,8 @@ class PagesController < ApplicationController
 
 		@hide_footer = true
 
+		@darkbluebackground = true
+
 	end
 
 	def login
@@ -66,6 +68,8 @@ class PagesController < ApplicationController
 		@hide_header = true
 
 		@hide_footer = true
+
+		@darkbluebackground = true
 		
 	end
 

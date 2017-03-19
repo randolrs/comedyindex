@@ -241,6 +241,37 @@ h1.dashboard-header{
 	margin: 0px;
 }
 
+.form-container.login-container{
+	label{
+		color: #fff;
+	}
+
+	input[type="email"], input[type="password"]{
+		background: rgba(0,0,0,0.2);
+		color: #fff;
+		border: 2px solid rgba(0,0,0,0.2);
+	}	
+
+	input:focus{
+		border: 2px solid $brand-red;
+
+	}
+
+	p.other-actions{
+		
+		a{
+			color: #fff;
+			font-size: 16px;
+		}
+		
+	}
+}
+
+.login-header{
+	margin: 0 auto;
+	max-width: 900px;	
+}
+
 .home-hero{
 	margin: 20px 10px;
     background: rgba(0,0,0,0.5);

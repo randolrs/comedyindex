@@ -1,28 +1,30 @@
-<h1 class="centered mega light-text-shadow login-header">ComedyZilla</h1>
+<h1 class="centered mega login-header">ComedyHere</h1>
+
+<h2 class="centered mega login-header">Create an account to promote your shows to thousands of comedy fans.</h2>
 
 
-<div class="form-container medium clear">
+<div class="form-container login-container medium clear">
 
 	<%= form_for(:user, :url => registration_path(:user)) do |f| %>
 
 		<div class="field">
 		  <label>Email</label>
 		  <br>
-		  <%= f.email_field :email, autofocus: true, placeholder: "Email", :required => true %>
+		  <%= f.email_field :email, autofocus: true, placeholder: "Email", :required => true, class:"email-input" %>
 		</div>
 
 		<div class="field">
 		  <label>Password</label>
 		  <br>
-		  <%= f.password_field :password, autocomplete: "off", placeholder: "Password", required: true, :required => true %>
+		  <%= f.password_field :password, autocomplete: "off", placeholder: "Password", required: true, :required => true, class:"password-input" %>
 		</div>
 
 		<div class="actions">
-		  <%= f.submit "Signup", class: "button medium blue-background" %>
+		  <%= f.submit "Create an Account", class: "button medium grey-background" %>
 		</div>
 
 	<% end %>
+	<br><br>
+	<p class="centered other-actions"><%= link_to "Already Have an Account? Login", login_path %></p>
 
 </div>
-
-  <p class="centered"><%= link_to "Login", login_path %></p>

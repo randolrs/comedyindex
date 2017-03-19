@@ -23,6 +23,9 @@ ready = ->
 			targetId = "#" + $(@).data("reveal-panel-id")
 			$('body').find(targetId).show()
 
+		$(".password-input").focus (window.event), ->
+			$('.button').addClass("orange-background")
+
 		$(window).scroll (window.event), ->
 			st = $(@).scrollTop()
 			last = $('body').data('last-scroll')

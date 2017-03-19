@@ -10,31 +10,33 @@
 
 <%end%>
 
-<h1 class="centered mega light-text-shadow login-header">ComedyZilla</h1>
+<h1 class="centered mega login-header">ComedyHere</h1>
 
 
-<div class="form-container medium clear">
+<div class="form-container login-container medium clear">
 
 	<%= form_for(:user, :url => session_path(:user)) do |f| %>
 
 		<div class="field">
 		  <label>Email</label>
 		  <br>
-		  <%= f.email_field :email, autofocus: true, placeholder: "Email", :required => true %>
+		  <%= f.email_field :email, autofocus: true, placeholder: "Email", :required => true, class:"email-input" %>
 		</div>
 
 		<div class="field">
 		  <label>Password</label>
 		  <br>
-		  <%= f.password_field :password, autocomplete: "off", placeholder: "Password", required: true, :required => true %>
+		  <%= f.password_field :password, autocomplete: "off", placeholder: "Password", required: true, :required => true, class:"password-input" %>
 		</div>
 
 		<div class="actions">
-		  <%= f.submit "Login", class: "button medium blue-background" %>
+		  <%= f.submit "Login", class: "button medium grey-background" %>
 		</div>
 
 	<% end %>
 
-</div>
+	<br><br>
 
-<p class="centered"><%= link_to "Signup", signup_path %></p>
+	<p class="centered other-actions"><%= link_to "Create a Free Account", signup_path %></p>
+
+</div>

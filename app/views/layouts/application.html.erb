@@ -43,7 +43,7 @@
 			<%= render 'modals/main_menu' %>
 		<%end%>
 
-		<div class="content-container <% if @whitebackground %>all-white-background<% end %>">
+		<div class="content-container <% if @whitebackground %>all-white-background<% end %> <% if @darkbluebackground %>dark-blue-background<% end %>">
 
 			<% flash.each do |name, msg| %>
      			<%# content_tag(:div, msg, class: "alert alert-#{name}") %>
