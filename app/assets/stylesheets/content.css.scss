@@ -114,6 +114,16 @@
 	
 }
 
+.card.see-more{
+    padding: 15px;
+    font-size: 20px;
+    border: 1px solid #666;
+    background: #aaa;
+    background: -webkit-linear-gradient(to bottom, #ddd, #aaa);
+    background: linear-gradient(to bottom, #ddd, #aaa);
+
+}
+
 .card.flat{
     padding: 10px;
     box-shadow: none;
