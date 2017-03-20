@@ -230,6 +230,13 @@ h1.dashboard-header{
 
 }
 
+.gold-star{
+	color: rgba(255, 215, 0, 1);
+	float: right;
+	font-size: 20px;
+	text-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+}
+
 .search-tag.active{
 	background: $brand-red;
 	border: 1px solid rgba(0,0,0,0.6);
