@@ -48,6 +48,8 @@
 
           <p><%= @show.user.first_name %></p>
 
+          <a href="<%= user_profile_path(@show.user.first_name) %>"><%= @show.user.first_name + " Profile" %><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a>
+
         </section>
 
 
