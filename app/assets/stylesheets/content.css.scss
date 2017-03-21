@@ -37,8 +37,9 @@
         
         padding: 3px 8px;
         border-radius: 20px;
-        background: #f6a;
         margin-right: 10px;
+        background: rgba(0,200,0,0.1);
+        border: 1px solid #aaa;
     }
 
     .tag-content:last-child{
@@ -117,10 +118,10 @@
 .card.see-more{
     padding: 15px;
     font-size: 20px;
-    border: 1px solid #666;
+    border: 1px solid #aaa;
     background: #aaa;
-    background: -webkit-linear-gradient(to bottom, #ddd, #aaa);
-    background: linear-gradient(to bottom, #ddd, #aaa);
+    background: -webkit-linear-gradient(to bottom, #eee, #ccc);
+    background: linear-gradient(to bottom, #eee, #ccc);
 
 }
 
