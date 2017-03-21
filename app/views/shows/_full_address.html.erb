@@ -4,6 +4,8 @@
 
 	<p><%= @show.venue.name %></p>
 
+	<p><%= @show.address %></p>
+
 	<p><%= @show.venue.address_line_1 %></p>
 
 	<% if @show.venue.address_line_2 %><p><%= @show.venue.address_line_2 %></p><%end%>
@@ -13,7 +15,7 @@
 
 <%else%>
 
-	<p><%= @show.venue_name %></p>
+	<p><%= @show.address %></p>
 
 	<p><%= @show.address_line_1 %></p>
 
