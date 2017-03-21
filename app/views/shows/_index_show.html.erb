@@ -12,7 +12,7 @@
         </div>
 
         <div class="col-xs-9 col-sm-12">
-          <p class="light">Shane Presents</p>
+          <p class="light"><%= link_to show.user.first_name, user_profile_path(show.user.first_name) %> Presents</p>
           <span class="glyphicon glyphicon-star gold-star" aria-hidden="true"></span>
           <br>
           <p class="title"><%= show.name %></p>

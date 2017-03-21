@@ -1,0 +1,23 @@
+<div class="profile-header-banner">
+
+  <div class="profile-title-container">
+
+     <div class="row">
+      
+      <div class="col-xs-3 col-sm-2">
+        <%= image_tag @user.image.url(:medium), class: "rounded" %>
+      </div>
+
+      <div class="col-xs-9 col-sm-10">
+        
+        <h1><%= @user.first_name %></h1>
+
+        <h2>Comedian, Producer</h2>
+
+      </div>
+  
+    </div>
+
+  </div>
+
+</div>

@@ -30,7 +30,16 @@
 
     p.light{
         color: #aaa;
-        LINe-HEIGHT: 20PX;
+        line-height: 20PX;
+
+        a{
+           color: #aaa;
+            line-height: 20PX; 
+        }
+
+        a:hover{
+            color: #666;
+        }
     }
 
     .tag-content{

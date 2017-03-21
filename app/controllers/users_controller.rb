@@ -26,5 +26,11 @@ class UsersController < ApplicationController
   	@main_SEO_title = "Dashboard"
 
   end
+
+  def profile
+
+    @user = User.where(:first_name => params[:display_name]).last
+
+  end
   
 end

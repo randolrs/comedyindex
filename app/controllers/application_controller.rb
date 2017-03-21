@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
     	if current_user.is_comic
 
 
-    		setup_performer_profile_path
+    		root_path
 
     	else
 
