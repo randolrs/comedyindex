@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170308004230) do
+ActiveRecord::Schema.define(version: 20170322230820) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -52,6 +52,21 @@ ActiveRecord::Schema.define(version: 20170308004230) do
     t.string   "snapchat_url"
     t.string   "website_url"
     t.integer  "user_id"
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.integer  "schedulable_id"
+    t.string   "schedulable_type"
+    t.date     "date"
+    t.time     "time"
+    t.string   "rule"
+    t.string   "interval"
+    t.text     "day"
+    t.text     "day_of_week"
+    t.datetime "until"
+    t.integer  "count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "show_occurences", force: :cascade do |t|

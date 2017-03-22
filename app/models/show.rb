@@ -5,13 +5,14 @@ class Show < ActiveRecord::Base
 	:default_url => 'missing_person_photo.png',
 	:s3_protocol => :https
 
-	geocoded_by :address
 
-	self.per_page = 2
+	acts_as_schedulable :schedule
+
+
+	geocoded_by :address
 
 	after_validation :geocode, :if => :address_changed?
 
-	
 	reverse_geocoded_by :latitude, :longitude do |obj, results|
 
 		if geo = results.first
@@ -23,6 +24,8 @@ class Show < ActiveRecord::Base
 	end
 
 	after_validation :reverse_geocode
+
+	self.per_page = 2
 
 	validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 

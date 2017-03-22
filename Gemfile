@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -51,6 +51,11 @@ gem 'geocoder'
 gem 'possessive'
 
 gem 'will_paginate'
+
+
+#scheduling
+gem 'ice_cube'
+gem 'schedulable'
 
 #gem 'bootstrap-will_paginate'
 

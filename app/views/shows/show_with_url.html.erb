@@ -39,10 +39,34 @@
         </section>
 
         <section class="profile-section">
-
+          
           <%= render :partial => 'shows/full_address', :locals => {:show => @show} %>
 
         </section>
+
+        <section class="profile-section">
+
+          <header class="section-title">Schedule</header>
+
+          <p><%= @show.schedule %></p>
+
+          <br>
+
+          <p><b>Upcoming Dates:</b><p>
+          <% @show.schedule.occurrences(Time.now + 1.month).each do |occurence| %>
+
+            <p><%= occurence.strftime("%a, %b %e") %></p>
+
+          <%end%>
+
+        </section>
+
+      </div>
+
+      <div class="col-xs-12 col-sm-6 no-padding">
+
+        
+
 
         <section class="profile-section">
 
@@ -54,10 +78,6 @@
 
         </section>
 
-
-      </div>
-
-      <div class="col-xs-12 col-sm-6 no-padding">
 
         <section class="profile-section">
 

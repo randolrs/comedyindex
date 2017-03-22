@@ -14,13 +14,13 @@
     <% end %>
 
     <div class="field">
-      <label>Event Title</label><br>
+      <label>Show Title</label><br>
       <%= f.text_field :name %>
     </div>
 
     <div class="field">
 
-      <label>Event Image</label>
+      <label>Preview Image</label>
 
       <div class="image-field-container">
         
@@ -33,8 +33,8 @@
     </div>
 
     <div class="field">
-      <%= f.label :start_time %><br>
-      <%= f.datetime_select :start_time, :ampm => true, :minute_step => 15 %>
+      <%= f.label :schedule %><br>
+      <%= f.schedule_select :schedule %>
     </div>
 
     <div class="field">
