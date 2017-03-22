@@ -54,7 +54,7 @@
 
             <br>
 
-            <% if @show.schedule.occurrences.count > 0 %>
+            <% if @show.schedule.occurrences(Time.now + 1.month).count > 0 %>
               
               <p><b>Upcoming Dates:</b><p>
 
