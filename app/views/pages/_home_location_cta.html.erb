@@ -4,22 +4,17 @@
 
 	<div class="home-hero-content centered">
 
-		<h1>Help us Help You</h1>
-
 		<h2>Enter Your City, Neighborhood, or Address to find all the best comedy shows near you.</h2>
 
 		<br><br>
 
 		<%= form_tag update_city_path do %>
 
-				<a class="modal-header">Tell us your location</a>
+			<input type="text" class="geocomplete-input" name="location"></input>
 
-				<br>
-				<br>
-
-				<input type="text" class="geocomplete-input" name="location"></input>
-
-				<button class="red-background button medium">Update City</button>
+			<br><br>
+			
+			<button class="yellow-background button medium">Update City</button>
 
 		<%end%>
 

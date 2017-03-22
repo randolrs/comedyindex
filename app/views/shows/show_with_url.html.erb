@@ -12,7 +12,9 @@
         
         <h1><%= @show.name %></h1>
 
-        <p><%= @show.start_time.strftime("%A, %b %e, %Y") %><% if user_signed_in? %><% if @show.user_id == current_user.id %><br><a class="button">Add Dates</a><%end%><%end%></p>
+        <p><%= @show.start_time.strftime("%A, %b %e, %Y") %></p>
+
+        <p><a class="button orange-background" href="<%= root_path %>">Buy Ticket for $10</a></p>
 
       </div>
   
@@ -26,7 +28,7 @@
 
   <div class="row">
       
-      <div class="col-xs-12 col-sm-6">
+      <div class="col-xs-12 col-sm-6 no-padding">
 
         <section class="profile-section">
 
@@ -55,7 +57,7 @@
 
       </div>
 
-      <div class="col-xs-12 col-sm-6">
+      <div class="col-xs-12 col-sm-6 no-padding">
 
         <section class="profile-section">
 

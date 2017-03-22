@@ -6,23 +6,39 @@
 
 			<div class="col-xs-12 col-sm-4">
 				
-				<% unless user_signed_in? %>
+				
 
 					<section class="footer-section">
 
-						<header class="footer-header">SIGNUP</header>
+						<% unless user_signed_in? %>
 
-						<ul>
+							<header class="footer-header">SIGNUP</header>
 
-							<li><%= link_to "I'm a Comic", comic_signup_path %></li>
-							<li><%= link_to "I'm a Producer", producer_signup_path %></li>
-							<li><%= link_to "I'm a Venue", venue_signup_path %></li>
+							<ul>
 
-						</ul>
+								<li><%= link_to "I'm a Comic", comic_signup_path %></li>
+								<li><%= link_to "I'm a Producer", producer_signup_path %></li>
+								<li><%= link_to "I'm a Venue", venue_signup_path %></li>
+
+							</ul>
+
+						<%else%>
+
+							<header class="footer-header">MY ACCOUNT</header>
+
+							<ul>
+
+								<li><%= link_to "Account Settings", account_path %></li>
+								<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+
+
+							</ul>
+
+						<%end%>
 
 					</section>
 
-				<%end%>
+				
 
 			</div>
 
@@ -36,7 +52,7 @@
 					
 						<% Market.all.each do |market| %>
 
-							<li><%= link_to market.name + " Comedy Shows", search_path(market.short_name) %></li>
+							<li><%= link_to market.name + " Comedy Shows", city_search_path(market.short_name) %></li>
 
 						<%end%>
 

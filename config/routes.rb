@@ -29,8 +29,9 @@ Rails.application.routes.draw do
 
 
 
+  get 'search' => 'pages#search', as: 'search'
 
-  get '/:market_name' => 'pages#search', as: 'search'
+  get '/:market_name' => 'pages#search', as: 'city_search'
 
 
   get 'profile/setup' => 'performers#setup_profile', as: 'setup_performer_profile'

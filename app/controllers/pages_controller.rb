@@ -121,6 +121,14 @@ class PagesController < ApplicationController
 
 	end
 
+	
+
+	def search
+
+
+
+	end
+
 
 
 end
