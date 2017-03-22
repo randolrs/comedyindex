@@ -44,27 +44,31 @@
 
         </section>
 
-        <section class="profile-section">
+        <% if @show.schedule %>
 
-          <header class="section-title">Schedule</header>
+          <section class="profile-section">
 
-          <p><%= @show.schedule %></p>
+            <header class="section-title">Schedule</header>
 
-          <br>
+            <p><%= @show.schedule %></p>
 
-          <% if @show.schedule.occurrences.count > 0 %>
-            
-            <p><b>Upcoming Dates:</b><p>
+            <br>
+
+            <% if @show.schedule.occurrences.count > 0 %>
               
-            <% @show.schedule.occurrences(Time.now + 1.month).each do |occurence| %>
+              <p><b>Upcoming Dates:</b><p>
 
-              <p><%= occurence.strftime("%a, %b %e") %></p>
+              <% @show.schedule.occurrences(Time.now + 1.month).each do |occurence| %>
+
+                <p><%= occurence.strftime("%a, %b %e") %></p>
+
+              <%end%>
 
             <%end%>
 
-          <%end%>
+          </section>
 
-        </section>
+        <%end%>
 
       </div>
 
