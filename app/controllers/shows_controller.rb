@@ -98,7 +98,9 @@ class ShowsController < ApplicationController
 
           ShowOccurence.create(:show_id => @show.id, :start_time => @show.start_time)
 
-          format.html { redirect_to @show, notice: 'Show was successfully created.' }
+          show_with_url_path(show.url_slug)
+
+          format.html { redirect_to show_with_url_path(@show.url_slug), notice: 'Show was successfully created.' }
           format.json { render :show, status: :created, location: @show }
         else
           format.html { render :new }
@@ -118,7 +120,7 @@ class ShowsController < ApplicationController
   def update
     respond_to do |format|
       if @show.update(show_params)
-        format.html { redirect_to @show, notice: 'Show was successfully updated.' }
+        format.html { redirect_to show_with_url_path(@show.url_slug), notice: 'Show was successfully updated.' }
         format.json { render :show, status: :ok, location: @show }
       else
         format.html { render :edit }
@@ -145,6 +147,6 @@ class ShowsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def show_params
-      params.require(:show).permit(:name, :market_id, :venue_id, :website_url, :category_1_id, :category_2_id, :about, :address_line_1, :address_line_2, :city, :state_province, :country, :image, :start_time, :venue_name, show_occurences_attributes:[:start_time])
+      params.require(:show).permit(:name, :market_id, :venue_id, :website_url, :category_1_id, :category_2_id, :about, :address_line_1, :address_line_2, :city, :state_province, :country, :image, :address, :start_time, :venue_name, show_occurences_attributes:[:start_time])
     end
 end
