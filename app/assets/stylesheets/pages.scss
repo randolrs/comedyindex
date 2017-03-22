@@ -290,11 +290,12 @@ h1.dashboard-header{
 .login-header{
 	margin: 0 auto;
 	max-width: 900px;	
-	color: yellow;
+	
 }
 
 .home-hero{
-	margin: 20px 10px;
+	margin: 20px auto;
+	max-width: 1200px;
     background: rgba(0,0,0,0.5);
     background-image: asset-url("city-dusk.jpg");
 	background-attachment: fixed;
