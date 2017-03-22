@@ -21,3 +21,57 @@
   </div>
 
 </div>
+
+
+<div class="profile-content">
+
+  <div class="row">
+      
+      <div class="col-xs-12 col-sm-6 no-padding">
+
+        <section class="profile-section">
+
+          <header class="section-title">Bio</header>
+
+          <p><%# @show.about %></p>
+
+        </section>
+
+        <section class="profile-section">
+
+          <header class="section-title">Social Media</header>
+
+          <p class="social-media-row">
+        
+            <%# if @performer.twitter_url %><%= link_to root_path do %> <%= image_tag "twitter_icon.PNG", class:"social-media-button" %><%end%><%#end%> 
+
+            <%# if @performer.facebook_url %><%= link_to root_path do %> <%= image_tag "facebook_icon.png", class:"social-media-button" %><%end%><%#end%> 
+
+            <%# if @performer.instagram_url %><%= link_to root_path do %><%= image_tag "instagram_icon.png", class:"social-media-button" %><%end%><%#end%> 
+
+            <%# if @performer.youtube_url %><%= link_to root_path do %><%= image_tag "youtube_icon.PNG", class:"social-media-button" %><%end%><%#end%>
+
+            <%# if @performer.snapchat_url %><% link_to root_path do %><%= image_tag "snapchat_icon.png", class:"social-media-button" %><%end%><%#end%>
+
+          </p>
+
+
+        </section>
+
+
+      </div>
+
+      <div class="col-xs-12 col-sm-6 no-padding">
+
+        <section class="profile-section">
+
+          <header class="section-title">Reviews</header>
+            
+
+        </section>
+
+      </div>
+
+  </div>
+
+</div>
