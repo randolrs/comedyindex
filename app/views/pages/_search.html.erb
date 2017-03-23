@@ -1,5 +1,5 @@
 
-<% if location.blank? %>
+<% if location.blank?  %>
 		
 	<%= render 'pages/home_location_cta' %>
 
@@ -39,7 +39,11 @@
 					
 					<div class="row">
 						
-						<%= ShowOccurrence.nearby_show_occurrences("55.00000","44.00000", Date.today.beginning_of_day + 6.hours, Date.today.end_of_day + 6.hours) %>
+						<% ShowOccurrence.nearby_show_occurrences(latitude, longitude, Date.today.beginning_of_day + 6.hours, Date.today.end_of_day + 6.hours).each do |show| %>
+
+							<%= show.id %>
+
+						<%end%>
 
 
 						<% ShowOccurrence.where(:date => Date.today.beginning_of_day + 6.hours..Date.today.end_of_day + 6.hours).take(8).each do |show_occurrence| %>
