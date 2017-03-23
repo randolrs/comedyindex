@@ -55,7 +55,9 @@ gem 'will_paginate'
 
 #scheduling
 gem 'ice_cube'
-gem 'schedulable'
+gem 'schedulable', github: 'benignware/schedulable'
+
+gem 'whenever', :require => false
 
 #gem 'bootstrap-will_paginate'
 

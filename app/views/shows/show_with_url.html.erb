@@ -12,7 +12,7 @@
         
         <h1><%= @show.name %></h1>
 
-        <p><%= @show.start_time.strftime("%A, %b %e, %Y") %></p>
+        <p><%# @show.start_time.strftime("%A, %b %e, %Y") %></p>
 
         <p><a class="button orange-background" href="<%= root_path %>">Buy Ticket for $10</a></p>
 
@@ -50,7 +50,7 @@
 
             <header class="section-title">Schedule</header>
 
-            <p><%= @show.schedule %></p>
+            <p><i><%= @show.schedule %></i></p>
 
             <br>
 

@@ -1,13 +1,14 @@
 class Show < ActiveRecord::Base
+	#default_scope :order => 'date ASC'
 
 	has_attached_file :image, 
 	:styles => { :medium => "400x400#", :small => "70x70#", :thumb => "30x30#"},
 	:default_url => 'missing_person_photo.png',
 	:s3_protocol => :https
 
+	
 
-	acts_as_schedulable :schedule
-
+	acts_as_schedulable :schedule, occurrences: :show_occurrences
 
 	geocoded_by :address
 
@@ -40,6 +41,10 @@ class Show < ActiveRecord::Base
 	belongs_to :venue
 
 	accepts_nested_attributes_for :show_occurences, allow_destroy: true
+
+	def self.default_scope
+    	where(["id >= ?",1])
+  	end
 
 	def average_rating 
 

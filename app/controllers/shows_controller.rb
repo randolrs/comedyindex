@@ -85,10 +85,12 @@ class ShowsController < ApplicationController
 
       @show = Show.new(show_params)
 
-      @show.url_slug = @show.name.downcase.gsub(' ', '-')
-
       respond_to do |format|
         if @show.save
+
+          slug = @show.name.downcase.gsub(' ', '-')
+
+          @show.update(:url_slug => slug)
 
           unless @show.producer_id
 
@@ -96,9 +98,9 @@ class ShowsController < ApplicationController
 
           end
 
-          ShowOccurence.create(:show_id => @show.id, :start_time => @show.start_time)
+          #ShowOccurence.create(:show_id => @show.id, :start_time => @show.start_time)
 
-          show_with_url_path(show.url_slug)
+          
 
           format.html { redirect_to show_with_url_path(@show.url_slug), notice: 'Show was successfully created.' }
           format.json { render :show, status: :created, location: @show }
