@@ -12,7 +12,9 @@
         
         <h1><%= @show.name %></h1>
 
-        <p><%= @show.next_occurrence_date_time %></p>
+        <p><%= @show.next_occurrence_date %></p>
+
+        <p><%= @show.next_occurrence_time %></p>
 
         <p><a class="button orange-background" href="<%= root_path %>">Buy Ticket for $10</a></p>
 
@@ -39,7 +41,7 @@
         </section>
 
         <% if @show.address %>
-        
+
           <section class="profile-section">
 
             <%= render :partial => 'shows/full_address', :locals => {:show => @show} %>
@@ -48,6 +50,26 @@
 
         <%end%>
 
+        <% if @show.venue_id %>
+
+          <section class="profile-section">
+
+            <header class="section-title">About the Venue</header>
+
+            <p><%= @show.venue.about %></p>
+
+            <br>
+            
+            <p><a class="blue-text" href="<%= @show.venue.website_url %>">Website <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a></p>
+
+          </section>
+
+        <%end%>
+
+      </div>
+
+      <div class="col-xs-12 col-sm-6 no-padding">
+        
         <% if @show.schedule %>
 
           <section class="profile-section">
@@ -73,13 +95,6 @@
           </section>
 
         <%end%>
-
-      </div>
-
-      <div class="col-xs-12 col-sm-6 no-padding">
-
-        
-
 
         <section class="profile-section">
 
@@ -128,22 +143,6 @@
             <%end%>
 
         </section>
-
-        <% if @show.venue_id %>
-
-          <section class="profile-section">
-
-            <header class="section-title">About the Venue</header>
-
-            <p><%= @show.venue.about %></p>
-
-            <br>
-            
-            <p><a class="blue-text" href="<%= @show.venue.website_url %>">Website <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a></p>
-
-          </section>
-
-        <%end%>
 
       </div>
 

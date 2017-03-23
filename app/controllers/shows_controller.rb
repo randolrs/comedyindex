@@ -123,6 +123,21 @@ class ShowsController < ApplicationController
 
           #ShowOccurence.create(:show_id => @show.id, :start_time => @show.start_time)
 
+          unless @show.venue_id
+
+            if @show.address && @show.venue_name
+
+              venue = Venue.create(:address => @show.address, :name => @show.venue_name, :user_id => current_user.id)
+
+              @show.update(:venue_id => venue.id)
+
+            end
+
+          else
+
+            @show.update(:address => @show.venue.address, :venue_name => @show.venue.name)
+
+          end
           
 
           format.html { redirect_to show_with_url_path(@show.url_slug), notice: 'Show was successfully created.' }

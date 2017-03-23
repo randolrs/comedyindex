@@ -11,11 +11,13 @@
 
 <% if @show.venue_id %>
 
-	<p><%= @show.venue.name %></p>
+	<p><b><%= @show.venue.name %></b></p>
 
-	<p><%= @show.address %></p>
+	<p><%= @show.venue.address %></p>
 
 <%else%>
+	
+	<p><b><%= @show.venue_name %></b></p>
 
 	<p><%= @show.address %></p>
 

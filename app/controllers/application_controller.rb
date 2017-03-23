@@ -11,12 +11,22 @@ class ApplicationController < ActionController::Base
 
   def check_for_location
 
-    if session[:city].blank?
-      
+    if session[:location].blank?
+
       if request
-        
-        session[:city] = request.location.city
-        
+
+        if session[:city].blank?
+          
+          session[:city] = request.location.city
+            
+        end
+
+        session[:location] = request.location
+
+        session[:latitude] = session[:location]["data"]["latitude"] 
+
+        session[:longitude] = session[:location]["data"]["longitude"] 
+
       end
 
     end

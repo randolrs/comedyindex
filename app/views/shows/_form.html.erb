@@ -51,10 +51,21 @@
 
 
     <div class="field">
-      <%= f.label :venue_id %><br>
 
-      <%= collection_select(:show, :venue_id, Venue.all, :id, :name, prompt: "Select a Venue") %><br>
-      
+      <% if current_user.is_admin %>
+
+        <%= collection_select(:show, :venue_id, Venue.all, :id, :name, prompt: "Select a Venue") %><br>
+
+      <%else%>
+
+        <% if current_user.venues.count > 0 %>
+
+          <%= collection_select(:show, :venue_id, current_user.venues.all, :id, :name, prompt: "Select a Venue") %><br>
+
+        <%end%>
+
+      <%end%>
+
       <%= f.label :venue_name %><br>
       <%= f.text_field :venue_name %><br>
 
@@ -63,13 +74,6 @@
    
     </div>
 
-    <div class="field">
-    
-      <label>User (Admin Action)</label><br>
-      
-      <%= collection_select(:show, :market_id, Market.all, :id, :name, prompt: true) %>
-
-    </div>
     
     <div class="field">
       <label>Event Website URL</label><br>
