@@ -170,6 +170,15 @@ class Show < ActiveRecord::Base
 		end
 	end
 
+	def next_occurrence_date_time
+
+		if self.remaining_show_occurrences
+			
+			return self.remaining_show_occurrences.first.date.strftime("%A, %b %e, %Y")
+		else
+			return "Date/Time TBD"
+		end
+	end
 
 	def display_time
 
