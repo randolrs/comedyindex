@@ -39,7 +39,7 @@
 					
 					<div class="row">
 						
-						<% ShowOccurrence.where(:date => Date.today.beginning_of_day..Date.today.end_of_day).take(8).each do |show_occurrence| %>
+						<% ShowOccurrence.where(:date => Date.today.beginning_of_day + 6.hours..Date.today.end_of_day + 6.hours).take(8).each do |show_occurrence| %>
 
 							<div class="col-xs-12 col-sm-4 col-md-3">
 					  			

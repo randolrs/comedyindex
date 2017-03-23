@@ -86,11 +86,34 @@ class ShowsController < ApplicationController
       @show = Show.new(show_params)
 
       respond_to do |format|
+        
         if @show.save
 
-          slug = @show.name.downcase.gsub(' ', '-')
+          original_slug = @show.name.downcase.gsub(' ', '-')
 
-          @show.update(:url_slug => slug)
+          slug = original_slug
+          
+          c=0
+          i=1
+
+          until c==1 do
+
+            unless Show.where(:url_slug => slug).exists?
+
+              @show.update(:url_slug => slug)
+
+              c=1
+
+            else
+
+              i = i + 1
+
+              slug = original_slug + "-" + i.to_s
+
+            end
+
+          end
+
 
           unless @show.producer_id
 

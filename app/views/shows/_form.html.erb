@@ -43,11 +43,11 @@
     </div>
 
 
-    <%= f.fields_for :show_occurences do |builder| %>
-      <%= render 'show_occurence_fields', f: builder %>
-    <% end %>
+    <%# f.fields_for :show_occurences do |builder| %>
+      <%# render 'show_occurence_fields', f: builder %>
+    <%# end %>
 
-    <%= link_to_add_fields "Add Date", f, :show_occurences %>
+    <%# link_to_add_fields "Add Date", f, :show_occurences %>
 
 
     <div class="field">
@@ -60,10 +60,6 @@
 
       <%= f.label :address %><br>
       <%= f.text_field :address, class:"geocomplete-input" %><br>
-
-
-
-      
    
     </div>
 

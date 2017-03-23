@@ -38,11 +38,15 @@
 
         </section>
 
-        <section class="profile-section">
+        <% if @show.address %>
+        
+          <section class="profile-section">
 
-          <%= render :partial => 'shows/full_address', :locals => {:show => @show} %>
+            <%= render :partial => 'shows/full_address', :locals => {:show => @show} %>
 
-        </section>
+          </section>
+
+        <%end%>
 
         <% if @show.schedule %>
 
