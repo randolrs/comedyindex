@@ -24,6 +24,9 @@ module App
     config.active_record.raise_in_transactional_callbacks = true
 
     config.assets.initialize_on_precompile = false
+
+    config.time_zone = 'Eastern Time (US & Canada)'
+    config.active_record.default_timezone = :local 
     
   end
 end
