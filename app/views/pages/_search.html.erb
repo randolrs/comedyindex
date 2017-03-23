@@ -80,7 +80,7 @@
 						
 						<div class="row">
 							
-							<% ShowOccurrence.where(:date => date.yesterday..date).take(8).each do |show_occurrence| %>
+							<% ShowOccurrence.where(:date => date..date.tomorrow).take(8).each do |show_occurrence| %>
 								<div class="col-xs-12 col-sm-4 col-md-3">
 						  			<%= render :partial => 'shows/index_show', :locals => {:show_occurrence => show_occurrence, :show =>  Show.find(show_occurrence.schedulable_id)} %>
 						  		</div>
