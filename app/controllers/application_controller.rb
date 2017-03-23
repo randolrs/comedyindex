@@ -15,17 +15,21 @@ class ApplicationController < ActionController::Base
 
       if request
 
-        if session[:city].blank?
-          
-          session[:city] = request.location.city
+        if request.location
+        
+          if session[:city].blank?
             
+            session[:city] = request.location.city
+              
+          end
+
+          session[:location] = request.location
+
+          session[:latitude] = session[:location]["data"]["latitude"] 
+
+          session[:longitude] = session[:location]["data"]["longitude"] 
+        
         end
-
-        session[:location] = request.location
-
-        session[:latitude] = session[:location]["data"]["latitude"] 
-
-        session[:longitude] = session[:location]["data"]["longitude"] 
 
       end
 
