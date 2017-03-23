@@ -27,9 +27,9 @@ class ApplicationController < ActionController::Base
 
           session[:location] = location
 
-          session[:latitude] = location.data
+          session[:latitude] = location.data.latitude
 
-          session[:longitude] = location.data
+          session[:longitude] = location.data.longitude
         
         end
 
