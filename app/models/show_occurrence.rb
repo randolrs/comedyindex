@@ -4,6 +4,11 @@ class ShowOccurrence < ActiveRecord::Base
   scope :remaining, lambda{where(["date >= ?",Time.now])}
   scope :previous, lambda{where(["date < ?",Time.now])}
 
+  geocoded_by :address
+
+  reverse_geocoded_by :latitude, :longitude
+
+
   def self.default_scope
     where(["id >= ?",1])
   end
@@ -11,14 +16,11 @@ class ShowOccurrence < ActiveRecord::Base
 
   def self.nearby_show_occurrences(latitude, longitude, start_date, end_date)
 
-  	location_shows = Show.near([latitude, longitude], 50)
+  	location_show_occurrences = ShowOccurrence.near([latitude, longitude], 50)
 
-  	date_shows = ShowOccurrence.where(:date => start_date..end_date)
-
-  	location_date_shows = date_shows
+  	location_and_date_show_occurences = location_show_occurrences.where(:date => start_date..end_date)
   	
-
-  	return location_shows
+  	return location_and_date_show_occurences 
 
   end
 

@@ -125,7 +125,7 @@ class ShowsController < ApplicationController
 
           unless @show.venue_id
 
-            if @show.address && @show.venue_name
+            unless @show.address.blank? or @show.venue_name.blank?
 
               venue = Venue.create(:address => @show.address, :name => @show.venue_name, :user_id => current_user.id)
 
@@ -138,6 +138,9 @@ class ShowsController < ApplicationController
             @show.update(:address => @show.venue.address, :venue_name => @show.venue.name)
 
           end
+
+
+          ShowOccurrence.where(:schedulable_id => @show.id).update_all(:address => @show.address, :latitude => @show.latitude, :longitude => @show.longitude)
           
 
           format.html { redirect_to show_with_url_path(@show.url_slug), notice: 'Show was successfully created.' }
