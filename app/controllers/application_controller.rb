@@ -23,11 +23,13 @@ class ApplicationController < ActionController::Base
               
           end
 
-          session[:location] = request.location
+          location = request.location
 
-          session[:latitude] = session[:location]["data"]["latitude"] 
-          
-          session[:longitude] = session[:location]["data"]["longitude"] 
+          session[:location] = location
+
+          session[:latitude] = location.data
+
+          session[:longitude] = location.data
         
         end
 
