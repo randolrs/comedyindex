@@ -3,7 +3,7 @@ class Show < ActiveRecord::Base
 
 	has_attached_file :image, 
 	:styles => { :medium => "400x400#", :small => "70x70#", :thumb => "30x30#"},
-	:default_url => 'missing_person_photo.png',
+	:default_url => 'show_default.jpg',
 	:s3_protocol => :https
 
 	
