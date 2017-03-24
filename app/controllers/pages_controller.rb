@@ -109,6 +109,11 @@ class PagesController < ApplicationController
 		session[:coordinates] = coordinates
 
 		session[:city] = city
+
+		session[:latitude] = session[:coordinates][0]
+
+		session[:longitude] = session[:coordinates][1]
+
 		
 		if user_signed_in?
 
