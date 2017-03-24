@@ -39,14 +39,7 @@
 					
 					<div class="row">
 						
-						<% ShowOccurrence.nearby_show_occurrences(latitude, longitude, Date.today.beginning_of_day + 6.hours, Date.today.end_of_day + 6.hours).each do |show| %>
-
-							<%= show.id %>
-
-						<%end%>
-
-
-						<% ShowOccurrence.where(:date => Date.today.beginning_of_day + 6.hours..Date.today.end_of_day + 6.hours).take(8).each do |show_occurrence| %>
+						<% ShowOccurrence.nearby_show_occurrences(latitude, longitude, Date.today.beginning_of_day + 6.hours, Date.today.end_of_day + 6.hours).each do |show_occurrence| %>
 
 							<div class="col-xs-12 col-sm-4 col-md-3">
 					  			
@@ -54,7 +47,8 @@
 
 					  		</div>
 
-						<% end %>
+						<%end%>
+
 
 						<div class="col-xs-12">
 							
