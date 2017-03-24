@@ -7,8 +7,14 @@ class ApplicationController < ActionController::Base
 
   before_action :check_for_location
 
-  
+  #around_action :user_time_zone, if: :current_user
 
+  #def user_time_zone(&block)
+    ##Time.use_zone(current_user.time_zone, &block)
+
+  #end
+
+  
   def check_for_location
 
     if session[:location].blank?

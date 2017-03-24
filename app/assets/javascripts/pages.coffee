@@ -8,6 +8,8 @@ ready = ->
 
 		$(".geocomplete-input").geocomplete()
 
+		$("#time-zone-input").set_timezone()
+
 		$(".sticky").stick_in_parent();
 
 		$(".toggle-active").click (window.event), ->

@@ -16,5 +16,7 @@
 //= require sticky
 //= require jquery.turbolinks
 //= require bootstrap-sprockets
+//= require detect_timezone
+//= require jquery.detect_timezone
 //= require turbolinks
 //= require_tree .

@@ -36,6 +36,8 @@ gem 'jquery-turbolinks'
 
 gem 'jquery-infinite-pages'
 
+gem 'detect_timezone_rails'
+
 
 gem 'devise'
 

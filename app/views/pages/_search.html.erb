@@ -1,4 +1,6 @@
 
+<input type="text" id="time-zone"></input>
+
 <% if location.blank?  %>
 		
 	<%= render 'pages/home_location_cta' %>
@@ -35,11 +37,11 @@
 
 				<section class="home-index">
 
-					<header class="home-section-header material-shadow">Tonight (<%= Time.now.strftime("%A, %b %e") %>)</header>
+					<header class="home-section-header material-shadow">Tonight (<%= Time.current.strftime("%A, %b %e") %>)</header>
 					
 					<div class="row">
 						
-						<% ShowOccurrence.nearby_show_occurrences(latitude, longitude, Date.today.beginning_of_day + 6.hours, Date.today.end_of_day + 6.hours).each do |show_occurrence| %>
+						<% ShowOccurrence.nearby_show_occurrences(latitude, longitude, Time.current.beginning_of_day + 6.hours, Time.current.end_of_day + 6.hours).each do |show_occurrence| %>
 
 							<div class="col-xs-12 col-sm-4 col-md-3">
 					  			
