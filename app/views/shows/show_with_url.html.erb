@@ -116,43 +116,46 @@
 
         </section>
 
+        <% if @show.show_reviews.count > 0 %>
 
-        <section class="profile-section">
+          <section class="profile-section">
 
-          <header class="section-title">Reviews</header>
-            
-            <% if @show.show_reviews.count > 0 %>
+            <header class="section-title">Reviews</header>
               
-              <% @show.show_reviews.all.each do |review| %>
+              <% if @show.show_reviews.count > 0 %>
+                
+                <% @show.show_reviews.all.each do |review| %>
 
-                <div class="row">
-          
-                  <div class="col-xs-3">
-                    
-                    <%= image_tag review.user.image.url(:small), class: "reviewer-small-image" %><br>
-
-                    <%= review.user.first_name + " " + review.user.last_name.first(1) + "."   %><br>
-                    
-                    <%= Market.find(review.user.default_market_id).name %>
-
-                  </div>
-
-
-                  <div class="col-xs-9">
-
-                    <div class="img-stars <%= review.css_rating_code %>"></div><br>
+                  <div class="row">
+            
+                    <div class="col-xs-3">
                       
-                      <i>"<%= review.body %>"</i>
+                      <%= image_tag review.user.image.url(:small), class: "reviewer-small-image" %><br>
+
+                      <%= review.user.first_name + " " + review.user.last_name.first(1) + "."   %><br>
+                      
+                      <%= Market.find(review.user.default_market_id).name %>
+
+                    </div>
+
+
+                    <div class="col-xs-9">
+
+                      <div class="img-stars <%= review.css_rating_code %>"></div><br>
+                        
+                        <i>"<%= review.body %>"</i>
+
+                    </div>
 
                   </div>
 
-                </div>
+                <%end%>
 
               <%end%>
 
-            <%end%>
+          </section>
 
-        </section>
+        <%end%>
 
       </div>
 
