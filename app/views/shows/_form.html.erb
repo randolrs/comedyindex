@@ -37,6 +37,8 @@
       <%= f.schedule_select :schedule %>
     </div>
 
+    <%= f.hidden_field :time_zone, :id => "time-zone-input" %>
+
     <div class="field">
       <label>Category</label><br>
       <%= collection_select(:show, :category_1_id, Category.all, :id, :name, prompt: "Select a Category") %>
