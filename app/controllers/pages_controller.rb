@@ -125,6 +125,18 @@ class PagesController < ApplicationController
 
 	def search
 
+		if params[:market_name]
+
+			input_location = params[:market_name]
+
+			coordinates = Geocoder.coordinates(input_location)
+			
+			city = Geocoder.search(coordinates).first.city
+
+			session[:coordinates] = coordinates
+
+		end
+
 
 
 	end
