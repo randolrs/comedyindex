@@ -36,7 +36,8 @@
 
 					</li>
 
-					<li><a href="<%= root_path %>"><%= Time.current.end_of_day %></a></li>
+          
+					<li><a href="<%= root_path %>"><%= Time.current.end_of_day.strftime("%A, %b %d %z %Z") %></a></li>
 
 				</span>
 
