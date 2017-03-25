@@ -12,6 +12,24 @@ ready = ->
 
 		$(".sticky").stick_in_parent();
 
+		$(".vote").click (window.event), ->
+			showID = $(@).data('show-id')
+			direction = $(@).data('vote-direction')
+			alert("Show" + showID)
+			alert("Direction" + direction)
+			if $(@).data('vote-direction') == "up"
+				alert("up")
+				$.ajax
+				url: "/show/vote/#{showID}/#{direction}", format: 'js'
+				type: "GET"
+				success: (data) ->
+			  		console.log(data)
+			  		alert("successful up")
+			  	failure: (data) ->
+			  		alert("york steakhouse")
+			else if $(@).data('vote-direction') == "down"
+				alert("down")
+ 
 		$(".toggle-active").click (window.event), ->
 			if $(@).hasClass("active")
 				$(@).removeClass("active")

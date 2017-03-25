@@ -8,6 +8,8 @@ class ShowOccurrence < ActiveRecord::Base
 
   reverse_geocoded_by :latitude, :longitude
 
+  has_many :show_votes
+  
 
   def self.default_scope
     where(["id >= ?",1])

@@ -20,6 +20,8 @@ class User < ActiveRecord::Base
 
    has_many :show_reviews
 
+   has_many :show_votes
+
 
 
 end

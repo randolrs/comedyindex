@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170324015232) do
+ActiveRecord::Schema.define(version: 20170324230144) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -96,6 +96,17 @@ ActiveRecord::Schema.define(version: 20170324015232) do
     t.integer  "author_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.integer  "user_id"
+  end
+
+  create_table "show_votes", force: :cascade do |t|
+    t.integer  "show_id"
+    t.integer  "show_occurrence_id"
+    t.integer  "venue_id"
+    t.boolean  "is_up"
+    t.boolean  "is_down"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "user_id"
   end
 

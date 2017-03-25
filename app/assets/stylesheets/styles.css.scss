@@ -120,10 +120,18 @@ body{
 		background: $brand-yellow;
 	}
 
+	.button.yellow-background{
+		background: $brand-yellow url(button-glass.png) repeat-x 0 0;
+	}
+
 	.green-background{
 		
 	    color:#fff;
 	    background: $brand-green;
+	}
+
+	.button.green-background{
+		background: $brand-green url(button-glass.png) repeat-x 0 0;
 	}
 
 	a.green-background{
@@ -174,18 +182,23 @@ body{
 	
 	}
 
+	.button.red-background{
+		background: $brand-red url(button-glass.png) repeat-x 0 0;
+	}
+
 	a.red-background{
 		color: #fff;
 	}
 
 	.orange-background{
 
-		border: 1px solid #f83600;
-		color:#fff;
-		text-transform: none;
+		
 		background: #fe8c00; /* fallback for old browsers */
-		background: -webkit-linear-gradient(to bottom, #fe8c00 , #f83600); /* Chrome 10-25, Safari 5.1-6 */
-		background: linear-gradient(to bottom, #fe8c00 , #f83600); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+		color: #fff;
+	}
+
+	.button.orange-background{
+		background: #fe8c00 url(button-glass.png) repeat-x 0 0;
 	}
 
 	a.orange-background{

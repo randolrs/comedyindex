@@ -6,7 +6,7 @@ class Show < ActiveRecord::Base
 	:default_url => 'show_default.jpg',
 	:s3_protocol => :https
 
-	
+	has_many :show_votes
 
 	acts_as_schedulable :schedule, occurrences: :show_occurrences
 

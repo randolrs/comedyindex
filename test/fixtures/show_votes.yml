@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  show_id: 1
+  show_occurrence_id: 1
+  venue_id: 1
+  is_up: false
+  is_down: false
+
+two:
+  show_id: 1
+  show_occurrence_id: 1
+  venue_id: 1
+  is_up: false
+  is_down: false

@@ -54,7 +54,7 @@ Rails.application.routes.draw do
 
   get 'review/new/:show_id' => 'show_reviews#new_with_show_header', as: 'new_review'
 
-
+  get '/show/vote/:showID/:direction', :to => 'users#vote'
   
 
   # Example of regular route:

@@ -16,7 +16,7 @@
 
         <p><%= @show.next_occurrence_time %></p>
 
-        <p><a class="button orange-background" href="<%= root_path %>">Buy Ticket for $10</a></p>
+        <p><a class="button yellow-background" href="<%= root_path %>">Buy Ticket for $10</a></p>
 
       </div>
   
@@ -110,9 +110,9 @@
 
           <header class="section-title">Have You Seen this Show?</header>
 
-          <a class="button green-background" href="<%= signup_path %>"><span class="glyphicon glyphicon-hand-up" aria-hidden="true"></span> It's Good</a>
+          <a class="button green-background vote" data-show-id="<%= @show.id%>" data-vote-direction="up"><span class="glyphicon glyphicon-hand-up" aria-hidden="true"></span> It's Funny</a>
 
-          <a class="button red-background" href="<%= signup_path %>"><span class="glyphicon glyphicon-hand-down" aria-hidden="true"></span> Needs Work</a>
+          <a class="button red-background vote" data-show-id="<%= @show.id%>" data-vote-direction="down"><span class="glyphicon glyphicon-hand-down" aria-hidden="true"></span> Needs Work</a>
 
         </section>
 
