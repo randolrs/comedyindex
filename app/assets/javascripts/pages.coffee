@@ -15,15 +15,11 @@ ready = ->
 		$(".vote").click (window.event), ->
 			showID = $(@).data('show-id')
 			direction = $(@).data('vote-direction')
-			alert("Show" + showID)
-			alert("Direction" + direction)
-			alert(direction)
 			$.ajax
 				url: "/show/vote/#{showID}/#{direction}", format: 'js'
 				type: "GET"
 				success: (data) ->
 		  			console.log(data)
-		  			alert("success")
  
 		$(".toggle-active").click (window.event), ->
 			if $(@).hasClass("active")
