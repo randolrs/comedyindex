@@ -114,9 +114,13 @@
 
           <header class="section-title">Have You Seen this Show?</header>
 
-          <span class="button green-background vote" data-show-id="<%= @show.id%>" data-vote-direction="up"><span class="glyphicon glyphicon-hand-up" aria-hidden="true"></span> It's Funny</span>
+          <div class="show-vote-ctas-container centered">
+            
+            <span class="button green-background vote" data-show-id="<%= @show.id%>" data-vote-direction="up"><span class="glyphicon glyphicon-hand-up" aria-hidden="true"></span> It's Funny</span>
 
-          <span class="button red-background vote" data-show-id="<%= @show.id%>" data-vote-direction="down"><span class="glyphicon glyphicon-hand-down" aria-hidden="true"></span> Needs Work</span>
+            <span class="button red-background vote" data-show-id="<%= @show.id%>" data-vote-direction="down"><span class="glyphicon glyphicon-hand-down" aria-hidden="true"></span> Needs Work</span>
+
+          </div>
 
         </section>
 
