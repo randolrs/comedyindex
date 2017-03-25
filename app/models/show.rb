@@ -172,21 +172,21 @@ class Show < ActiveRecord::Base
 
 	def next_occurrence_date
 
-		if self.remaining_show_occurrences
+		if self.remaining_show_occurrences.count > 0
 			
 			return self.remaining_show_occurrences.first.date.strftime("%A, %b %e, %Y")
 		else
-			return "Date/Time TBD"
+			return "Date TBD"
 		end
 	end
 
 	def next_occurrence_time
 
-		if self.remaining_show_occurrences
+		if self.remaining_show_occurrences.count > 0
 			
 			return self.remaining_show_occurrences.first.date.strftime("%l:%M%P")
 		else
-			return "Date/Time TBD"
+			return "Time TBD"
 		end
 	end
 

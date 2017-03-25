@@ -37,100 +37,58 @@ class UsersController < ApplicationController
 
   def vote
 
-    # respond_to do |format|
-    #   format.js { render json: { :status => "success", :now_following => false } , content_type: 'text/json' }
-    # end
 
+    if user_signed_in?
 
-    respond_to do |format|
-      format.js {}
-      format.json { render json:  }
-      format.html { render action: 'index' }
-    end
- end
+      if params[:showID] && params[:direction]
 
+        @show = Show.where(:id => params[:showID]).first        
 
-    # respond_to do |format|
-    #   format.js { render json: { :status => "success", :now_following => false } , content_type: 'text/json' }
-    # end
+        if @show
 
+          @vote = ShowVote.where(user_id: current_user.id, show_id: @show.id).first
 
-    #if user_signed_in?
+          unless @vote
 
-      # if params[:showID] && params[:direction]
+            @vote = ShowVote.create(:user_id => current_user.id, :show_id => @show.id)
 
-      #   @show = Show.where(:id => params[:showID]).first        
+          end
 
-      #   if @show
-
-      #     @vote = ShowVote.where(user_id: current_user.id, show_id: @show.id).first
-
-      #     unless @vote
-
-      #       @vote = Vote.create(:user_id => current_user.id, :show_id => @show.id)
-
-      #     end
-
-      #     if params[:direction] == "up"
-            
-      #       @vote.upvote
-
-      #       respond_to do |format|
-      #         format.js { render json: { :status => "success"} , content_type: 'text/json' }
-      #       end
+          if params[:direction] == "up"
           
-      #     elsif params[:direction] == "down"
+            @vote.upvote
+
+            render json: { :result => "success", :notice=> "upvote", content_type: 'text/json' }
+
+
+          elsif params[:direction] == "down"
             
-      #       @vote.downvote
+            @vote.downvote
 
-      #       respond_to do |format|
-      #         format.js { render json: { :status => "success"} , content_type: 'text/json' }
-      #       end
-
-      #     else
-
-      #       respond_to do |format|
-      #         format.js { render json: { :status => "failure", :notice => "invalid direction"} , content_type: 'text/json' }
-      #       end
-
-      #     end
-
-      #   else
-
-      #     respond_to do |format|
-      #       format.js { render json: { :status => "failure", :notice => "no such show"} , content_type: 'text/json' }
-      #     end
-
-      #   end
-
-      # else
-
-      #   respond_to do |format|
-      #     format.js { render json: { :status => "failure"} , content_type: 'text/json' }
-      #   end
+            render json: { :result => "success", :notice=> "downvote", content_type: 'text/json' }
 
 
-      # end
-      # XXYYZZ
-      # respond_to do |format|
-      #       render json: { :change => -1, :notice=> "signed in", content_type: 'text/json' }
-      #       #format.js { render json: { :status => "success", :notice => "signed in"} , content_type: 'text/json' }
-      # end
+          end
 
-    #else
-      # YYRREE
-      # respond_to do |format|
-      #   render json: { :change => -1, :notice=> "not signed in", content_type: 'text/json' }
-      #   #format.js { render json: { :status => "success", :notice => "not signed in"} , content_type: 'text/json' }
-      # end
+        else
 
-      # respond_to do |format|
-      #   format.html { redirect_to signup_path, notice: 'Show was successfully created.' }
-      #   #format.json { render :show, status: :created, location: @show }
-      #   #format.js { render json: { :status => "failure"} , content_type: 'text/json' }
-      # end
+          render json: { :result => "failure", :notice=> "invalid show", content_type: 'text/json' }
 
-    #end
+        end
+
+      else
+
+        render json: { :result => "failure", :notice=> "invalid parameters", content_type: 'text/json' }
+
+      end
+
+       
+
+    else
+
+       render :js => "window.location = '/signup'"
+
+    end
 
   end
   

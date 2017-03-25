@@ -17,16 +17,13 @@ ready = ->
 			direction = $(@).data('vote-direction')
 			alert("Show" + showID)
 			alert("Direction" + direction)
-			if $(@).data('vote-direction') == "up"
-				alert("up")
-				$.ajax
+			alert(direction)
+			$.ajax
 				url: "/show/vote/#{showID}/#{direction}", format: 'js'
 				type: "GET"
 				success: (data) ->
-			  		console.log(data)
-			  		alert("successful up")
-			else if $(@).data('vote-direction') == "down"
-				alert("down")
+		  			console.log(data)
+		  			alert("success")
  
 		$(".toggle-active").click (window.event), ->
 			if $(@).hasClass("active")
@@ -48,8 +45,6 @@ ready = ->
 			st = $(@).scrollTop()
 			last = $('body').data('last-scroll')
 			$('body').data('last-scroll', st).removeAttr('last-scroll')
-			if st > last
-			else
 
 		$(".click-to-toggle").click (window.event), ->
 			targetId = "#" + $(@).data("reveal-panel-id")
