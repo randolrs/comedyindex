@@ -25,8 +25,6 @@ ready = ->
 				success: (data) ->
 			  		console.log(data)
 			  		alert("successful up")
-			  	failure: (data) ->
-			  		alert("york steakhouse")
 			else if $(@).data('vote-direction') == "down"
 				alert("down")
  
@@ -51,11 +49,7 @@ ready = ->
 			last = $('body').data('last-scroll')
 			$('body').data('last-scroll', st).removeAttr('last-scroll')
 			if st > last
-				console.log("down")
 			else
-				console.log("up")
-			
-
 
 		$(".click-to-toggle").click (window.event), ->
 			targetId = "#" + $(@).data("reveal-panel-id")

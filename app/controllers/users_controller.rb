@@ -37,16 +37,25 @@ class UsersController < ApplicationController
 
   def vote
 
-    respond_to do |format|
-            format.js 
-       end
-       
     # respond_to do |format|
     #   format.js { render json: { :status => "success", :now_following => false } , content_type: 'text/json' }
     # end
 
 
-    if user_signed_in?
+    respond_to do |format|
+      format.js {}
+      format.json { render json:  }
+      format.html { render action: 'index' }
+    end
+ end
+
+
+    # respond_to do |format|
+    #   format.js { render json: { :status => "success", :now_following => false } , content_type: 'text/json' }
+    # end
+
+
+    #if user_signed_in?
 
       # if params[:showID] && params[:direction]
 
@@ -108,7 +117,7 @@ class UsersController < ApplicationController
       #       #format.js { render json: { :status => "success", :notice => "signed in"} , content_type: 'text/json' }
       # end
 
-    else
+    #else
       # YYRREE
       # respond_to do |format|
       #   render json: { :change => -1, :notice=> "not signed in", content_type: 'text/json' }
@@ -121,7 +130,7 @@ class UsersController < ApplicationController
       #   #format.js { render json: { :status => "failure"} , content_type: 'text/json' }
       # end
 
-    end
+    #end
 
   end
   

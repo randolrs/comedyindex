@@ -72,27 +72,31 @@
         
         <% if @show.schedule %>
 
-          <section class="profile-section">
+          <% if @show.remaining_show_occurrences.count > 1 %>
 
-            <header class="section-title">Schedule</header>
+            <section class="profile-section">
 
-            <p><i><%= @show.schedule %></i></p>
+              <header class="section-title">Schedule</header>
 
-            <br>
+              <p><i><%= @show.schedule %></i></p>
 
-            <% if @show.schedule.occurrences(Time.now + 1.month).count > 0 %>
-              
-              <p><b>Upcoming Dates:</b><p>
+              <br>
 
-              <% @show.schedule.occurrences(Time.now + 1.month).each do |occurence| %>
+              <% if @show.schedule.occurrences(Time.now + 1.month).count > 0 %>
+                
+                <p><b>Upcoming Dates:</b><p>
 
-                <p><%= occurence.strftime("%a, %b %e") %></p>
+                <% @show.schedule.occurrences(Time.now + 1.month).each do |occurence| %>
+
+                  <p><%= occurence.strftime("%a, %b %e") %></p>
+
+                <%end%>
 
               <%end%>
 
-            <%end%>
+            </section>
 
-          </section>
+          <%end%>
 
         <%end%>
 
@@ -110,9 +114,9 @@
 
           <header class="section-title">Have You Seen this Show?</header>
 
-          <a class="button green-background vote" data-show-id="<%= @show.id%>" data-vote-direction="up"><span class="glyphicon glyphicon-hand-up" aria-hidden="true"></span> It's Funny</a>
+          <span class="button green-background vote" data-show-id="<%= @show.id%>" data-vote-direction="up"><span class="glyphicon glyphicon-hand-up" aria-hidden="true"></span> It's Funny</span>
 
-          <a class="button red-background vote" data-show-id="<%= @show.id%>" data-vote-direction="down"><span class="glyphicon glyphicon-hand-down" aria-hidden="true"></span> Needs Work</a>
+          <span class="button red-background vote" data-show-id="<%= @show.id%>" data-vote-direction="down"><span class="glyphicon glyphicon-hand-down" aria-hidden="true"></span> Needs Work</span>
 
         </section>
 
