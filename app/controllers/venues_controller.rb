@@ -21,6 +21,28 @@ class VenuesController < ApplicationController
   def edit
   end
 
+  def show_with_url
+
+    if Venue.where(:url_slug => params[:url_slug]).exists?
+
+      @venue = Venue.find_by_url_slug(params[:url_slug])
+
+      @main_SEO_title = @venue.name
+
+      @SEO_description = @venue.about
+
+      @nav_return = true
+      
+
+    else
+
+      redirect_to root_path
+
+    end
+
+  end
+
+
   # POST /venues
   # POST /venues.json
   def create
