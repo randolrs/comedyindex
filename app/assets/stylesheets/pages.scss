@@ -162,15 +162,11 @@ h1.dashboard-header{
 }
 
 .dashboard-header{
-	padding:15px 0px;
+	padding: 25px 0px;
 	position: fixed;
 	top: 70px;
 	width: 100%;
-	background: #1e3c72;
-    background: -webkit-linear-gradient(to bottom, #1e3c72, #2a5298);
-    background: linear-gradient(to bottom, #1e3c72, #2a5298);
-
-    box-shadow: 0px 1px 1px rgba(0,0,0,0.3), inset 0px 2px 1px rgba(200, 200, 200, 0.1), inset 2px 0px 1px rgba(200, 200, 200, 0.1), inset -2px 0px 1px rgba(200, 200, 200, 0.1), inset 0px -2px 1px rgba(00, 00, 00, 0.1);
+	background: #061C6E;
 
     border-bottom: 1px solid rgba(0,0,0,0.2);
 
@@ -188,14 +184,10 @@ h1.dashboard-header{
 	}
 }
 
-.dashboard-header-cta{
-
-    border: 1px solid rgba(0,0,00,0.2);
-    box-shadow: inset 0px 1px 1px rgba(200, 200, 200, 0.5), 0px 1px 1px rgba(0, 0, 0, 0.3);
-    background: #2a5298;
+.dashboard-header-cta{   
 
 	text-align: center;
-	color: #fff;
+	
 	cursor: pointer;
 	display: none;
 
@@ -205,10 +197,7 @@ h1.dashboard-header{
 
 }
 
-.dashboard-header-cta:hover{
-	color: #fff;
 
-}
 
 .dashboard-header-content{
 	max-width: 1200px;
