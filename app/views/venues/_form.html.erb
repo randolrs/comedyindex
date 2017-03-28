@@ -19,35 +19,8 @@
   <br>
 
   <div class="field">
-    <%= f.label :address_line_1 %><br>
-    <%= f.text_field :address_line_1 %>
-  </div>
-
-  <br>
-  <div class="field">
-    <%= f.label :address_line_2 %><br>
-    <%= f.text_field :address_line_2 %>
-  </div>
-
-  <br>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-
-  <br>
-
-  <div class="field">
-    <label>State/Province</label><br>
-    <%= f.text_field :state_province %>
-  </div>
-
-  <div class="field">
-
-    <label>Market</label><br>
-      
-    <%= collection_select(:venue, :market_id, Market.all, :id, :name, prompt: true) %>
-  
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
   </div>
 
   <br>

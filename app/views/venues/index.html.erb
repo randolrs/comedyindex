@@ -5,10 +5,9 @@
 <table>
   <thead>
     <tr>
-      <th>City</th>
-      <th>Address line 1</th>
-      <th>Address line 2</th>
       <th>Name</th>
+      <th>Address</th>
+      
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,10 +15,9 @@
   <tbody>
     <% @venues.each do |venue| %>
       <tr>
-        <td><%= venue.city_id %></td>
-        <td><%= venue.address_line_1 %></td>
-        <td><%= venue.address_line_2 %></td>
         <td><%= venue.name %></td>
+        <td><%= venue.address %></td>
+        
         <td><%= link_to 'Show', venue %></td>
         <td><%= link_to 'Edit', edit_venue_path(venue) %></td>
         <td><%= link_to 'Destroy', venue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
