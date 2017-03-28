@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'variables';
+
 @media only screen and (min-width: 776px) {
 	
 	html {
@@ -224,9 +226,11 @@
 
 			.dashboard-header{
 
+				height: 100px;
+				
 				h1{
 					line-height: 48px;
-					font-size: 40px;
+					font-size: 32px;
 				}
 			}
 
@@ -253,7 +257,9 @@
 				position: relative;
 				bottom: inherit;
 				right: inherit;
-				padding: 10px 50px;
+				padding: 10px 40px;
+
+				background: $brand-yellow url(button-glass.png) repeat-x 0 0;
 
     			cursor: pointer;
    
@@ -281,6 +287,8 @@
 					border: none;
     				color: #333;
     				box-shadow: none;
+    				padding: 0px;
+    				padding-bottom: 10px;
 
     				border-bottom: 2px solid #aaa;
     				margin-bottom: 15px;

@@ -16,11 +16,10 @@
 
 			
 
-			<a class="dashboard-header-cta button yellow-background" <% if user_signed_in? %>href="<%= new_show_path %>"<%else%>href="<%= signup_path %>"<%end%>>+ <span class="full-cta">Add a Show</span></a>
+			<a class="dashboard-header-cta yellow-background" <% if user_signed_in? %>href="<%= new_show_path %>"<%else%>href="<%= signup_path %>"<%end%>>+ <span class="full-cta">Add a Show</span></a>
 			
 			<div class="mobile-only">
 				
-				<br>
 				<br>
 
 				<span class="search-tag toggle-active">Stand-up</span>
@@ -38,15 +37,22 @@
 		<div class="row">
 
 			<div class="hidden-xs col-sm-4 col-md-3">
-				<p>Categories</p>
-				<ul>
-					<li class="card-background"><a>All</a></li>
-					<li class="card-background"><a>Open Mic</a></li>
-					<li class="card-background"><a>Local Showcase</a></li>
-					<li class="card-background" ><a>Free</a></li>
-					<li class="card-background"><a>National Headliner</a></li>
-					<li class="card-background"><a>As Seen on TV</a></li>
-				</ul>
+
+				<section class="home-index">
+
+					<p>Categories</p>
+					
+					<ul>
+						<li class="card-background"><a>All</a></li>
+						<li class="card-background"><a>Open Mic</a></li>
+						<li class="card-background"><a>Local Showcase</a></li>
+						<li class="card-background" ><a>Free</a></li>
+						<li class="card-background"><a>National Headliner</a></li>
+						<li class="card-background"><a>As Seen on TV</a></li>
+					</ul>
+
+				</section>
+
 			</div>
 
 			<div class="col-xs-12 col-sm-8 col-md-9">
