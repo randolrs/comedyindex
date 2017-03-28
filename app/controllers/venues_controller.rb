@@ -28,6 +28,33 @@ class VenuesController < ApplicationController
 
     respond_to do |format|
       if @venue.save
+
+        original_slug = @venue.name.downcase.gsub(' ', '-')
+
+        slug = original_slug
+        
+        c=0
+        i=1
+
+        until c==1 do
+
+          unless Venue.where(:url_slug => slug).exists?
+
+            @venue.update(:url_slug => slug)
+
+            c=1
+
+          else
+
+            i = i + 1
+
+            slug = original_slug + "-" + i.to_s
+
+          end
+
+        end
+
+
         format.html { redirect_to @venue, notice: 'Venue was successfully created.' }
         format.json { render :show, status: :created, location: @venue }
       else
@@ -69,6 +96,6 @@ class VenuesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def venue_params
-      params.require(:venue).permit(:city_id, :address_line_1, :address_line_2, :city, :market_id, :state_province, :name, :about, :image, :twitter_url, :facebook_url, :instagram_url, :youtube_url, :snapchat_url, :website_url, :address, :latitude, :longitude)
+      params.require(:venue).permit(:city_id, :address_line_1, :address_line_2, :city, :market_id, :state_province, :name, :about, :image, :twitter_url, :facebook_url, :instagram_url, :youtube_url, :snapchat_url, :website_url, :address, :latitude, :longitude, :url_slug)
     end
 end

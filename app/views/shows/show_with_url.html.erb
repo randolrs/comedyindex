@@ -60,7 +60,7 @@
 
             <br>
             
-            <p><a class="blue-text" href="<%= @show.venue.website_url %>">Website <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a></p>
+            <p><%= link_to "See Venue Page", venue_with_url_path(@venue.url_slug), class:"blue-text" %></p>
 
           </section>
 
