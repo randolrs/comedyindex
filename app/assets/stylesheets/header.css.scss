@@ -16,12 +16,14 @@ nav.header-container{
 	top: 0px;
 	left:0px;
 	right:0px;
-	height: 60px;
+	height: 70px;
 	z-index: 960;
 	font-family: 'Roboto', sans-serif;
 
 	.header-content{
 		padding: 0px 0px;
+		max-width: 1200px;
+    	margin: 0 auto;
 	}
 
 	.header-options{
@@ -30,7 +32,7 @@ nav.header-container{
 			line-height: 30px;
     		
 			text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.3);
-			padding: 14px 12px;
+			padding: 20px 12px;
     		font-size: 20px;
     		color: #fff;
     		font-weight: 400;
@@ -38,7 +40,7 @@ nav.header-container{
 		}
 
 		a.header-image{
-			padding: 9px 15px;
+			padding: 15px;
 		}
 
 		a.logo{
@@ -59,6 +61,16 @@ nav.header-container{
 			    text-align: center;
     		}
     		
+		}
+
+		a.full-logo{
+			padding: 5px 12px;
+
+			text-align: left;
+
+			span{
+				line-height: 22px;
+			}
 		}
 
 		a.cheeseburger-container{

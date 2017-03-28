@@ -32,7 +32,19 @@
 
 		<div class="row">
 
-			<div class="col-xs-12 col-sm-12">
+			<div class="col-xs-12 col-sm-3 col-md-2">
+				<p>Categories</p>
+				<ul>
+					<li class="card-background"><a>All</a></li>
+					<li class="card-background"><a>Open Mic</a></li>
+					<li class="card-background"><a>Local Showcase</a></li>
+					<li class="card-background" ><a>Free</a></li>
+					<li class="card-background"><a>National Headliner</a></li>
+					<li class="card-background"><a>As Seen on TV</a></li>
+				</ul>
+			</div>
+
+			<div class="col-xs-12 col-sm-9 col-md-8">
 
 				<section class="home-index">
 
@@ -42,7 +54,7 @@
 						
 						<% ShowOccurrence.nearby_show_occurrences(latitude, longitude, Time.current.beginning_of_day + 6.hours, Time.current.end_of_day + 6.hours).each do |show_occurrence| %>
 
-							<div class="col-xs-12 col-sm-4 col-md-3">
+							<div class="col-xs-12">
 					  			
 					  			<%= render :partial => 'shows/index_show', :locals => {:show_occurrence => show_occurrence, :show =>  Show.find(show_occurrence.schedulable_id)} %>
 
@@ -84,7 +96,7 @@
 							
 							<% ShowOccurrence.nearby_show_occurrences(latitude, longitude, date.beginning_of_day + 6.hours, date.end_of_day + 6.hours).each do |show_occurrence| %>
 
-								<div class="col-xs-12 col-sm-4 col-md-3">
+								<div class="col-xs-12">
 						  			
 						  			<%= render :partial => 'shows/index_show', :locals => {:show_occurrence => show_occurrence, :show =>  Show.find(show_occurrence.schedulable_id)} %>
 
@@ -110,6 +122,15 @@
 
 				<% end %>
 
+			</div>
+
+			<div class="col-xs-1 col-md-2">
+
+				<div class="card material-shadow padded centered">
+					<a class="button yellow-background" <% if user_signed_in? %>href="<%= new_show_path %>"<%else%>href="<%= signup_path %>"<%end%>>+ <span class="full-cta">Add my Show</span></a>
+				</div>
+
+				
 			</div>
 
 		</div>

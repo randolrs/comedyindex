@@ -3,15 +3,15 @@
 
   <%= link_to(show_with_url_path(show.url_slug)) do %>
 
-    <div class="card material-shadow">
+    <div class="card top-padded">
       
       <div class="row padded-cols">
       
-        <div class="col-xs-3 col-sm-12">
+        <div class="col-xs-3">
           <%= image_tag show.image.url(:medium), class: "small-index-image"%>
         </div>
 
-        <div class="col-xs-9 col-sm-12">
+        <div class="col-xs-9">
           <p class="light one-line"><% if show.venue %><%= show.venue.name %> Presents<%end%></p>
           <span class="glyphicon glyphicon-star gold-star" aria-hidden="true"></span>
           <br>

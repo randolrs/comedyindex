@@ -3,6 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.card-background{
+    
+    background: #fff;
+    border-radius: 1px;
+    border: 1px solid #ccc;
+
+}
+
+.card.top-padded{
+    padding: 10px 0px;    
+}
+
 .card{
 	
     background: #fff;
