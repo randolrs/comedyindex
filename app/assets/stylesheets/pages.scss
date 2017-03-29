@@ -481,3 +481,24 @@ h1.dashboard-header{
 	z-index: 9999999999;
 
 }
+
+ul.category-tag-index{
+	
+	li{
+
+
+
+		a{
+			display: block;
+			padding: 5px;
+			font-size: 18px;
+			background: rgba(0,0,0,0);
+
+		}
+
+		a.active{
+			background: #fff;
+			border: 1px solid #ccc;
+		}
+	}
+}

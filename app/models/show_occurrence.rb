@@ -56,5 +56,21 @@ class ShowOccurrence < ActiveRecord::Base
 
   end
 
+  def show
+
+    show = Show.where(:id => self.schedulable_id).last
+
+    if show
+
+      return show
+
+    else
+
+      return nil
+
+    end
+
+  end
+
 
 end

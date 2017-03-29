@@ -1,0 +1,17 @@
+<section class="home-index">
+
+	<p>Categories</p>
+
+	<ul class="category-tag-index">
+		
+		<li><%= link_to "All", root_path, class: cp(root_path) %></li>
+
+		<% ShowTag.front_page_tags.each do |show_tag| %>
+			
+			<li><%= link_to show_tag.name, show_tag_index_path(show_tag.url_slug), class: cp(show_tag_index_path(show_tag.url_slug)) %></li>
+
+		<% end %>
+
+	</ul>
+
+</section>

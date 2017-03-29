@@ -8,6 +8,8 @@ class Show < ActiveRecord::Base
 
 	has_many :show_votes
 
+	has_many :show_tag_entries
+
 	acts_as_schedulable :schedule, occurrences: :show_occurrences
 
 	geocoded_by :address
@@ -58,6 +60,14 @@ class Show < ActiveRecord::Base
 		end
 	end
 
+
+	def self.nearby(latitude, longitude)
+
+  		shows = Show.near([latitude, longitude], 50)
+
+  		return shows
+
+  	end
 
 
 	def css_rating_code

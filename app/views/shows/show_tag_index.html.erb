@@ -1,0 +1,121 @@
+
+<div class="dashboard-header">
+		
+	<div class="dashboard-header-content">
+		
+		<h1><%= session[:city] %> Comedy Shows</h1> 
+
+		<p class="change-location-cta"><a class="modal-cta" data-modal-id="select-city">Change Location</a></p>
+
+		<a class="dashboard-header-cta yellow-background" <% if user_signed_in? %>href="<%= new_show_path %>"<%else%>href="<%= signup_path %>"<%end%>>+ <span class="full-cta">Add a Show</span></a>
+		
+		<div class="mobile-only">
+			
+			<br>
+
+			<% ShowTag.front_page_tags.each do |show_tag| %>
+
+				<span class="search-tag toggle-active"><%= link_to show_tag.name, show_tag_index_path(show_tag.url_slug) %></span>
+
+			<% end %>
+
+
+			<span class="click-to-reveal" data-reveal-panel-id="more-filters" style="float:right;">More Filters<span class="glyphicon glyphicon-chevron-down" aria-hidden="true" style="margin-left: 5px;"></span></span>
+
+			<div class="" id="more-filters" style="display: none;">
+				More filters
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+<div class="dashboard">
+
+	<div class="row">
+
+		<div class="hidden-xs col-sm-3 col-md-3">
+
+			<%= render 'pages/front_page_tags' %>
+
+		</div>
+
+		<div class="col-xs-12 col-sm-9 col-md-9">
+
+			<section class="home-index">
+
+					<header class="home-section-header material-shadow">Tonight (<%= Time.current.strftime("%A, %b %e") %>)</header>
+					
+					<div class="row">
+						
+						<% @show_tag.nearby_show_occurrences(session[:latitude], session[:longitude], Time.current.beginning_of_day + 6.hours, Time.current.end_of_day + 6.hours).each do |show_occurrence| %>
+
+							<div class="col-xs-12">
+					  			
+					  			<%= render :partial => 'shows/index_show', :locals => {:show_occurrence => show_occurrence, :show =>  Show.find(show_occurrence.schedulable_id)} %>
+
+					  		</div>
+
+						<%end%>
+
+
+						<div class="col-xs-12">
+							
+							<%= link_to root_path do %>
+
+								<div class="card material-shadow see-more">
+									See More Comedy Shows Tonight
+									<span class="glyphicon glyphicon-arrow-right" aria-hidden="true" style="float: right;"></span>
+								</div>
+							
+							<%end%>
+
+				        </div>
+
+					</div>
+
+				</section>
+
+			<%(Date.tomorrow..Date.tomorrow + 7).each do |date| %>
+
+				<section class="home-index">
+
+					<header class="home-section-header material-shadow"><%= date.strftime("%A, %b %e")%></header>
+					
+					<div class="row">
+
+						<% @show_tag.nearby_show_occurrences(session[:latitude], session[:longitude], date.beginning_of_day + 6.hours, date.end_of_day + 6.hours).each do |show_occurrence| %>
+
+							<div class="col-xs-12">
+					  			
+					  			<%= render :partial => 'shows/index_show', :locals => {:show_occurrence => show_occurrence, :show =>  show_occurrence.show} %>
+
+					  		</div>
+
+						<%end%>
+
+						<div class="col-xs-12">
+							
+							<%= link_to root_path do %>
+								<div class="card material-shadow see-more">
+									See More Comedy Shows <%= date.strftime("%a %b %e") %>
+									<span class="glyphicon glyphicon-arrow-right" aria-hidden="true" style="float: right;"></span>
+								</div>
+							<%end%>
+
+			        	</div>
+
+					</div>
+
+				</section>
+
+
+			<% end %>
+
+		</div>
+
+	</div>
+
+</div>
+

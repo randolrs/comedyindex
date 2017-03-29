@@ -14,8 +14,6 @@
 
 			<p class="change-location-cta"><a class="modal-cta" data-modal-id="select-city">Change Location</a></p>
 
-			
-
 			<a class="dashboard-header-cta yellow-background" <% if user_signed_in? %>href="<%= new_show_path %>"<%else%>href="<%= signup_path %>"<%end%>>+ <span class="full-cta">Add a Show</span></a>
 			
 			<div class="mobile-only">
@@ -24,7 +22,7 @@
 
 				<% ShowTag.front_page_tags.each do |show_tag| %>
 
-					<span class="search-tag toggle-active"><%= show_tag.name %></span>
+					<span class="search-tag toggle-active"><%= link_to show_tag.name, show_tag_index_path(show_tag.url_slug) %></span>
 
 				<% end %>
 
@@ -46,26 +44,13 @@
 
 			<div class="hidden-xs col-sm-3 col-md-3">
 
-				<section class="home-index">
-
-					<p>Categories</p>
-
-					<ul>
-						<li class="card-background"><a>All</a></li>
-
-						<% ShowTag.front_page_tags.each do |show_tag| %>
-							<li class="card-background"><a><%= show_tag.name %></a></li>
-						<% end %>
-
-					</ul>
-
-				</section>
+				<%= render 'pages/front_page_tags' %>
 
 			</div>
 
 			<div class="col-xs-12 col-sm-9 col-md-9">
 
-				<section class="home-index">
+<!-- 				<section class="home-index">
 					
 					<div class="row">
 
@@ -75,7 +60,7 @@
 
 								Featured
 					  			
-					  			<%= render :partial => 'shows/index_show', :locals => {:show_occurrence => ShowOccurrence.last, :show =>  Show.find(ShowOccurrence.last.schedulable_id)} %>
+					  			<%# render :partial => 'shows/index_show', :locals => {:show_occurrence => ShowOccurrence.last, :show =>  Show.find(ShowOccurrence.last.schedulable_id)} %>
 
 					  		</div>
 
@@ -83,7 +68,7 @@
 
 					</div>
 
-				</section>
+				</section> -->
 
 				<section class="home-index">
 

@@ -22,6 +22,23 @@ class ShowsController < ApplicationController
 
   end
 
+  def show_tag_index
+
+    @show_tag = ShowTag.where(:url_slug => params[:url_slug]).last
+
+
+    if @show_tag
+
+      @show_occurrences = @show_tag.nearby_show_occurrences(session[:latitude], session[:longitude], Date.today, Date.tomorrow + 7)
+
+    else
+
+      redirect_to root_path
+
+    end
+
+  end
+
   def index_for_review
 
     @review_index = true

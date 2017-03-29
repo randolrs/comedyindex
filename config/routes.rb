@@ -52,6 +52,8 @@ Rails.application.routes.draw do
 
   get 'v/:url_slug' => 'venues#show_with_url', as: 'venue_with_url'
 
+  get 'tag/:url_slug' => 'shows#show_tag_index', as: 'show_tag_index'
+
   get 'u/:display_name' => 'users#profile', as: 'user_profile'
 
   get 'review/new/:show_id' => 'show_reviews#new_with_show_header', as: 'new_review'
