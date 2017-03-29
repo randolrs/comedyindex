@@ -71,11 +71,11 @@
 
 						<div class="card">
 
-							Featured
-
 							<div class="col-xs-12">
+
+								Featured
 					  			
-					  			
+					  			<%= render :partial => 'shows/index_show', :locals => {:show_occurrence => ShowOccurrence.last, :show =>  Show.find(ShowOccurrence.last.schedulable_id)} %>
 
 					  		</div>
 
