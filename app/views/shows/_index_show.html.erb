@@ -21,7 +21,7 @@
           <br>
           <p><%= show_occurrence.date.strftime("%l:%M%P") %></p>
           <br>
-          <p><span class="tag-content">Standup</span><span class="tag-content">Open-Mic</span></p>
+          <p><% show.show_tag_entries.each do |tag| %><span class="tag-content"><%= tag.show_tag.name %></span><%end%></p>
         </div>
 
       </div>
