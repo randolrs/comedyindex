@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'variables';
 
 .image-grid{
 
@@ -92,11 +93,10 @@
     padding: 0px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     box-shadow: inset 0px 1px 1px rgba(200, 200, 200, 0.5), 0px 1px 1px rgba(0, 0, 0, 0.3);
-    background: #19ED39;
+    background: $brand-yellow;
     height: 60px;
     width: 60px;
     text-align: center;
-    color: #fff;
     cursor: pointer;
     font-size: 60px;
     line-height: 60px;
