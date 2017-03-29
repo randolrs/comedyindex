@@ -19,15 +19,10 @@
         <td><%= show_tag.name %></td>
         <td><%= show_tag.parent_tag_id %></td>
         <td><%= show_tag.front_page %></td>
-        <td><%= link_to 'Show', show_review %></td>
-        <td><%= link_to 'Edit', edit_show_review_path(show_review) %></td>
-        <td><%= link_to 'Destroy', show_review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', show_tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Show review', new_show_review_path %>
 

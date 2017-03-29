@@ -22,9 +22,12 @@
 				
 				<br>
 
-				<span class="search-tag toggle-active">Stand-up</span>
-				<span class="search-tag toggle-active">Improv</span>
-				<span class="search-tag toggle-active">Open Mic</span>
+				<% ShowTag.front_page_tags.each do |show_tag| %>
+
+					<span class="search-tag toggle-active"><%= show_tag.name %></span>
+
+				<% end %>
+
 
 				<span class="click-to-reveal" data-reveal-panel-id="more-filters" style="float:right;">More Filters<span class="glyphicon glyphicon-chevron-down" aria-hidden="true" style="margin-left: 5px;"></span></span>
 
@@ -49,11 +52,11 @@
 
 					<ul>
 						<li class="card-background"><a>All</a></li>
-						<li class="card-background"><a>Open Mic</a></li>
-						<li class="card-background"><a>Local Showcase</a></li>
-						<li class="card-background" ><a>Free</a></li>
-						<li class="card-background"><a>National Headliner</a></li>
-						<li class="card-background"><a>As Seen on TV</a></li>
+
+						<% ShowTag.front_page_tags.each do |show_tag| %>
+							<li class="card-background"><a><%= show_tag.name %></a></li>
+						<% end %>
+
 					</ul>
 
 				</section>
@@ -69,7 +72,7 @@
 						<div class="card">
 
 							Featured
-							
+
 							<div class="col-xs-12">
 					  			
 					  			
