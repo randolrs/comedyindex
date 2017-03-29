@@ -106,6 +106,48 @@ class ShowsController < ApplicationController
         
         if @show.save
 
+          params[:tags].each do |tag|
+
+            show_tag = ShowTag.where(:name => tag[0]).last
+
+            if show_tag
+
+              #check for existing show tag entry
+
+              show_tag_entry = ShowTagEntry.where(:show_id => @show.id).last
+
+              if tag[1]  
+
+                #if selected
+
+                unless show_tag_entry
+
+                  ShowTagEntry.create(:show_tag_id => show_tag.id, :show_id => @show.id, :is_active => true)
+
+                else
+
+                  show_tag_entry.update(:is_active => true)
+
+                end
+
+
+
+              else
+
+                #if not selected
+
+                if show_tag_entry
+
+                  show_tag_entry.update(:is_active => false)
+
+                end
+
+              end
+
+            end
+
+          end
+
           original_slug = @show.name.downcase.gsub(' ', '-')
 
           slug = original_slug
@@ -180,6 +222,44 @@ class ShowsController < ApplicationController
   def update
     respond_to do |format|
       if @show.update(show_params)
+
+       params[:tags].each do |tag|
+
+          show_tag = ShowTag.where(:name => tag[0]).last
+
+          if show_tag
+
+            #check for existing show tag entry
+
+            show_tag_entry = ShowTagEntry.where(:show_id => @show.id).last
+
+            if tag[1] #if selected
+
+              unless show_tag_entry
+
+                ShowTagEntry.create(:show_tag_id => show_tag.id, :show_id => @show.id, :is_active => true)
+
+              else
+
+                show_tag_entry.update(:is_active => true)
+
+              end
+
+
+            else #if not selected
+
+              if show_tag_entry
+
+                show_tag_entry.update(:is_active => false)
+
+              end
+
+            end
+
+          end
+
+        end
+
         format.html { redirect_to show_with_url_path(@show.url_slug), notice: 'Show was successfully updated.' }
         format.json { render :show, status: :ok, location: @show }
       else

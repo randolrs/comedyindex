@@ -33,6 +33,19 @@
     </div>
 
     <div class="field">
+
+      Tags
+      <% ShowTag.all.each do |show_tag| %>
+      
+        <a class="add-tag-option toggle-active toggle-to-activate" data-activate-input="<%= show_tag.name %>"><%=show_tag.name%></a>
+        <input type="hidden" value="false" name="tags[<%= show_tag.name %>]" id="<%= show_tag.name %>"></input>
+
+      <% end %>
+
+
+    </div>
+
+    <div class="field">
       <%= f.label :schedule %><br>
       <%= f.schedule_select :schedule %>
     </div>

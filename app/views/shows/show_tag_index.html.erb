@@ -23,7 +23,7 @@
 
 							<div class="col-xs-12">
 					  			
-					  			<%= render :partial => 'shows/index_show', :locals => {:show_occurrence => show_occurrence, :show =>  Show.find(show_occurrence.schedulable_id)} %>
+					  			<%= render :partial => 'shows/index_show', :locals => {:show_occurrence => show_occurrence, :show =>  show_occurrence.show} %>
 
 					  		</div>
 

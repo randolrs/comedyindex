@@ -27,6 +27,13 @@ ready = ->
 			else
 				$(@).addClass("active")
 
+		$(".toggle-to-activate").click (window.event), ->
+			target_id = "#" + $(@).data("activate-input")
+			if $(target_id).val() == "false"
+				$(target_id).val(true)
+			else
+				$(target_id).val(false)
+
 		$(".click-to-reveal").click (window.event), ->
 			$('a.click-to-reveal').removeClass('active')
 			$('div.reveal-panel').hide()

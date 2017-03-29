@@ -15,12 +15,11 @@ class ShowTag < ActiveRecord::Base
 		@nearby_shows = Show.all
 
 
-
-		ShowTagEntry.where(:show_tag_id => self.id).each do |show_tag_entry|
+		ShowTagEntry.where(:show_tag_id => self.id, :is_active => true).each do |show_tag_entry|
 
 			show = @nearby_shows.where(:id => show_tag_entry.show_id).last
 			
-			if show
+			if show #does a show exists that is 1) nearby and 2) has a matching search tag entry  
 
 				ShowOccurrence.nearby_show_occurrences(latitude, longitude, start_date, end_date).where(:schedulable_id => show.id).each do |show_occurrence|
 

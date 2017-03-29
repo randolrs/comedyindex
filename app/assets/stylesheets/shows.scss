@@ -58,3 +58,14 @@ table.review-index{
 		}
 	}
 }
+
+.add-tag-option{
+	background: #999;
+	padding: 5px 10px;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+.add-tag-option.active{
+	background: green;
+}
