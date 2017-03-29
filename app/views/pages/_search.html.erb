@@ -6,37 +6,7 @@
 
 <%else%>
 	
-	<div class="dashboard-header">
-		
-		<div class="dashboard-header-content">
-			
-			<h1><%= location %> Comedy Shows</h1> 
-
-			<p class="change-location-cta"><a class="modal-cta" data-modal-id="select-city">Change Location</a></p>
-
-			<a class="dashboard-header-cta yellow-background" <% if user_signed_in? %>href="<%= new_show_path %>"<%else%>href="<%= signup_path %>"<%end%>>+ <span class="full-cta">Add a Show</span></a>
-			
-			<div class="mobile-only">
-				
-				<br>
-
-				<% ShowTag.front_page_tags.each do |show_tag| %>
-
-					<span class="search-tag toggle-active"><%= link_to show_tag.name, show_tag_index_path(show_tag.url_slug) %></span>
-
-				<% end %>
-
-
-				<span class="click-to-reveal" data-reveal-panel-id="more-filters" style="float:right;">More Filters<span class="glyphicon glyphicon-chevron-down" aria-hidden="true" style="margin-left: 5px;"></span></span>
-
-				<div class="" id="more-filters" style="display: none;">
-					More filters
-				</div>
-			</div>
-
-		</div>
-
-	</div>
+	<%= render :partial => 'pages/dashboard_header', :locals => {:location => location} %>
 	
 	<div class="dashboard">
 
