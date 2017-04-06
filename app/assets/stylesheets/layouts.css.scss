@@ -86,6 +86,17 @@
     z-index: 1000;
 }
 
+
+.bottom-cta-container{
+    position: fixed;
+    padding: 10px;
+    background: rgba(255,255,255,0.9);  
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    display:block;
+}
+
 .corner-cta{
     position: fixed;
     bottom: 20px;

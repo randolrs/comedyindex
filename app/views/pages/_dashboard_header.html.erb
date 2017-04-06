@@ -1,4 +1,4 @@
-<div class="dashboard-header">
+<div class="dashboard-header material-shadow">
 		
 	<div class="dashboard-header-content">
 		
@@ -9,8 +9,6 @@
 		<a class="dashboard-header-cta yellow-background" <% if user_signed_in? %>href="<%= new_show_path %>"<%else%>href="<%= signup_path %>"<%end%>>+ <span class="full-cta">Add a Show</span></a>
 		
 		<div class="mobile-only mobile-tag-container">
-			
-			<br>
 
 			<% ShowTag.front_page_tags.each do |show_tag| %>
 
@@ -24,6 +22,7 @@
 			<div class="" id="more-filters" style="display: none;">
 				More filters
 			</div>
+
 		</div>
 
 	</div>

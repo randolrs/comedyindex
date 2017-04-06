@@ -2,10 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'variables';
+
 nav.header-container{
 	position: fixed;
 
-	background: #1e3cee;
+	background: #fff;
 
 	border-bottom: 1px solid rgba(0,0,0,0.2);
 
@@ -30,7 +32,7 @@ nav.header-container{
 			line-height: 30px;
 			padding: 20px 12px;
     		font-size: 20px;
-    		color: #fff;
+    		color: #333;
     		font-weight: 400;
     		
 		}
@@ -45,7 +47,7 @@ nav.header-container{
     		background: none;
     		box-shadow: none;
     		letter-spacing: -1px;
-    		color: #fff;
+    		color: $brand-red;
     		border: none;
     		display: inline-block;
 
@@ -60,8 +62,9 @@ nav.header-container{
 		}
 
 		a.full-logo{
+			
 			padding: 5px 12px;
-
+			color: $brand-red;
 			text-align: left;
 
 			span{
@@ -69,7 +72,7 @@ nav.header-container{
 			}
 
 			span.tagline{
-				color: rgba(255,255,255,0.7);
+				color: rgba(55,55,55,0.7);
     			font-size: 16px;
 			}
 		}
@@ -242,7 +245,7 @@ nav.header-container{
 	width:40px;
 	height: 40px;
 	border-radius: 50%;
-	border:2px solid #fff;	
+	border:2px solid #ddd;	
 }
 
 .cheeseburger {
