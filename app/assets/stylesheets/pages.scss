@@ -99,6 +99,7 @@ section.home-index{
 
 	header.home-section-header{
 		font-size: 1.2em;
+		color: #000;
 	    font-weight: 500;
     	border: none;
 	    padding: 10px;
@@ -168,11 +169,22 @@ h1.dashboard-header{
 	color: #fff;
 	background: #fff;
 	z-index: 961;
+	border-bottom: 1px solid #ccc;
+
+	.dashboard-header-top{
+		max-width: 1200px;
+		margin: 0 auto;
+		line-height: 24px;
+		padding: 15px;
+		
+		color: #fff;
+		background: #111;
+	}
 
 	h1{
 		line-height: 24px;
-		padding: 15px;
-		display: block;
+
+		display: inline-block;
 		font-size: 24px;
 		color: #fff;
 		background: #111;
@@ -194,8 +206,8 @@ h1.dashboard-header{
 
 
 .dashboard-header-content{
-	max-width: 1200px;
-	margin: 0 auto;
+	
+	background: #111;
 
 	.change-location-cta{
 		display: none;
@@ -243,6 +255,8 @@ h1.dashboard-header{
 .mobile-tag-container{
 	
 	padding: 20px 10px;
+	max-width: 1200px;
+	margin: 0 auto;
 
 	a, a:hover{
 		color: #666;
