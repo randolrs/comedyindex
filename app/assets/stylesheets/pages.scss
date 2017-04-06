@@ -245,18 +245,21 @@ h1.dashboard-header{
 	padding: 20px 10px;
 
 	a, a:hover{
-		color: rgba(255, 255, 255, 1);
-    	background: rgba(55, 200, 200, 1);
-    	border: 1px solid rgba(05, 05, 05, 0.2);
-    	text-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+		color: #666;
+    	background: rgba(0, 0, 0, 0);
+    	border: 2px solid #ccc;
 		padding: 5px 10px;
 		border-radius: 20px;
 
 	}
 
+	a:hover{
+		background: rgba(200,200,200,0.1);
+	}
+
 	a.active{
 		color: #fff;
-		border: 1px solid rgba(5, 5, 5, 0.8);
+		border: 1px solid rgba(5, 5, 5, 0.3);
 		background: $brand-red;
 	}
 }
