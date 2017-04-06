@@ -89,12 +89,14 @@
 
 .bottom-cta-container{
     position: fixed;
-    padding: 10px;
-    background: rgba(255,255,255,0.9);  
+    padding: 25px 15px;
+    background: rgba(255,255,255,0.95);  
     bottom: 0px;
     width: 100%;
     text-align: center;
     display:block;
+    z-index: 900000;
+    border-top: 1px solid #ccc;
 }
 
 .corner-cta{
