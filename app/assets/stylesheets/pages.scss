@@ -221,7 +221,7 @@ h1.dashboard-header{
 .dashboard{
 	margin: 0 auto;
 	max-width: 1200px;
-	padding: 150px 0px 0px 0px;
+	padding: 60px 0px 0px 0px;
 
 }
 
@@ -257,6 +257,7 @@ h1.dashboard-header{
 	padding: 20px 10px;
 	max-width: 1200px;
 	margin: 0 auto;
+	margin-bottom: 20px;
 
 	a, a:hover{
 		color: #666;
@@ -336,7 +337,7 @@ h1.dashboard-header{
 }
 
 .home-hero{
-	margin: 20px auto;
+	margin: 20px;
 	max-width: 1200px;
     background: rgba(0,0,0,0.5);
     background-image: asset-url("city-dusk.jpg");

@@ -3,6 +3,23 @@
 
 <div class="dashboard">
 
+	<div class="mobile-only mobile-tag-container">
+
+		<% ShowTag.front_page_tags.each do |show_tag| %>
+
+			<%= link_to show_tag.name, show_tag_index_path(show_tag.url_slug), class: cp(show_tag_index_path(show_tag.url_slug)) %>
+
+		<% end %>
+
+
+		<span class="click-to-reveal" data-reveal-panel-id="more-filters" style="float:right;">More Filters<span class="glyphicon glyphicon-chevron-down" aria-hidden="true" style="margin-left: 5px;"></span></span>
+
+		<div class="" id="more-filters" style="display: none;">
+			More filters
+		</div>
+
+	</div>
+
 	<div class="row">
 
 		<div class="hidden-xs col-sm-3 col-md-3">
