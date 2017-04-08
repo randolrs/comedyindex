@@ -1,5 +1,7 @@
 <div class="mobile-only mobile-tag-container">
 
+	<%= link_to "All Shows", root_path, class: cp(root_path) %>
+
 	<% ShowTag.front_page_tags.each do |show_tag| %>
 
 		<%= link_to show_tag.name, show_tag_index_path(show_tag.url_slug), class: cp(show_tag_index_path(show_tag.url_slug)) %>
