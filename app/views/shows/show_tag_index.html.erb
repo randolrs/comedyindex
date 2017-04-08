@@ -3,22 +3,7 @@
 
 <div class="dashboard">
 
-	<div class="mobile-only mobile-tag-container">
-
-		<% ShowTag.front_page_tags.each do |show_tag| %>
-
-			<%= link_to show_tag.name, show_tag_index_path(show_tag.url_slug), class: cp(show_tag_index_path(show_tag.url_slug)) %>
-
-		<% end %>
-
-
-		<span class="click-to-reveal" data-reveal-panel-id="more-filters" style="float:right;">More Filters<span class="glyphicon glyphicon-chevron-down" aria-hidden="true" style="margin-left: 5px;"></span></span>
-
-		<div class="" id="more-filters" style="display: none;">
-			More filters
-		</div>
-
-	</div>
+	<%= render 'pages/mobile_front_page_tags' %>
 
 	<div class="row">
 
@@ -51,7 +36,7 @@
 							
 							<%= link_to root_path do %>
 
-								<div class="card material-shadow see-more">
+								<div class="card see-more">
 									See More Comedy Shows Tonight
 									<span class="glyphicon glyphicon-arrow-right" aria-hidden="true" style="float: right;"></span>
 								</div>
@@ -85,7 +70,7 @@
 						<div class="col-xs-12">
 							
 							<%= link_to root_path do %>
-								<div class="card material-shadow see-more">
+								<div class="card see-more">
 									See More Comedy Shows <%= date.strftime("%a %b %e") %>
 									<span class="glyphicon glyphicon-arrow-right" aria-hidden="true" style="float: right;"></span>
 								</div>

@@ -83,7 +83,7 @@ section.home-form{
 section.home-index{
 
 	margin: 0 auto;
-	margin-top: 30px;
+	margin-top: 40px;
 	width: 100%;
 	display: block;
 	padding: 0px;
@@ -100,7 +100,7 @@ section.home-index{
 	header.home-section-header{
 		font-size: 1.2em;
 		color: #000;
-	    font-weight: 500;
+	    font-weight: 600;
     	border: none;
 	    padding: 10px;
 	    
@@ -169,7 +169,7 @@ h1.dashboard-header{
 	color: #fff;
 	background: #fff;
 	z-index: 961;
-	border-bottom: 1px solid #ccc;
+	
 
 	.dashboard-header-top{
 		max-width: 1200px;
@@ -185,7 +185,7 @@ h1.dashboard-header{
 		line-height: 24px;
 
 		display: inline-block;
-		font-size: 24px;
+		font-size: 20px;
 		color: #fff;
 		background: #111;
 	}
@@ -337,52 +337,69 @@ h1.dashboard-header{
 }
 
 .home-hero{
+	
+	display: none;
 	margin: 20px;
 	max-width: 1200px;
     background: rgba(0,0,0,0.5);
-    background-image: asset-url("city-dusk.jpg");
-	background-attachment: fixed;
+
+	.home-hero-content{
+
+		box-shadow: 0px 2px 1px rgba(0,0,0,0.3);
+		border: 1px solid rgba(0,0,00,0.3);
+
+		padding: 20px;
+    
+	    background: rgba(0,0,0,0.6);
+
+	    header{
+	    	font-size: 1.5em;
+	    	color: #fff;
+	    	text-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+	    }
+
+	    h2{
+	    	color:#fff;
+	    }
+
+	    input{
+	    	font-size: 20px;
+	    	max-width: 500px;
+	    	width:100%;
+	    	padding: 10px;
+	    	text-align: center;
+	    }
+	
+	}	
 }
 
-.home-hero.textured-background{
+.textured-background{
 	
 	background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/white_brick_wall.png);
 
 	background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/grey_sandbag.png");
 
-	.home-hero-content{
-
-		background: rgba(255, 26, 63, 0.8);
-		box-shadow: 0px 2px 1px rgba(0,0,0,0.3);
-		border: 1px solid rgba(0,0,00,0.3);
-	
-	}	
 }
 
-
-.home-hero-content{
+.home-hero.mobile{
 	
-	padding: 100px 20px;
-    
-    background: rgba(0,0,0,0.6);
+	.home-hero-content{
 
-    h1{
-    	font-size: 2.5em;
-    	color: #fff;
-    	text-shadow: 0px 1px 1px rgba(0,0,0,0.2);
-    }
+		padding: 100px 20px;
 
-    h2{
-    	color:#fff;
-    }
+		header{
+			font-size: 2.5em;
+		}
 
-    input{
-    	font-size: 20px;
-    	max-width: 500px;
-    	width:100%;
-    	padding: 10px;
-    	text-align: center;
-    }
+	}
+}
+
+.sidebar{
+	
+
+	.sidebar-content{
+		
+	}
 }
 
 .content.with-sidebar{
@@ -530,22 +547,29 @@ h1.dashboard-header{
 }
 
 ul.category-tag-index{
-	
+
 	li{
-
-
 
 		a{
 			display: block;
-			padding: 5px;
+			padding: 5px 10px;
 			font-size: 18px;
 			background: rgba(0,0,0,0);
+			border: 1px solid transparent;
+			border-radius: 100px;
 
 		}
 
-		a.active{
-			background: #fff;
-			border: 1px solid #ccc;
+		a:hover{
+			background: #eee;
+			border: 1px solid #ddd;
+		}
+
+		a.active, a.active:hover{
+			
+			border: 1px solid rgba(0,0,0,0.2);
+    		background: #ff1a3f;
+    		color: #fff;
 		}
 	}
 }

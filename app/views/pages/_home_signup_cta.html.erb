@@ -1,15 +1,36 @@
 
-<div class="home-hero textured-background">
+<% if mobile_only %>
 
-	<div class="home-hero-content centered">
-		
-		<h1>Signup for free comedy tickets</h1>
+	<section class="home-hero mobile">
 
-		<br><br>
+		<div class="home-hero-content centered">
+			
+			<header>Signup for free comedy tickets</header>
 
-		<%= link_to "Create a Free Account", signup_path, class:"button medium yellow-background button"%>
+			<br><br>
 
-	</div>
+			<%= link_to "Create a Free Account", signup_path, class:"button medium yellow-background button"%>
 
-</div>
+		</div>
+
+	</section>
+
+<%else%>
+	
+	<section class="home-hero textured-background">
+
+		<div class="home-hero-content centered">
+			
+			<header>Signup for free comedy tickets</header>
+
+			<br><br>
+
+			<%= link_to "Signup", signup_path, class:"button small yellow-background button"%>
+
+		</div>
+
+	</section>
+
+
+<%end%>
 
