@@ -167,7 +167,6 @@ h1.dashboard-header{
 	top: 70px;
 	width: 100%;
 	color: #fff;
-	background: #fff;
 	z-index: 961;
 	
 
@@ -550,9 +549,11 @@ ul.category-tag-index{
 
 	li{
 
+		margin-bottom: 5px;
+
 		a{
 			display: block;
-			padding: 5px 10px;
+			padding: 5px 20px;
 			font-size: 18px;
 			background: rgba(0,0,0,0);
 			border: 1px solid transparent;
