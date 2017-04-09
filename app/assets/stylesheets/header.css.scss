@@ -7,7 +7,10 @@
 nav.header-container{
 	position: fixed;
 
-	background: #fff;
+	background: #005C97;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #363795, #005C97);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #363795, #005C97); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 
 	border-bottom: 1px solid rgba(0,0,0,0.2);
 
@@ -32,7 +35,7 @@ nav.header-container{
 			line-height: 30px;
 			padding: 20px 12px;
     		font-size: 20px;
-    		color: #333;
+    		color: #fff;
     		font-weight: 400;
     		
 		}
@@ -47,7 +50,7 @@ nav.header-container{
     		background: none;
     		box-shadow: none;
     		letter-spacing: -1px;
-    		color: $brand-red;
+    		color: #fff;
     		border: none;
     		display: inline-block;
 
@@ -64,7 +67,7 @@ nav.header-container{
 		a.full-logo{
 			
 			padding: 5px 12px;
-			color: $brand-red;
+			color: #fff;
 			text-align: left;
 
 			span{
@@ -72,7 +75,7 @@ nav.header-container{
 			}
 
 			span.tagline{
-				color: rgba(55,55,55,0.7);
+				color: rgba(255,255,255,0.7);
     			font-size: 16px;
 			}
 		}
