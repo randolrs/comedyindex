@@ -12,7 +12,9 @@
 			<%= render 'pages/front_page_tags' %>
 
 			<% unless user_signed_in? %>
-							
+				
+				<br>
+
 				<%= render :partial => 'pages/home_signup_cta', :locals => {:mobile_only => false} %>
 
 			<%end%>
@@ -98,4 +100,6 @@
 	</div>
 
 </div>
+
+<%= render 'layouts/corner_add_cta' %>
 

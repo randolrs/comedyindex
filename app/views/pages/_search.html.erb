@@ -16,7 +16,7 @@
 
 			<div class="hidden-xs col-sm-3 col-md-3">
 
-				<div class="sidebar">
+				<div class="sidebar sticky">
 
 					<div class="sidebar-content">
 
@@ -24,6 +24,8 @@
 
 						<% unless user_signed_in? %>
 							
+							<br>
+
 							<%= render :partial => 'pages/home_signup_cta', :locals => {:mobile_only => false} %>
 
 						<%end%>
@@ -138,3 +140,5 @@
 	</div>
 
 <%end%>
+
+<%= render 'layouts/corner_add_cta' %>
