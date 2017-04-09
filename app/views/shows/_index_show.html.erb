@@ -3,23 +3,23 @@
 
   <%= link_to(show_with_url_path(show.url_slug)) do %>
 
-    <div class="card top-padded">
+    <div class="card top-padded" itemscope itemtype="http://schema.org/Event">
       
       <div class="row padded-cols">
       
         <div class="col-xs-3">
-          <%= image_tag show.image.url(:medium), class: "small-index-image"%>
+          <span itemprop="image">
+            <%= image_tag show.image.url(:medium), class: "small-index-image"%>
+          </span>
         </div>
 
         <div class="col-xs-9">
           <p class="light one-line"><% if show.venue %><%= show.venue.name %> Presents<%end%></p>
           <span class="glyphicon glyphicon-star gold-star" aria-hidden="true"></span>
           <br>
-          <p class="title"><%= show.name %></p>
+          <p class="title" itemprop="name"><%= show.name %></p>
           <br>
-          <p><%= show_occurrence.date.strftime("%A, %b %d") %></p>
-          <br>
-          <p><%= show_occurrence.date.strftime("%l:%M%P") %></p>
+          <p itemprop="startDate" content="<%# time_placeholder %>"><%= show_occurrence.date.strftime("%A, %b %d") %><br><%= show_occurrence.date.strftime("%l:%M%P") %></p>
           <br>
           <p><% show.show_tag_entries.each do |tag| %><span class="tag-content"><%= tag.show_tag.name %></span><%end%></p>
         </div>

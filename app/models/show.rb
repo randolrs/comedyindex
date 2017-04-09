@@ -22,6 +22,12 @@ class Show < ActiveRecord::Base
 
 			obj.city = geo.city
 
+			obj.address_street_address = geo.address
+    		obj.address_locality = geo.city
+		    obj.address_region = geo.state
+		    obj.address_country = geo.country
+		    obj.address_postal_code = geo.postal_code
+
 		end
 
 	end

@@ -1,96 +1,74 @@
-<div class="profile-header-banner sticky">
+<div itemscope itemtype="http://schema.org/Event">
 
-  <div class="profile-title-container">
+  <div class="profile-header-banner sticky">
 
-    <div class="row">
-      
-      <div class="col-xs-3 col-sm-2">
-        <%= image_tag @show.image.url(:medium), class: ""%>
-      </div>
+    <div class="profile-title-container">
 
-      <div class="col-xs-9 col-sm-10">
+      <div class="row">
         
-        <h1><%= @show.name %></h1>
+        <div class="col-xs-3 col-sm-2">
+          <span itemprop="image">
+            <%= image_tag @show.image.url(:medium), class: ""%>
+          </span>
+        </div>
 
-        <p><%= @show.next_occurrence_date %></p>
+        <div class="col-xs-9 col-sm-10">
+          
+          <h1 itemprop="name"><%= @show.name %></h1>
 
-        <p><%= @show.next_occurrence_time %></p>
+          <p itemprop="startDate" content="<%# time_placeholder %>"><%= @show.next_occurrence_date %> <%= @show.next_occurrence_time %></p>
 
-        <p><a class="button yellow-background" href="<%= root_path %>">Buy Ticket for $10</a></p>
+          <p><a class="button yellow-background" href="<%= root_path %>">Buy Ticket for <span itemprop="price">$10</span></a></p>
 
+        </div>
+    
       </div>
-  
+
     </div>
 
   </div>
 
-</div>
+  <div class="profile-content">
 
-<div class="profile-content">
-
-  <div class="row">
-      
-      <div class="col-xs-12 col-sm-6 no-padding">
-
-        <section class="profile-section">
-
-          <header class="section-title">About the Show</header>
-
-          <p><%= @show.about %></p>
-
-        </section>
-
-        <% if @show.address %>
-
-          <section class="profile-section">
-
-            <%= render :partial => 'shows/full_address', :locals => {:show => @show} %>
-
-          </section>
-
-        <%end%>
-
-        <% if @show.venue_id %>
-
-          <section class="profile-section">
-
-            <header class="section-title">About the Venue</header>
-
-            <p><%= @show.venue.about %></p>
-
-            <br>
-            
-            <p><%= link_to "See Venue Page", venue_with_url_path(@show.venue.url_slug), class:"blue-text" %></p>
-
-          </section>
-
-        <%end%>
-
-      </div>
-
-      <div class="col-xs-12 col-sm-6 no-padding">
+    <div class="row">
         
-        <% if @show.schedule %>
+        <div class="col-xs-12 col-sm-6 no-padding">
 
-          <% if @show.remaining_show_occurrences.count > 1 %>
+          <section class="profile-section">
+
+            <header class="section-title">About the Show</header>
+
+            <p itemprop="description"><%= @show.about %></p>
+
+          </section>
+
+          <% if @show.address %>
+
+            <section class="profile-section" itemprop="location" itemscope itemtype="http://schema.org/Place">
+
+              <%= render :partial => 'shows/full_address', :locals => {:show => @show} %>
+
+            </section>
+
+          <%end%>
+
+          <% if @show.venue_id %>
 
             <section class="profile-section">
 
-              <header class="section-title">Schedule</header>
+              <header class="section-title">About the Venue</header>
 
-              <p><i><%= @show.schedule %></i></p>
+              <p><%= @show.venue.about %></p>
 
               <br>
-
-              <% if @show.schedule.occurrences(Time.now + 1.month).count > 0 %>
-                
-                <p><b>Upcoming Dates:</b><p>
-
-                <% @show.schedule.occurrences(Time.now + 1.month).each do |occurence| %>
-
-                  <p><%= occurence.strftime("%a, %b %e") %></p>
-
-                <%end%>
+              
+              <% if @show.venue %>
+                  
+                  <% if @show.venue.url_slug %>
+                    
+                    <p><%= link_to "See Venue Page", venue_with_url_path(@show.venue.url_slug), class:"blue-text" %></p>
+                    
+                  <%end%>
 
               <%end%>
 
@@ -98,74 +76,108 @@
 
           <%end%>
 
-        <%end%>
+        </div>
 
-        <section class="profile-section">
+        <div class="col-xs-12 col-sm-6 no-padding">
+          
+          <% if @show.schedule %>
 
-          <header class="section-title">About the Producer</header>
+            <% if @show.remaining_show_occurrences.count > 1 %>
 
-          <p><%= @show.user.first_name %></p>
+              <section class="profile-section">
 
-          <a href="<%= user_profile_path(@show.user.first_name) %>"><%= @show.user.first_name + " Profile" %><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a>
+                <header class="section-title">Schedule</header>
 
-        </section>
+                <p><i><%= @show.schedule %></i></p>
 
-        <section class="profile-section centered">
+                <br>
 
-          <header class="section-title">Have You Seen this Show?</header>
+                <% if @show.schedule.occurrences(Time.now + 1.month).count > 0 %>
+                  
+                  <p><b>Upcoming Dates:</b><p>
 
-          <div class="show-vote-ctas-container centered">
-            
-            <span class="button green-background vote" data-show-id="<%= @show.id%>" data-vote-direction="up"><span class="glyphicon glyphicon-hand-up" aria-hidden="true"></span> It's Funny</span>
+                  <% @show.schedule.occurrences(Time.now + 1.month).each do |occurence| %>
 
-            <span class="button red-background vote" data-show-id="<%= @show.id%>" data-vote-direction="down"><span class="glyphicon glyphicon-hand-down" aria-hidden="true"></span> Needs Work</span>
+                    <p><%= occurence.strftime("%a, %b %e") %></p>
 
-          </div>
-
-        </section>
-
-        <% if @show.show_reviews.count > 0 %>
-
-          <section class="profile-section">
-
-            <header class="section-title">Reviews</header>
-              
-              <% if @show.show_reviews.count > 0 %>
-                
-                <% @show.show_reviews.all.each do |review| %>
-
-                  <div class="row">
-            
-                    <div class="col-xs-3">
-                      
-                      <%= image_tag review.user.image.url(:small), class: "reviewer-small-image" %><br>
-
-                      <%= review.user.first_name + " " + review.user.last_name.first(1) + "."   %><br>
-                      
-                      <%= Market.find(review.user.default_market_id).name %>
-
-                    </div>
-
-
-                    <div class="col-xs-9">
-
-                      <div class="img-stars <%= review.css_rating_code %>"></div><br>
-                        
-                        <i>"<%= review.body %>"</i>
-
-                    </div>
-
-                  </div>
+                  <%end%>
 
                 <%end%>
 
-              <%end%>
+              </section>
+
+            <%end%>
+
+          <%end%>
+
+          <section class="profile-section">
+
+            <header class="section-title">About the Producer</header>
+
+            <p><%= @show.user.first_name %></p>
+
+            <a href="<%= user_profile_path(@show.user.first_name) %>"><%= @show.user.first_name + " Profile" %><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a>
 
           </section>
 
-        <%end%>
+          <section class="profile-section centered">
 
-      </div>
+            <header class="section-title">Have You Seen this Show?</header>
+
+            <div class="show-vote-ctas-container centered">
+              
+              <span class="button green-background vote" data-show-id="<%= @show.id%>" data-vote-direction="up"><span class="glyphicon glyphicon-hand-up" aria-hidden="true"></span> It's Funny</span>
+
+              <span class="button red-background vote" data-show-id="<%= @show.id%>" data-vote-direction="down"><span class="glyphicon glyphicon-hand-down" aria-hidden="true"></span> Needs Work</span>
+
+            </div>
+
+          </section>
+
+          <% if @show.show_reviews.count > 0 %>
+
+            <section class="profile-section">
+
+              <header class="section-title">Reviews</header>
+                
+                <% if @show.show_reviews.count > 0 %>
+                  
+                  <% @show.show_reviews.all.each do |review| %>
+
+                    <div class="row">
+              
+                      <div class="col-xs-3">
+                        
+                        <%= image_tag review.user.image.url(:small), class: "reviewer-small-image" %><br>
+
+                        <%= review.user.first_name + " " + review.user.last_name.first(1) + "."   %><br>
+                        
+                        <%= Market.find(review.user.default_market_id).name %>
+
+                      </div>
+
+
+                      <div class="col-xs-9">
+
+                        <div class="img-stars <%= review.css_rating_code %>"></div><br>
+                          
+                          <i>"<%= review.body %>"</i>
+
+                      </div>
+
+                    </div>
+
+                  <%end%>
+
+                <%end%>
+
+            </section>
+
+          <%end%>
+
+        </div>
+
+    </div>
 
   </div>
 
