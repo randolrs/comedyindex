@@ -29,17 +29,14 @@
     width: 100%;
     padding:15px 0px;
     z-index: 200;
-    color: #fff;
-    background: #111;
-
-    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2);
+    color: #111;
+    background: #fff;
 
     border-bottom: 1px solid rgba(0,0,0,0.2);
 
     h1{
-        font-size: 24px;
         
-        text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.3);
+        font-size: 24px;
 
         margin-bottom: 0.1em;
         font-weight: 700;
@@ -80,7 +77,6 @@ section.profile-section{
     padding: 20px;
     background: #fff;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
     
     content: "";
     clear: both;

@@ -10,7 +10,7 @@
     if (opts == null) {
       opts = {};
     }
-    sticky_class = opts.sticky_class, inner_scrolling = opts.inner_scrolling, recalc_every = opts.recalc_every, parent_selector = opts.parent, offset_top = 60, manual_spacer = opts.spacer, enable_bottoming = opts.bottoming;
+    sticky_class = opts.sticky_class, inner_scrolling = opts.inner_scrolling, recalc_every = opts.recalc_every, parent_selector = opts.parent, offset_top = 70, manual_spacer = opts.spacer, enable_bottoming = opts.bottoming;
     if (offset_top == null) {
       offset_top = 0;
     }
