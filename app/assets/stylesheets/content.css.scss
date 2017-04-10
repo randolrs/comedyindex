@@ -73,8 +73,9 @@
         padding: 3px 8px;
         border-radius: 20px;
         margin-right: 10px;
-        background: rgba(0,200,0,0.1);
-        border: 1px solid #aaa;
+        border: 1px solid rgba(0,0,0,0.2);
+        background: #ff1a3f;
+        color: #fff;
     }
 
     .tag-content:last-child{
