@@ -16,7 +16,7 @@
           
           <h1 itemprop="name"><%= @show.name %></h1>
 
-          <a class="button yellow-background" href="<%= root_path %>" style="float: right;">Buy Ticket for <span itemprop="price">$10</span></a>
+          <a class="button full-screen-only yellow-background" href="<%= root_path %>" style="float: right;">Buy Ticket for <span itemprop="price">$10</span></a>
 
           <p class="show-detail" itemprop="startDate" content="<%= @show.next_occurrence %>"><%= @show.next_occurrence_date %> <br><%= @show.next_occurrence_time %></p>
 
@@ -189,4 +189,7 @@
 
   </div>
 
+  <%= render :partial => 'layouts/corner_add_cta', :locals => {:target_url => root_path, :cta_text => "Buy Tickets for " + @show.name.to_s} %>
+  
 </div>
+
