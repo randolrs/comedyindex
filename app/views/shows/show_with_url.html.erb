@@ -9,18 +9,22 @@
       <div class="row">
         
         <div class="col-xs-3 col-sm-2">
-          <span itemprop="image">
-            <%= image_tag @show.image.url(:medium), class: ""%>
-          </span>
+          
+            <%= image_tag @show.image.url(:medium), class: "", :itemprop => "image" %>
+
         </div>
 
         <div class="col-xs-9 col-sm-10">
           
           <h1 itemprop="name"><%= @show.name %></h1>
 
-          <a class="button full-screen-only yellow-background" href="<%= root_path %>" style="float: right;">Buy Ticket for <span itemprop="price">$10</span></a>
+          <a class="button full-screen-only yellow-background" href="<%= root_path %>" style="float: right;" itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">Buy Ticket for <span itemprop="lowPrice">$10</span></a>
 
           <p class="show-detail" itemprop="startDate" content="<%= @show.next_occurrence %>"><%= @show.next_occurrence_date %> <br><%= @show.next_occurrence_time %></p>
+
+          <meta itemprop="endDate" content="<%= @show.next_occurrence + 2.hours %>">
+
+          <meta itemprop="eventStatus" content="EventScheduled">
 
           <br>
 
