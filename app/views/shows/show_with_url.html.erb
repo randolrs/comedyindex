@@ -16,7 +16,7 @@
           
           <h1 itemprop="name"><%= @show.name %></h1>
 
-          <p itemprop="startDate" content="<%# time_placeholder %>"><%= @show.next_occurrence_date %> <%= @show.next_occurrence_time %></p>
+          <p itemprop="startDate" content="<%# time_placeholder %>"><%= @show.next_occurrence_date %> <br><%= @show.next_occurrence_time %></p>
 
           <p><a class="button yellow-background" href="<%= root_path %>">Buy Ticket for <span itemprop="price">$10</span></a></p>
 
