@@ -4,7 +4,7 @@
 
 	<% ShowTag.front_page_tags.each do |show_tag| %>
 
-		<%= link_to show_tag.name, show_tag_index_path(show_tag.url_slug), class: cp(show_tag_index_path(show_tag.url_slug)) %>
+		<%= link_to show_tag.name, show_tag_index_path(location, show_tag.url_slug), class: cp(show_tag_index_path(location, show_tag.url_slug)) %>
 
 	<% end %>
 

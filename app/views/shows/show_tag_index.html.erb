@@ -3,13 +3,13 @@
 
 <div class="dashboard">
 
-	<%= render 'pages/mobile_front_page_tags' %>
+	<%= render :partial => 'pages/mobile_front_page_tags', :locals => {:location => session[:city]} %>
 
 	<div class="row">
 
 		<div class="hidden-xs col-sm-3 col-md-3">
 
-			<%= render 'pages/front_page_tags' %>
+			<%= render :partial => 'pages/front_page_tags', :locals => {:location => session[:city]} %>
 
 			<% unless user_signed_in? %>
 				
@@ -45,7 +45,7 @@
 							<%= link_to root_path do %>
 
 								<div class="card see-more">
-									See ... More Shows
+									See 2 More Shows
 									<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
 								</div>
 							
@@ -80,7 +80,7 @@
 							<%= link_to root_path do %>
 
 								<div class="card see-more">
-									See ... More Shows
+									See 5 More Shows
 									<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
 								</div>
 							

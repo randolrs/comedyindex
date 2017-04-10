@@ -48,11 +48,11 @@ Rails.application.routes.draw do
 
   get 'writeareview' => 'shows#index_for_review', as: 'index_for_review'
 
-  get 's/:url_slug' => 'shows#show_with_url', as: 'show_with_url'
+  get ':city/:url_slug' => 'shows#show_with_url', as: 'show_with_url'
 
   get 'v/:url_slug' => 'venues#show_with_url', as: 'venue_with_url'
 
-  get 'tag/:url_slug' => 'shows#show_tag_index', as: 'show_tag_index'
+  get ':city/category/:url_slug' => 'shows#show_tag_index', as: 'show_tag_index'
 
   get 'u/:display_name' => 'users#profile', as: 'user_profile'
 
