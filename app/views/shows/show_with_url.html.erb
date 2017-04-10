@@ -1,5 +1,7 @@
 <div itemscope itemtype="http://schema.org/ComedyEvent">
 
+  <meta itemprop="url" content="<%= request.original_url %>">
+
   <div class="profile-header-banner sticky">
 
     <div class="profile-title-container">
@@ -190,6 +192,6 @@
   </div>
 
   <%= render :partial => 'layouts/corner_add_cta', :locals => {:target_url => root_path, :cta_text => "Buy Tickets for " + @show.name.to_s} %>
-  
+
 </div>
 
