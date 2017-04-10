@@ -101,5 +101,13 @@
 
 </div>
 
-<%= render 'layouts/corner_add_cta' %>
+<% if user_signed_in? %>
+
+	<%= render :partial => 'layouts/corner_add_cta', :locals => {:target_url => new_show_path, :cta_text => "+ Add a Show"} %>
+
+<%else%>
+	
+	<%= render :partial => 'layouts/corner_add_cta', :locals => {:target_url => signup_path, :cta_text => "+ Add a Show"} %>
+
+<%end%>
 
