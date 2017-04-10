@@ -260,15 +260,21 @@ h1.dashboard-header{
 
 	a, a:hover{
 		color: #666;
-    	background: rgba(0, 0, 0, 0);
+    	background: rgba(255, 255, 255, 1);
     	border: 1px solid #bbb;
 		padding: 5px 10px;
 		border-radius: 20px;
+		margin-right: 5px;
 
 	}
 
+	a:last-child{
+		margin:0px;
+	}
+
 	a:hover{
-		background: rgba(200,200,200,0.1);
+		color: $brand-red;
+
 	}
 
 	a.active{
