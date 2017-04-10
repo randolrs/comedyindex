@@ -19,13 +19,13 @@
 
 <%end%>
 
-<p itemscope itemtype="http://schema.org/PostalAddress">
+<p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 		
 	<span itemprop="streetAddress"><%= @show.address_street_address %> </span>
 	<br> 
 	<span itemprop="addressLocality"><%= @show.address_locality %></span>, 
 	<span itemprop="addressRegion"><%= @show.address_region %></span>, 
-	<span itemprop="addressPostalCode"><%= @show.address_postal_code %></span>
+	<span itemprop="addressPostalAddress"><%= @show.address_postal_code %></span>
 	<br>
 	<span itemprop="addressCountry"><%= @show.address_country %></span>
 		
