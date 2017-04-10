@@ -188,6 +188,18 @@ class Show < ActiveRecord::Base
 		end
 	end
 
+	def next_occurrence
+
+		if self.remaining_show_occurrences.count > 0
+			
+			return self.remaining_show_occurrences.first.date
+		else
+			return "Date TBD"
+		end
+
+	end
+
+
 	def next_occurrence_date
 
 		if self.remaining_show_occurrences.count > 0

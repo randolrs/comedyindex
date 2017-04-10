@@ -3,7 +3,7 @@
 
   <%= link_to(show_with_url_path(show.city, show.url_slug)) do %>
 
-    <div class="card top-padded" itemscope itemtype="http://schema.org/Event">
+    <div class="card top-padded" itemscope itemtype="http://schema.org/ComedyEvent">
       
       <div class="row padded-cols">
       
@@ -19,7 +19,7 @@
           <br>
           <p class="title" itemprop="name"><%= show.name %></p>
           <br>
-          <p itemprop="startDate" content="<%# time_placeholder %>"><%= show_occurrence.date.strftime("%A, %b %d") %><br><%= show_occurrence.date.strftime("%l:%M%P") %></p>
+          <p itemprop="startDate" content="<%= show_occurrence.date %>"><%= show_occurrence.date.strftime("%A, %b %d") %><br><%= show_occurrence.date.strftime("%l:%M%P") %></p>
           <br>
           <p><% show.show_tag_entries.each do |tag| %><span class="tag-content"><%= tag.show_tag.name %></span><%end%></p>
         </div>

@@ -1,4 +1,4 @@
-<div itemscope itemtype="http://schema.org/Event">
+<div itemscope itemtype="http://schema.org/ComedyEvent">
 
   <div class="profile-header-banner sticky">
 
@@ -18,10 +18,10 @@
 
           <a class="button yellow-background" href="<%= root_path %>" style="float: right;">Buy Ticket for <span itemprop="price">$10</span></a>
 
-          <p class="show-detail" itemprop="startDate" content="<%# time_placeholder %>"><%= @show.next_occurrence_date %> <br><%= @show.next_occurrence_time %></p>
+          <p class="show-detail" itemprop="startDate" content="<%= @show.next_occurrence %>"><%= @show.next_occurrence_date %> <br><%= @show.next_occurrence_time %></p>
 
           <br>
-          
+
           <p>
 
             <span><%= @show.address_street_address %></span>
