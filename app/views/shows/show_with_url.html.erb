@@ -18,7 +18,7 @@
           
           <h1 itemprop="name"><%= @show.name %></h1>
 
-          <a class="button full-screen-only yellow-background" href="<%= root_path %>" style="float: right;" itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">Buy Ticket for <span itemprop="price">$10</span></a>
+          <a class="button full-screen-only yellow-background" href="<%= root_path %>" style="float: right;" itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">Buy Ticket for <span itemprop="price" content="10.0000">$10</span></a>
 
           <p class="show-detail" itemprop="startDate" content="<%= @show.next_occurrence %>"><%= @show.next_occurrence_date %> <br><%= @show.next_occurrence_time %></p>
 
