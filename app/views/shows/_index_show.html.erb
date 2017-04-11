@@ -5,6 +5,32 @@
 
     <div class="card top-padded" itemscope itemtype="http://schema.org/ComedyEvent">
       
+      <meta itemprop="url" content="<%= show_with_url_path(show.city, show.url_slug) %>">
+
+      <span itemprop="location" itemscope itemtype="http://schema.org/EventVenue">
+
+        <% if show.venue_id %>
+
+          <meta itemprop="name" content="<%= show.venue.name %>">
+
+        <%else%>
+          
+          <meta itemprop="name" content="<%= show.venue_name %>">    
+
+        <%end%>
+
+        <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+      
+          <meta itemprop="streetAddress" content="<%= show.address_street_address %>">
+          <meta itemprop="addressLocality" content="<%= show.address_locality %>"> 
+          <meta itemprop="addressRegion" content="<%= show.address_region %>"> 
+          <meta itemprop="postalCode" content="<%= show.address_postal_code %>">
+          <meta itemprop="addressCountry" content="<%= show.address_country %>">
+            
+        </span>
+
+      </span>
+
       <div class="row padded-cols">
       
         <div class="col-xs-3">
