@@ -22,13 +22,27 @@
 
       <label>Preview Image</label>
 
-      <div class="image-field-container">
+      <% if @show.image %>
         
-        <h3>Click to Add Event Picture</h3>
+        <div>
+          
+          <%= image_tag @show.image.url(:small), class: "small-show-img" %>
 
-        <%= f.file_field :image, class: "form-control" %>
+          <%= f.file_field :image, class: "form-control" %>
 
-      </div>
+        </div>
+
+      <%else%>
+
+        <div class="image-field-container">
+          
+          <h3>Click to Add Event Picture</h3>
+
+          <%= f.file_field :image, class: "form-control" %>
+
+        </div>
+
+      <%end%>
 
     </div>
 
