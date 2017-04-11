@@ -155,7 +155,7 @@ class ShowsController < ApplicationController
 
               show_tag_entry = ShowTagEntry.where(:show_id => @show.id, :show_tag_id => show_tag.id).last
 
-              if tag[1]  #if selected
+              if tag[1] == "true"  #if selected
 
                 unless show_tag_entry
 
@@ -262,13 +262,11 @@ class ShowsController < ApplicationController
 
           show_tag = ShowTag.where(:name => tag[0]).last
 
-          if show_tag
-
-            #check for existing show tag entry
+          if show_tag #is this a real show_tag?
 
             show_tag_entry = ShowTagEntry.where(:show_id => @show.id, :show_tag_id => show_tag.id).last
 
-            if tag[1] #if selected
+            if tag[1] == "true" #if selected
 
               unless show_tag_entry
 

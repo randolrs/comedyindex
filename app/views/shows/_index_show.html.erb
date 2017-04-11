@@ -47,7 +47,7 @@
           <br>
           <p itemprop="startDate" content="<%= show_occurrence.date %>"><%= show_occurrence.date.strftime("%A, %b %d") %><br><%= show_occurrence.date.strftime("%l:%M%P") %></p>
           <br>
-          <p><% show.show_tag_entries.each do |tag| %><span class="tag-content"><%= tag.show_tag.name %></span><%end%></p>
+          <p><% show.show_tag_entries.where(:is_active => true).each do |tag| %><span class="tag-content"><%= tag.show_tag.name %></span><%end%></p>
         </div>
 
       </div>

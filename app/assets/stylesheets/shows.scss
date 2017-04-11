@@ -60,12 +60,15 @@ table.review-index{
 }
 
 .add-tag-option{
-	background: #999;
+	background: #fff;
+	border: 1px solid #ccc;
 	padding: 5px 10px;
 	border-radius: 20px;
 	cursor: pointer;
 }
 
 .add-tag-option.active{
-	background: green;
+	background: #ff1a3f;
+	color: #fff;
+	border: 1px solid rgba(0,0,0,0.2);
 }

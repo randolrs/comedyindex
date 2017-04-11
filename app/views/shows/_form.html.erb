@@ -34,11 +34,23 @@
 
     <div class="field">
 
-      Tags
+      <label>Tags</label>
+
+      <br>
+
       <% ShowTag.all.each do |show_tag| %>
-      
-        <a class="add-tag-option toggle-active toggle-to-activate" data-activate-input="<%= show_tag.name %>"><%=show_tag.name%></a>
-        <input type="hidden" value="<%= @show.has_tag(show_tag.id) %>" name="tags[<%= show_tag.name %>]" id="<%= show_tag.name %>"></input>
+        
+        <% if @show.has_tag(show_tag.id) %>
+
+          <a class="add-tag-option toggle-active toggle-to-activate active" data-activate-input="<%= show_tag.url_slug %>"><%=show_tag.name%></a>
+
+        <%else%>
+
+          <a class="add-tag-option toggle-active toggle-to-activate" data-activate-input="<%= show_tag.url_slug %>"><%=show_tag.name%></a>
+
+        <%end%>
+
+          <input type="hidden" value="<%= @show.has_tag(show_tag.id) %>" name="tags[<%= show_tag.name %>]" id="<%= show_tag.url_slug %>"></input>
 
       <% end %>
 
