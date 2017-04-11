@@ -199,6 +199,11 @@ class Show < ActiveRecord::Base
 
 	end
 
+	def has_tag(show_tag_id)
+
+		return ShowTagEntry.where(:show_id => self.id, :show_tag_id => show_tag_id, :is_active => true).exists?
+
+	end
 
 	def next_occurrence_date
 

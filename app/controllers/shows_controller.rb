@@ -96,6 +96,34 @@ class ShowsController < ApplicationController
 
   end
 
+
+
+  def show_home
+
+
+    if Show.where(:url_slug => params[:url_slug]).exists?
+
+      @show = Show.find_by_url_slug(params[:url_slug])
+
+      @main_SEO_title = @show.name
+
+      @SEO_description = @show.about
+
+      @nav_return = true
+
+
+      #@nav_return_title = @show.name
+
+    else
+
+      redirect_to root_path
+
+    end
+
+
+  end
+
+
   # GET /shows/new
   def new
     @show = Show.new
@@ -127,9 +155,7 @@ class ShowsController < ApplicationController
 
               show_tag_entry = ShowTagEntry.where(:show_id => @show.id, :show_tag_id => show_tag.id).last
 
-              if tag[1]  
-
-                #if selected
+              if tag[1]  #if selected
 
                 unless show_tag_entry
 
@@ -143,9 +169,7 @@ class ShowsController < ApplicationController
 
 
 
-              else
-
-                #if not selected
+              else #if not selected
 
                 if show_tag_entry
 

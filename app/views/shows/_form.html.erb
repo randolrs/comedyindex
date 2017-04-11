@@ -38,7 +38,7 @@
       <% ShowTag.all.each do |show_tag| %>
       
         <a class="add-tag-option toggle-active toggle-to-activate" data-activate-input="<%= show_tag.name %>"><%=show_tag.name%></a>
-        <input type="hidden" value="false" name="tags[<%= show_tag.name %>]" id="<%= show_tag.name %>"></input>
+        <input type="hidden" value="<%= @show.has_tag(show_tag.id) %>" name="tags[<%= show_tag.name %>]" id="<%= show_tag.name %>"></input>
 
       <% end %>
 
@@ -51,11 +51,6 @@
     </div>
 
     <%= f.hidden_field :time_zone, :id => "time-zone-input" %>
-
-    <div class="field">
-      <label>Category</label><br>
-      <%= collection_select(:show, :category_1_id, Category.all, :id, :name, prompt: "Select a Category") %>
-    </div>
 
 
     <%# f.fields_for :show_occurences do |builder| %>
