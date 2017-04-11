@@ -16,7 +16,7 @@
 
         <div class="col-xs-12 col-sm-10">
           
-          <h1 itemprop="name"><%= @show.name %></h1>
+          <h1 itemprop="name"><% unless @show_occurrence.title %><%= @show.name %><%else%><%= @show_occurrence.title %><%end%></h1>
 
           <a class="button full-screen-only yellow-background" href="<%# placeholder for ComedyHere Ticketing %>" style="float: right;" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
             Buy Ticket for 

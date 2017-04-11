@@ -59,6 +59,32 @@ class ShowsController < ApplicationController
     
   end
 
+  def this_shows_occurrences
+
+    @show = Show.find(params[:id])
+
+  end
+
+  def edit_show_occurrence
+
+    @show_occurrence = ShowOccurrence.find(params[:id])
+
+    @show = Show.find(@show_occurrence.schedulable_id)
+
+  end
+
+  def update_show_occurrence
+
+    @show_occurrence = ShowOccurrence.find(params[:id])
+
+    @show = Show.find(@show_occurrence.schedulable_id)
+
+    @show_occurrence.update(:title => params[:title], :about => params[:about])
+
+    redirect_to this_shows_occurrences_path(@show.id)
+
+  end
+
   def show_with_url
 
     @whitebackground = false

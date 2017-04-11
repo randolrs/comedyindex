@@ -48,10 +48,18 @@ Rails.application.routes.draw do
 
   get 'writeareview' => 'shows#index_for_review', as: 'index_for_review'
 
-  get ':city/:url_slug/:formatted_date/:show_occurrence_id' => 'shows#show_with_url', as: 'show_with_url'
-
   
   get ':city/:url_slug/' => 'shows#show_home', as: 'show_home'
+
+  get 'show/:id/occurrences/' => 'shows#this_shows_occurrences', as: 'this_shows_occurrences'
+
+  get 'show/occurrence/edit/:id' => 'shows#edit_show_occurrence', as: 'edit_show_occurrence'
+
+  post 'show/occurrence/update/:id' => 'shows#update_show_occurrence', as: 'update_show_occurrence'
+
+
+  get ':city/comedy/:url_slug/:formatted_date/:show_occurrence_id' => 'shows#show_with_url', as: 'show_with_url'
+
 
 
   get 'v/:url_slug' => 'venues#show_with_url', as: 'venue_with_url'

@@ -1,0 +1,24 @@
+<div class="profile-header-banner">
+
+  <div class="profile-title-container">
+
+    <div class="profile-detail-container">
+
+      <h1><%= @show.name %></h1>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="dashboard">
+
+  <% @show.show_occurrences.each do |show_occurrence|%>
+
+    <%= render :partial => 'shows/index_show_occurrences', :locals => {:show_occurrence => show_occurrence, :show =>  @show } %>
+
+
+  <% end %>
+
+</div>

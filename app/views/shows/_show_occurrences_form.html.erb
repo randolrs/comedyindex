@@ -1,0 +1,32 @@
+<div class="form-container">
+
+  <%= form_tag update_show_occurrence_path(@show_occurrence) do %>
+
+    
+    <div class="field">
+      <label>Show Occurrence Title</label><br>
+      <input name="title" type="text" <% unless @show_occurrence.title %>value="<%= @show.title %>"<% else %>value="<%= @show_occurrence.title %>"<%end%>></input>
+    </div>
+
+    <div class="field">
+
+      <label>Image</label>
+
+      <input type="file" name="image"></input>
+
+    </div>
+
+
+    <div class="field">
+      <label>Event Description</label><br>
+      <input type="text" name="text" <% unless @show_occurrence.about %>value="<%= @show.about %>"<% else %>value="<%= @show_occurrence.about %>"<%end%>></input>
+    </div>
+
+
+    <div class="actions">
+      <input type="submit" class="button green-background" value="Update Show Occurrence">
+    </div>
+
+  <% end %>
+
+</div>
