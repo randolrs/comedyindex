@@ -81,7 +81,7 @@ class ShowsController < ApplicationController
       else
 
         redirect_to root_path
-        
+
       end
 
 
@@ -213,7 +213,7 @@ class ShowsController < ApplicationController
           ShowOccurrence.where(:schedulable_id => @show.id).update_all(:address => @show.address, :latitude => @show.latitude, :longitude => @show.longitude)
           
 
-          format.html { redirect_to show_with_url_path(@show.city, @show.url_slug), notice: 'Show was successfully created.' }
+          format.html { redirect_to show_home_path(@show.city, @show.url_slug), notice: 'Show was successfully created.' }
           format.json { render :show, status: :created, location: @show }
         else
           format.html { render :new }
@@ -271,7 +271,7 @@ class ShowsController < ApplicationController
 
         end
 
-        format.html { redirect_to show_with_url_path(@show.url_slug), notice: 'Show was successfully updated.' }
+        format.html { redirect_to show_home_path(@show.city, @show.url_slug), notice: 'Show was successfully updated.' }
         format.json { render :show, status: :ok, location: @show }
       else
         format.html { render :edit }

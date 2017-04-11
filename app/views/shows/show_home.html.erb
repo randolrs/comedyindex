@@ -1,0 +1,228 @@
+<div itemscope itemtype="http://schema.org/ComedyEvent">
+
+  <meta itemprop="url" content="<%= request.original_url %>">
+
+  <div class="profile-header-banner sticky">
+
+    <div class="profile-title-container">
+
+      <div class="row">
+        
+        <div class="hidden-xs col-sm-2">
+          
+            <%= image_tag @show.image.url(:medium), class: "", :itemprop => "image" %>
+
+        </div>
+
+        <div class="col-xs-12 col-sm-10">
+          
+          <h1 itemprop="name"><%= @show.name %></h1>
+
+          <a class="button full-screen-only yellow-background" href="<%# placeholder for ComedyHere Ticketing %>" style="float: right;" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+            Buy Ticket for 
+            <span itemprop="price" content="10.0000">$10</span>
+            <meta itemprop="url" content="<%# placeholder for ComedyHere Ticketing %>">
+          </a>
+
+          <p class="show-detail" itemprop="startDate" content="<%= @show.next_occurrence %>"><%= @show.next_occurrence_date %> <br><%= @show.next_occurrence_time %></p>
+
+          <meta itemprop="endDate" content="<%= @show.next_occurrence + 2.hours %>">
+
+          <meta itemprop="eventStatus" content="EventScheduled">
+
+          <br>
+
+          <p>
+
+            <span><%= @show.address_street_address %></span>
+
+          </p>
+
+        </div>
+    
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="profile-content">
+
+    <div class="row">
+        
+        <div class="col-xs-12 col-sm-6 no-padding">
+
+          <section class="profile-section">
+
+            <header class="section-title">About the Show</header>
+
+            <p itemprop="description"><%= @show.about %></p>
+
+          </section>
+
+          <% if @performers %>
+            <section class="profile-section">
+
+              <header class="section-title">Performers</header>
+
+              <div class="row">
+          
+                <div class="col-xs-12 col-sm-3 no-padding">
+                  img
+                </div>
+
+                <div class="col-xs-12 col-sm-9 no-padding">
+                  Name
+                </div>
+
+              </div>
+
+            </section>
+
+          <%end%>
+
+
+          <% if @show.address %>
+
+            <section class="profile-section" itemprop="location" itemscope itemtype="http://schema.org/EventVenue">
+
+              <%= render :partial => 'shows/full_address', :locals => {:show => @show} %>
+
+            </section>
+
+          <%end%>
+
+          <% if @show.venue_id %>
+
+            <section class="profile-section">
+
+              <header class="section-title">About the Venue</header>
+
+              <p><%= @show.venue.about %></p>
+
+              <br>
+              
+              <% if @show.venue %>
+                  
+                  <% if @show.venue.url_slug %>
+                    
+                    <p><%= link_to "See Venue Page", venue_with_url_path(@show.venue.url_slug), class:"blue-text" %></p>
+                    
+                  <%end%>
+
+              <%end%>
+
+            </section>
+
+          <%end%>
+
+        </div>
+
+        <div class="col-xs-12 col-sm-6 no-padding">
+          
+          <% if @show.schedule %>
+
+            <% if @show.remaining_show_occurrences.count > 1 %>
+
+              <section class="profile-section">
+
+                <header class="section-title">Schedule</header>
+
+                <p><i><%= @show.schedule %></i></p>
+
+                <br>
+
+                <% if @show.schedule.occurrences(Time.now + 1.month).count > 0 %>
+                  
+                  <p><b>Upcoming Dates:</b><p>
+
+                  <% @show.schedule.occurrences(Time.now + 1.month).each do |occurence| %>
+
+                    <p><%= occurence.strftime("%a, %b %e") %></p>
+
+                  <%end%>
+
+                <%end%>
+
+              </section>
+
+            <%end%>
+
+          <%end%>
+
+
+          <section class="profile-section">
+
+            <header class="section-title">About the Producer</header>
+
+            <p><%= @show.user.first_name %></p>
+
+            <a href="<%= user_profile_path(@show.user.first_name) %>"><%= @show.user.first_name + " Profile" %><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a>
+
+          </section>
+
+          <section class="profile-section centered">
+
+            <header class="section-title">Have You Seen this Show?</header>
+
+            <div class="show-vote-ctas-container centered">
+              
+              <span class="button green-background vote" data-show-id="<%= @show.id%>" data-vote-direction="up"><span class="glyphicon glyphicon-hand-up" aria-hidden="true"></span> It's Funny</span>
+
+              <span class="button red-background vote" data-show-id="<%= @show.id%>" data-vote-direction="down"><span class="glyphicon glyphicon-hand-down" aria-hidden="true"></span> Needs Work</span>
+
+            </div>
+
+          </section>
+
+          <% if @show.show_reviews.count > 0 %>
+
+            <section class="profile-section">
+
+              <header class="section-title">Reviews</header>
+                
+                <% if @show.show_reviews.count > 0 %>
+                  
+                  <% @show.show_reviews.all.each do |review| %>
+
+                    <div class="row">
+              
+                      <div class="col-xs-3">
+                        
+                        <%= image_tag review.user.image.url(:small), class: "reviewer-small-image" %><br>
+
+                        <%= review.user.first_name + " " + review.user.last_name.first(1) + "."   %><br>
+                        
+                        <%= Market.find(review.user.default_market_id).name %>
+
+                      </div>
+
+
+                      <div class="col-xs-9">
+
+                        <div class="img-stars <%= review.css_rating_code %>"></div><br>
+                          
+                          <i>"<%= review.body %>"</i>
+
+                      </div>
+
+                    </div>
+
+                  <%end%>
+
+                <%end%>
+
+            </section>
+
+          <%end%>
+
+        </div>
+
+    </div>
+
+  </div>
+
+  <%= render :partial => 'layouts/corner_add_cta', :locals => {:target_url => root_path, :cta_text => "Buy Tickets for " + @show.name.to_s} %>
+
+</div>
+

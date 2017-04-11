@@ -50,6 +50,10 @@ Rails.application.routes.draw do
 
   get ':city/:url_slug/:formatted_date/:show_occurrence_id' => 'shows#show_with_url', as: 'show_with_url'
 
+  
+  get ':city/:url_slug/' => 'shows#show_home', as: 'show_home'
+
+
   get 'v/:url_slug' => 'venues#show_with_url', as: 'venue_with_url'
 
   get ':city/category/:url_slug' => 'shows#show_tag_index', as: 'show_tag_index'
