@@ -79,6 +79,8 @@ class ShowsController < ApplicationController
 
     @show = Show.find(@show_occurrence.schedulable_id)
 
+    #@show_occurrence.update(:title => params[:title], :about => params[:about], :image => params[:image])
+
     @show_occurrence.update(:title => params[:title], :about => params[:about])
 
     redirect_to this_shows_occurrences_path(@show.id)

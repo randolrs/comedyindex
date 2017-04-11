@@ -9,6 +9,10 @@ class ShowOccurrence < ActiveRecord::Base
   reverse_geocoded_by :latitude, :longitude
 
   has_many :show_votes
+
+  has_attached_file :image, 
+  :styles => { :medium => "400x400#", :small => "70x70#", :thumb => "30x30#"},
+  :s3_protocol => :https
   
 
   def self.default_scope

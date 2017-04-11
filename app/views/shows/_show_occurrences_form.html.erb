@@ -1,18 +1,28 @@
 <div class="form-container">
 
+  <%# form_for(@show_occurrence) do |f| %>
   <%= form_tag update_show_occurrence_path(@show_occurrence) do %>
 
     
     <div class="field">
       <label>Show Occurrence Title</label><br>
       <input name="title" type="text" <% unless @show_occurrence.title %>value="<%= @show.title %>"<% else %>value="<%= @show_occurrence.title %>"<%end%>></input>
+      <%# f.text_field :title %>
     </div>
 
     <div class="field">
 
       <label>Image</label>
 
-      <input type="file" name="image"></input>
+      <%#if @show_occurrence.image %>
+        
+        <%# image_tag @show_occurrence.image.url(:small) %>
+
+      <%#end%>
+
+      <%# f.file_field :image, class: "form-control" %>
+
+     <!--  <input type="file" name="image"></input> -->
 
     </div>
 
@@ -20,6 +30,7 @@
     <div class="field">
       <label>Event Description</label><br>
       <input type="text" name="text" <% unless @show_occurrence.about %>value="<%= @show.about %>"<% else %>value="<%= @show_occurrence.about %>"<%end%>></input>
+      <%# f.text_area :about %>
     </div>
 
 

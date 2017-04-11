@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :show_reviews
   resources :shows
   resources :venues
+  #resources :show_occurrences
   resources :performers
   devise_for :users, controllers: {registrations: 'registrations'}
   # The priority is based upon order of creation: first created -> highest priority.
@@ -53,7 +54,7 @@ Rails.application.routes.draw do
 
   get 'show/:id/occurrences/' => 'shows#this_shows_occurrences', as: 'this_shows_occurrences'
 
-  get 'show/occurrence/edit/:id' => 'shows#edit_show_occurrence', as: 'edit_show_occurrence'
+  get 'show/occurrence/edit/:id' => 'shows#edit_show_occurrence', as: 'edit_a_show_occurrence'
 
   post 'show/occurrence/update/:id' => 'shows#update_show_occurrence', as: 'update_show_occurrence'
 
