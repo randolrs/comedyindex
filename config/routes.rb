@@ -48,7 +48,7 @@ Rails.application.routes.draw do
 
   get 'writeareview' => 'shows#index_for_review', as: 'index_for_review'
 
-  get ':city/:url_slug/:formatted-date/:show_occurrence_id' => 'shows#show_with_url', as: 'show_with_url'
+  get ':city/:url_slug/:formatted_date/:show_occurrence_id' => 'shows#show_with_url', as: 'show_with_url'
 
   get 'v/:url_slug' => 'venues#show_with_url', as: 'venue_with_url'
 
