@@ -21,13 +21,12 @@
 
 <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 		
-	<span itemprop="streetAddress"><%= @show.address_street_address %> </span>
-	<br> 
-	<span itemprop="addressLocality"><%= @show.address_locality %></span>, 
-	<span itemprop="addressRegion"><%= @show.address_region %></span>, 
-	<span itemprop="postalCode"><%= @show.address_postal_code %></span>
-	<br>
-	<span itemprop="addressCountry"><%= @show.address_country %></span>
+	<span itemprop="streetAddress"><%= @show.address_street_address %></span>
+	
+	<meta itemprop="addressLocality" content="<%= @show.address_locality %>">
+	<meta itemprop="addressRegion" content="<%= @show.address_region %>">
+	<meta itemprop="postalCode" content="<%= @show.address_postal_code %>">
+	<meta itemprop="addressCountry" content="<%= @show.address_country %>">
 		
 </p>
 

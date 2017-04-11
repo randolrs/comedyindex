@@ -64,7 +64,6 @@ class ShowsController < ApplicationController
     @whitebackground = false
 
 
-
     if Show.where(:url_slug => params[:url_slug]).exists?
 
       @show = Show.find_by_url_slug(params[:url_slug])
@@ -74,6 +73,18 @@ class ShowsController < ApplicationController
       @SEO_description = @show.about
 
       @nav_return = true
+
+      if ShowOccurrence.where(:id => params[:show_occurrence_id]).exists?
+
+        @show_occurrence = ShowOccurrence.find(params[:show_occurrence_id])
+
+      else
+
+        redirect_to root_path
+        
+      end
+
+
       #@nav_return_title = @show.name
 
     else

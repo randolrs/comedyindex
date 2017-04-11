@@ -24,9 +24,9 @@
             <meta itemprop="url" content="<%# placeholder for ComedyHere Ticketing %>">
           </a>
 
-          <p class="show-detail" itemprop="startDate" content="<%= @show.next_occurrence %>"><%= @show.next_occurrence_date %> <br><%= @show.next_occurrence_time %></p>
+          <p class="show-detail" itemprop="startDate" content="<%= @show_occurrence.date %>"><%= @show_occurrence.date.strftime("%A, %b %e, %Y") %> <br><%= @show_occurrence.date.strftime("%l:%M%P") %></p>
 
-          <meta itemprop="endDate" content="<%= @show.next_occurrence + 2.hours %>">
+          <meta itemprop="endDate" content="<%= @show_occurrence.date + 2.hours %>">
 
           <meta itemprop="eventStatus" content="EventScheduled">
 

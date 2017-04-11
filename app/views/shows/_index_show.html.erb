@@ -1,11 +1,11 @@
 
 <% unless @review_index %>
 
-  <%= link_to(show_with_url_path(show.city, show.url_slug)) do %>
+  <%= link_to(show_with_url_path(show.city, show.url_slug, show_occurrence.date.strftime("%b-%d-%y"), show_occurrence.id)) do %>
 
     <div class="card top-padded" itemscope itemtype="http://schema.org/ComedyEvent">
       
-      <meta itemprop="url" content="<%= show_with_url_path(show.city, show.url_slug) %>">
+      <meta itemprop="url" content="<%= show_with_url_path(show.city, show.url_slug, show_occurrence.date.strftime("%d-%b-%Y"), show_occurrence.id) %>">
 
       <span itemprop="location" itemscope itemtype="http://schema.org/EventVenue">
 
