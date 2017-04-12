@@ -24,7 +24,7 @@
             <meta itemprop="url" content="<%# placeholder for ComedyHere Ticketing %>">
           </a>
 
-          <p class="show-detail" itemprop="startDate" content="<%= @show_occurrence.date %>"><%= @show_occurrence.date.strftime("%A, %b %e, %Y") %> <br><%= @show_occurrence.date.strftime("%l:%M%P") %></p>
+          <p class="show-detail" itemprop="startDate" content="<%= @show_occurrence.date %>"><span class="glyphicon glyphicon-calendar" aria-hidden="true" style="margin-right: 10px;"></span><%= @show_occurrence.date.strftime("%A, %b %e, %Y") %> <b><span style="margin-left: 10px;"><%= @show_occurrence.date.strftime("%l:%M%P") %></span></b></p>
 
           <meta itemprop="endDate" content="<%= @show_occurrence.date + 2.hours %>">
 
@@ -34,7 +34,7 @@
 
           <p>
 
-            <span><%= @show.address_street_address %></span>
+            <span class="glyphicon glyphicon-map-marker" aria-hidden="true" style="margin-right: 10px;"></span><span><%= @show.address_street_address %></span>
 
           </p>
 
