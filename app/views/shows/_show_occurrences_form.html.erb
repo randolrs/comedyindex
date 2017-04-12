@@ -1,36 +1,65 @@
 <div class="form-container">
 
   <%# form_for(@show_occurrence) do |f| %>
-  <%= form_tag update_show_occurrence_path(@show_occurrence) do %>
+  <%= form_for @show_occurrence, url: update_show_occurrence_path(@show_occurrence), html: {multipart: true} do |f| %>
 
     
     <div class="field">
+      
       <label>Show Occurrence Title</label><br>
-      <input name="title" type="text" <% unless @show_occurrence.title %>value="<%= @show.name %>"<% else %>value="<%= @show_occurrence.title %>"<%end%>></input>
-      <%# f.text_field :title %>
+
+      <% unless @show_occurrence.title %>
+
+        <%= f.text_field :title, :value => @show.name %>
+
+      <% else %>
+
+        <%= f.text_field :title, :value => @show_occurrence.title %>
+
+      <%end%>
+      
     </div>
 
     <div class="field">
 
       <label>Image</label>
+      <br>
+      <%= image_tag @show_occurrence.check_for_image.url(:small), class: "small-image" %>
+      
+      <%= f.file_field :image %>
 
-      <%#if @show_occurrence.image %>
-        
-        <%# image_tag @show_occurrence.image.url(:small) %>
+    </div>
 
-      <%#end%>
+    <div class="field">
 
-      <%# f.file_field :image, class: "form-control" %>
+      <label>Date/Time</label>
 
-     <!--  <input type="file" name="image"></input> -->
+      <%# f.datetime_field :date %>
+
+      <%# f.select_date :date %>
+
+      <br>
+      <%= datetime_select :show_occurrence, :date %>
+
+      <%# time_select :show_occurrence, :date %>
 
     </div>
 
 
     <div class="field">
+      
       <label>Event Description</label><br>
-      <input type="text" name="text" <% unless @show_occurrence.about %>value="<%= @show.about %>"<% else %>value="<%= @show_occurrence.about %>"<%end%>></input>
-      <%# f.text_area :about %>
+
+      <% unless @show_occurrence.about %>
+
+        <%= f.text_field :about, :value => @show.about %>
+
+      <% else %>
+
+        <%= f.text_field :about, :value => @show_occurrence.about %>
+
+      <%end%>
+
     </div>
 
 

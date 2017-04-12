@@ -56,7 +56,7 @@ Rails.application.routes.draw do
 
   get 'show/occurrence/edit/:id' => 'shows#edit_show_occurrence', as: 'edit_a_show_occurrence'
 
-  post 'show/occurrence/update/:id' => 'shows#update_show_occurrence', as: 'update_show_occurrence'
+  patch 'show/occurrence/update/:id' => 'shows#update_show_occurrence', as: 'update_show_occurrence'
 
 
   get ':city/comedy/:url_slug/:formatted_date/:show_occurrence_id' => 'shows#show_with_url', as: 'show_with_url'

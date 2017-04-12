@@ -13,6 +13,9 @@ class ShowOccurrence < ActiveRecord::Base
   has_attached_file :image, 
   :styles => { :medium => "400x400#", :small => "70x70#", :thumb => "30x30#"},
   :s3_protocol => :https
+
+  validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+
   
 
   def self.default_scope
@@ -73,6 +76,21 @@ class ShowOccurrence < ActiveRecord::Base
       return nil
 
     end
+
+  end
+
+  def check_for_image
+
+    unless self.image_file_name
+
+      return self.show.image
+
+    else
+
+      return self.image
+
+    end
+
 
   end
 

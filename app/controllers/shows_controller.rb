@@ -79,11 +79,34 @@ class ShowsController < ApplicationController
 
     @show = Show.find(@show_occurrence.schedulable_id)
 
+    respond_to do |format|
+      if @show_occurrence.update(show_occurrence_params)
+        format.html { redirect_to this_shows_occurrences_path(@show.id), notice: 'Venue was successfully updated.' }
+        #format.json { render :show, status: :ok, location: redirect_to this_shows_occurrences_path(@show.id) }
+      else
+        format.html { render :edit }
+        format.json { render json: @venue.errors, status: :unprocessable_entity }
+      end
+    end
+
+
+    # respond_to do |format|
+    #   if @venue.update(venue_params)
+    #     format.html { redirect_to @venue, notice: 'Venue was successfully updated.' }
+    #     format.json { render :show, status: :ok, location: @venue }
+    #   else
+    #     format.html { render :edit }
+    #     format.json { render json: @venue.errors, status: :unprocessable_entity }
+    #   end
+    # end
+
+  
+
     #@show_occurrence.update(:title => params[:title], :about => params[:about], :image => params[:image])
 
-    @show_occurrence.update(:title => params[:title], :about => params[:about])
+    #@show_occurrence.update(:title => params[:title], :about => params[:about])
 
-    redirect_to this_shows_occurrences_path(@show.id)
+    #redirect_to this_shows_occurrences_path(@show.id)
 
   end
 
@@ -349,5 +372,9 @@ class ShowsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def show_params
       params.require(:show).permit(:name, :market_id, :venue_id, :website_url, :category_1_id, :category_2_id, :about, :address_line_1, :address_line_2, :city, :state_province, :country, :image, :address, :start_time, :time_zone, :venue_name, show_occurences_attributes:[:start_time], schedule_attributes: Schedulable::ScheduleSupport.param_names)
+    end
+
+    def show_occurrence_params
+      params.require(:show_occurrence).permit(:image, :title, :about, :date)
     end
 end
