@@ -34,7 +34,7 @@
 
           <p>
 
-            <span class="glyphicon glyphicon-map-marker" aria-hidden="true" style="margin-right: 10px;"></span><span><%= @show.address_street_address %></span>
+            <span class="glyphicon glyphicon-map-marker" aria-hidden="true" style="margin-right: 10px;"></span><span><%= @show.address_street_address %></span><span><%= link_to "(map)", "https://maps.google.com/?q=" + @show.address_street_address, target: :_blank %></span>
 
           </p>
 
