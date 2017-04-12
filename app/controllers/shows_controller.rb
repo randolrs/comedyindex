@@ -4,7 +4,20 @@ class ShowsController < ApplicationController
   # GET /shows
   # GET /shows.json
   def index
-    @shows = Show.all
+
+    #NEED TO MAKE "MY SHOWS" LATER
+    
+    if user_signed_in?
+      
+      if current_user.is_admin
+        @shows = Show.all
+      else
+        redirect_to root_path
+      end
+
+    else
+      redirect_to root_path
+    end
   end
 
   def dashboard
@@ -61,15 +74,44 @@ class ShowsController < ApplicationController
 
   def this_shows_occurrences
 
-    @show = Show.find(params[:id])
+    #NEED TO MAKE "MY SHOWS" LATER
+
+    if user_signed_in?
+      
+      if current_user.is_admin
+        @show = Show.find(params[:id])
+      else
+        redirect_to root_path
+      end
+
+    else
+      redirect_to root_path
+    end
 
   end
 
   def edit_show_occurrence
 
-    @show_occurrence = ShowOccurrence.find(params[:id])
+    #NEED TO MAKE "MY SHOWS" LATER
 
-    @show = Show.find(@show_occurrence.schedulable_id)
+    if user_signed_in?
+      
+      if current_user.is_admin
+        
+        @show_occurrence = ShowOccurrence.find(params[:id])
+
+        @show = Show.find(@show_occurrence.schedulable_id)
+
+      else
+        redirect_to root_path
+      end
+
+    else
+      redirect_to root_path
+    end
+
+
+    
 
   end
 
