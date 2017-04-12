@@ -6,7 +6,7 @@
     
     <div class="field">
       <label>Show Occurrence Title</label><br>
-      <input name="title" type="text" <% unless @show_occurrence.title %>value="<%= @show.title %>"<% else %>value="<%= @show_occurrence.title %>"<%end%>></input>
+      <input name="title" type="text" <% unless @show_occurrence.title %>value="<%= @show.name %>"<% else %>value="<%= @show_occurrence.title %>"<%end%>></input>
       <%# f.text_field :title %>
     </div>
 
