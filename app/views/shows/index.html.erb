@@ -2,13 +2,11 @@
 
 <h1>Listing Shows</h1>
 
-<table>
+<table class="simple-index-summary">
   <thead>
     <tr>
       <th>Name</th>
       <th>Venue</th>
-      <th>Website url</th>
-      <th>About</th>
       <th colspan="4"></th>
     </tr>
   </thead>
@@ -17,9 +15,19 @@
     <% @shows.each do |show| %>
       <tr>
         <td><%= show.name %></td>
-        <td><%= show.venue_id %></td>
-        <td><%= show.website_url %></td>
-        <td><%= show.about %></td>
+        <td>
+
+          <% if show.venue_id %>
+
+            <%= show.venue.name %>
+
+          <%else%>
+          
+            <%= show.venue_name %>   
+
+        <%end%>
+
+      </td>
         <td><%= link_to 'Show', show %></td>
         <td><%= link_to "Occurrences", this_shows_occurrences_path(show.id) %></td>
         <td><%= link_to 'Edit', edit_show_path(show) %></td>
