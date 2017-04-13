@@ -18,6 +18,8 @@
           
           <h1 itemprop="name"><% unless @show_occurrence.title %><%= @show.name %><%else%><%= @show_occurrence.title %><%end%></h1>
 
+          <%if user_signed_in?%><% if current_user.is_admin %><p><%= link_to "Edit", edit_a_show_occurrence_path(@show_occurrence.id) %></p><%end%><%end%>
+
           <a class="button full-screen-only yellow-background" href="<%# placeholder for ComedyHere Ticketing %>" style="float: right;" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
             Buy Ticket for 
             <span itemprop="price" content="10.0000">$10</span>
