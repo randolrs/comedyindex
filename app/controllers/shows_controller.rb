@@ -129,7 +129,7 @@ class ShowsController < ApplicationController
 
         if @show_occurrence.title
 
-          original_slug = @show_occurrence.title.downcase.gsub(' ', '-')
+          slug = @show_occurrence.title.downcase.gsub(' ', '-')
 
           @show_occurrence.update(:url_slug => slug)
 
@@ -144,7 +144,12 @@ class ShowsController < ApplicationController
 
             if occurrence #check for existing occurrence
 
-              occurrence.update(:title => @show_occurrence.title, :about => @show_occurrence.about, :image => @show_occurrence.image, :url_slug => @show_occurrence.url_slug)
+              occurrence.update(:title => @show_occurrence.title, :about => @show_occurrence.about, :image => @show_occurrence.image)
+              
+              if occurrence.title
+                occurrence.update(:url_slug => @show_occurrence.url_slug)
+              end
+
               #occurrence.update(show_occurrence_params)
 
             end
