@@ -64,7 +64,7 @@
 					
 					<div class="row">
 						
-						<% ShowOccurrence.nearby_show_occurrences(latitude, longitude, Time.current.beginning_of_day + 6.hours, Time.current.end_of_day + 6.hours).each do |show_occurrence| %>
+						<% ShowOccurrence.order(:date).nearby_show_occurrences(latitude, longitude, Time.current.beginning_of_day + 6.hours, Time.current.end_of_day + 6.hours).each do |show_occurrence| %>
 
 							<div class="col-xs-12">
 					  			
@@ -106,7 +106,7 @@
 						
 						<div class="row">
 							
-							<% ShowOccurrence.nearby_show_occurrences(latitude, longitude, date.beginning_of_day + 6.hours, date.end_of_day + 6.hours).each do |show_occurrence| %>
+							<% ShowOccurrence.order(:date).nearby_show_occurrences(latitude, longitude, date.beginning_of_day + 6.hours, date.end_of_day + 6.hours).each do |show_occurrence| %>
 
 								<div class="col-xs-12">
 						  			

@@ -14,7 +14,7 @@
 
 <div class="dashboard">
 
-  <% @show.show_occurrences.each do |show_occurrence|%>
+  <% @show_occurrences.each do |show_occurrence|%>
 
     <%= render :partial => 'shows/index_show_occurrences', :locals => {:show_occurrence => show_occurrence, :show =>  @show } %>
 
