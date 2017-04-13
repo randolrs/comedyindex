@@ -205,6 +205,14 @@ body{
 		color: #fff;
 	}
 
+	.button.blue-background{
+		background: #005C97 url(button-glass.png) repeat-x 0 0;
+	}
+
+	a.blue-background{
+		background: #005C97 url(button-glass.png) repeat-x 0 0;
+	}
+
 	.button{
 		padding: 10px 25px;
 	    border-radius: 2px;
@@ -219,11 +227,9 @@ body{
 	    transform:scale(1);
     	transition:all 1s;
 	    cursor: pointer;
-	    border: 1px solid rgba(0,0,0,0.1);
+	    border: 1px solid rgba(0,0,0,0.05);
 
-	    box-shadow: $material-shadow;
-	    -webkit-box-shadow: $material-shadow;
-	    -moz-box-shadow: $material-shadow;
+	    
 
 
 
@@ -238,10 +244,7 @@ body{
 	}
 
 
-	.button:hover{
-		
-	    transform:scale(1.05);
-	}
+	
 
 
 

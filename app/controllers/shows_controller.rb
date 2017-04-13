@@ -6,7 +6,7 @@ class ShowsController < ApplicationController
   def index
 
     #NEED TO MAKE "MY SHOWS" LATER
-    
+
     if user_signed_in?
       
       if current_user.is_admin
@@ -122,7 +122,39 @@ class ShowsController < ApplicationController
     @show = Show.find(@show_occurrence.schedulable_id)
 
     respond_to do |format|
+      
       if @show_occurrence.update(show_occurrence_params)
+
+        if @show_occurrence.title
+
+          original_slug = @show_occurrence.title.downcase.gsub(' ', '-')
+
+          slug = original_slug
+          
+          c=0
+          i=1
+
+          until c==1 do
+
+            unless ShowOccurrence.where(:url_slug => slug).where.not(:id => @show_occurrence.id).exists?
+
+              @show_occurrence.update(:url_slug => slug)
+
+              c=1
+
+            else
+
+              i = i + 1
+
+              slug = original_slug + "-" + i.to_s
+
+            end
+
+          end
+
+        end
+
+
         format.html { redirect_to this_shows_occurrences_path(@show.id), notice: 'Venue was successfully updated.' }
         #format.json { render :show, status: :ok, location: redirect_to this_shows_occurrences_path(@show.id) }
       else
@@ -157,28 +189,21 @@ class ShowsController < ApplicationController
     @whitebackground = false
 
 
-    if Show.where(:url_slug => params[:url_slug]).exists?
+    if ShowOccurrence.where(:id => params[:show_occurrence_id]).exists?
 
-      @show = Show.find_by_url_slug(params[:url_slug])
+      @show_occurrence = ShowOccurrence.find(params[:show_occurrence_id])
+
+      @show = Show.find(:schedulable_id => @show_occurrence.id)
+
+
 
       @main_SEO_title = @show.name
 
       @SEO_description = @show.about
 
+
+
       @nav_return = true
-
-      if ShowOccurrence.where(:id => params[:show_occurrence_id]).exists?
-
-        @show_occurrence = ShowOccurrence.find(params[:show_occurrence_id])
-
-      else
-
-        redirect_to root_path
-
-      end
-
-
-      #@nav_return_title = @show.name
 
     else
 

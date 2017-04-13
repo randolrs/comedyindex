@@ -94,5 +94,21 @@ class ShowOccurrence < ActiveRecord::Base
 
   end
 
+  def check_for_url_slug
+
+    unless self.url_slug
+      
+      show = Show.find(self.schedulable_id)
+
+      return show.url_slug
+
+    else
+
+      return self.url_slug
+
+    end
+
+  end
+
 
 end
