@@ -25,7 +25,7 @@
       <label>Image</label>
       <br>
       <%= image_tag @show_occurrence.check_for_image.url(:small), class: "small-image" %>
-      
+
       <%= f.file_field :image %>
 
     </div>
@@ -59,6 +59,23 @@
         <%= f.text_field :about, :value => @show_occurrence.about %>
 
       <%end%>
+
+    </div>
+
+    <div class="field">
+
+      <label>Update Other Dates?</label>
+
+      <br>
+
+      <% @show_occurrence.other_occurrences_soon.each do |occurrence| %>
+                  
+        <a class="add-tag-option toggle-active toggle-to-activate" data-activate-input="<%= occurrence.id %>"><%= occurrence.date.strftime("%A, %b %e, %Y %l:%M%P")  %></a>
+
+        <input type="hidden" value="false" name="other_occurences_to_update[<%= occurrence.id %>]" id="<%= occurrence.id %>"></input>
+
+      <% end %>
+
 
     </div>
 

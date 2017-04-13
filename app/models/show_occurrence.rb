@@ -110,5 +110,14 @@ class ShowOccurrence < ActiveRecord::Base
 
   end
 
+  def other_occurrences_soon
+
+    occurrences_for_this_event = ShowOccurrence.where(:schedulable_id => self.schedulable_id)
+
+    return occurrences_for_this_event.where(:date => self.date - 7.days..self.date + 7.days).where.not(:id => self.id)
+
+
+  end
+
 
 end
