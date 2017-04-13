@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170413134410) do
+ActiveRecord::Schema.define(version: 20170413144816) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -92,6 +92,7 @@ ActiveRecord::Schema.define(version: 20170413134410) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "url_slug"
+    t.boolean  "approved"
   end
 
   create_table "show_reviews", force: :cascade do |t|
@@ -168,6 +169,7 @@ ActiveRecord::Schema.define(version: 20170413134410) do
     t.string   "address_region"
     t.string   "address_country"
     t.string   "address_postal_code"
+    t.boolean  "approved"
   end
 
   create_table "users", force: :cascade do |t|

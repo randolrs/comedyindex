@@ -193,7 +193,7 @@ class ShowsController < ApplicationController
 
       @show_occurrence = ShowOccurrence.find(params[:show_occurrence_id])
 
-      @show = Show.find(:schedulable_id => @show_occurrence.id)
+      @show = Show.find(:id => @show_occurrence.schedulable_id)
 
 
 
