@@ -1,6 +1,6 @@
 
 		
-<div class="home-hero textured-background">
+<!-- <div class="home-hero textured-background">
 
 	<div class="home-hero-content centered">
 
@@ -8,7 +8,7 @@
 
 		<br><br>
 
-		<%= form_tag update_city_path do %>
+		<%# form_tag update_city_path do %>
 
 			<input type="text" class="geocomplete-input" name="location"></input>
 
@@ -16,15 +16,38 @@
 			
 			<button class="yellow-background button medium">Update City</button>
 
-		<%end%>
+		<%#end%>
 
 	</div>
 
-</div>
+</div> -->
 
 <section>
 
-	<h2 class="centered">Where are You?</h2>
+	<div class="centered">
+
+	<ul class="" id="rig">
+
+		<% Market.all.each do |market| %>
+
+			<li>
+				
+				<a class="rig-cell" href="<%= root_path %>">
+
+			        <%# image_tag category.image(:medium), class:"rig-img" %>
+			        <span class="rig-overlay"></span>
+			        <span class="rig-text"><%= market.name %></span>
+
+			    </a>
+			</li>
+
+		<%end%>
+
+	</ul>
+
+</div>
+
+
 
 	<div class="row padded-cols">
 

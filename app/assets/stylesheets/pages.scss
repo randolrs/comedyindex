@@ -589,3 +589,21 @@ ul.category-tag-index{
 		}
 	}
 }
+
+.welcomes-container{
+
+	background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/white_brick_wall.png);
+
+	.welcomes-overlay{
+		
+		background: rgba(100,50,50,0.8);
+		
+
+		.welcomes-content{
+			color: #fff;
+			padding: 20px;
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+	}
+}
