@@ -119,5 +119,41 @@ class ShowOccurrence < ActiveRecord::Base
 
   end
 
+  def check_for_recommendation
+
+    if self.reason_we_recommend
+
+      return self.reason_we_recommend
+
+    elsif self.show.reason_we_recommend
+
+      return self.show.reason_we_recommend
+
+    else
+
+      return nil
+
+    end
+
+  end
+
+  def check_for_video_preview
+
+    if self.video_url
+
+      return self.video_url
+
+    elsif self.show.video_url
+
+      return self.show.video_url
+
+    else
+
+      return nil
+
+    end
+
+  end
+
 
 end

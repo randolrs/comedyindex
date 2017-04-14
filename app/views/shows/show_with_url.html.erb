@@ -62,6 +62,33 @@
 
           </section>
 
+          <% if @show_occurrence.check_for_recommendation %>
+
+            <section class="profile-section">
+
+              <header class="section-title">Reason We Recommend</header>
+
+              <p><%= @show_occurrence.check_for_recommendation %></p>
+
+            </section>
+
+          <%end%>
+
+          <% if @show_occurrence.check_for_video_preview %>
+
+            <section class="profile-section">
+
+              <header class="section-title">Video Preview</header>
+
+              <iframe class="video-embed" src="<%= @show_occurrence.check_for_video_preview %>" frameborder="0" allowfullscreen></iframe>
+
+              <p>Description Placeholder</p>
+
+            </section>
+
+          <%end%>
+
+
           <% if @performers %>
             
             <section class="profile-section">

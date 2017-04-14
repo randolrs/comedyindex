@@ -63,6 +63,25 @@
     </div>
 
     <div class="field">
+      <label>Video Preview (Youtube Only)</label><br>
+      <%= f.text_field :video_url %>
+    </div>
+
+    <div class="field">
+      <label>Video Preview Description</label><br>
+      <%= f.text_field :video_description %>
+    </div>
+
+    <% if current_user.is_admin %>
+      
+      <div class="field">
+        <label>Reason We Recommend</label><br>
+        <%= f.text_field :reason_we_recommend %>
+      </div>
+
+    <%end%>
+
+    <div class="field">
 
       <label>Update Other Dates?</label>
 

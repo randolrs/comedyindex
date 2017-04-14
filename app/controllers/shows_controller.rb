@@ -249,7 +249,11 @@ class ShowsController < ApplicationController
 
   # GET /shows/new
   def new
-    @show = Show.new
+    if user_signed_in?
+      @show = Show.new
+    else
+      redirect_to root_path
+    end
   end
 
   # GET /shows/1/edit
@@ -443,10 +447,10 @@ class ShowsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def show_params
-      params.require(:show).permit(:name, :market_id, :venue_id, :website_url, :category_1_id, :category_2_id, :about, :address_line_1, :address_line_2, :city, :state_province, :country, :image, :address, :start_time, :time_zone, :venue_name, show_occurences_attributes:[:start_time], schedule_attributes: Schedulable::ScheduleSupport.param_names)
+      params.require(:show).permit(:name, :market_id, :venue_id, :website_url, :category_1_id, :category_2_id, :about, :address_line_1, :address_line_2, :city, :state_province, :country, :image, :address, :start_time, :time_zone, :venue_name, :video_url, :video_description, :reason_we_recommend, show_occurences_attributes:[:start_time], schedule_attributes: Schedulable::ScheduleSupport.param_names)
     end
 
     def show_occurrence_params
-      params.require(:show_occurrence).permit(:image, :title, :about, :date)
+      params.require(:show_occurrence).permit(:image, :title, :about, :date, :video_url, :video_description, :reason_we_recommend)
     end
 end

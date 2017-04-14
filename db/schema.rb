@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170413144816) do
+ActiveRecord::Schema.define(version: 20170414012140) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -93,6 +93,9 @@ ActiveRecord::Schema.define(version: 20170413144816) do
     t.datetime "image_updated_at"
     t.string   "url_slug"
     t.boolean  "approved"
+    t.string   "video_url"
+    t.text     "video_description"
+    t.text     "reason_we_recommend"
   end
 
   create_table "show_reviews", force: :cascade do |t|
@@ -170,6 +173,9 @@ ActiveRecord::Schema.define(version: 20170413144816) do
     t.string   "address_country"
     t.string   "address_postal_code"
     t.boolean  "approved"
+    t.text     "reason_we_recommend"
+    t.string   "video_url"
+    t.text     "video_description"
   end
 
   create_table "users", force: :cascade do |t|
