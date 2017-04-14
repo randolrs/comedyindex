@@ -4,15 +4,17 @@
 
     <div class="profile-detail-container">
 
-      <h1><%= @show.name %></h1>
-
+      <h1><%= @show.name %></h1><br>
+      <%= link_to "Edit the Show", edit_show_path(@show) %>
     </div>
 
   </div>
 
 </div>
 
-<div class="dashboard">
+<br>
+
+<div style="margin: 0 auto; max-width: 600px;">
 
   <% @show_occurrences.each do |show_occurrence|%>
 
