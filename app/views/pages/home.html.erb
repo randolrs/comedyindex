@@ -1,3 +1,23 @@
 
-<%= render :partial => 'pages/search', :locals => {:location => session[:city], :latitude => session[:latitude], :longitude => session[:longitude]} %>
+
+<% if session[:city].blank?  %>
+	
+	<div>
+
+	Hello & Welcome To ComedyHere
+
+	<br>
+
+	We bring together your favourite music services and join up listening, watching and sharing to connect your musical world.
+
+	</div>
+
+	<%= render 'pages/home_location_cta' %>
+
+<%else%>
+	
+	<%= render :partial => 'pages/search', :locals => {:location => session[:city], :latitude => session[:latitude], :longitude => session[:longitude]} %>
+
+<%end%>
+
 

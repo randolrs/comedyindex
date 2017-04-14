@@ -1,70 +1,105 @@
 
+<%= render :partial => 'pages/dashboard_header', :locals => {:location => location} %>
 
-<% if location.blank?  %>
-		
-	<%= render 'pages/home_location_cta' %>
+<div class="dashboard">
 
-<%else%>
-	
-	<%= render :partial => 'pages/dashboard_header', :locals => {:location => location} %>
-	
-	<div class="dashboard">
+	<%= render :partial => 'pages/mobile_front_page_tags', :locals => {:location => location} %>
 
-		<%= render :partial => 'pages/mobile_front_page_tags', :locals => {:location => location} %>
+	<div class="row">
 
-		<div class="row">
+		<div class="hidden-xs col-sm-4 col-md-3">
 
-			<div class="hidden-xs col-sm-4 col-md-3">
+			<div class="sidebar">
 
-				<div class="sidebar">
+				<div class="sidebar-content sticky">
 
-					<div class="sidebar-content sticky">
+					<%= render :partial => 'pages/front_page_tags', :locals => {:location => location} %>
 
-						<%= render :partial => 'pages/front_page_tags', :locals => {:location => location} %>
+					<% unless user_signed_in? %>
+						
+						<br>
 
-						<% unless user_signed_in? %>
-							
-							<br>
+						<%= render :partial => 'pages/home_signup_cta', :locals => {:mobile_only => false} %>
 
-							<%= render :partial => 'pages/home_signup_cta', :locals => {:mobile_only => false} %>
-
-						<%end%>
-
-					</div>
+					<%end%>
 
 				</div>
 
 			</div>
 
-			<div class="col-xs-12 col-sm-8 col-md-9">
+		</div>
+
+		<div class="col-xs-12 col-sm-8 col-md-9">
 
 <!-- 				<section class="home-index">
-					
-					<div class="row">
+				
+				<div class="row">
 
-						<div class="card">
+					<div class="card">
 
-							<div class="col-xs-12">
+						<div class="col-xs-12">
 
-								Featured
-					  			
-					  			<%# render :partial => 'shows/index_show', :locals => {:show_occurrence => ShowOccurrence.last, :show =>  Show.find(ShowOccurrence.last.schedulable_id)} %>
-
-					  		</div>
+							Featured
+				  			
+				  			<%# render :partial => 'shows/index_show', :locals => {:show_occurrence => ShowOccurrence.last, :show =>  Show.find(ShowOccurrence.last.schedulable_id)} %>
 
 				  		</div>
 
-					</div>
+			  		</div>
 
-				</section> -->
+				</div>
+
+			</section> -->
+
+			<section class="home-index">
+
+				<header class="home-section-header">Tonight (<%= Time.current.strftime("%A, %b %e") %>)</header>
+				
+				<div class="row">
+					
+					<% ShowOccurrence.order(:date).nearby_show_occurrences(latitude, longitude, Time.current.beginning_of_day + 6.hours, Time.current.end_of_day + 6.hours).each do |show_occurrence| %>
+
+						<div class="col-xs-12">
+				  			
+				  			<%= render :partial => 'shows/index_show', :locals => {:show_occurrence => show_occurrence, :show =>  Show.find(show_occurrence.schedulable_id)} %>
+
+				  		</div>
+
+					<%end%>
+
+
+					<div class="col-xs-12">
+						
+						<%= link_to root_path do %>
+
+							<div class="card see-more">
+								See 2 More Shows
+								<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+							</div>
+						
+						<%end%>
+
+			        </div>
+
+				</div>
+
+			</section>
+
+			<% unless user_signed_in? %>
+
+				<%= render :partial => 'pages/home_signup_cta', :locals => {:mobile_only => true} %>
+
+			<%end%>
+
+			<% (Date.tomorrow..Date.tomorrow + 7).each do |date| %>
 
 				<section class="home-index">
 
-					<header class="home-section-header">Tonight (<%= Time.current.strftime("%A, %b %e") %>)</header>
+					<header class="home-section-header"><%= date.strftime("%A, %b %e")%></header>
 					
 					<div class="row">
 						
-						<% ShowOccurrence.order(:date).nearby_show_occurrences(latitude, longitude, Time.current.beginning_of_day + 6.hours, Time.current.end_of_day + 6.hours).each do |show_occurrence| %>
+						<% ShowOccurrence.order(:date).nearby_show_occurrences(latitude, longitude, date.beginning_of_day + 6.hours, date.end_of_day + 6.hours).each do |show_occurrence| %>
 
 							<div class="col-xs-12">
 					  			
@@ -74,72 +109,28 @@
 
 						<%end%>
 
-
 						<div class="col-xs-12">
 							
 							<%= link_to root_path do %>
-
 								<div class="card see-more">
-									See 2 More Shows
+									See 6 More Shows
 									<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
 								</div>
-							
 							<%end%>
 
-				        </div>
+			        	</div>
 
 					</div>
 
 				</section>
 
-				<% unless user_signed_in? %>
-
-					<%= render :partial => 'pages/home_signup_cta', :locals => {:mobile_only => true} %>
-
-				<%end%>
-
-				<% (Date.tomorrow..Date.tomorrow + 7).each do |date| %>
-
-					<section class="home-index">
-
-						<header class="home-section-header"><%= date.strftime("%A, %b %e")%></header>
-						
-						<div class="row">
-							
-							<% ShowOccurrence.order(:date).nearby_show_occurrences(latitude, longitude, date.beginning_of_day + 6.hours, date.end_of_day + 6.hours).each do |show_occurrence| %>
-
-								<div class="col-xs-12">
-						  			
-						  			<%= render :partial => 'shows/index_show', :locals => {:show_occurrence => show_occurrence, :show =>  Show.find(show_occurrence.schedulable_id)} %>
-
-						  		</div>
-
-							<%end%>
-
-							<div class="col-xs-12">
-								
-								<%= link_to root_path do %>
-									<div class="card see-more">
-										See 6 More Shows
-										<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-									</div>
-								<%end%>
-
-				        	</div>
-
-						</div>
-
-					</section>
-
-				<% end %>
-
-			</div>
+			<% end %>
 
 		</div>
 
 	</div>
 
-<%end%>
+</div>
 
 <% if user_signed_in? %>
 
