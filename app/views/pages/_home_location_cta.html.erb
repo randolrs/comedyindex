@@ -22,58 +22,32 @@
 
 </div> -->
 
-<section>
+<section style="padding: 40px 20px;">
 
 	<div class="centered">
 
-	<ul class="" id="rig">
+		<h2>Select Your City to Get Started</h2>
 
-		<% Market.all.each do |market| %>
+		<br>
 
-			<li>
-				
-				<a class="rig-cell" href="<%= root_path %>">
+		<ul class="" id="rig">
 
-			        <%# image_tag category.image(:medium), class:"rig-img" %>
-			        <span class="rig-overlay"></span>
-			        <span class="rig-text"><%= market.name %></span>
+			<% Market.all.each do |market| %>
 
-			    </a>
-			</li>
+				<li>
+					<a class="rig-cell" href="<%= update_city_link_path(location: market.name) %>">
+							
+						<%# image_tag category.image(:medium), class:"rig-img" %>
+				        <span class="rig-overlay"></span>
+				        <span class="rig-text"><%= market.name %></span>
 
-		<%end%>
+					</a>
 
-	</ul>
+				</li>
 
-</div>
+			<%end%>
 
-
-
-	<div class="row padded-cols">
-
-		<div class="col-xs-6 col-sm-3">
-			<div class="card centered">
-				NYC
-			</div>
-		</div>
-
-		<div class="col-xs-6 col-sm-3">
-			<div class="card centered">
-				LAX
-			</div>
-		</div>
-
-		<div class="col-xs-6 col-sm-3">
-			<div class="card centered">
-				SF
-			</div>
-		</div>
-
-		<div class="col-xs-6 col-sm-3">
-			<div class="card centered">
-				Montreal
-			</div>
-		</div>
+		</ul>
 
 	</div>
 

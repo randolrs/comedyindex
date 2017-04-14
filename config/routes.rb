@@ -24,6 +24,8 @@ Rails.application.routes.draw do
 
   get 'account' => 'users#account_settings'
 
+  get 'update_city_link' => 'pages#update_city_link', as: 'update_city_link'
+
   post 'update_market' => 'pages#update_market', as: 'update_market'
 
   post 'update_city' => 'pages#update_city', as: 'update_city'

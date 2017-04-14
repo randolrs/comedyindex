@@ -97,29 +97,64 @@ class PagesController < ApplicationController
 
 	end
 
+	def update_city_link
 
-	def update_city
-		
-		input_location = params[:location]
+		if params[:location]
 
-		coordinates = Geocoder.coordinates(input_location)
-		
-		city = Geocoder.search(coordinates).first.city
+			input_location = params[:location]
 
-		session[:coordinates] = coordinates
+			coordinates = Geocoder.coordinates(input_location)
+			
+			city = Geocoder.search(coordinates).first.city
 
-		session[:city] = city
+			session[:coordinates] = coordinates
 
-		session[:latitude] = session[:coordinates][0]
+			session[:city] = city
 
-		session[:longitude] = session[:coordinates][1]
+			session[:latitude] = session[:coordinates][0]
 
-		
-		if user_signed_in?
+			session[:longitude] = session[:coordinates][1]
 
-			#default city or something
+			
+			if user_signed_in?
+
+				#default city or something
+
+			end
 
 		end
+		
+		redirect_to root_path
+
+	end
+
+	def update_city
+		if params[:location]
+
+			input_location = params[:location]
+
+			coordinates = Geocoder.coordinates(input_location)
+			
+			city = Geocoder.search(coordinates).first.city
+
+			session[:coordinates] = coordinates
+
+			session[:city] = city
+
+			session[:latitude] = session[:coordinates][0]
+
+			session[:longitude] = session[:coordinates][1]
+
+			
+			if user_signed_in?
+
+				#default city or something
+
+			end
+
+		end
+
+		#session[:city] = nil
 
 		redirect_to :back
 

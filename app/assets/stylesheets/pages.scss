@@ -596,14 +596,23 @@ ul.category-tag-index{
 
 	.welcomes-overlay{
 		
-		background: rgba(100,50,50,0.8);
+		background: rgba(0,0,0,0.8);
+		background: #ff1a3f;
 		
 
 		.welcomes-content{
 			color: #fff;
-			padding: 20px;
+			padding: 40px 20px;
 			max-width: 1200px;
 			margin: 0 auto;
+
+			h2{
+				text-shadow: 0px 1px 1px rgba(0,0,0,0.6);
+			}
+
+			p{
+				text-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+			}
 		}
 	}
 }
