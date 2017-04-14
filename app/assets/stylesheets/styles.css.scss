@@ -84,7 +84,8 @@ body{
 	}
 
 	.video-embed{
-		
+		width: 100%;
+    	max-width: 500px;
 	}
 	
 	input[type=number]::-webkit-inner-spin-button, 
