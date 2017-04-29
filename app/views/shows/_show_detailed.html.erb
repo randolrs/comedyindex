@@ -1,0 +1,82 @@
+
+<% unless @review_index %>
+
+
+  <%= link_to(show_with_url_path(show.city, show_occurrence.check_for_url_slug, show_occurrence.date.strftime("%e-%b-%Y"), show_occurrence.id)) do %>
+
+    <div class="card top-padded" itemscope itemtype="http://schema.org/ComedyEvent">
+      
+      <meta itemprop="url" content="<%= show_with_url_path(show.city, show.url_slug, show_occurrence.date.strftime("%d-%b-%Y"), show_occurrence.id) %>">
+
+      <span itemprop="location" itemscope itemtype="http://schema.org/EventVenue">
+
+        <% if show.venue_id %>
+
+          <meta itemprop="name" content="<%= show.venue.name %>">
+
+        <%else%>
+          
+          <meta itemprop="name" content="<%= show.venue_name %>">    
+
+        <%end%>
+
+        <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+      
+          <meta itemprop="streetAddress" content="<%= show.address_street_address %>">
+          <meta itemprop="addressLocality" content="<%= show.address_locality %>"> 
+          <meta itemprop="addressRegion" content="<%= show.address_region %>"> 
+          <meta itemprop="postalCode" content="<%= show.address_postal_code %>">
+          <meta itemprop="addressCountry" content="<%= show.address_country %>">
+            
+        </span>
+
+      </span>
+
+      <div class="row padded-cols">
+      
+        <div class="col-xs-3">
+
+          <%= image_tag show_occurrence.check_for_image.url(:medium), class: "small-index-image" %>
+    
+        </div>
+
+        <div class="col-xs-9">
+          <p class="light one-line"><% if show.venue %><%= show.venue.name %> Presents<%end%></p>
+          <% if show_occurrence.check_for_recommendation %><span class="glyphicon glyphicon-star gold-star" aria-hidden="true"></span><%end%>
+          <br>
+          <p class="title" itemprop="name"><% unless show_occurrence.title %><%= show.name %><%else%><%= show_occurrence.title %><%end%></p>
+          <br>
+          <p itemprop="startDate" content="<%= show_occurrence.date %>"><%= show_occurrence.date.strftime("%A, %b %d") %><br><%= show_occurrence.date.strftime("%l:%M%P") %></p>
+          <br>
+          <p><% show.show_tag_entries.where(:is_active => true).each do |tag| %><span class="tag-content"><%= tag.show_tag.name %></span><%end%></p>
+        </div>
+
+      </div>
+
+    </div>
+
+  <% end %>
+
+<% else %>
+
+    <div class="card">
+      
+      <div class="image-container">
+        
+        <%= image_tag show.image.url(:medium), class: "small-index-image"%>
+
+      </div>
+
+      <div class="detail-container">
+        
+        <p class="title"><% unless show_occurrence.title %><%= show.name %><%else%><%= show_occurrence.title %><%end%></p>
+
+        <p>Venue McGullicuddy</p>
+        <p><div class="img-stars <%= show.css_rating_code %>"></div> <%= show.show_reviews.count.to_s + " " + "Review".pluralize(show.show_reviews.count) %></p>
+        <p style="text-align:right;"><%= link_to "Start Your Review", new_review_path(show.id), class:"red-text" %></p>
+
+      </div>
+
+    </div>
+
+<% end %>

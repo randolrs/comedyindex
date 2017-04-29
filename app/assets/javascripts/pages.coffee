@@ -12,7 +12,7 @@ ready = ->
 
 		$(".sticky").stick_in_parent();
 
-		$(".vote").click (window.event), ->
+		$(".vote").click (e) ->
 			showID = $(@).data('show-id')
 			direction = $(@).data('vote-direction')
 			$.ajax
@@ -21,77 +21,77 @@ ready = ->
 				success: (data) ->
 		  			console.log(data)
  
-		$(".toggle-active").click (window.event), ->
+		$(".toggle-active").click (e) ->
 			if $(@).hasClass("active")
 				$(@).removeClass("active")
 			else
 				$(@).addClass("active")
 
-		$(".toggle-to-activate").click (window.event), ->
+		$(".toggle-to-activate").click (e) ->
 			target_id = "#" + $(@).data("activate-input")
 			if $(target_id).val() == "false"
 				$(target_id).val(true)
 			else
 				$(target_id).val(false)
 
-		$(".click-to-reveal").click (window.event), ->
+		$(".click-to-reveal").click (e) ->
 			$('a.click-to-reveal').removeClass('active')
 			$('div.reveal-panel').hide()
 			$(@).addClass('active')
 			targetId = "#" + $(@).data("reveal-panel-id")
 			$('body').find(targetId).show()
 
-		$(".password-input").focus (window.event), ->
+		$(".password-input").focus (e) ->
 			$('.button').addClass("orange-background")
 
-		$(window).scroll (window.event), ->
+		$(window).scroll (e) ->
 			st = $(@).scrollTop()
 			last = $('body').data('last-scroll')
 			$('body').data('last-scroll', st).removeAttr('last-scroll')
 
-		$(".click-to-toggle").click (window.event), ->
+		$(".click-to-toggle").click (e) ->
 			targetId = "#" + $(@).data("reveal-panel-id")
 			$('body').find(targetId).slideToggle()
 
-		$(".modal-cta").click (window.event), ->
+		$(".modal-cta").click (e) ->
 			targetId = "#" + $(@).data("modal-id")
 			$('body').find(targetId).show()
 			$('body').addClass('no-scroll')
 			$('.menu-content').animate({width:'show'},350);
 
-		$(".modal-container").click (window.event), ->
+		$(".modal-container").click (e) ->
 			$(@).hide()
 			$('body').removeClass('no-scroll')
 			$('.menu-content').animate({width:'hide'},350);
 
-		$(".dismiss-modal").click (window.event), ->
+		$(".dismiss-modal").click (e) ->
 			$(".modal-container").hide()
 			$('body').removeClass('no-scroll')
 			$('.menu-content').animate({width:'hide'},350);
 
-		$(".dismiss-parent").click (window.event), ->
+		$(".dismiss-parent").click (e) ->
 			$(@).parent().slideUp()
 
-		$(".menu-cta").click (window.event), ->
+		$(".menu-cta").click (e) ->
 			$('.menu-content').animate({width:'show'},350);
 
-		$(".menu-modal").click (window.event), ->
+		$(".menu-modal").click (e) ->
 			$('.menu-content').animate({width:'hide'},350);
 
-		$('.menu-content').click (window.event), ->
-			window.event.stopPropagation()
+		$('.menu-content').click (e) ->
+			e.stopPropagation()
 
-		$('.thumb-cta').click (window.event), ->
-			window.event.stopPropagation()
+		$('.thumb-cta').click (e) ->
+			e.stopPropagation()
 			alert("get off my dick")
 
-		$('.modal-content').click (window.event), ->
-			window.event.stopPropagation()
+		$('.modal-content').click (e) ->
+			e.stopPropagation()
 
-		$('.modal-content-full').click (window.event), ->
-			window.event.stopPropagation()
+		$('.modal-content-full').click (e) ->
+			e.stopPropagation()
 
-		$('#rating_string').change (window.event), ->
+		$('#rating_string').change (e) ->
 			$('#rating_number').val($(@).val());
 
 
