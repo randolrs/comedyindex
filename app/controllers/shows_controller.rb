@@ -46,7 +46,7 @@ class ShowsController < ApplicationController
 
     if @show_tag && @market
 
-      @show_occurrences = @show_tag.nearby_show_occurrences(@market.latitude, @market.longitude, Date.today, Date.tomorrow + 7)
+      #@show_occurrences = @show_tag.nearby_show_occurrences(@market.latitude, @market.longitude, Date.today, Date.tomorrow + 7)
 
     else
 
