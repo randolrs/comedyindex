@@ -1,32 +1,26 @@
 
-<div class="content medium">
+<div class="form-container content medium" style="margin:30px auto;">
+		
+	<%= form_tag comedian_contact_submit_path do %>
 
-	<div class="card">
+		<h3>Help us Get in Touch with You When We Do Auditions</h3>
+		<p><i>Include at least one</i></p>
+		<br>
+		<label>Email</label><br>
+		<input type="text" name="email"></input>
+		<br><br>
+		<label>Facebook URL</label><br>
+		<input type="text" name="facebook_url"></input>
+		<br><br>
+		<label>Twitter</label><br>
+		<input type="text" name="twitter_url"></input>
 
-		<h1>Give us some info<h1>
+		<br>
+		<br>
 
-		<%= form_tag comedian_contact_submit_path do %>
+		<button class="blue-background button medium">Send</button>
 
-			<header>Help us Get in Touch with You</header>
-
-			<br>
-			<label>Email</label>
-			<input type="text" name="email"></input>
-			<br>
-			<label>Facebook URL</label>
-			<input type="text" name="facebook_url"></input>
-			<br>
-			<label>Twitter</label>
-			<input type="text" name="twitter_url"></input>
-
-			<br>
-			<br>
-
-			<button class="blue-background button medium">Update City</button>
-
-		<%end%>
-
-	</div>
+	<%end%>
 
 </div>
 
