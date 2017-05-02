@@ -20,11 +20,11 @@
 
           <%if user_signed_in?%><% if current_user.is_admin %><p><%= link_to "Edit", edit_a_show_occurrence_path(@show_occurrence.id) %></p><%end%><%end%>
 
-          <a class="button full-screen-only yellow-background" href="<%# placeholder for ComedyHere Ticketing %>" style="float: right;" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+          <!-- <a class="button full-screen-only yellow-background" href="<%# placeholder for ComedyHere Ticketing %>" style="float: right;" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
             Buy Ticket for 
             <span itemprop="price" content="10.0000">$10</span>
             <meta itemprop="url" content="<%# placeholder for ComedyHere Ticketing %>">
-          </a>
+          </a> -->
 
           <p class="show-detail" itemprop="startDate" content="<%= @show_occurrence.date %>"><span class="glyphicon glyphicon-calendar" aria-hidden="true" style="margin-right: 10px;"></span><%= @show_occurrence.date.strftime("%A, %b %e, %Y") %> <b><span style="margin-left: 10px;"><%= @show_occurrence.date.strftime("%l:%M%P") %></span></b></p>
 
@@ -32,13 +32,17 @@
 
           <meta itemprop="eventStatus" content="EventScheduled">
 
-          <br>
+          <% if @show.address_street_address %>
+          
+            <br>
 
-          <p>
+            <p>
 
-            <span class="glyphicon glyphicon-map-marker" aria-hidden="true" style="margin-right: 10px;"></span><span><%= @show.address_street_address %></span><span><%= link_to "(map)", "https://maps.google.com/?q=" + @show.address_street_address, target: :_blank %></span>
+              <span class="glyphicon glyphicon-map-marker" aria-hidden="true" style="margin-right: 10px;"></span><span><%= @show.address_street_address %></span><span><%= link_to "(map)", "https://maps.google.com/?q=" + @show.address_street_address, target: :_blank %></span>
 
-          </p>
+            </p>
+
+          <%end%>
 
         </div>
     
