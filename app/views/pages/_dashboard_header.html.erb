@@ -2,7 +2,7 @@
 
 	<div class="dashboard-header-message yellow-background">
 		<div class="message-content">
-			<%= @location_prompt.message %> <%= link_to @location_prompt.cta_text, @location_prompt.cta_link, class:"button red-background", style:"margin-left: 10px;", target: :_blank %>
+			<%= @location_prompt.message %> <span class="mobile-only"><br></span><%= link_to @location_prompt.cta_text, @location_prompt.cta_link, class:"button red-background", style:"margin-left: 10px;", target: :_blank %>
 		</div>
 	</div>
 
