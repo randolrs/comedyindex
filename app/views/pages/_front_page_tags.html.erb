@@ -2,13 +2,30 @@
 
 	<ul class="category-tag-index">
 		
-		<li><%= link_to "All Shows", root_path, class: cp(root_path) %></li>
+		<% if market %>
+		
+			<li><%= link_to "All Shows", city_search_path(market), class: cp(city_search_path(market)) %></li>
 
-		<% ShowTag.front_page_tags.each do |show_tag| %>
+			<% ShowTag.front_page_tags.each do |show_tag| %>
 			
-			<li><%= link_to show_tag.name, show_tag_index_path(location, show_tag.url_slug), class: cp(show_tag_index_path(location, show_tag.url_slug)) %></li>
+				<li><%= link_to show_tag.name, show_tag_index_path(market, show_tag.url_slug), class: cp(show_tag_index_path(market, show_tag.url_slug)) %></li>
 
-		<% end %>
+			<% end %>
+		
+		<%else%>
+			
+			<li><%= link_to "All Shows", root_path, class: cp(root_path) %></li>
+
+			<% ShowTag.front_page_tags.each do |show_tag| %>
+			
+				<li><%= link_to show_tag.name, home_tag_index_path(show_tag.url_slug), class: cp(home_tag_index_path(show_tag.url_slug)) %></li>
+
+			<% end %>
+
+
+		<%end%>
+
+		
 
 	</ul>
 

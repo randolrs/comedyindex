@@ -8,11 +8,11 @@
 
 			<div class="welcomes-content">
 
-				<h2>Hello & Welcome To ComedyHere</h2>
+				<h2>Welcome To ComedyHere</h2>
 
 				<br>
 
-				<p>We curate the best live comedy events going on in your city. ComedyHere is the best place to stay up to date on all the best live comedy in your city, from independent shows in your neighborhood to national headliners visiting your city.</p>
+				<p>We curate the best live comedy events going on in your city, from independent shows in your neighborhood to national headliners visiting your city.</p>
 
 			</div>
 
@@ -24,7 +24,7 @@
 
 <%else%>
 	
-	<%= render :partial => 'pages/search', :locals => {:location => session[:city], :latitude => session[:latitude], :longitude => session[:longitude]} %>
+	<%= render :partial => 'pages/search', :locals => {:show_occurrences => @show_occurrences, :city_page => false, :dashboard_title => session[:city], :location => session[:city], :latitude => session[:latitude], :longitude => session[:longitude], :market => nil} %>
 
 <%end%>
 

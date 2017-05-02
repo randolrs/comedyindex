@@ -52,7 +52,7 @@ Rails.application.routes.draw do
   get 'writeareview' => 'shows#index_for_review', as: 'index_for_review'
 
   
-  get ':city/:url_slug/' => 'shows#show_home', as: 'show_home'
+  #get ':city/:url_slug/' => 'shows#show_home', as: 'show_home'
 
   get 'show/:id/occurrences/' => 'shows#this_shows_occurrences', as: 'this_shows_occurrences'
 
@@ -67,7 +67,9 @@ Rails.application.routes.draw do
 
   get 'v/:url_slug' => 'venues#show_with_url', as: 'venue_with_url'
 
-  get ':city/category/:url_slug' => 'shows#show_tag_index', as: 'show_tag_index'
+  get '/category/:url_slug' => 'pages#show_tag_index', as: 'home_tag_index'
+
+  get ':market_name/category/:url_slug' => 'shows#show_tag_index', as: 'show_tag_index'
 
   get 'u/:display_name' => 'users#profile', as: 'user_profile'
 

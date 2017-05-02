@@ -1,15 +1,15 @@
 
-<%= render :partial => 'pages/dashboard_header', :locals => {:location => @market.name} %>
+<%= render :partial => 'pages/dashboard_header', :locals => {:location => session[:city]} %>
 
 <div class="dashboard">
 
-	<%= render :partial => 'pages/mobile_front_page_tags', :locals => {:location => @market.short_name, :city_page => true, :market => @market.short_name} %>
+	<%= render :partial => 'pages/mobile_front_page_tags', :locals => {:location => session[:city], :city_page => true, :market => nil} %>
 
 	<div class="row">
 
 		<div class="hidden-xs col-sm-4 col-md-3">
 
-			<%= render :partial => 'pages/front_page_tags', :locals => {:location => @market.short_name, :city_page => true, :market => @market.short_name} %>
+			<%= render :partial => 'pages/front_page_tags', :locals => {:location => session[:city], :city_page => true, :market => nil} %>
 
 			<% unless user_signed_in? %>
 				
@@ -29,7 +29,7 @@
 					
 					<div class="row">
 						
-						<% @show_tag.nearby_show_occurrences(@market.latitude, @market.longitude, Time.current.beginning_of_day + 6.hours, Time.current.end_of_day + 6.hours).each do |show_occurrence| %>
+						<% @show_tag.nearby_show_occurrences(session[:latitude], session[:longitude], Time.current.beginning_of_day + 6.hours, Time.current.end_of_day + 6.hours).each do |show_occurrence| %>
 
 							<div class="col-xs-12">
 					  			
@@ -65,7 +65,7 @@
 					
 					<div class="row">
 
-						<% @show_tag.nearby_show_occurrences(@market.latitude, @market.longitude, date.beginning_of_day + 6.hours, date.end_of_day + 6.hours).each do |show_occurrence| %>
+						<% @show_tag.nearby_show_occurrences(session[:latitude], session[:longitude], date.beginning_of_day + 6.hours, date.end_of_day + 6.hours).each do |show_occurrence| %>
 
 							<div class="col-xs-12">
 					  			

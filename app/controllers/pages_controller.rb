@@ -2,34 +2,28 @@ class PagesController < ApplicationController
 
 	def home
 
-		@shows = Show.paginate(page: params[:page], per_page: 2).order('created_at DESC')
+		@message = "HEYYY"
 		
-		respond_to do |format|
-    
-    		format.html
-    		format.js
+		@shows = Show.paginate(page: params[:page], per_page: 2).order('created_at DESC')
+	
 
-  		end
-
-  		
-
-		if session[:city]
+		unless session[:city].blank?
 			
-			unless session[:city] == "Select a City" or session[:city] == ""
-
-				@city = session[:city]
-
-			else
-
-				@city = nil
-
-			end
+			@show_occurrences = ShowOccurrence.order(:date).nearby_show_occurrences(session[:latitude], session[:longitude], Time.current.beginning_of_day + 6.hours, Time.current.end_of_day + 6.hours + 8.days)
+			
 
 		else
 
 			@city = nil
 
 		end
+
+		respond_to do |format|
+    
+    		format.html
+    		format.js
+
+  		end
 
 	end
 
@@ -161,7 +155,21 @@ class PagesController < ApplicationController
 
 	end
 
-	
+	def show_tag_index
+
+	    @show_tag = ShowTag.where(:url_slug => params[:url_slug]).last
+
+	    if @show_tag
+
+	      @show_occurrences = @show_tag.nearby_show_occurrences(session[:latitude], session[:longitude], Time.current.beginning_of_day + 6.hours, Time.current.end_of_day + 6.hours + 8.days)
+	    
+	    else
+
+	      redirect_to root_path
+
+	    end
+
+  	end
 
 	def search
 
@@ -169,11 +177,27 @@ class PagesController < ApplicationController
 
 			input_location = params[:market_name]
 
-			coordinates = Geocoder.coordinates(input_location)
-			
-			city = Geocoder.search(coordinates).first.city
+			@market = Market.where(:short_name => params[:market_name]).last
 
-			session[:coordinates] = coordinates
+			
+			if @market
+
+		      #@show_occurrences = @show_tag.nearby_show_occurrences(@market.latitude, @market.longitude, Date.today, Date.tomorrow + 7)
+		      @show_occurrences = ShowOccurrence.order(:date).nearby_show_occurrences(@market.latitude, @market.longitude, Time.current.beginning_of_day + 6.hours, Time.current.end_of_day + 6.hours + 8.days)
+			
+
+		    else
+
+		      redirect_to root_path
+
+		    end
+
+
+			# coordinates = Geocoder.coordinates(input_location)
+			
+			# city = Geocoder.search(coordinates).first.city
+
+			# session[:coordinates] = coordinates
 
 		end
 

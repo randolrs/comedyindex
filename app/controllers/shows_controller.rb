@@ -39,10 +39,14 @@ class ShowsController < ApplicationController
 
     @show_tag = ShowTag.where(:url_slug => params[:url_slug]).last
 
+    #had params[:market_name], need to get @show_occurrences for that
 
-    if @show_tag
+    @market = Market.where(:name => params[:market_name]).last
 
-      @show_occurrences = @show_tag.nearby_show_occurrences(session[:latitude], session[:longitude], Date.today, Date.tomorrow + 7)
+
+    if @show_tag && @market
+
+      @show_occurrences = @show_tag.nearby_show_occurrences(@market.latitude, @market.longitude, Date.today, Date.tomorrow + 7)
 
     else
 

@@ -1,4 +1,4 @@
 
 
-<%= render :partial => 'pages/search', :locals => {:location => params[:market_name], :latitude => session[:coordinates][0] , :longitude => session[:coordinates][1]} %>
+<%= render :partial => 'pages/search', :locals => {:show_occurrences => @show_occurrences, :location => @market.name, :latitude => @market.latitude , :longitude => @market.longitude, :market => @market.short_name, :city_page => true} %>
 

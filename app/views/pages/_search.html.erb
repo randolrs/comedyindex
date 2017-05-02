@@ -3,7 +3,15 @@
 
 <div class="dashboard">
 
-	<%= render :partial => 'pages/mobile_front_page_tags', :locals => {:location => location} %>
+	<% unless market %>
+		
+		<%= render :partial => 'pages/mobile_front_page_tags', :locals => {:location => location, :city_page => city_page, :market => nil} %>
+
+	<%else%>
+		
+		<%= render :partial => 'pages/mobile_front_page_tags', :locals => {:location => location, :city_page => city_page, :market => market} %>
+
+	<%end%>
 
 	<div class="row">
 
@@ -13,7 +21,16 @@
 
 				<div class="sidebar-content sticky">
 
-					<%= render :partial => 'pages/front_page_tags', :locals => {:location => location} %>
+					<% unless market %>
+						
+						<%= render :partial => 'pages/front_page_tags', :locals => {:location => location, :city_page => city_page, :market => nil} %>
+
+					<%else%>
+
+						<%= render :partial => 'pages/front_page_tags', :locals => {:location => location, :city_page => city_page, :market => market} %>
+
+					<%end%>
+
 
 					<% unless user_signed_in? %>
 						
@@ -57,7 +74,7 @@
 				
 				<div class="row">
 					
-					<% ShowOccurrence.order(:date).nearby_show_occurrences(latitude, longitude, Time.current.beginning_of_day + 6.hours, Time.current.end_of_day + 6.hours).each do |show_occurrence| %>
+					<% show_occurrences.where(:date => Time.current.beginning_of_day + 6.hours .. Time.current.end_of_day + 6.hours).each do |show_occurrence| %>
 
 						<div class="col-xs-12">
 				  			
@@ -98,8 +115,8 @@
 					<header class="home-section-header"><%= date.strftime("%A, %b %e")%></header>
 					
 					<div class="row">
-						
-						<% ShowOccurrence.order(:date).nearby_show_occurrences(latitude, longitude, date.beginning_of_day + 6.hours, date.end_of_day + 6.hours).each do |show_occurrence| %>
+
+						<% show_occurrences.where(:date => date.beginning_of_day + 6.hours .. date.end_of_day + 6.hours).each do |show_occurrence| %>
 
 							<div class="col-xs-12">
 					  			

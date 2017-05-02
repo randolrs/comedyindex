@@ -1,12 +1,30 @@
 <div class="mobile-only mobile-tag-container">
 
-	<%= link_to "All Shows", root_path, class: cp(root_path) %>
+	<% if market %>
+		
+		<%= link_to "All Shows", city_search_path(market), class: cp(city_search_path(market)) %>
 
-	<% ShowTag.front_page_tags.each do |show_tag| %>
+		<% ShowTag.front_page_tags.each do |show_tag| %>
 
-		<%= link_to show_tag.name, show_tag_index_path(location, show_tag.url_slug), class: cp(show_tag_index_path(location, show_tag.url_slug)) %>
+			<%= link_to show_tag.name, show_tag_index_path(market, show_tag.url_slug), class: cp(show_tag_index_path(market, show_tag.url_slug)) %>
 
-	<% end %>
+		<% end %>
+
+
+	<%else%>
+		
+		<%= link_to "All Shows", root_path, class: cp(root_path) %>
+
+		<% ShowTag.front_page_tags.each do |show_tag| %>
+
+			<%= link_to show_tag.name, home_tag_index_path(show_tag.url_slug), class: cp(home_tag_index_path(show_tag.url_slug)) %>
+
+		<% end %>
+
+
+	<%end%>
+
+	
 
 
 	<!-- <span class="click-to-reveal" data-reveal-panel-id="more-filters" style="float:right;">More Categories<span class="glyphicon glyphicon-chevron-down" aria-hidden="true" style="margin-left: 5px;"></span></span>

@@ -10,7 +10,9 @@ class ShowTag < ActiveRecord::Base
 
 		show_collection = Array.new
 
-		#@nearby_shows = Show.nearby([latitude, longitude], 50)
+		nearby_show_occurrences = ShowOccurrence.nearby_show_occurrences(latitude, longitude, start_date, end_date)
+
+		#nearby_shows = Show.nearby([latitude, longitude], 50)
 
 		@nearby_shows = Show.all
 
