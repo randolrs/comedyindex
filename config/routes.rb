@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :location_prompts
   resources :markets
   resources :show_reviews
   resources :shows
@@ -18,6 +19,8 @@ Rails.application.routes.draw do
 
   get 'dashboard' => 'users#dashboard'
 
+  get 'comedian_contact_form' => 'pages#comedian_contact_form'
+
   get 'login' => 'pages#login'
 
   get 'community' => 'pages#community'
@@ -29,6 +32,8 @@ Rails.application.routes.draw do
   post 'update_market' => 'pages#update_market', as: 'update_market'
 
   post 'update_city' => 'pages#update_city', as: 'update_city'
+
+  post 'comedian_contact_submit' => 'pages#comedian_contact_submit', as: 'comedian_contact_submit'
 
 
 

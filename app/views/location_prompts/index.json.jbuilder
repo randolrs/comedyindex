@@ -1,0 +1,1 @@
+json.array! @location_prompts, partial: 'location_prompts/location_prompt', as: :location_prompt

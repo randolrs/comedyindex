@@ -11,6 +11,8 @@ class PagesController < ApplicationController
 			
 			@show_occurrences = ShowOccurrence.order(:date).nearby_show_occurrences(session[:latitude], session[:longitude], Time.current.beginning_of_day + 6.hours, Time.current.end_of_day + 6.hours + 8.days)
 			
+			@location_prompt = LocationPrompt.near([session[:latitude], session[:longitude]], 50).last
+		
 
 		else
 
@@ -171,6 +173,18 @@ class PagesController < ApplicationController
 
   	end
 
+  	def comedian_contact_form
+
+  	end
+
+  	def comedian_contact_submit
+  		
+  		ComedianContactSubmission.create(:email => params[:email], :twitter_url => params[:twitter_url], :facebook_url => params[:facebook_url])
+
+  		redirect_to root_path
+
+  	end
+
 	def search
 
 		if params[:market_name]
@@ -183,8 +197,10 @@ class PagesController < ApplicationController
 			if @market
 
 		      #@show_occurrences = @show_tag.nearby_show_occurrences(@market.latitude, @market.longitude, Date.today, Date.tomorrow + 7)
-		      @show_occurrences = ShowOccurrence.order(:date).nearby_show_occurrences(@market.latitude, @market.longitude, Time.current.beginning_of_day + 6.hours, Time.current.end_of_day + 6.hours + 8.days)
-			
+		     	@show_occurrences = ShowOccurrence.order(:date).nearby_show_occurrences(@market.latitude, @market.longitude, Time.current.beginning_of_day + 6.hours, Time.current.end_of_day + 6.hours + 8.days)
+				@location_prompt = LocationPrompt.near([@market.latitude, @market.longitude], 50).last
+		
+
 
 		    else
 

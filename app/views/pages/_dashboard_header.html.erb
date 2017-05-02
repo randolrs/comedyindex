@@ -1,3 +1,17 @@
+<% if @location_prompt %>
+
+	<div class="dashboard-header-message yellow-background">
+		<div class="message-content">
+			<%= @location_prompt.message %> <%= link_to @location_prompt.cta_text, @location_prompt.cta_link, class:"button red-background", style:"margin-left: 10px;", target: :_blank %>
+		</div>
+	</div>
+
+	<div class="dashboard-header-message-offset">
+
+	</div>
+
+<%end%>
+
 <div class="dashboard-header">
 		
 	<div class="dashboard-header-content">
@@ -13,5 +27,9 @@
 		</div>
 		
 	</div>
+
+</div>
+
+<div class="dashboard-header-offset">
 
 </div>

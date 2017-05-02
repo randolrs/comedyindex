@@ -1,0 +1,1 @@
+json.partial! "location_prompts/location_prompt", location_prompt: @location_prompt
