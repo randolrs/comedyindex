@@ -164,7 +164,7 @@ h1.dashboard-header{
 
 .dashboard-header-message{
 	padding: 10px;
-	height: 60px;
+	height: 120px;
 	position: fixed;
     width: 100%;
     z-index: 962;
@@ -173,11 +173,12 @@ h1.dashboard-header{
 		max-width: 1200px;
 		margin: 0 auto;
 		text-align: center;
+		color: #000;
 	}	
 }
 
 .dashboard-header-message-offset{
-	height: 60px;
+	height: 120px;
 	display: block;
 	width: 100%;
 }
