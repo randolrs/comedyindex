@@ -155,7 +155,7 @@ class ShowOccurrence < ActiveRecord::Base
 
   end
 
-  def video_description
+  def check_for_video_description
 
     if self.video_url
 
