@@ -85,7 +85,7 @@ class ShowsController < ApplicationController
       if current_user.is_admin
         @show = Show.find(params[:id])
 
-        @show_occurrences = @show.show_occurrences.sort_by &:created_at
+        @show_occurrences = @show.show_occurrences.order(:date)
       else
         redirect_to root_path
       end
