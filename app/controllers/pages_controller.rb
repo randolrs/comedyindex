@@ -131,20 +131,24 @@ class PagesController < ApplicationController
 
 			coordinates = Geocoder.coordinates(input_location)
 			
-			city = Geocoder.search(coordinates).first.city
+			if coordinates
+			
+				city = Geocoder.search(coordinates).first.city
 
-			session[:coordinates] = coordinates
+				session[:coordinates] = coordinates
 
-			session[:city] = city
+				session[:city] = city
 
-			session[:latitude] = session[:coordinates][0]
+				session[:latitude] = session[:coordinates][0]
 
-			session[:longitude] = session[:coordinates][1]
+				session[:longitude] = session[:coordinates][1]
 
 			
-			if user_signed_in?
+				if user_signed_in?
 
-				#default city or something
+					#default city or something
+
+				end
 
 			end
 
