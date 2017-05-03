@@ -184,16 +184,19 @@
 
           <%end%>
 
+          <% if @producer_active %> <!-- Change this later -->
 
-          <section class="profile-section">
+            <section class="profile-section">
 
-            <header class="section-title">About the Producer</header>
+              <header class="section-title">About the Producer</header>
 
-            <p><%= @show.user.first_name %></p>
+              <p><%= @show.user.first_name %></p>
 
-            <a href="<%= user_profile_path(@show.user.first_name) %>"><%= @show.user.first_name + " Profile" %><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a>
+              <a href="<%= user_profile_path(@show.user.first_name) %>"><%= @show.user.first_name + " Profile" %><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a>
 
-          </section>
+            </section>
+
+          <%end%>
 
           <section class="profile-section centered">
 
