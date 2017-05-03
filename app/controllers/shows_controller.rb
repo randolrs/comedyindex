@@ -392,11 +392,11 @@ class ShowsController < ApplicationController
 
           end
 
+          these_show_occurrences =  ShowOccurrence.where(:schedulable_id => @show.id)
+          these_show_occurrences.update_all(:address => @show.address, :latitude => @show.latitude, :longitude => @show.longitude)
+          next_show_occurrence = these_show_occurrences.first
 
-          ShowOccurrence.where(:schedulable_id => @show.id).update_all(:address => @show.address, :latitude => @show.latitude, :longitude => @show.longitude)
-          
-
-          format.html { redirect_to show_home_path(@show.city, @show.url_slug), notice: 'Show was successfully created.' }
+          format.html { redirect_to show_with_url_path(@show.city, next_show_occurrence.check_for_url_slug, next_show_occurrence.date.strftime("%e-%b-%Y"), next_show_occurrence.id), notice: 'Show was successfully created.' }
           format.json { render :show, status: :created, location: @show }
         else
           format.html { render :new }

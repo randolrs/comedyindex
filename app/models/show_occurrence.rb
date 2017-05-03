@@ -121,11 +121,11 @@ class ShowOccurrence < ActiveRecord::Base
 
   def check_for_recommendation
 
-    if self.reason_we_recommend
+    if !self.reason_we_recommend.blank?
 
       return self.reason_we_recommend
 
-    elsif self.show.reason_we_recommend
+    elsif !self.show.reason_we_recommend.blank?
 
       return self.show.reason_we_recommend
 
@@ -139,11 +139,11 @@ class ShowOccurrence < ActiveRecord::Base
 
   def check_for_video_preview
 
-    if self.video_url
+    if !self.video_url.blank?
 
       return self.video_url
 
-    elsif self.show.video_url
+    elsif !self.show.video_url.blank?
 
       return self.show.video_url
 
