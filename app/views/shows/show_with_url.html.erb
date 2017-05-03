@@ -128,26 +128,32 @@
 
           <% if @show.venue_id %>
 
-            <section class="profile-section">
+            <% if @show.venue.about %>
 
-              <header class="section-title">About the Venue</header>
+              <section class="profile-section">
 
-              <p><%= @show.venue.about %></p>
+                <header class="section-title">About the Venue</header>
 
-              <br>
-              
-              <% if @show.venue %>
-                  
-                  <% if @show.venue.url_slug %>
+                <p><b><%= @show.venue.name %></b></p>
+
+                <p><%= @show.venue.about %></p>
+
+                <br>
+                
+                <% if @show.venue %>
                     
-                    <p><%= link_to "See Venue Page", venue_with_url_path(@show.venue.url_slug), class:"blue-text" %></p>
-                    
-                  <%end%>
+                    <% if @show.venue.url_slug %>
+                      
+                      <p><%= link_to "See Venue Page", venue_with_url_path(@show.venue.url_slug), class:"blue-text" %></p>
+                      
+                    <%end%>
 
-              <%end%>
+                <%end%>
 
-            </section>
+              </section>
 
+            <%end%>
+            
           <%end%>
 
         </div>
