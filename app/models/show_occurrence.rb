@@ -155,5 +155,32 @@ class ShowOccurrence < ActiveRecord::Base
 
   end
 
+  def video_description
+
+    if self.video_url
+
+      if self.video_description
+        return self.video_description
+      else
+        return nil
+      end
+
+    elsif self.show.video_url
+
+      if self.show.video_description
+        return self.show.video_description
+      else
+        return nil
+      end
+
+    else
+
+      return nil
+
+    end
+
+
+  end
+
 
 end
