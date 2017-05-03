@@ -49,6 +49,7 @@ class VenuesController < ApplicationController
     @venue = Venue.new(venue_params)
 
     respond_to do |format|
+      
       if @venue.save
 
         original_slug = @venue.name.downcase.gsub(' ', '-')

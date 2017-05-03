@@ -356,6 +356,34 @@ class ShowsController < ApplicationController
 
               @show.update(:venue_id => venue.id)
 
+              # Add URL SLUG TO VENUE
+              original_slug = venue.name.downcase.gsub(' ', '-')
+
+              slug = original_slug
+              
+              c=0
+              i=1
+
+              until c==1 do
+
+                unless Venue.where(:url_slug => slug).exists?
+
+                  venue.update(:url_slug => slug)
+
+                  c=1
+
+                else
+
+                  i = i + 1
+
+                  slug = original_slug + "-" + i.to_s
+
+                end
+
+              end
+
+              # END URL SLUG FOR VENUE
+
             end
 
           else
