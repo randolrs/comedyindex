@@ -1,5 +1,5 @@
 
-<%= render :partial => 'pages/dashboard_header', :locals => {:location => session[:city]} %>
+<%= render :partial => 'pages/dashboard_header', :locals => {:location => session[:city], :category => @show_tag.name} %>
 
 <div class="dashboard">
 
