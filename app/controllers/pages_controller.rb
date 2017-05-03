@@ -177,6 +177,10 @@ class PagesController < ApplicationController
 
   	end
 
+  	def comedian_contact_submissions
+
+  	end
+
   	def comedian_contact_submit
   		
   		ComedianContactSubmission.create(:email => params[:email], :twitter_url => params[:twitter_url], :facebook_url => params[:facebook_url])

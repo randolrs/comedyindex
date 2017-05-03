@@ -1,0 +1,22 @@
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Twitter</th>
+      <th>Facebook</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% ComedianContactSubmission.all.each do |submission| %>
+      <tr>
+        <td><%= submission.email %></td>
+        <td><%= submission.twitter_url %></td>
+        <td><%= submission.facebook_url %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+

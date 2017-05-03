@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
   get 'comedian_contact_form' => 'pages#comedian_contact_form'
 
+  get 'comedian_contact_submissions' => 'pages#comedian_contact_submissions'
+
   get 'login' => 'pages#login'
 
   get 'community' => 'pages#community'
