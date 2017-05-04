@@ -29,6 +29,29 @@ class UsersController < ApplicationController
 
   end
 
+  def admin_dashboard
+
+    if user_signed_in?
+
+      if current_user.is_admin
+
+
+
+      else
+
+        redirect_to root_path
+
+      end
+
+    else
+
+      redirect_to root_path
+
+    end
+
+
+  end
+
   def profile
 
     @user = User.where(:first_name => params[:display_name]).last

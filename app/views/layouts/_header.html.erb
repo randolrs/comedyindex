@@ -52,7 +52,7 @@
 				
 					<% if user_signed_in? %>
 
-						<% if current_user.is_admin %><li><%= link_to "All Shows", shows_path %></li><%end%><li><a href="<%= account_path%>" class="header-image"><%= image_tag current_user.image.url(:small), class: "header-profile-image material-shadow" %></a></li><%end%><li><a class="modal-cta" data-modal-id="select-city"><% if session[:city] && !session[:city].blank? %><%= session[:city] %><%else%>Select a City<%end%><span class="glyphicon glyphicon-map-marker" aria-hidden="true" style="margin-left: 5px;"></span></a></li>
+						<% if current_user.is_admin %><li><%= link_to "Admin", admin_dashboard_path %></li><li><%= link_to "All Shows", shows_path %></li><%end%><li><a href="<%= account_path%>" class="header-image"><%= image_tag current_user.image.url(:small), class: "header-profile-image material-shadow" %></a></li><%end%><li><a class="modal-cta" data-modal-id="select-city"><% if session[:city] && !session[:city].blank? %><%= session[:city] %><%else%>Select a City<%end%><span class="glyphicon glyphicon-map-marker" aria-hidden="true" style="margin-left: 5px;"></span></a></li>
 
 				</span>
 
@@ -60,7 +60,7 @@
 
 					<% if user_signed_in? %>
 
-						<% if current_user.is_admin %><li><%= link_to "All Shows", shows_path %></li><%end%><li><a href="<%= account_path%>" class="header-image"><%= image_tag current_user.image.url(:small), class: "header-profile-image material-shadow" %></a></li><%end%><li><a class="modal-cta" data-modal-id="select-city"><% if session[:city] && !session[:city].blank? %><%= session[:city] %><%else%>Select a City<%end%><span class="glyphicon glyphicon-map-marker" aria-hidden="true" style="margin-left: 5px;"></span></a></li>
+						<% if current_user.is_admin %><li><%= link_to "Admin", admin_dashboard_path %></li><li><%= link_to "All Shows", shows_path %></li><%end%><li><a href="<%= account_path%>" class="header-image"><%= image_tag current_user.image.url(:small), class: "header-profile-image material-shadow" %></a></li><%end%><li><a class="modal-cta" data-modal-id="select-city"><% if session[:city] && !session[:city].blank? %><%= session[:city] %><%else%>Select a City<%end%><span class="glyphicon glyphicon-map-marker" aria-hidden="true" style="margin-left: 5px;"></span></a></li>
 					
 
 				</span>

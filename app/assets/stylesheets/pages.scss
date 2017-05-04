@@ -242,6 +242,14 @@ h1.dashboard-header{
 
 .dashboard-section{
 	margin: 15px 0px;
+
+	table{
+		width: 100%;
+
+		th, td{
+			padding: 5px;
+		}
+	}
 }
 
 .dashboard{

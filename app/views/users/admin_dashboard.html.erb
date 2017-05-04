@@ -1,0 +1,64 @@
+<div class="content">
+
+	<div class="dashboard-section">
+
+		<h3>Users</h3>
+
+		Users: <%= User.all.count%>
+
+		<table>
+
+			<tr>
+				<th>ID</th>
+				<th>Email</th>
+				<th>Name</th>
+			</tr>
+
+			<% User.all.each do |user| %>
+
+				<tr>
+					<td><%= user.id %></td>
+					<td><%= user.email %></td>
+					<td><%= user.first_name %> <%= user.last_name %></td>
+				</tr>
+
+
+			<%end%>
+
+		</table>
+
+	</div>
+
+	<div class="dashboard-section">
+
+		<h3>Shows</h3>
+
+		Shows: <%= Show.all.count%>
+
+		<table>
+
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>User Email</th>
+				<th>Created At</th>
+			</tr>
+
+			<% Show.all.each do |show| %>
+
+				<tr>
+					<td><%= show.id %></td>
+					<td><%= show.name %></td>
+					<td><%= show.user.email %></td>
+					<td><%= show.created_at.strftime("%e-%b-%Y") %></td>
+				</tr>
+
+
+			<%end%>
+
+		</table>
+
+	</div>
+	
+
+</div>

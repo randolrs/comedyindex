@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   get 'dashboard' => 'users#dashboard'
 
+  get 'admin_dashboard' => 'users#admin_dashboard'
+
   get 'comedian_contact_form' => 'pages#comedian_contact_form'
 
   get 'comedian_contact_submissions' => 'pages#comedian_contact_submissions'
