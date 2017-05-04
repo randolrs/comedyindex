@@ -14,7 +14,7 @@
 				<th>Name</th>
 			</tr>
 
-			<% User.all.each do |user| %>
+			<% User.all.order(:created_at).reverse.each do |user| %>
 
 				<tr>
 					<td><%= user.id %></td>
@@ -44,7 +44,7 @@
 				<th>Created At</th>
 			</tr>
 
-			<% Show.all.each do |show| %>
+			<% Show.all.order(:created_at).reverse.each do |show| %>
 
 				<tr>
 					<td><%= show.id %></td>
