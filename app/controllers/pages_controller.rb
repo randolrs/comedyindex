@@ -13,6 +13,9 @@ class PagesController < ApplicationController
 			
 			@location_prompt = LocationPrompt.near([session[:latitude], session[:longitude]], 50).last
 		
+			@SEO_title = session[:city] + " Comedy Shows " + Time.now.strftime("%Y")
+
+			@SEO_description = "All the best comedy shows in " + session[:city] + " this week."
 
 		else
 
@@ -166,9 +169,12 @@ class PagesController < ApplicationController
 	    @show_tag = ShowTag.where(:url_slug => params[:url_slug]).last
 
 	    if @show_tag
+			
+			@show_occurrences = @show_tag.nearby_show_occurrences(session[:latitude], session[:longitude], Time.current.beginning_of_day + 6.hours, Time.current.end_of_day + 6.hours + 8.days)
+	    	@SEO_title = session[:city] + " " + @show_tag.name + " Comedy Shows " + Time.now.strftime("%Y")
+	    	
+	    	@SEO_description = "All the best " + @show_tag.name + " comedy shows in " + session[:city] + " this week."
 
-	      @show_occurrences = @show_tag.nearby_show_occurrences(session[:latitude], session[:longitude], Time.current.beginning_of_day + 6.hours, Time.current.end_of_day + 6.hours + 8.days)
-	    
 	    else
 
 	      redirect_to root_path
@@ -207,7 +213,10 @@ class PagesController < ApplicationController
 		      #@show_occurrences = @show_tag.nearby_show_occurrences(@market.latitude, @market.longitude, Date.today, Date.tomorrow + 7)
 		     	@show_occurrences = ShowOccurrence.order(:date).nearby_show_occurrences(@market.latitude, @market.longitude, Time.current.beginning_of_day + 6.hours, Time.current.end_of_day + 6.hours + 8.days)
 				@location_prompt = LocationPrompt.near([@market.latitude, @market.longitude], 50).last
-		
+				
+				@SEO_title = @market.name + " Comedy Shows " + Time.now.strftime("%Y")
+
+				@SEO_description = "All the best comedy shows in " + @market.name + " this week."
 
 
 		    else

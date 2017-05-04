@@ -47,6 +47,10 @@ class ShowsController < ApplicationController
     if @show_tag && @market
 
       #@show_occurrences = @show_tag.nearby_show_occurrences(@market.latitude, @market.longitude, Date.today, Date.tomorrow + 7)
+      @SEO_title = @market.name + " " + @show_tag.name + " Comedy Shows " + Time.now.strftime("%Y")
+      
+      @SEO_description = "All the best " + @show_tag.name + " comedy shows in " + @market.name + " this week."
+
 
     else
 
@@ -197,7 +201,6 @@ class ShowsController < ApplicationController
 
     @whitebackground = false
 
-
     if ShowOccurrence.where(:id => params[:show_occurrence_id]).exists?
 
       @show_occurrence = ShowOccurrence.find(params[:show_occurrence_id])
@@ -206,9 +209,11 @@ class ShowsController < ApplicationController
 
 
 
-      @main_SEO_title = @show.name
+      @SEO_title = @show.name + " | " + @show.city
 
       @SEO_description = @show.about
+
+      #@SEO_description = @show.name + " is a live comedy show in " + @show.city + " on " + @show_occurrence.date.strftime("%d-%b-%Y") + " at " +  @show_occurrence.date.strftime("%l:%M%P") + "."
 
 
 

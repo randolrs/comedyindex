@@ -36,7 +36,9 @@
       
         <div class="col-xs-3">
 
-          <%= image_tag show_occurrence.check_for_image.url(:medium), class: "small-index-image" %>
+          <% unless show_occurrence.title %><% alt_tag = show.name %><%else%><% alt_tag = show_occurrence.title %><%end%>
+
+          <%= image_tag show_occurrence.check_for_image.url(:medium), class: "small-index-image", alt: alt_tag %>
     
         </div>
 
