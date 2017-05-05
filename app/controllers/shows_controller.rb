@@ -41,7 +41,8 @@ class ShowsController < ApplicationController
 
     #had params[:market_name], need to get @show_occurrences for that
 
-    @market = Market.where(:name => params[:market_name]).last
+    input_location = params[:market_name]
+    @market = Market.where(:short_name => input_location.downcase).last
 
 
     if @show_tag && @market

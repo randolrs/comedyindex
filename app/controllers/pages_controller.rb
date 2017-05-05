@@ -205,7 +205,7 @@ class PagesController < ApplicationController
 
 			input_location = params[:market_name]
 
-			@market = Market.where(:short_name => params[:market_name]).last
+			@market = Market.where(:short_name => input_location.downcase).last
 
 			
 			if @market
