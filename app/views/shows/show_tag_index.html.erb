@@ -3,13 +3,13 @@
 
 <div class="dashboard">
 
-	<%= render :partial => 'pages/mobile_front_page_tags', :locals => {:location => @market.short_name, :city_page => true, :market => @market.short_name} %>
+	<%= render :partial => 'pages/mobile_front_page_tags', :locals => {:location => @market.short_name, :city_page => true, :market => @market.name} %>
 
 	<div class="row">
 
 		<div class="hidden-xs col-sm-4 col-md-3">
 
-			<%= render :partial => 'pages/front_page_tags', :locals => {:location => @market.short_name, :city_page => true, :market => @market.short_name} %>
+			<%= render :partial => 'pages/front_page_tags', :locals => {:location => @market.short_name, :city_page => true, :market => @market.name} %>
 
 			<% unless user_signed_in? %>
 				
