@@ -137,6 +137,24 @@ class ShowOccurrence < ActiveRecord::Base
 
   end
 
+  def check_for_about
+
+    if !self.about.blank?
+
+      return self.about
+
+    elsif !self.show.about.blank?
+
+      return self.show.about
+
+    else
+
+      return nil
+
+    end
+
+  end
+
   def check_for_video_preview
 
     if !self.video_url.blank?
