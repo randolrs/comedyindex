@@ -94,15 +94,23 @@ class ShowOccurrence < ActiveRecord::Base
 
   end
 
-  def check_address
+  def check_for_address
 
-    if !self.address.blank?
+    unless self.show.is_secret_show
 
-      return self.address
+      if !self.address.blank?
 
-    elsif !self.show.address.blank?
+        return self.address
 
-      return self.show.address
+      elsif !self.show.address.blank?
+
+        return self.show.address
+
+      else
+
+        return nil
+
+      end
 
     else
 

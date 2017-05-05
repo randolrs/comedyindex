@@ -85,6 +85,11 @@
 
     <%# link_to_add_fields "Add Date", f, :show_occurences %>
 
+    <div class="field">
+      <label>Do you want to hide the address? (Secret Show)</label><br>
+      <%= f.check_box :is_secret_show %>
+    </div>
+
 
     <div class="field">
 
@@ -106,7 +111,7 @@
       <%= f.text_field :venue_name %><br>
 
       <%= f.label :address %><br>
-      <%= f.text_field :address, class:"geocomplete-input" %><br>
+      <%= f.text_field :address, class:"geocomplete-input", required: true %><br>
    
     </div>
 

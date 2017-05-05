@@ -489,6 +489,6 @@ class ShowsController < ApplicationController
     end
 
     def show_occurrence_params
-      params.require(:show_occurrence).permit(:image, :title, :about, :date, :video_url, :video_description, :reason_we_recommend)
+      params.require(:show_occurrence).permit(:image, :title, :about, :date, :video_url, :video_description, :reason_we_recommend, :is_secret_show)
     end
 end
