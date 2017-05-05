@@ -8,6 +8,8 @@ class ShowOccurrence < ActiveRecord::Base
 
   reverse_geocoded_by :latitude, :longitude
 
+  after_validation :geocode, :if => :address_changed?
+
   has_many :show_votes
 
   has_attached_file :image, 
