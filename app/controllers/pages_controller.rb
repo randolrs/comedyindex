@@ -15,7 +15,7 @@ class PagesController < ApplicationController
 		
 			@SEO_title = session[:city] + " Comedy Shows " + Time.now.strftime("%Y")
 
-			@SEO_description = "All the best comedy shows in " + session[:city] + " this week."
+			@SEO_description = session[:city] + " - Find the funniest comedy shows and events in " + session[:city]
 
 		else
 
@@ -173,7 +173,7 @@ class PagesController < ApplicationController
 			@show_occurrences = @show_tag.nearby_show_occurrences(session[:latitude], session[:longitude], Time.current.beginning_of_day + 6.hours, Time.current.end_of_day + 6.hours + 8.days)
 	    	@SEO_title = session[:city] + " " + @show_tag.name + " Comedy Shows " + Time.now.strftime("%Y")
 	    	
-	    	@SEO_description = "All the best " + @show_tag.name + " comedy shows in " + session[:city] + " this week."
+	    	@SEO_description = session[:city] + " - Find the funniest " + @show_tag.name + " comedy shows and events in " + session[:city] + "."
 
 	    else
 
@@ -216,7 +216,7 @@ class PagesController < ApplicationController
 				
 				@SEO_title = @market.name + " Comedy Shows " + Time.now.strftime("%Y")
 
-				@SEO_description = "All the best comedy shows in " + @market.name + " this week."
+				@SEO_description = @market.name + " - Find the funniest comedy shows and events in  " + @market.name + "."
 
 
 		    else

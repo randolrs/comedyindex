@@ -49,7 +49,7 @@ class ShowsController < ApplicationController
       #@show_occurrences = @show_tag.nearby_show_occurrences(@market.latitude, @market.longitude, Date.today, Date.tomorrow + 7)
       @SEO_title = @market.name + " " + @show_tag.name + " Comedy Shows " + Time.now.strftime("%Y")
       
-      @SEO_description = "All the best " + @show_tag.name + " comedy shows in " + @market.name + " this week."
+      @SEO_description = "Find the funniest " + @show_tag.name + " comedy shows and events in " + @market.name + "."
 
 
     else
