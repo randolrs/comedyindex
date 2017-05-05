@@ -209,10 +209,17 @@ h1.dashboard-header{
 		color: #fff;
 		background: #111;
 	}
+
+	h2{
+		font-size: 16px;
+	    color: #bbb;
+	    line-height: 24px;
+	    text-indent: 5px;
+	}
 }
 
 .dashboard-header-offset{
-	height: 60px;
+	height: 84px;
 	width: 100%;
 	display: block;
 }
