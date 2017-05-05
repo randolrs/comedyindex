@@ -59,6 +59,39 @@
 		</table>
 
 	</div>
+
+	<div class="dashboard-section">
+
+		<h3>Comedian Contact Submissions</h3>
+
+		Shows: <%= ComedianContactSubmission.all.count%>
+
+		<table>
+
+			<tr>
+				<th>ID</th>
+				<th>Email</th>
+				<th>Twitter</th>
+				<th>Facebook</th>
+				<th>Submission Date</th>
+			</tr>
+
+			<% ComedianContactSubmission.all.order(:created_at).reverse.each do |contact| %>
+
+				<tr>
+					<td><%= contact.id %></td>
+					<td><%= contact.email %></td>
+					<td><%= contact.twitter_url %></td>
+					<td><%= contact.facebook_url %></td>
+					<td><%= contact.created_at.strftime("%e-%b-%Y") %></td>
+				</tr>
+
+
+			<%end%>
+
+		</table>
+
+	</div>
 	
 
 </div>
