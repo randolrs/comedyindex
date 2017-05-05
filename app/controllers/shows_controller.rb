@@ -145,29 +145,31 @@ class ShowsController < ApplicationController
         end
 
         ####update other occurrences
-        params[:other_occurences_to_update].each do |occurrence_param|
+        if params[:other_occurences_to_update]
+        
+          params[:other_occurences_to_update].each do |occurrence_param|
 
-          if occurrence_param[1] == "true"
+            if occurrence_param[1] == "true"
 
-            occurrence = ShowOccurrence.where(:id => occurrence_param[0]).last
+              occurrence = ShowOccurrence.where(:id => occurrence_param[0]).last
 
-            if occurrence #check for existing occurrence
+              if occurrence #check for existing occurrence
 
-              occurrence.update(:title => @show_occurrence.title, :about => @show_occurrence.about, :image => @show_occurrence.image)
-              
-              if occurrence.title
-                occurrence.update(:url_slug => @show_occurrence.url_slug)
+                occurrence.update(:title => @show_occurrence.title, :about => @show_occurrence.about, :image => @show_occurrence.image)
+                
+                if occurrence.title
+                  occurrence.update(:url_slug => @show_occurrence.url_slug)
+                end
+
+                #occurrence.update(show_occurrence_params)
+
               end
-
-              #occurrence.update(show_occurrence_params)
 
             end
 
           end
 
         end
-
-
 
         format.html { redirect_to this_shows_occurrences_path(@show.id), notice: 'Venue was successfully updated.' }
         #format.json { render :show, status: :ok, location: redirect_to this_shows_occurrences_path(@show.id) }
