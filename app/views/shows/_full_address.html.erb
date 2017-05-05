@@ -20,13 +20,21 @@
 <%end%>
 
 <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+	<%= unless @show_occurrence.show.secret_show %>
 		
-	<span itemprop="streetAddress"><%= @show_occurrence.check_for_address %></span>
-	
-	<meta itemprop="addressLocality" content="<%= @show.address_locality %>">
-	<meta itemprop="addressRegion" content="<%= @show.address_region %>">
-	<meta itemprop="postalCode" content="<%= @show.address_postal_code %>">
-	<meta itemprop="addressCountry" content="<%= @show.address_country %>">
+		<span itemprop="streetAddress"><%= @show_occurrence.check_for_address %></span>
+		
+		<meta itemprop="addressLocality" content="<%= @show.address_locality %>">
+		<meta itemprop="addressRegion" content="<%= @show.address_region %>">
+		<meta itemprop="postalCode" content="<%= @show.address_postal_code %>">
+		<meta itemprop="addressCountry" content="<%= @show.address_country %>">
+
+
+	<%else%>
+
+		Secret Show! Check out the <% link_to "Event Website", @show.website_url %> for the Location.
+
+	<%end%>
 		
 </p>
 
