@@ -21,7 +21,7 @@
 
 <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 		
-	<span itemprop="streetAddress"><%= @show.address_street_address %></span>
+	<span itemprop="streetAddress"><%= @show_occurrence.check_for_address %></span>
 	
 	<meta itemprop="addressLocality" content="<%= @show.address_locality %>">
 	<meta itemprop="addressRegion" content="<%= @show.address_region %>">

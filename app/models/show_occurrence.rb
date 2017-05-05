@@ -94,6 +94,26 @@ class ShowOccurrence < ActiveRecord::Base
 
   end
 
+  def check_address
+
+    if !self.address.blank?
+
+      return self.address
+
+    elsif !self.show.address.blank?
+
+      return self.show.address
+
+    else
+
+      return nil
+
+    end
+
+
+  end
+
+
   def check_for_url_slug
 
     unless self.url_slug
