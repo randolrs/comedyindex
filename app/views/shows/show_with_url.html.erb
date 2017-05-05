@@ -178,7 +178,7 @@
                   
                   <p><b>Upcoming Dates:</b><p>
 
-                  <% @show.schedule.occurrences(Time.now + 1.month).each do |occurence| %>
+                  <% @show.schedule.occurrences(Time.now + 1.month).first(5).each do |occurence| %>
 
                     <p><%= occurence.strftime("%a, %b %e") %></p>
 
