@@ -138,6 +138,8 @@
 
                 <p><b><%= @show.venue.name %></b></p>
 
+                <br>
+
                 <p><%= @show.venue.about %></p>
 
                 <br>
@@ -146,8 +148,8 @@
                     
                     <% if @show.venue.url_slug %>
                       
-                      <p><%= link_to "See Venue Page", venue_with_url_path(@show.venue.url_slug), class:"blue-text" %></p>
-                      
+                      <!-- <p><%# link_to "See Venue Page", venue_with_url_path(@show.venue.url_slug), class:"blue-text" %></p>
+                       -->
                     <%end%>
 
                 <%end%>
@@ -192,7 +194,7 @@
 
           <%end%>
 
-          <% if @producer_active %> <!-- Change this later -->
+          <% if @producer_active %> <!-- Change this later, that's a dummy controller variable -->
 
             <section class="profile-section">
 
