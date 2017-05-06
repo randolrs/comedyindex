@@ -212,7 +212,7 @@ class ShowsController < ApplicationController
 
 
 
-      @SEO_title = @show.name + " | " + @show.city
+      @SEO_title = @show.name + " | " + @show_occurrence.date.strftime("%d-%b-%Y") + " | " + @show.city
 
       @SEO_description = @show.about
 
