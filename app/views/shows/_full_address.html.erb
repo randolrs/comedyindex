@@ -21,7 +21,7 @@
 
 <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 	
-	<%= unless @show_occurrence.show.is_secret_show %>
+	<% unless @show_occurrence.show.is_secret_show %>
 		
 		<span itemprop="streetAddress"><%= @show_occurrence.check_for_address %></span>
 		
