@@ -4,9 +4,9 @@ class ShowOccurrence < ActiveRecord::Base
   scope :remaining, lambda{where(["date >= ?",Time.now])}
   scope :previous, lambda{where(["date < ?",Time.now])}
 
-  # geocoded_by :address
+  geocoded_by :address
 
-  # reverse_geocoded_by :latitude, :longitude
+  reverse_geocoded_by :latitude, :longitude
 
   # after_validation :geocode, :if => :address_changed?
 
