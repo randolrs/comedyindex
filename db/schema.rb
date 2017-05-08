@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170505190033) do
+ActiveRecord::Schema.define(version: 20170508144244) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -118,6 +118,7 @@ ActiveRecord::Schema.define(version: 20170505190033) do
     t.string   "video_url"
     t.text     "video_description"
     t.text     "reason_we_recommend"
+    t.integer  "show_id"
   end
 
   create_table "show_reviews", force: :cascade do |t|

@@ -8,6 +8,8 @@ class Show < ActiveRecord::Base
 
 	has_many :show_votes
 
+	has_many :show_occurrences
+
 	has_many :show_tag_entries
 
 	acts_as_schedulable :schedule, occurrences: :show_occurrences

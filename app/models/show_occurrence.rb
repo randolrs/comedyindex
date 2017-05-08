@@ -12,6 +12,8 @@ class ShowOccurrence < ActiveRecord::Base
 
   has_many :show_votes
 
+  belongs_to :show
+
   has_attached_file :image, 
   :styles => { :medium => "400x400#", :small => "70x70#", :thumb => "30x30#"},
   :s3_protocol => :https
