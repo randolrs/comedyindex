@@ -49,12 +49,8 @@
 					<header class="footer-header">Cities</header>
 
 					<ul>
-					
-						<% Market.all.each do |market| %>
 
-							<li><%= link_to market.name + " Comedy Shows", city_search_path(market.name) %></li>
-
-						<%end%>
+						<li><%= link_to Market.first.name + " Comedy Shows", city_search_path(Market.first.name) %></li>
 
 					</ul>
 
