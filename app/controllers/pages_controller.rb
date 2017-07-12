@@ -2,8 +2,6 @@ class PagesController < ApplicationController
 
 	def home
 
-		redirect_to city_search_path("Montreal")
-
 		@message = "HEYYY"
 		
 		@shows = Show.paginate(page: params[:page], per_page: 2).order('created_at DESC')

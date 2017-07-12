@@ -32,20 +32,16 @@
 
 		<ul class="" id="rig">
 
-			<% Market.all.each do |market| %>
+			<li>
+				<a class="rig-cell" href="<%= update_city_link_path(location: "Montreal") %>">
+						
+					<%# image_tag category.image(:medium), class:"rig-img" %>
+			        <span class="rig-overlay"></span>
+			        <span class="rig-text">Montreal</span>
 
-				<li>
-					<a class="rig-cell" href="<%= update_city_link_path(location: market.name) %>">
-							
-						<%# image_tag category.image(:medium), class:"rig-img" %>
-				        <span class="rig-overlay"></span>
-				        <span class="rig-text"><%= market.name %></span>
+				</a>
 
-					</a>
-
-				</li>
-
-			<%end%>
+			</li>
 
 		</ul>
 
